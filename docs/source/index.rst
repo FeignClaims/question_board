@@ -12,6 +12,7 @@
   src/theory.rst
   src/swan_preface.rst
   src/searching_method/main.rst
+  src/cpp/main.rst
 
 另有计软智网转专业相关资料:
 
