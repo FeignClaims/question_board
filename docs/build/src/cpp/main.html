@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C++ 学习建议 &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=12f31cd9"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = '';</script>
+        <script>let toggleHintHide = '';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="常见问题解答" href="../faq/index.html" />
+    <link rel="prev" title="在哪查找中文的 C++ 资料?" href="../searching_method/main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            C++ 洋葱剥法交流群资料
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../rule_and_preface.html">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory.html">答疑原则和理论依据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C++ 学习建议</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id14">学习方法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">在学会如何走得好看之前，先跑起来</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">不要记忆技术细节</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">实际编程</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">学习使用软件</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">更多学习方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id21">应试教育学习路径</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">网课参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">教材参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">习题参考</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">应对上机考试的进阶内容，有余力可用</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id31">非应试自学学习路径</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id32">核心路径</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id34">教材参考</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id35">C++ 资料查询</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id37">C++ 环境配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id40">C++ 术语不全书</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/index.html">常见问题解答</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++ 洋葱剥法交流群资料</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">C++ 学习建议</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/src/cpp/main.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id13">
+<h1>C++ 学习建议<a class="headerlink" href="#id13" title="Link to this heading"></a></h1>
+<section id="id14">
+<h2>学习方法<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<span id="id16"></span><h3>在学会如何走得好看之前，先跑起来<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<blockquote>
+<div><div class="line-block">
+<div class="line">你见过小孩学习走路吗? 实际上小孩在学会平稳地慢慢走路之前就开始尝试跑了. 与之相似, 你可以先勇猛向前, 偶尔摔一跤, 从中获得编程的感觉, 然后再慢下来, 获得必要的精确控制能力和准确的理解. 你必须在学会走之前就开始跑!</div>
+<div class="line">—— Bjarne Stroustrup《Programming: Principles and Practice Using C++》引言</div>
+</div>
+</div></blockquote>
+<p>小孩子学走路从来不是从走路开始的, 而是向前猛跑摔倒几次, 有了走路的整体感觉, 再慢下来对各个过程进行准确的理解.</p>
+<p>所以建议先将 C++ 整体内容粗略过一遍再进行细节学习, 这粗略的一遍不需要解决 “C++ 如何做到什么”, 只需要解决 “C++ 可以做什么”. 知道了可以做什么, 便能有效地学习或提问如何去做. 例如, 你不必掌握函数递归怎么写或怎么分析, 但在这一遍中会知道 C++ 可以进行递归.</p>
+</section>
+<section id="id17">
+<h3>不要记忆技术细节<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<p>二进制原码和补码? 我不知道. <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 的大小? 我不知道. 运算符的结合性和优先级? 我不知道.</p>
+<p>我不知道, 因为我没必要知道. 如果实在需要知道 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 的大小 (它并不固定) 那可以去查, 如果实在不清楚运算符的结合性优先级那可以加括号. 问题在于, 知道这些细节会帮助初学者写出程序吗? 对于初学者, 更重要的是如 <a class="reference internal" href="#id15"><span class="std std-ref">在学会如何走得好看之前，先跑起来</span></a> 所述建立起对编程的感性认识. 这些细节并不是学习的重点, 且 <strong>在有了总体认识后很容易补充上</strong>.</p>
+<p>考试是闭卷考试, 但编程不是, 编程学习过程也不是. <a class="reference internal" href="../searching_method/main.html"><span class="doc">在哪查找中文的 C++ 资料?</span></a></p>
+</section>
+<section id="id18">
+<h3>实际编程<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<p>请阅读</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/467228101">《人的正确思想是从哪里来的？》</a>.</p></li>
+<li><p>或更详细的 <a class="reference external" href="https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm">《实践论》</a>.</p></li>
+<li><p>或更更详细的 <a class="reference external" href="https://www.marxists.org/chinese/maozedong/1937/index.htm">《辩证法唯物论（讲授提纲）》</a>.</p></li>
+</ul>
+<p>明确编程能力不是靠听课听来的, 而是从实际的编程中理解掌握的.</p>
+<p>实际的编程并不一定是刷力扣题等 (从考试的角度, 刷力扣题是偏题的; 从编程语言学习的角度, 刷力扣题是有害的), 对于新手来说可以是抄书上例题实际运行进行理解, 可以是对一些突发奇想加以实际验证, 可以是学习练习如何使用软件等等.</p>
+</section>
+<section id="id19">
+<h3>学习使用软件<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<p>软件是你的朋友, 手写代码不报错不算什么能力, 能用合适的软件写代码才是能力. 例如, 建议学习:</p>
+<ul class="simple">
+<li><p>阅读报错信息.</p></li>
+<li><p>进行断点调试: 设置断点, 条件断点, 逐语句和跳入跳出执行, 设置监视值, 切换调用栈帧.</p></li>
+<li><p>如何用软件自动格式化代码 (Visual Studio 里 <kbd class="kbd docutils literal notranslate">Ctrl</kbd><kbd class="kbd docutils literal notranslate">K</kbd><kbd class="kbd docutils literal notranslate">D</kbd>, VSCode 里 <kbd class="kbd docutils literal notranslate">Shift</kbd><kbd class="kbd docutils literal notranslate">Alt</kbd><kbd class="kbd docutils literal notranslate">F</kbd>).</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cassert&gt;</span></code> 里的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">assert</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span></code>.</p></li>
+</ul>
+<p><strong>学会这些比多刷几道力扣题提升更大</strong>.</p>
+</section>
+<section id="id20">
+<h3>更多学习方法<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
+<p>更多学习方法请阅读 <a class="reference internal" href="../swan_preface.html"><span class="doc">《Programming: Principles and Practice Using C++》引言</span></a> 了解.</p>
+</section>
+</section>
+<section id="id21">
+<h2>应试教育学习路径<a class="headerlink" href="#id21" title="Link to this heading"></a></h2>
+<section id="id22">
+<h3>网课参考<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<p><a class="reference external" href="https://www.bilibili.com/video/BV1et411b73Z">黑马 C++</a> 或 <a class="reference external" href="https://www.bilibili.com/video/BV1Yv411t7qe">嵌入式技术公开课的《C++ Primer Plus》</a></p>
+</section>
+<section id="id24">
+<h3>教材参考<a class="headerlink" href="#id24" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>《C++ Primer Plus》</dt><dd><p>矮子里的高个, <strong>最适合应试的书</strong>, 看书一个月左右即可速通 C++ 上下册所有内容 (如果感觉看书有难度, 可以先看一部分上面的网课领会).</p>
+</dd>
+<dt>《C++ How to Program, 9th Edition》(《C++ 大学教程，第 9 版》)</dt><dd><p>电类 C++ 用的教材, 但 <strong>个人</strong> 完全不推荐, <a class="reference external" href="https://accu.org/bookreviews/2002/haley_791/">ACCU 给出最低分的神仙书</a>.</p>
+</dd>
+<dt>《C++ 程序设计实践教程》</dt><dd><p>部分非电类专业 C++ 用的教材, 虽然不怎么好, 但写得比《C++ 大学教程》清晰地多. 如果不想新买书, 可以考虑用这本, 缺的内容很容易补回来.</p>
+</dd>
+</dl>
+</section>
+<section id="id25">
+<h3>习题参考<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>《C++ Primer Plus》课后习题</dt><dd><p>主要是语法的练习.</p>
+</dd>
+</dl>
+</section>
+<section id="id26">
+<h3>应对上机考试的进阶内容，有余力可用<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gitee.com/cpp_tutorial/board/raw/main/docs/source/src/cpp/stl_solution.pdf">STL “简” 述 (摘自《C++标准库（第 2 版) 》by Nicolai Josuttis</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1VU4y1U7rL">105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1xb411e7ww">动态规划 入门</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1gp4y1t7xe">动态规划 套路</a></p></li>
+<li><p><a class="reference external" href="https://leetcode.cn/leetbook/detail/recursion-and-divide-and-conquer/">递归与分治精讲</a></p></li>
+<li><p><a class="reference external" href="https://leetcode.cn/leetbook/detail/top-interview-questions-easy/">初级算法</a></p></li>
+</ul>
+<p>尤其是转专业考试，强烈建议在应试学习基础上学习这些内容，即学习范围为</p>
+<p>建议的学习范围为</p>
+<ul>
+<li><p>课内必修</p>
+<ul class="simple">
+<li><p>C++98/03 (即应试网课、教材所教授的版本)</p></li>
+<li><p>淡化指针 (很多地方都能用引用代替)</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> 基本用法.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span></code> 基本用法.</p></li>
+</ul>
+</li>
+<li><p>可选</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">stringstream</span></code>: 用于数字和字符串间的转换和分割单词等. 可用于 2023 年计软智转专业上机第 1 题, 秒杀 2022 年网安转专业编写程序题第 1 题.</p></li>
+<li><p>STL 容器基本用法</p>
+<ul>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span></code>: 动态数组, 且无需手动管理内存.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">&gt;</span></code>: 固定长度的数组, 且不会隐式类型转换为首元素的指针.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="o">&gt;</span></code>: 关联数组. 可秒杀 2021 年计软智转专业第 3 题.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">Key</span><span class="o">&gt;</span></code>: 元素唯一且自动排序. 可秒杀 2023 年计软智转专业上机第 2 题.</p></li>
+</ul>
+</li>
+<li><p>STL 算法 + Lambdas</p></li>
+<li><p>C++11 的基于范围的 for 循环 + auto 基本用法</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// auto: 我不在乎 array 里的元素 value 类型具体是什么, 编译器你自己搞定;</span>
+<span class="c1">//       我只要求你把它按 const&amp; 传给 value</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+<section id="id31">
+<h2>非应试自学学习路径<a class="headerlink" href="#id31" title="Link to this heading"></a></h2>
+<section id="id32">
+<span id="id33"></span><h3>核心路径<a class="headerlink" href="#id32" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_syllabus.pdf">我的 C++ 学习大纲</a></p></li>
+<li><p><a class="reference external" href="https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_bookmarks.html">我的 C++ 浏览器书签 (右键另存为再导入到浏览器)</a></p></li>
+</ul>
+</section>
+<section id="id34">
+<h3>教材参考<a class="headerlink" href="#id34" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>此处是一些评价, 具体建议直接看 <a class="reference internal" href="#id32"><span class="std std-ref">核心路径</span></a>.</p>
+</div>
+<dl>
+<dt>《C++ Primer》</dt><dd><p>很好的一本书, 但内容编排存在一定问题, 导致初学者用起来比较难.</p>
+</dd>
+<dt>《Programming: Principles and Practices using C++》(《C++程序设计：原理与实践》、天鹅书)</dt><dd><ul>
+<li><p>个人认为最好最优雅的编程入门书, 在原书 17 章之前一直没使用指针! 我的 C++ 传授、答疑、学习方法高度基于 <a class="reference internal" href="../swan_preface.html"><span class="doc">本书的引言</span></a>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">书评</p>
+<p>2021 年 9 月 9 日.</p>
+<p>最好的编程入门书!!!</p>
+<p>遗憾的是, 哪怕我提早知道这一点, 也不会在四月时通过它来初学编程. 在考试的压力下, 我需要的是应试本领, 而不是获取知识. ——这是兴趣学习和应试学习的区别使然.</p>
+<p>仅花了 10 天就学习完了上下册书, 一方面习题只是脑内构思了一下, 另一方面 (也是最主要的), Bjarne Stroustrup 的讲述深入浅出, 已经到了让人一眼望去不可能看不懂的地步.</p>
+<p>唯一的问题在于前言部分提供的资源网站有误, 应是 <a class="reference external" href="https://www.stroustrup.com/programming.html">Bjarne Stroustrup’s Homepage</a>.</p>
+<p>没有人能比 C++的发明者——Bjarne Stroustrup 更理解 C++.</p>
+<p>Bjarne 在 Texas A&amp;M 大学任教时使用 C++ 为大学新生讲授编程, 从而就有了《C++程序设计：原理与实践》这本书——它面向编程初学者, 既包含 C++ 教程, 也包含大量 “程序设计原则”.</p>
+<p>他将计算机科学的精髓尽可能地融入新手的 C++ 学习中, 涉及甚广:</p>
+<ol class="arabic simple">
+<li><p>在我一提及处理数学表达式就想到栈的愚钝大脑里, 醍醐灌顶地指出 “文法” 的存在, 并以一个计算器程序的例子, 让我理解了 “编译器的构造原理”.</p></li>
+<li><p>调试、数学证明和测试. 让新手学会重视正确性.</p></li>
+<li><p>“不要相信 ‘魔法’” 的理念: 知其然, 知其所以然. 不然如何得知程序的性能? 如何得知去哪勘误?</p></li>
+<li><p>一本过半都没有出现指针或 C 风格数组的 C++教程, 从而真正指出指针的作用和 C 风格数组的弊端.</p></li>
+<li><p>驳斥常有的 “低级语言＝高效” 观点, 高效应该包括对代码后期的管理和维护, 指出低级语言的难以优化性和高级语言与人类思维更加接近的特点.</p></li>
+<li><p>浅析嵌入式程序设计, 其概念、特征、其相关操作、内存管理……</p></li>
+<li><p>提出 “编码规范”. 它针对特定应用领域和特定程序员来设计; 既有指示性, 又有限制性; 指明了程序风格 (命名和缩进原则, 允许使用的语言子集, 注释原则, 使用哪些库)……</p></li>
+<li><p>讲解 GUI, 如何使用第三方库.</p></li>
+<li><p>指出比起写程序, 定义正确的问题更为关键.</p></li>
+<li><p>动态规划、状态机等基础概念的解析.</p></li>
+<li><p>……</p></li>
+</ol>
+<p>总之, 这套书带给我的震撼太多太多.</p>
+</div>
+</li>
+<li><p>但中文版印刷存在问题, 且自以为是地调换了章节顺序拆成了两本书, 把原本分为 4 部分的章节给打乱了 (见书本译者序), 导致如果完全自学不问别人会在初期配置环境时遇到问题. 为此我做了一个学习项目文件, <a class="reference external" href="https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_starter.zip">为天鹅书制作的学习项目文件 (解压以使用)</a>.</p></li>
+</ul>
+</dd>
+<dt>《C++ How to Program, 11th Edition》(《C++ 大学教程，第 11 版》)</dt><dd><ul class="simple">
+<li><p>从前言、目录和示例代码来看, 虽然有部分不足之处, 但已经非常依据现代 C++ 之哲学和最佳实践, 让我一度怀疑是不是换了作者.</p></li>
+<li><p>它基于 C++20 版本, 并将新标准的各种特性融汇在初学者教学中, 直接在目录上强调并切实淡化了指针等 C 风格 C++ 内容, 如果不对现代 C++ 有一定理解是不能做到这种程度的.</p></li>
+<li><p>然而还是过于偏向语法和自底向上, 导致读者可能在能实际编程前就接受了大量底层细节的干扰.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+<section id="id35">
+<h2>C++ 资料查询<a class="headerlink" href="#id35" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../searching_method/main.html"><span class="doc">在哪查找中文的 C++ 资料?</span></a>.</p></li>
+<li><p><a class="reference external" href="https://hackingcpp.com/cpp/cheat_sheets.html">小抄 (可能过于进阶)</a>.</p></li>
+</ul>
+</section>
+<section id="id37">
+<h2>C++ 环境配置<a class="headerlink" href="#id37" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>直接装 <a class="reference external" href="https://visualstudio.microsoft.com/zh-hans/">Visual Studio</a> 最新版即可用.</p></li>
+<li><p>如需在线编译运行, 可用 <a class="reference external" href="https://godbolt.org/">Compiler Explorer</a>, 此处提供一个 <a class="reference external" href="https://godbolt.org/z/8Tof9397K">已配置好提供较多诊断的版本</a>.</p></li>
+<li><p><a class="reference external" href="https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/others/visual_studio.html">我个人写的 Visual Studio 配置教程</a>.</p></li>
+<li><p><a class="reference external" href="https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/">我个人写的 VSCode 配置教程</a>.</p></li>
+</ul>
+</section>
+<section id="id40">
+<h2>C++ 术语不全书<a class="headerlink" href="#id40" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.stroustrup.com/glossary.html">Bjarne Stroustrup’s C++ Glossary</a></p></li>
+</ul>
+<p>这一个应该足够了, 遇到不理解的再去查就行, 没必要全部记忆. 其余术语网站可以在 <a class="reference external" href="https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_bookmarks.html">我的 C++ 浏览器书签 (右键另存为再导入到浏览器)</a> 中找到.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../searching_method/main.html" class="btn btn-neutral float-left" title="在哪查找中文的 C++ 资料?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../faq/index.html" class="btn btn-neutral float-right" title="常见问题解答" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, FeignClaims。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
