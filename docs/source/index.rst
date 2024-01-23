@@ -11,6 +11,7 @@
   src/rule_and_preface.rst
   src/theory.rst
   src/swan_preface.rst
+  src/searching_method/main.rst
 
 另有计软智网转专业相关资料:
 
