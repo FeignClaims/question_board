@@ -9,6 +9,7 @@
   :maxdepth: 1
 
   src/rule_and_preface.rst
+  src/theory.rst
 
 另有计软智网转专业相关资料:
 
