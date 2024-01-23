@@ -4,6 +4,12 @@
 
 群号: 682132891.
 
+.. toctree::
+  :caption: 目录
+  :maxdepth: 1
+
+  src/rule_and_preface.rst
+
 另有计软智网转专业相关资料:
 
 - 群号: 730899457.
