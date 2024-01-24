@@ -30,6 +30,7 @@
   :maxdepth: 1
 
   copy_functions_parameter/main
+  copy_assignment_define/main
 
 ***********************************************************************************************************************
 术语和惯用法
@@ -40,6 +41,7 @@
 
   getter_setter/main
   separate_interface_from_implementation/main
+  copy_assignment_define/main
 
 ***********************************************************************************************************************
 核心准则
