@@ -30,6 +30,7 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="逗号表达式 (Comma Operator)" href="comma_operator/main.html" />
     <link rel="prev" title="C++ 学习建议" href="../cpp/main.html" /> 
 </head>
 
@@ -61,7 +62,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">常见问题解答</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id14">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">表达式和语句</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="comma_operator/main.html">逗号表达式 (Comma Operator)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">类与类层次</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="class_invariants/main.html">不变式: 类和结构体的区别 (Class Invariant)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">术语和惯用法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="getter_setter/main.html">实现 setter 和 getter 函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="separate_interface_from_implementation/main.html">接口与实现相分离 (Separate Interface from Implementation)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">核心准则</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coreguidelines/c_2.html">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="coreguidelines/c_131.html">C.131: 避免平凡的 getters 和 setters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -92,10 +111,43 @@
              
   <section id="id13">
 <h1>常见问题解答<a class="headerlink" href="#id13" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-</div>
 <section id="id14">
-<h2>废弃资料<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<h2>表达式和语句<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="comma_operator/main.html">逗号表达式 (Comma Operator)</a></li>
+</ul>
+</div>
+</section>
+<section id="id15">
+<h2>类与类层次<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="class_invariants/main.html">不变式: 类和结构体的区别 (Class Invariant)</a></li>
+</ul>
+</div>
+</section>
+<section id="id16">
+<h2>术语和惯用法<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getter_setter/main.html">实现 setter 和 getter 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separate_interface_from_implementation/main.html">接口与实现相分离 (Separate Interface from Implementation)</a></li>
+</ul>
+</div>
+</section>
+<section id="id17">
+<h2>核心准则<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<p>为了配合常见问题解答, 对 <a class="reference external" href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a> 中的部分准则进行调整并翻译.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="coreguidelines/c_2.html">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="coreguidelines/c_131.html">C.131: 避免平凡的 getters 和 setters</a></li>
+</ul>
+</div>
+</section>
+<section id="id18">
+<h2>废弃资料<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <div class="dropdown admonition">
 <p class="admonition-title">常见答疑类型</p>
 <ul class="simple">
@@ -190,6 +242,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="../cpp/main.html" class="btn btn-neutral float-left" title="C++ 学习建议" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="comma_operator/main.html" class="btn btn-neutral float-right" title="逗号表达式 (Comma Operator)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
