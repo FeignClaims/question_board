@@ -23,6 +23,7 @@
 .. _`Bjarne Stroustrup's Homepage`: https://www.stroustrup.com/programming.html
 .. _`Bjarne Stroustrup's C++ Glossary`: https://www.stroustrup.com/glossary.html
 .. _`Stop Teaching C - Kate Gregory - CppCon 2015`: https://www.bilibili.com/video/BV13P411D7eF/
+.. _`Give me 15 minutes & I'll change your view of GDB - Greg Law - CppCon 2015`: https://www.youtube.com/watch?v=PorfLSr3DDI
 .. _`105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`: https://www.bilibili.com/video/BV1VU4y1U7rL
 .. _`Learning and Teaching Modern C++ - Bjarne Stroustrup - CppCon 2017`: https://www.bilibili.com/video/BV1d3411579r
 .. _`C++ Seasoning - Sean Parent - GoingNative 2013`: https://www.youtube.com/watch?v=W2tWOdzgXHA

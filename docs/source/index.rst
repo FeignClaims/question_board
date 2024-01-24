@@ -4,6 +4,8 @@
 
 群号: 682132891
 
+如果图片看不清, 请放大网页或 :menuselection:`右键 --> 在新标签页中打开图片`.
+
 .. toctree::
   :caption: 目录
   :maxdepth: 1
@@ -12,6 +14,7 @@
   src/theory.rst
   src/swan_preface.rst
   src/searching_method/main.rst
+  src/debugger/main.rst
   src/cpp/main.rst
   src/faq/index.rst
 
