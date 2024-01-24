@@ -68,19 +68,27 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id15">类与类层次</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="class_invariants/main.html">不变式: 类和结构体的区别 (Class Invariant)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">特殊函数: 构造函数、赋值函数、析构函数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="copy_functions_parameter/main.html">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l4"><a class="reference internal" href="copy_assignment_define/main.html#id14">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">术语和惯用法</a><ul>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">术语和惯用法</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="getter_setter/main.html">实现 setter 和 getter 函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="separate_interface_from_implementation/main.html">接口与实现相分离 (Separate Interface from Implementation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l3"><a class="reference internal" href="copy_assignment_define/main.html#id14">示例</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id17">核心准则</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id18">核心准则</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="coreguidelines/c_2.html">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="coreguidelines/c_131.html">C.131: 避免平凡的 getters 和 setters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id18">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id19">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -126,18 +134,31 @@
 <li class="toctree-l1"><a class="reference internal" href="class_invariants/main.html">不变式: 类和结构体的区别 (Class Invariant)</a></li>
 </ul>
 </div>
-</section>
 <section id="id16">
-<h2>术语和惯用法<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<h3>特殊函数: 构造函数、赋值函数、析构函数<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
+<p>这些函数控制了对象的生命周期: 创建、复制和销毁.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="copy_functions_parameter/main.html">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copy_assignment_define/main.html#id14">示例</a></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="id17">
+<h2>术语和惯用法<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getter_setter/main.html">实现 setter 和 getter 函数</a></li>
 <li class="toctree-l1"><a class="reference internal" href="separate_interface_from_implementation/main.html">接口与实现相分离 (Separate Interface from Implementation)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="copy_assignment_define/main.html#id14">示例</a></li>
 </ul>
 </div>
 </section>
-<section id="id17">
-<h2>核心准则<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<section id="id18">
+<h2>核心准则<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <p>为了配合常见问题解答, 对 <a class="reference external" href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a> 中的部分准则进行调整并翻译.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -146,8 +167,8 @@
 </ul>
 </div>
 </section>
-<section id="id18">
-<h2>废弃资料<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<section id="id19">
+<h2>废弃资料<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
 <div class="dropdown admonition">
 <p class="admonition-title">常见答疑类型</p>
 <ul class="simple">
