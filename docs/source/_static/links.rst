@@ -22,9 +22,10 @@
 .. _`《辩证法唯物论（讲授提纲）》`: https://www.marxists.org/chinese/maozedong/1937/index.htm
 .. _`Bjarne Stroustrup's Homepage`: https://www.stroustrup.com/programming.html
 .. _`Bjarne Stroustrup's C++ Glossary`: https://www.stroustrup.com/glossary.html
+.. _`C++ Core Guidelines`: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+.. _`《Sixteen Ways to Stack a Cat》by Bjarne Stroustup`: https://gitee.com/cpp_tutorial/weekly_question/raw/master/src/extra/16%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%8A%8A%E4%B8%80%E5%8F%AA%E7%8C%AB%E6%94%BE%E5%85%A5%E6%A0%88%E4%B8%AD.pdf
 .. _`Stop Teaching C - Kate Gregory - CppCon 2015`: https://www.bilibili.com/video/BV13P411D7eF/
 .. _`Give me 15 minutes & I'll change your view of GDB - Greg Law - CppCon 2015`: https://www.youtube.com/watch?v=PorfLSr3DDI
 .. _`105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`: https://www.bilibili.com/video/BV1VU4y1U7rL
 .. _`Learning and Teaching Modern C++ - Bjarne Stroustrup - CppCon 2017`: https://www.bilibili.com/video/BV1d3411579r
 .. _`C++ Seasoning - Sean Parent - GoingNative 2013`: https://www.youtube.com/watch?v=W2tWOdzgXHA
-.. _`C++ Core Guidelines`: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
