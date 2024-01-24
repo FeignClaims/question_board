@@ -27,6 +27,7 @@
 .. toctree::
   :maxdepth: 1
 
+  getter_setter/main
   separate_interface_from_implementation/main
 
 ***********************************************************************************************************************
