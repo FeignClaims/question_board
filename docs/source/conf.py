@@ -17,7 +17,8 @@ release = 'v1.0.0'
 extensions = ['sphinx_togglebutton', 'sphinx.ext.todo',
               'sphinx.ext.graphviz', 'sphinx.ext.extlinks', 'sphinx_rtd_theme']
 
-extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]')}
+extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'), 'coreguidelines': (
+    'https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#%s', '[核心准则 %s]')}
 
 togglebutton_hint = ""
 togglebutton_hint_hide = ""
@@ -25,7 +26,8 @@ togglebutton_hint_hide = ""
 templates_path = ['_templates']
 exclude_patterns = []
 
-rst_prolog = open('_static/inline_cpp.rst', 'r', encoding="utf8").read() + '\n' + open('_static/links.rst', 'r', encoding="utf8").read()
+rst_prolog = open('_static/inline_cpp.rst', 'r',
+                  encoding="utf8").read() + '\n' + open('_static/links.rst', 'r', encoding="utf8").read()
 
 language = 'zh_CN'
 
