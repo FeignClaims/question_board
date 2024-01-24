@@ -95,6 +95,7 @@
 - 《Elements of Programming》
 - `C++ Seasoning - Sean Parent - GoingNative 2013`_ 及 Sean Parent 其他公开视频
 - 《Effective Modern C++》
+- 《The Design and Evolution of C++》
 - 《Thriving in a crowded and changing world - C++ 2006-2020》
 
 -----------------------------------------------------------------------------------------------------------------------
