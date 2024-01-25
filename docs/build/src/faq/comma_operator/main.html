@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>逗号表达式 (Comma Operator) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+  <title>逗号表达式 (comma operator) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
@@ -30,8 +30,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="不变式: 类和结构体的区别 (Class Invariant)" href="../class_invariants/main.html" />
-    <link rel="prev" title="常见问题解答" href="../index.html" /> 
+    <link rel="next" title="不变式: 类和结构体的区别 (class invariant)" href="../class_invariant/main.html" />
+    <link rel="prev" title="变量声明的阅读: int* (*(*const&amp; value)[3][4])(double, double)?" href="../variable_decleration_reading/main.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,8 +62,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id14">表达式和语句</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">逗号表达式 (Comma Operator)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id15">表达式和语句</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../east_const/main.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../variable_decleration_reading/main.html">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">逗号表达式 (comma operator)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id13">逗号表达式结合性优先级最低</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id15">左边子表达式的计算和副作用均先于右边子表达式</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id17">整个表达式的值是最右边子表达式的值</a></li>
@@ -71,12 +74,12 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -96,7 +99,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
-      <li class="breadcrumb-item active">逗号表达式 (Comma Operator)</li>
+      <li class="breadcrumb-item active">逗号表达式 (comma operator)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/src/faq/comma_operator/main.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -107,7 +110,7 @@
            <div itemprop="articleBody">
              
   <section id="comma-operator">
-<h1>逗号表达式 (Comma Operator)<a class="headerlink" href="#comma-operator" title="Link to this heading"></a></h1>
+<h1>逗号表达式 (comma operator)<a class="headerlink" href="#comma-operator" title="Link to this heading"></a></h1>
 <p>逗号表达式在教学大纲内并无实际的应用场景, 可能的考点有:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#id13"><span class="std std-ref">逗号表达式结合性优先级最低</span></a></p></li>
@@ -183,8 +186,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="../index.html" class="btn btn-neutral float-left" title="常见问题解答" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="../class_invariants/main.html" class="btn btn-neutral float-right" title="不变式: 类和结构体的区别 (Class Invariant)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../variable_decleration_reading/main.html" class="btn btn-neutral float-left" title="变量声明的阅读: int* (*(*const&amp; value)[3][4])(double, double)?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../class_invariant/main.html" class="btn btn-neutral float-right" title="不变式: 类和结构体的区别 (class invariant)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

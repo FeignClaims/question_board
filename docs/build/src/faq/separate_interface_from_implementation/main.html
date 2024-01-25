@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>接口与实现相分离 (Separate Interface from Implementation) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+  <title>接口与实现相分离 (separate interface from implementation) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
@@ -62,13 +62,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">标准库</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id19">术语和惯用法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id20">术语和惯用法</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../getter_setter/main.html">实现 setter 和 getter 函数</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">接口与实现相分离 (Separate Interface from Implementation)</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">接口与实现相分离 (separate interface from implementation)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id13">分文件</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id14">抽象基类</a></li>
 </ul>
@@ -76,8 +77,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -97,7 +98,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
-      <li class="breadcrumb-item active">接口与实现相分离 (Separate Interface from Implementation)</li>
+      <li class="breadcrumb-item active">接口与实现相分离 (separate interface from implementation)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/src/faq/separate_interface_from_implementation/main.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -108,7 +109,7 @@
            <div itemprop="articleBody">
              
   <section id="separate-interface-from-implementation">
-<h1>接口与实现相分离 (Separate Interface from Implementation)<a class="headerlink" href="#separate-interface-from-implementation" title="Link to this heading"></a></h1>
+<h1>接口与实现相分离 (separate interface from implementation)<a class="headerlink" href="#separate-interface-from-implementation" title="Link to this heading"></a></h1>
 <p>当题目上要求接口与实现相分离, 一般来说分文件即可; 如果题目涉及类层次和继承则是在要求写一个抽象基类, 而其他具体类继承自它.</p>
 <p>想了解更多请阅读 <a class="reference external" href="https://gitee.com/cpp_tutorial/weekly_question/raw/master/src/extra/16%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%8A%8A%E4%B8%80%E5%8F%AA%E7%8C%AB%E6%94%BE%E5%85%A5%E6%A0%88%E4%B8%AD.pdf">《Sixteen Ways to Stack a Cat》by Bjarne Stroustup</a>.</p>
 <section id="id13">

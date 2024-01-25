@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>二进制输入输出 (Binary I/O) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+  <title>二进制输入输出 (binary I/O) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
@@ -30,7 +30,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="随机数的生成 (Random Number Generation)" href="../generate_random_number/main.html" />
+    <link rel="next" title="随机数的生成 (random number generation)" href="../generate_random_number/main.html" />
     <link rel="prev" title="几种 cin 输入方式的区别" href="../input_methods/main.html" /> 
 </head>
 
@@ -62,21 +62,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">类与类层次</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id17">输入输出</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id18">输入输出</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../input_methods/main.html">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">二进制输入输出 (Binary I/O)</a><ul>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">二进制输入输出 (binary I/O)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id13">二进制输出</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id14">二进制输入</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -96,7 +97,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
-      <li class="breadcrumb-item active">二进制输入输出 (Binary I/O)</li>
+      <li class="breadcrumb-item active">二进制输入输出 (binary I/O)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/src/faq/binary_io/main.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
@@ -107,7 +108,7 @@
            <div itemprop="articleBody">
              
   <section id="binary-i-o">
-<h1>二进制输入输出 (Binary I/O)<a class="headerlink" href="#binary-i-o" title="Link to this heading"></a></h1>
+<h1>二进制输入输出 (binary I/O)<a class="headerlink" href="#binary-i-o" title="Link to this heading"></a></h1>
 <p>这是一种序列化方式. 所谓序列化就是将对象转换为一种特定的格式 (序列化), 从而可以传输或存储, 而又能从这种特定格式转换为程序中的对象 (反序列化).</p>
 <p>一般只是简单考一下, 记住怎么做即可.</p>
 <section id="id13">
@@ -143,7 +144,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
         <a href="../input_methods/main.html" class="btn btn-neutral float-left" title="几种 cin 输入方式的区别" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="../generate_random_number/main.html" class="btn btn-neutral float-right" title="随机数的生成 (Random Number Generation)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../generate_random_number/main.html" class="btn btn-neutral float-right" title="随机数的生成 (random number generation)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

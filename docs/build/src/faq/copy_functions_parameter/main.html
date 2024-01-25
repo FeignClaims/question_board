@@ -31,7 +31,7 @@
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
     <link rel="next" title="copy-and-swap: 拷贝赋值函数的简单实现" href="../copy_assignment_define/main.html" />
-    <link rel="prev" title="不变式: 类和结构体的区别 (Class Invariant)" href="../class_invariants/main.html" /> 
+    <link rel="prev" title="不变式: 类和结构体的区别 (class invariant)" href="../class_invariant/main.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,21 +62,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">表达式和语句</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id15">类与类层次</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../class_invariants/main.html">不变式: 类和结构体的区别 (Class Invariant)</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html#id16">特殊函数: 构造函数、赋值函数、析构函数</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id16">类与类层次</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../class_invariant/main.html">不变式: 类和结构体的区别 (class invariant)</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#id17">特殊函数: 构造函数、赋值函数、析构函数</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -149,6 +150,12 @@
 </section>
 <section id="widget">
 <h3><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="o">&amp;</span></code> 只能引用左值, 但很多情况需要用右值拷贝<a class="headerlink" href="#widget" title="Link to this heading"></a></h3>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../basic_concepts/value_category.html"><span class="doc">值类别 (value category)</span></a></p></li>
+</ul>
+</div>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="o">&amp;</span></code> 报错</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Widget</span><span class="w"> </span><span class="p">{</span>
@@ -179,24 +186,6 @@
 </pre></div>
 </div>
 </div>
-<dl class="simple">
-<dt>左值</dt><dd><p>可以概括认为是已经存在了的对象, 例如:</p>
-<ul class="simple">
-<li><p>所有有名字的对象 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">value</span></code>).</p></li>
-<li><p>字符串字面值 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="s">&quot;hello&quot;</span></code>, 它存储在一个特殊区域).</p></li>
-</ul>
-</dd>
-<dt>右值</dt><dd><p>除了左值以外的值, 例如:</p>
-<ul class="simple">
-<li><p>临时对象 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">function</span><span class="p">()</span></code> 的返回值).</p></li>
-<li><p>其他字面值 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">42</span></code>, 它即写即用, 不会被存储).</p></li>
-</ul>
-</dd>
-</dl>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>这里的解释是通用解释, 实际表现可能由于编译器、编译器版本、编译选项、标准版本等存在差异.</p>
-</div>
 </section>
 </section>
 </section>
@@ -205,7 +194,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="../class_invariants/main.html" class="btn btn-neutral float-left" title="不变式: 类和结构体的区别 (Class Invariant)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../class_invariant/main.html" class="btn btn-neutral float-left" title="不变式: 类和结构体的区别 (class invariant)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
         <a href="../copy_assignment_define/main.html" class="btn btn-neutral float-right" title="copy-and-swap: 拷贝赋值函数的简单实现" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
