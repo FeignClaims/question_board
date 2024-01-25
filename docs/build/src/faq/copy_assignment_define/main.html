@@ -68,7 +68,6 @@
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html#id16">特殊函数: 构造函数、赋值函数、析构函数</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../copy_functions_parameter/main.html">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">示例</a></li>
 </ul>
 </li>
 </ul>
@@ -76,8 +75,10 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#id17">术语和惯用法</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../getter_setter/main.html">实现 setter 和 getter 函数</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../separate_interface_from_implementation/main.html">接口与实现相分离 (Separate Interface from Implementation)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id14">示例</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">copy-and-swap: 拷贝赋值函数的简单实现</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id14">示例</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id18">核心准则</a></li>
@@ -122,9 +123,8 @@
 <span class="p">}</span><span class="w">  </span><span class="c1">// temp 的析构函数将会对交换来的 *this 内容完成必要的清理</span>
 </pre></div>
 </div>
-</section>
 <section id="id14">
-<h1>示例<a class="headerlink" href="#id14" title="Link to this heading"></a></h1>
+<h2>示例<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://godbolt.org/z/fjcjKMGce">[在线代码 fjcjKMGce]</a></p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span><span class="c1">  // for std::swap</span>
 <span class="linenos"> 2</span>
@@ -153,6 +153,7 @@
 <span class="linenos">25</span><span class="p">};</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 
