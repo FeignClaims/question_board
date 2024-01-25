@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>实现 setter 和 getter 函数 &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+  <title>二进制输入输出 (Binary I/O) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
@@ -30,8 +30,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="接口与实现相分离 (Separate Interface from Implementation)" href="../separate_interface_from_implementation/main.html" />
-    <link rel="prev" title="随机数的生成 (Random Number Generation)" href="../generate_random_number/main.html" /> 
+    <link rel="next" title="随机数的生成 (Random Number Generation)" href="../generate_random_number/main.html" />
+    <link rel="prev" title="几种 cin 输入方式的区别" href="../input_methods/main.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,14 +64,17 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id14">表达式和语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id15">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">标准库</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id19">术语和惯用法</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">实现 setter 和 getter 函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../separate_interface_from_implementation/main.html">接口与实现相分离 (Separate Interface from Implementation)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id17">输入输出</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../input_methods/main.html">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">二进制输入输出 (Binary I/O)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">二进制输出</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">二进制输入</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">术语和惯用法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id20">核心准则</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id21">废弃资料</a></li>
 </ul>
@@ -93,9 +96,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
-      <li class="breadcrumb-item active">实现 setter 和 getter 函数</li>
+      <li class="breadcrumb-item active">二进制输入输出 (Binary I/O)</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/src/faq/getter_setter/main.rst.txt" rel="nofollow"> 查看页面源码</a>
+            <a href="../../../_sources/src/faq/binary_io/main.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
   </ul>
   <hr/>
@@ -103,40 +106,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="setter-getter">
-<h1>实现 setter 和 getter 函数<a class="headerlink" href="#setter-getter" title="Link to this heading"></a></h1>
-<p>这样的说法其实在其他语言如 Java 中用得更多, 当考试遇到这种说法时, 就是在要求将数据成员设为私用, 用成员函数进行访问.</p>
-<p>为了让老师能看出来这是 setter 和 getter 函数, 建议将名字命名为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">set_xxx</span><span class="p">()</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">get_xxx</span><span class="p">()</span></code>.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Widget</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 2</span><span class="w"> </span><span class="k">public</span><span class="o">:</span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">set_value</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="n">value_</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 6</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">get_value</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">value_</span><span class="p">;</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="p">}</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="w"> </span><span class="k">private</span><span class="o">:</span>
-<span class="linenos">11</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">value_</span><span class="p">;</span>
-<span class="linenos">12</span><span class="p">};</span>
+  <section id="binary-i-o">
+<h1>二进制输入输出 (Binary I/O)<a class="headerlink" href="#binary-i-o" title="Link to this heading"></a></h1>
+<p>这是一种序列化方式. 所谓序列化就是将对象转换为一种特定的格式 (序列化), 从而可以传输或存储, 而又能从这种特定格式转换为程序中的对象 (反序列化).</p>
+<p>一般只是简单考一下, 记住怎么做即可.</p>
+<section id="id13">
+<h2>二进制输出<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ofile</span><span class="p">(</span><span class="s">&quot;输出文件路径&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ios_base</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+<span class="c1">// ofile.write(char const* string, streamsize count)</span>
+<span class="c1">// 将 [string, string + count) 字符数组输出到 ofile 中, 所以我们要将 value 强行转换为字符数组</span>
+<span class="n">ofile</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
 </pre></div>
 </div>
-<p><strong>但非考试编程中不建议这样做.</strong></p>
-<div class="admonition seealso">
-<p class="admonition-title">参见</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../class_invariants/main.html"><span class="doc">不变式: 类和结构体的区别 (Class Invariant)</span></a></p></li>
-<li><p><a class="reference internal" href="../coreguidelines/c_131.html"><span class="doc">C.131: 避免平凡的 getters 和 setters</span></a></p></li>
-</ul>
+</section>
+<section id="id14">
+<h2>二进制输入<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">ifile</span><span class="p">(</span><span class="s">&quot;输入文件路径&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">ios_base</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+<span class="c1">// ofile.read(char* string, streamsize count)</span>
+<span class="c1">// 从 ifile 读入字符到 [string, string + count) 字符数组中, 所以我们要将 value 强行转换为字符数组</span>
+<span class="n">ifile</span><span class="p">.</span><span class="n">read</span><span class="p">(</span><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">value</span><span class="p">));</span>
+</pre></div>
 </div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="../generate_random_number/main.html" class="btn btn-neutral float-left" title="随机数的生成 (Random Number Generation)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="../separate_interface_from_implementation/main.html" class="btn btn-neutral float-right" title="接口与实现相分离 (Separate Interface from Implementation)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../input_methods/main.html" class="btn btn-neutral float-left" title="几种 cin 输入方式的区别" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../generate_random_number/main.html" class="btn btn-neutral float-right" title="随机数的生成 (Random Number Generation)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
