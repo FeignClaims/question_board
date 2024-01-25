@@ -2,7 +2,7 @@
 C.2: 如果类具有不变式则用 :cpp:`class`; 如果数据成员相互独立则使用 :cpp:`struct`
 ************************************************************************************************************************
 
-.. include:: warning.rst
+.. include:: warning.irst
 
 :coreguidelines:`点此查看原文 <c2-use-class-if-the-class-has-an-invariant-use-struct-if-the-data-members-can-vary-independently>`
 
