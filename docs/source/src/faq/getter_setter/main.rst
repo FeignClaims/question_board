@@ -14,5 +14,5 @@
 
 .. seealso::
 
-  - :doc:`/src/faq/class_invariants/main`
+  - :doc:`/src/faq/class_invariant/main`
   - :doc:`/src/faq/coreguidelines/c_131`
