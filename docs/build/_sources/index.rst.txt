@@ -10,13 +10,13 @@
   :caption: 目录
   :maxdepth: 1
 
-  /src/rule_and_preface.rst
-  /src/theory.rst
-  /src/swan_preface.rst
-  /src/searching_method/main.rst
-  /src/debugger/main.rst
-  /src/cpp/main.rst
-  /src/faq/index.rst
+  /rule_and_preface.rst
+  /theory.rst
+  /swan_preface.rst
+  /searching_method/main.rst
+  /debugger/main.rst
+  /cpp/main.rst
+  /faq/index.rst
 
 另有计软智网转专业相关资料:
 

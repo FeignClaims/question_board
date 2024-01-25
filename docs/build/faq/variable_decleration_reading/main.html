@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>变量声明的阅读: int* (*(*const&amp; value)[3][4])(double, double)? &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=12f31cd9"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>let toggleHintShow = '';</script>
+        <script>let toggleHintHide = '';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="逗号表达式 (comma operator)" href="../comma_operator/main.html" />
+    <link rel="prev" title="const 的阅读: 常量指针? 指针常量?" href="../east_const/main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            C++ 洋葱剥法交流群资料
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id15">表达式和语句</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../east_const/main.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">常见的声明类型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">复杂声明的阅读</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">明确复杂声明的语义</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../comma_operator/main.html">逗号表达式 (comma operator)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++ 洋葱剥法交流群资料</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
+      <li class="breadcrumb-item active">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/faq/variable_decleration_reading/main.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="int-const-value-3-4-double-double">
+<h1>变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?<a class="headerlink" href="#int-const-value-3-4-double-double" title="Link to this heading"></a></h1>
+<section id="id13">
+<h2>常见的声明类型<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><span class="xref std std-doc">/faq/basic_concepts/const/main</span></p></li>
+<li><p><span class="xref std std-doc">/faq/basic_concepts/reference/main</span></p></li>
+<li><p><span class="xref std std-doc">/faq/basic_concepts/pointer/main</span></p></li>
+<li><p><span class="xref std std-doc">/faq/basic_concepts/east_const/main</span></p></li>
+<li><p><span class="xref std std-doc">/faq/basic_concepts/function/main</span></p></li>
+<li><p><span class="xref std std-doc">/faq/basic_concepts/c_array/main</span></p></li>
+</ul>
+</section>
+<section id="id14">
+<h2>复杂声明的阅读<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<p>我个人是 <strong>非常不建议学习这个的</strong>, 能写出复杂的声明, 那说明你的代码本身已经过于复杂了. 实际遇到了建议通过 :ref:<a href="#id15"><span class="problematic" id="id16">`</span></a>变量声明的阅读_明确复杂声明的语义`解决.</p>
+<section id="id17">
+<h3>规则<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>这是我自创的规则, 可能与实际存在微妙的差异.</p>
+</div>
+<p><strong>括号分层, 由里及外; 调用括号, 同时延展; 其他元素, 先右后左.</strong></p>
+<dl>
+<dt>括号分层</dt><dd><p>对于将名字包括起来的括号, 先分析括号内, 再分析括号外.</p>
+<p>例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span></code> 的阅读顺序为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code>-<code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span></code>-<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span></code>.</p>
+</dd>
+<dt>由里及外</dt><dd><p>对于同一层的内容, 以名字为里面, 向外面读.</p>
+<p>例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">value</span></code> 的阅读顺序为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code>-<code class="code highlight cpp docutils literal highlight-cpp"><span class="o">*</span><span class="w"> </span><span class="n">value</span></code>-<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">value</span></code>.</p>
+</dd>
+<dt>调用括号, 同时延展</dt><dd><p>对于没将名字包括起来的括号, 它是作为函数的参数存在的. 既然是函数, 则除了参数还存在返回值, 故应该向右分析参数部分并向左分析返回值部分, 即为 “同时延展”.</p>
+<p>例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>, 右边读取到参数 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>, 左边读取到返回值 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code>.</p>
+</dd>
+<dt>其他元素, 先右后左.</dt><dd><p>对于同一层的其他内容, 先分析所有右边的内容, 再分析所有左边的内容.</p>
+<p>例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code> 的阅读顺序为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code>-<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code>-<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code>.</p>
+</dd>
+</dl>
+</section>
+<section id="id18">
+<h3>示例<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code></dt><dd><ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code>: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个长度为 3 的数组; 其元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code>: 其元素是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code>.</p></li>
+<li><p>所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个长度为 3 的数组, 数组的元素是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code></dt><dd><ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)</span></code>: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个指针; 其指向的对象是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code>: 指向一个长度为 3 的数组; 其元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code>: 其元素是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code>.</p></li>
+<li><p>所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个指针, 指针指向一个长度为 3 的数组, 数组的元素是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code></dt><dd><ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个引用; 其引用的对象是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: 是一个 const 对象; const 作用于?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: 作用于一个指针; 其指向的元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code>: 指向一个长度为 3 的数组; 其元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code>: 其元素是指针; 其指向的对象是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code>: 指向一个 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 对象.</p></li>
+<li><p>所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个引用, 引用一个被 const 作用的指针, 指针指向一个长度为 3 的数组, 数组的元素是指针, 指向一个 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 对象.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code></dt><dd><ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span></code>: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个长度为 3 的数组; 其元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span></code>: 其元素是指针; 其指向的对象是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">value</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>: 其指向一个函数, 参数是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>, 返回值是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span></code>.</p></li>
+<li><p>所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个长度为 3 的数组, 数组的元素是指针, 指向一个函数, 函数的参数是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>, 返回值是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id19">
+<h3>习题<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
+<p><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">点击查看解答</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个引用; 其引用的对象是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: 是一个 const 对象; const 作用于?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span></code>: 作用于一个指针; 其指向的元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">]</span></code>: 指向一个长度为 3 的数组; 其元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span></code>: 其元素是长度为 4 的数组; 其元素是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])</span></code>: 其元素是指针; 其指向的对象是?</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>: 其指向一个函数, 函数的参数是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>, 返回值是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span></code>.</p></li>
+<li><p>所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">value</span></code> 是一个引用, 引用一个被 const 作用的指针, 指针指向一个长度为 3 的数组, 数组的元素是一个长度为 4 的数组, 数组的元素是指针, 指向一个函数, 函数的参数是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>, 返回值是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span></code>.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="id20">
+<span id="id21"></span><h2>明确复杂声明的语义<a class="headerlink" href="#id20" title="Link to this heading"></a></h2>
+<p>如果真的考这种题那只能说没活了, 在实际的程序设计中, 复杂的类型往往有明确的语义乃至 <a class="reference internal" href="../class_invariant/main.html"><span class="doc">不变式</span></a>, 应该通过命名来解决.</p>
+<section id="id22">
+<h3>类型别名<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
+<p>C++11 前通过 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">typedef</span><span class="w"> </span><span class="n">原来的类型名</span><span class="w"> </span><span class="n">别名</span></code>, C++11 及以后通过 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">using</span><span class="w"> </span><span class="n">别名</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">原来的类型名</span></code> 可以创建类型别名, 为类型增加语义.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">using</span><span class="w"> </span><span class="n">Log_type</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
+<span class="linenos">2</span><span class="k">using</span><span class="w"> </span><span class="n">Log_function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">void</span><span class="p">(</span><span class="n">Log_type</span><span class="p">);</span><span class="w">  </span><span class="c1">// 函数参数为 Log_type, 返回值为 void</span>
+</pre></div>
+</div>
+<p>但要注意类型别名只是一个别名, 实际使用的还是原来的类型.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">  </span><span class="k">using</span><span class="w"> </span><span class="n">Log_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">;</span>
+<span class="linenos">5</span><span class="w">  </span><span class="n">Log_type</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos">6</span><span class="w">  </span><span class="n">function</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w">  </span><span class="c1">// 通过</span>
+<span class="linenos">7</span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+<section id="id23">
+<h3>用自定义类型包装<a class="headerlink" href="#id23" title="Link to this heading"></a></h3>
+<p>有时候我们需要区别于原来的类型定义一个新的类型名, 但又与原来的类型有同样的功能, <strong>这在目前的 C++ 版本没有很好的解决方案.</strong></p>
+<p>折中方法是, 通过自定义类型进行包装. 这方面涉及的内容很多, 此处仅给出一个非常简单的例子.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="k">struct</span><span class="w"> </span><span class="nc">Widget</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w"> </span><span class="k">public</span><span class="o">:</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="linenos"> 6</span><span class="p">};</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="n">Widget</span><span class="w"> </span><span class="n">widget</span><span class="p">;</span>
+<span class="linenos">10</span><span class="w">  </span><span class="n">function</span><span class="p">(</span><span class="n">widget</span><span class="p">);</span><span class="w">  </span><span class="c1">// 预期发生编译错误</span>
+<span class="linenos">11</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../east_const/main.html" class="btn btn-neutral float-left" title="const 的阅读: 常量指针? 指针常量?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../comma_operator/main.html" class="btn btn-neutral float-right" title="逗号表达式 (comma operator)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, FeignClaims。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
