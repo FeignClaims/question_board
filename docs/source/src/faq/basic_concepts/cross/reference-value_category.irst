@@ -1,0 +1,28 @@
+.. warning::
+
+  这部分内容很难在新手期给出符合标准的简洁解释, 以下为可以借鉴的感性理解:
+
+:cpp:`T&` 只能引用左值即 "已经存在的对象", 因此不进行会产生临时对象的隐式类型转换.
+
+.. code-block:: cpp
+  :linenos:
+
+  int value1 = 0;
+  int& reference1 = value1;
+
+  double value2 = 0;
+  int& reference2 = value2;  // 错误: double 隐式类型转换为 int 是产生新的临时对象
+  int& reference3 = reinterpret_cast<int&>(value2);  // 语法上正确: 产生的是引用
+
+  class A {};
+  class B : public A {};
+  B b;
+  A& = b;  // 正确: 基类引用兼容于 (reference-compatible to) 公用继承自它的类
+
+:cpp:`T const&` 既能引用左值又能引用右值: 既然能引用临时值, 则会在引用时发生隐式类型转换.
+
+.. code-block:: cpp
+  :linenos:
+
+  double value = 0;
+  int const& reference = value;  // 正确: T const& 能够引用临时对象

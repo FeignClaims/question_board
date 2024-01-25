@@ -30,7 +30,7 @@ class Widget {
 
   // 如果是 C++11 及以后, 加上 noexcept 表示不会抛出异常 ↓
   friend void swap(Widget& lhs, Widget& rhs) /*noexcept*/ {
-    using std::swap;  // 先 `using std::swap`, 再使用不加限定的 `swap`
+    using std::swap;  // 先 using std::swap, 再使用不加限定的 swap
     swap(lhs.array_, rhs.array_);
     swap(lhs.size_, rhs.size_);
   }
