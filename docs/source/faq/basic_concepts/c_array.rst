@@ -157,7 +157,9 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
   int array[5] = {0, 1, 2, 3, 4};
   auto value = array;  // 这个 value 是指向数组首元素的指针!
 
-所以, 我们看起来是拷贝了数组, 实际上只是获取了指向数组首元素的指针. 这样拷贝后两个变量实际是指向同一个对象的语义, 称为引用语义; 与之相对地, 像 :cpp:`int` 那样拷贝后得到确确实实的新对象, 与原来的对象完全独立, 称为值语义. **尽量避免引用语义.**
+所以, 我们看起来是拷贝了数组, 实际上只是获取了指向数组首元素的指针.
+
+这样拷贝后两个变量实际是指向同一个对象的语义, 称为引用语义; 与之相对地, 像 :cpp:`int` 那样拷贝后得到确确实实的新对象, 与原来的对象完全独立, 称为值语义. **尽量避免引用语义.**
 
 .. hint::
 
@@ -224,7 +226,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 .. figure:: begin_size_empty.png
 
 ------------------------------------------------------------------------------------------------------------------------
-更好的解决方案: :cpp:`(int* first, int* last)`
+更好的解决方案: :cpp:`(int* begin, int* end)`
 ------------------------------------------------------------------------------------------------------------------------
 
 不知道什么时候结束, 那么我们就告知什么时候结束, 把指向结束位置的指针——也就是指向末尾元素之后一个位置 (逾尾位置) 的指针——传给函数.
@@ -232,9 +234,9 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 .. code-block:: cpp
   :linenos:
 
-  void print(int const* first, int const* last) {
-    for (; first != last; ++first) {
-      std::cout << *first << ' ';
+  void print(int const* begin, int const* end) {
+    for (; begin != begin; ++begin) {
+      std::cout << *begin << ' ';
     }
     std::cout << '\n';
   }
@@ -246,8 +248,8 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 .. code-block:: cpp
   :linenos:
 
-  int size(int const* first, int const* last) {
-    return last - first;
+  int size(int const* begin, int const* end) {
+    return end - begin;
   }
 
 如何确定传入的数组长度为 :cpp:`0` 呢? 长度为 :cpp:`0` 意味着指向开始位置的指针也指向逾尾位置.
@@ -255,8 +257,8 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 .. code-block:: cpp
   :linenos:
 
-  bool is_empty(int const* first, int const* last) {
-    return first == last;
+  bool is_empty(int const* begin, int const* end) {
+    return begin == end;
   }
 
 .. figure:: begin_end_empty.png
@@ -302,7 +304,9 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 
 .. hint::
 
-  有没有感觉眼熟? 字符串就是这么做的! :cpp:`std::strlen(string)` 是怎么获取字符串长度的? 从左到右一直数到 :cpp:`'\\0'`.
+  有没有感觉眼熟? 字符串就是这么做的!
+  
+  :cpp:`std::strlen(string)` 是怎么获取字符串长度的? 从左到右一直数到 :cpp:`'\\0'`.
 
   .. code-block:: cpp
     :linenos:
@@ -322,7 +326,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
   想想你的 :cpp:`char array[3] = {'a', 'b', 'c'}` 为什么输出出奇怪的内容! 因为你没有加上终止字符 :cpp:`'\\0'`.
 
 ------------------------------------------------------------------------------------------------------------------------
-思维启发: 我为什么要传入整个数组?
+思维启发: 我一定要传入整个数组吗?
 ------------------------------------------------------------------------------------------------------------------------
 
 请思考以下代码:
@@ -330,7 +334,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 .. code-block:: cpp
   :linenos:
 
-  void print(int const* first, int const* last);
+  void print(int const* begin, int const* end);
 
   int main() {
     int array[5] = {0, 1, 2, 3, 4};
@@ -353,7 +357,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 
 多维数组实际上仍然是一维数组, 只是数组的元素是数组.
 
-例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]`, 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
+例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]` (:doc:`复杂声明的阅读方法 </faq/variable_decleration_reading/main>`), 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
 
 .. code-block:: text
   :linenos:
@@ -385,7 +389,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 
 多维数组的传参则由它的布局有多种方法.
 
-一种是, 按之前的理解进行传递.
+一种是, 按之前一维数组的理解进行传递.
 
 .. code-block:: cpp
   :linenos:
@@ -409,15 +413,15 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 .. code-block:: text
   :linenos:
 
-  0 1 2 3 0 1 2 3 0 1 2 3
-  ↑       ↑       ↑
   0       1       2
+  ↓       ↓       ↓
+  0 1 2 3 0 1 2 3 0 1 2 3
 
 .. code-block:: cpp
-  :emphasize-lines: 4, 11, 21
+  :emphasize-lines: 4, 11
   :linenos:
 
-  void print_1(int* array, int row_size, int column_size) {
+  void print(int* array, int row_size, int column_size) {
     for (int i = 0; i < row_size; ++i) {
       for (int j = 0; j < column_size; ++j) {
         std::cout << array[column_size * i + j];
@@ -426,7 +430,15 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
     }
   }
 
-  void print_2(int* array, int row_size, int column_size) {
+  int matrix[3][4] = {};
+  print(&matrix[0][0], 3, 4);
+
+
+.. code-block:: cpp
+  :emphasize-lines: 2, 12
+  :linenos:
+
+  void print(int* array, int row_size, int column_size) {
     int const size = row_size * column_size;
     for (int i = 0; i < size; ++i) {
       std::cout << array[i];

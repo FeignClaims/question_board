@@ -118,7 +118,7 @@
              
   <section id="const">
 <h1><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code><a class="headerlink" href="#const" title="Link to this heading"></a></h1>
-<p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 是一种约定, 它要求它 <strong>所限定的对象</strong> 不应被修改.</p>
+<p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 是一种约定, 它始终作用于左边的对象, 要求它 <strong>所限定的对象</strong> 不应被修改.</p>
 <p>基于这样的约束, 必须在构造一个对象时初始化它, 之后就不能修改了.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误: 未初始化 const 限定的对象</span>
 <span class="linenos">2</span>
