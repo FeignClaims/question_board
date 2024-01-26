@@ -49,7 +49,7 @@ C++ 学习建议
 软件是你的朋友, 手写代码不报错不算什么能力, 能用合适的软件写代码才是能力. 例如, 建议学习:
 
 - 阅读报错信息.
-- 进行断点调试: 设置断点, 条件断点, 逐语句和跳入跳出执行, 设置监视值, 切换调用栈帧.
+- :doc:`进行断点调试 </debugger/main>`.
 - 如何用软件自动格式化代码 (Visual Studio 里 :KBD:`Ctrl`:KBD:`K`:KBD:`D`, VSCode 里 :KBD:`Shift`:KBD:`Alt`:KBD:`F`).
 - :cpp:`#include <cassert>` 里的 :cpp:`assert(condition)`.
 
