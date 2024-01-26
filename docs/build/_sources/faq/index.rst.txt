@@ -31,6 +31,7 @@
 
   east_const/main
   variable_decleration_reading/main
+  condition/main
   escape_character/main
   newline_character/main
   comma_operator/main

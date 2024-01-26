@@ -46,7 +46,7 @@ C 风格数组: :cpp:`T array[size]` (C-style array)
 .. code-block:: cpp
   :linenos:
 
-  int const size  = 5;
+  int const size  = 5;  // 这和 const int size 是等价的
   int array[size] = {0, 1, 2, 3, 4};
 
   for (int i = 0; i < size; ++i) {

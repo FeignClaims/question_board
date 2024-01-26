@@ -64,7 +64,12 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#id14">基本概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="object.html">对象 (object)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">类型转换 (type conversion)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">类型转换 (type conversion)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id13">隐式类型转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">显式类型转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">相关解答</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="const.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference.html">引用 (reference)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="function.html">函数 (function)</a></li>
@@ -114,7 +119,128 @@
   <section id="type-conversion">
 <h1>类型转换 (type conversion)<a class="headerlink" href="#type-conversion" title="Link to this heading"></a></h1>
 <p>类型转换是指从一个类型的值转换得到另一个类型的值, 这个过程是生成了新的对象或引用, <strong>原来的对象或引用保持不变</strong>.</p>
-<p>&lt;&lt;TODO: 解释各种类型转换&gt;&gt;</p>
+<section id="id13">
+<h2>隐式类型转换<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<p>当类型 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span></code> 用于不接受 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span></code> 但接受 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">U</span></code> 的语境时, 就会 <strong>自动发生</strong>.</p>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code></span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.1</span><span class="p">;</span>
+<span class="linenos">2</span><span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// double 隐式类型转换为 int, 截断为 1</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">C 风格数组隐式类型转换为指向首元素的指针</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="linenos">2</span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w">     </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="linenos">3</span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<section id="id14">
+<h3>常考的隐式类型转换<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>整型 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code></dt><dd><ul class="simple">
+<li><p>非 0 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code>.</p></li>
+<li><p>0 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">false</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code> -&gt; 整型</dt><dd><ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code> -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">1</span></code>.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">false</span></code> -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code>.</p></li>
+</ul>
+</dd>
+<dt>整型提升: 我没仔细记过, 因为没多少必要</dt><dd><ul class="simple">
+<li><p>同等等级下，有符号数转为无符号数</p></li>
+<li><p>窄于 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 的整型 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">char</span></code> 也是整型!) 在算术运算 (不含比较运算) 时会转换成 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 或 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></code>, 所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">char变量</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></code> 其实是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code></p></li>
+</ul>
+</dd>
+<dt>整型 -&gt; 浮点数</dt><dd><ul class="simple">
+<li><p>只要有可能, 转换为足够精确的数值, 例如整数 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">1</span></code> 转换为浮点数 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">1</span></code>.</p></li>
+</ul>
+</dd>
+<dt>浮点数 -&gt; 整型</dt><dd><ul class="simple">
+<li><p>截断小数部分.</p></li>
+</ul>
+</dd>
+<dt>指针 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code></dt><dd><ul class="simple">
+<li><p>有指向的对象 (无论该对象是否实际存在) -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code>.</p></li>
+<li><p>空指针 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code>.</p></li>
+</ul>
+</dd>
+<dt>数组 -&gt; 指向数组首元素的指针</dt><dd><ul class="simple">
+<li><p>比如拷贝时 (按值传参也可以当做拷贝, 所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[]</span></code> 或 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span></code> 作为参数其实是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">array</span></code>).</p></li>
+<li><p>比如运算时 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">array</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">+</span><span class="n">array</span></code> 等等).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<dl class="simple">
+<dt>数组 -&gt; 指向首元素的指针 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code></dt><dd><ul class="simple">
+<li><p>必然有指向的对象故必然 <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code></p></li>
+</ul>
+</dd>
+<dt>字符串字面值是字符数组 -&gt; 指向首元素的指针 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code></dt><dd><ul class="simple">
+<li><p>必然有指向的对象故必然 <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</section>
+<section id="id15">
+<h3>最佳实践<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<ul>
+<li><p>使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">{}</span></code> 进行初始化, 它更通用, 且不允许 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 这样的缩窄转换.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">{</span><span class="mf">1.1</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="p">{</span><span class="n">value</span><span class="p">};</span><span class="w">  </span><span class="c1">// 错误: 发生缩窄转换</span>
+</pre></div>
+</div>
+</li>
+<li><p>移除不需要的隐式类型转换, 将必需的转换用显式类型转换替代.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">{</span><span class="mf">1.1</span><span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="p">{</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">)};</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>更好地, 尽量开启 <a class="reference external" href="https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/">静态检查</a> 来查找出隐式类型转换.</p>
+</section>
+</section>
+<section id="id17">
+<h2>显式类型转换<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<p>除了标准规定的隐式类型转换, 我们也可以显式地进行类型转换, 这让未来的读者知道, 这个转换是你明确需要的, 而不是一时疏忽.</p>
+<p>以下是 C++ 引入的类型转换符, 分别进行不同功能的类型转换: (仅介绍极小的部分)</p>
+<dl>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">To</span><span class="o">&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code></dt><dd><p>表示这是我明确要求的类型转换, 也许会有精度的损失, 但这就是我想要的.</p>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">To</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></code></dt><dd><p>表示我要 “打破” C++ 的类型系统, 强制进行类型转换, 并为它的后果负责. 如果不了解其中细节, 很容易出现未定义行为.</p>
+<p>写出这一个只是因为会考的 <a class="reference internal" href="../binary_io/main.html"><span class="doc">二进制输入输出</span></a> 需要用到.</p>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">To</span><span class="o">&gt;</span><span class="p">(</span><span class="n">base</span><span class="p">)</span></code></dt><dd><p>通常用于将类层次的基类有检查地转换为派生类.</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">*&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="n">base</span><span class="p">)</span></code>: 如果转换失败, 返回空指针.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Derived</span><span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">base</span><span class="p">)</span></code>: 如果转换失败, 抛出异常.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition danger">
+<p class="admonition-title">危险</p>
+<p>C 本身也有类型转换, 但没有对功能进行区分, 因而不自带语义且更加危险.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">别看: C 类型转换与 C++ 类型转换的关系</p>
+<figure class="align-default">
+<img alt="../../_images/c_cast.png" src="../../_images/c_cast.png" />
+</figure>
+</div>
+</div>
+</section>
+<section id="id18">
+<h2>相关解答<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../condition/main.html"><span class="doc">条件判断 (condition)</span></a></p></li>
+</ul>
+</section>
 </section>
 
 
