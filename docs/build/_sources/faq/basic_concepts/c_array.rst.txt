@@ -348,7 +348,101 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 更好地, 去学习使用 :cpp:`std::array<T, size>` 和 :cpp:`std::vector<T>`.
 
 ========================================================================================================================
+多维数组
+========================================================================================================================
+
+多维数组实际上仍然是一维数组, 只是数组的元素是数组.
+
+例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]`, 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
+
+.. code-block:: text
+  :linenos:
+
+  0: 0 1 2 3  // 每个元素是一个长度为 4 的数组
+  1: 0 1 2 3
+  2: 0 1 2 3
+
+.. code-block:: cpp
+  :linenos:
+
+  int matrix[3][4] = {};
+
+  for (int i = 0; i < 3; ++i) {
+    for (int j = 0; j < 4; ++j) {
+      std::cout << matrix[i][j] << ' ';
+    }
+    std::cout << '\n';
+  }
+
+由于它实际仍然是一维数组, 只有这个最外层数组会隐式类型转换为首元素的指针.
+
+.. code-block:: cpp
+  :linenos:
+
+  int matrix[3][4] = {};
+  auto value = matrix;
+  sizeof(value) == sizeof(int (*)[4]);  // 首元素的指针: 指向长度为 4 的 int 数组的指针
+
+多维数组的传参则由它的布局有多种方法.
+
+一种是, 按之前的理解进行传递.
+
+.. code-block:: cpp
+  :linenos:
+
+  void print(int (*matrix)[4], int size) {
+    for (int i = 0; i < size; ++i) {
+      for (int j = 0; j < 4; ++j) {
+        std::cout << matrix[i][j] << ' ';
+      }
+      std::cout << '\n';
+    }
+  }
+
+  int matrix[3][4] = {};
+  print(matrix, 3);
+
+但这样做限制了内部数组的长度必须是 4.
+
+另一种方式是, 我们可以将它的布局展平, 认为是 :cpp:`int` 的数组.
+
+.. code-block:: text
+  :linenos:
+
+  0 1 2 3 0 1 2 3 0 1 2 3
+  ↑       ↑       ↑
+  0       1       2
+
+.. code-block:: cpp
+  :emphasize-lines: 4, 11, 21
+  :linenos:
+
+  void print_1(int* array, int row_size, int column_size) {
+    for (int i = 0; i < row_size; ++i) {
+      for (int j = 0; j < column_size; ++j) {
+        std::cout << array[column_size * i + j];
+      }
+      std::cout << '\n';
+    }
+  }
+
+  void print_2(int* array, int row_size, int column_size) {
+    int const size = row_size * column_size;
+    for (int i = 0; i < size; ++i) {
+      std::cout << array[i];
+      if (i % column_size == column_size - 1) {  // 矩阵每行的换行
+        std::cout << '\n';
+      }
+    }
+  }
+
+  int matrix[3][4] = {};
+  print(&matrix[0][0], 3, 4);
+
+========================================================================================================================
 相关解答
 ========================================================================================================================
 
 - :doc:`/faq/variable_decleration_reading/main`
+- :doc:`/faq/c_string_output/main`
+- :doc:`/faq/pointer_output/main`

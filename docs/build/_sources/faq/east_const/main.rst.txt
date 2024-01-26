@@ -4,9 +4,9 @@
 
 .. seealso::
 
-  - :doc:`/basic_concepts/const`
-  - :doc:`/basic_concepts/reference`
-  - :doc:`/basic_concepts/pointer`
+  - :doc:`/faq/basic_concepts/const`
+  - :doc:`/faq/basic_concepts/reference`
+  - :doc:`/faq/basic_concepts/pointer`
 
 - :cpp:`const int*` 和 :cpp:`int* const` 到底哪个是常量指针, 哪个是指针常量?
 - :cpp:`const int function()` 和 :cpp:`int function() const` 的意思是什么?

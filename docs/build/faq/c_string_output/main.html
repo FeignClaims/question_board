@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>类型转换 (type conversion) &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+  <title>为什么我的字符数组输出很奇怪? &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
@@ -30,8 +30,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="const" href="const.html" />
-    <link rel="prev" title="对象 (object)" href="object.html" /> 
+    <link rel="next" title="随机数的生成 (random number generation)" href="../generate_random_number/main.html" />
+    <link rel="prev" title="为什么字符指针不输出地址值, 而其他指针输出地址值?" href="../pointer_output/main.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,22 +62,17 @@
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id14">基本概念</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="object.html">对象 (object)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">类型转换 (type conversion)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="const.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="reference.html">引用 (reference)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="function.html">函数 (function)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="value_category.html">值类别 (value category)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="pointer.html">指针 (pointer)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sizeof.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="c_array.html">C 风格数组: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">]</span></code> (C-style array)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="c_string.html">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id18">输入输出</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../input_methods/main.html">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../binary_io/main.html">二进制输入输出 (binary I/O)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pointer_output/main.html">为什么字符指针不输出地址值, 而其他指针输出地址值?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">为什么我的字符数组输出很奇怪?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../newline_character/main.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\n&#39;</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
@@ -101,9 +96,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
-      <li class="breadcrumb-item active">类型转换 (type conversion)</li>
+      <li class="breadcrumb-item active">为什么我的字符数组输出很奇怪?</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/faq/basic_concepts/type_conversion.rst.txt" rel="nofollow"> 查看页面源码</a>
+            <a href="../../_sources/faq/c_string_output/main.rst.txt" rel="nofollow"> 查看页面源码</a>
       </li>
   </ul>
   <hr/>
@@ -111,18 +106,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="type-conversion">
-<h1>类型转换 (type conversion)<a class="headerlink" href="#type-conversion" title="Link to this heading"></a></h1>
-<p>类型转换是指从一个类型的值转换得到另一个类型的值, 这个过程是生成了新的对象或引用, <strong>原来的对象或引用保持不变</strong>.</p>
-<p>&lt;&lt;TODO: 解释各种类型转换&gt;&gt;</p>
+  <section id="id13">
+<h1>为什么我的字符数组输出很奇怪?<a class="headerlink" href="#id13" title="Link to this heading"></a></h1>
+<p>数组很容易隐式类型转换为首元素的指针, 字符数组 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">char</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">]</span></code> 即转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">char</span><span class="o">*</span></code> 或 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">char</span><span class="w"> </span><span class="k">const</span><span class="o">*</span></code>.</p>
+<p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">char_array</span></code> 就发生了这样的转换才找到能用的函数, 而由于 <a class="reference internal" href="../pointer_output/main.html"><span class="doc">约定俗成</span></a>, 它会被认为是字符串进行输出.</p>
+<p><a class="reference internal" href="../basic_concepts/c_string.html"><span class="doc">字符串以 ‘\0’ 作为终止字符</span></a>, 所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span></code> 只能一直输出到 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\0&#39;</span></code> 为止. 如果你的字符数组没有打算在末尾加上 <code class="code highlight cpp docutils literal highlight-cpp"><span class="err">\</span><span class="mi">0</span></code>, 就不应该采用这样的输出方式, 而应该自己编写输出函数.</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<ul class="simple">
+<li><p>请阅读 <a class="reference internal" href="../basic_concepts/c_array.html"><span class="doc">C 风格数组: T array[size] (C-style array)</span></a> 理解 C 风格数组的传参方式.</p></li>
+<li><p>请阅读 <a class="reference internal" href="../basic_concepts/c_string.html"><span class="doc">C 风格字符串和字符串字面值 (C-style string and string literal)</span></a> 理解 C 风格字符串和字符串字面值.</p></li>
+<li><p>请阅读 <a class="reference internal" href="../pointer_output/main.html"><span class="doc">为什么字符指针不输出地址值, 而其他指针输出地址值?</span></a> 理解 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">string</span></code> 具体是怎么输出的.</p></li>
+</ul>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
-        <a href="object.html" class="btn btn-neutral float-left" title="对象 (object)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
-        <a href="const.html" class="btn btn-neutral float-right" title="const" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../pointer_output/main.html" class="btn btn-neutral float-left" title="为什么字符指针不输出地址值, 而其他指针输出地址值?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../generate_random_number/main.html" class="btn btn-neutral float-right" title="随机数的生成 (random number generation)" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

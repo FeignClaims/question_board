@@ -20,6 +20,7 @@
   basic_concepts/pointer
   basic_concepts/sizeof
   basic_concepts/c_array
+  basic_concepts/c_string
 
 ***********************************************************************************************************************
 表达式和语句
@@ -30,6 +31,8 @@
 
   east_const/main
   variable_decleration_reading/main
+  escape_character/main
+  newline_character/main
   comma_operator/main
 
 ***********************************************************************************************************************
@@ -62,6 +65,9 @@
 
   input_methods/main
   binary_io/main
+  pointer_output/main
+  c_string_output/main
+  newline_character/main
 
 ***********************************************************************************************************************
 标准库
