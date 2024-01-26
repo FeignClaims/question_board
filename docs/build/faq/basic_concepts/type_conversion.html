@@ -66,8 +66,8 @@
 <li class="toctree-l3"><a class="reference internal" href="object.html">对象 (object)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">类型转换 (type conversion)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id13">隐式类型转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id17">显式类型转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">相关解答</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">显式类型转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">相关解答</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="const.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
@@ -122,15 +122,15 @@
 <section id="id13">
 <h2>隐式类型转换<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <p>当类型 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span></code> 用于不接受 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span></code> 但接受 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">U</span></code> 的语境时, 就会 <strong>自动发生</strong>.</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code></span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code></span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.1</span><span class="p">;</span>
 <span class="linenos">2</span><span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// double 隐式类型转换为 int, 截断为 1</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">C 风格数组隐式类型转换为指向首元素的指针</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">C 风格数组隐式类型转换为指向首元素的指针</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
 <span class="linenos">2</span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w">     </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 <span class="linenos">3</span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span>
@@ -204,11 +204,11 @@
 </div>
 </li>
 </ul>
-<p>更好地, 尽量开启 <a class="reference external" href="https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/">静态检查</a> 来查找出隐式类型转换.</p>
+<p>更好地, 参考 <a class="reference internal" href="../../cpp/main.html#id37"><span class="std std-ref">C++ 环境配置</span></a> 尽量开启静态检查来查找出隐式类型转换.</p>
 </section>
 </section>
-<section id="id17">
-<h2>显式类型转换<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>显式类型转换<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <p>除了标准规定的隐式类型转换, 我们也可以显式地进行类型转换, 这让未来的读者知道, 这个转换是你明确需要的, 而不是一时疏忽.</p>
 <p>以下是 C++ 引入的类型转换符, 分别进行不同功能的类型转换: (仅介绍极小的部分)</p>
 <dl>
@@ -235,8 +235,8 @@
 </div>
 </div>
 </section>
-<section id="id18">
-<h2>相关解答<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>相关解答<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../condition/main.html"><span class="doc">条件判断 (condition)</span></a></p></li>
 </ul>
