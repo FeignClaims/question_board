@@ -17,6 +17,7 @@ void impl(int* array, int size, int index) {
 void function(int* array, int size) {
   impl(array, size, 0);
 }
+
 int main() {
   int array[] = {7, 6, 5, 4, 3, 2, 1};
   function(array, sizeof(array) / sizeof(array[0]));

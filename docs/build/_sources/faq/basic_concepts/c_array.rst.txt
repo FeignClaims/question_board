@@ -347,7 +347,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 ========================================================================================================================
 
 - 用另外的变量 (如 :cpp:`int const size`) 记录数组的长度.
-- 传参时使用 :cpp:`(int* array, int size)` 或 :cpp:`(int* first, int* last)`.
+- 传参时使用 :cpp:`(int* array, int size)` 或 :cpp:`(int* begin, int* end)`.
 
 更好地, 去学习使用 :cpp:`std::array<T, size>` 和 :cpp:`std::vector<T>`.
 
