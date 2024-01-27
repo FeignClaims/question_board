@@ -6,12 +6,12 @@
 常见的声明类型
 =======================================================================================================================
 
-- :doc:`/faq/basic_concepts/const/main`
-- :doc:`/faq/basic_concepts/reference/main`
-- :doc:`/faq/basic_concepts/pointer/main`
-- :doc:`/faq/basic_concepts/east_const/main`
-- :doc:`/faq/basic_concepts/function/main`
-- :doc:`/faq/basic_concepts/c_array/main`
+- :doc:`/faq/basic_concepts/const`
+- :doc:`/faq/basic_concepts/reference`
+- :doc:`/faq/basic_concepts/pointer`
+- :doc:`/faq/basic_concepts/east_const`
+- :doc:`/faq/basic_concepts/function`
+- :doc:`/faq/basic_concepts/c_array`
 
 =======================================================================================================================
 复杂声明的阅读

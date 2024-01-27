@@ -191,7 +191,7 @@
 </section>
 <section id="id18">
 <h3>调试位置控制处<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
-<p>让命中断点或因其他原因暂停的程序按要求执行:</p>
+<p>让命中断点或因其他原因中断的程序按要求执行:</p>
 <figure class="align-default" id="id31">
 <img alt="../_images/%E6%96%AD%E7%82%B9%E7%95%8C%E9%9D%A2_%E8%B0%83%E8%AF%95%E4%BD%8D%E7%BD%AE%E6%8E%A7%E5%88%B6%E5%A4%84.png" src="../_images/%E6%96%AD%E7%82%B9%E7%95%8C%E9%9D%A2_%E8%B0%83%E8%AF%95%E4%BD%8D%E7%BD%AE%E6%8E%A7%E5%88%B6%E5%A4%84.png" />
 <figcaption>
@@ -201,7 +201,7 @@
 <ol class="arabic simple">
 <li><p><span class="guilabel">逐语句</span>: 像正常执行程序一样一句句执行, 如果遇到函数调用则进入函数内部进行调试.</p></li>
 <li><p><span class="guilabel">逐过程</span>: 类似逐语句, 除了遇到函数调用时会直接完全执行该函数, 不调试函数内部.</p></li>
-<li><p><span class="guilabel">跳出`</span>: 执行直到当前函数返回, 回到调用该函数的函数中.</p></li>
+<li><p><span class="guilabel">跳出</span>: 执行直到当前函数返回, 回到调用该函数的函数中.</p></li>
 </ol>
 <p>一些调试器还允许更多的执行方式:</p>
 <ol class="arabic simple">
@@ -246,12 +246,12 @@
 <p><span class="caption-text">调用堆栈</span><a class="headerlink" href="#id33" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>如上图中我在第二次调用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">add_1</span><span class="p">()</span></code> 时中断, 则函数调用信息如下所示, 其中行号表示该函数目前执行到的语句:</p>
-<p><code class="docutils literal notranslate"><span class="pre">`txt</span>
-<span class="pre">add_1()</span> <span class="pre">行</span> <span class="pre">9</span>
-<span class="pre">add_1()</span> <span class="pre">行</span> <span class="pre">10</span>
-<span class="pre">main()</span> <span class="pre">行</span> <span class="pre">15</span>
-<span class="pre">`</span></code></p>
+<p>如上图中我在第二次调用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">add_1</span><span class="p">()</span></code> 时中断, 从图中可知函数调用信息如下所示, 其中行号表示该函数目前执行到的语句:</p>
+<div class="highlight-txt notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>add_1() 行 9
+<span class="linenos">2</span>add_1() 行 10
+<span class="linenos">3</span>main() 行 15
+</pre></div>
+</div>
 <p>我们可以双击调用堆栈中的函数, 从而切换到该函数.</p>
 <figure class="align-default" id="id34">
 <img alt="../_images/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95_%E5%88%87%E6%8D%A2%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88.png" src="../_images/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95_%E5%88%87%E6%8D%A2%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88.png" />
@@ -284,7 +284,7 @@
 <p>以下提供两种方法,</p>
 <ol class="arabic simple">
 <li><p>就像之前所演示的, 我们切换调用堆栈到 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">main</span><span class="p">()</span></code> 函数. 因为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">main</span><span class="p">()</span></code> 函数中的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">array</span></code> 类型确实是数组, 所以我们能看到整个数组的内容.</p></li>
-<li><p>在监视窗口用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">&gt;</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> 强制转换传入的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">array</span></code>, 恢复数组的长度信息.</p></li>
+<li><p>在监视窗口填入 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">&gt;</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code>, 这会将传入的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">array</span></code> 强制转换为指向数组的指针 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span></code>, 从而恢复数组的类型信息.</p></li>
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
@@ -295,7 +295,7 @@
 <h2>习题<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
 <p>请在不修改代码的情况下调试代码, 并回答以下问题: (每问的调试可分别进行)</p>
 <ol class="arabic simple">
-<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span></code> 的功能是获取类型的大小. <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></code> 分别是获取哪个类型的大小?</p></li>
+<li><p><a class="reference internal" href="../faq/basic_concepts/sizeof.html"><span class="doc">sizeof 的功能是获取类型的大小</span></a>. <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></code> 分别是获取哪个类型的大小?</p></li>
 <li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></code> 的目的是什么?</p></li>
 <li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">function</span><span class="p">()</span></code> 函数实现了什么功能?</p></li>
 <li><p>第三次调用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">impl</span><span class="p">()</span></code> 函数且刚刚进入函数内时, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">array</span></code> 元素的内容是什么?</p></li>
@@ -320,10 +320,11 @@
 <span class="linenos">17</span><span class="kt">void</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">18</span><span class="w">  </span><span class="n">impl</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
 <span class="linenos">19</span><span class="p">}</span>
-<span class="linenos">20</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="linenos">21</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
-<span class="linenos">22</span><span class="w">  </span><span class="n">function</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
-<span class="linenos">23</span><span class="p">}</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">};</span>
+<span class="linenos">23</span><span class="w">  </span><span class="n">function</span><span class="p">(</span><span class="n">array</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+<span class="linenos">24</span><span class="p">}</span>
 </pre></div>
 </div>
 <div class="dropdown admonition">

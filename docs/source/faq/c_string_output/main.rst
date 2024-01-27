@@ -6,7 +6,7 @@
 
 :cpp:`cout << char_array` 就发生了这样的转换才找到能用的函数, 而由于 :doc:`约定俗成 </faq/pointer_output/main>`, 它会被认为是字符串进行输出.
 
-:doc:`字符串以 '\\0' 作为终止字符 </faq/basic_concepts/c_string>`, 所以 :cpp:`cout` 只能一直输出到 :cpp:`'\\0'` 为止. 如果你的字符数组没有打算在末尾加上 :cpp:`\\0`, 就不应该采用这样的输出方式, 而应该自己编写输出函数.
+:doc:`字符串以 '\\0' 作为终止字符 </faq/basic_concepts/c_string>`, 所以 :cpp:`cout` 只能一直输出到 :cpp:`'\\0'` 为止. 如果你的字符数组没有打算在末尾加上 :cpp:`'\\0'`, 就不应该采用这样的输出方式, 而应该自己编写输出函数.
 
 .. seealso::
 
