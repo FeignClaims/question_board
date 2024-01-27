@@ -53,23 +53,25 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id18">输入输出</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id19">输入输出</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../input_methods/main.html">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">二进制输入输出 (binary I/O)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">二进制输出</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">二进制输入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">二进制输出</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">二进制输入</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../pointer_output/main.html">为什么字符指针不输出地址值, 而其他指针输出地址值?</a></li>
@@ -77,10 +79,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../newline_character/main.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\n&#39;</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -114,8 +116,8 @@
 <h1>二进制输入输出 (binary I/O)<a class="headerlink" href="#binary-i-o" title="Link to this heading"></a></h1>
 <p>这是一种序列化方式. 所谓序列化就是将对象转换为一种特定的格式 (序列化), 从而可以传输或存储, 而又能从这种特定格式转换为程序中的对象 (反序列化).</p>
 <p>一般只是简单考一下, 记住怎么做即可.</p>
-<section id="id13">
-<h2>二进制输出<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>二进制输出<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -127,8 +129,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id14">
-<h2>二进制输入<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2>二进制输入<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>

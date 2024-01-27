@@ -53,35 +53,37 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id21">核心准则</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id22">核心准则</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="es_45.html">ES.45: 避免 “魔法常量”; 用符号常量代替它!</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">原因</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">注意</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">示例</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">注意</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">建议</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">原因</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">注意</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">注意</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id19">建议</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="c_131.html">C.131: 避免平凡的 getters 和 setters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -123,8 +125,8 @@
 <li><p>要么 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code> + 构造函数 (+ 私有数据成员).</p></li>
 <li><p>要么 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code> + 无构造函数 (+ 公有数据成员).</p></li>
 </ul>
-<section id="id13">
-<h2>原因<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>原因<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>可读性.</p></li>
 <li><p>易于理解.</p></li>
@@ -132,15 +134,15 @@
 <li><p>这是一个有用的惯例.</p></li>
 </ul>
 </section>
-<section id="id14">
-<h2>注意<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2>注意<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <p><strong>不变式</strong> 是一个对象的成员必须满足的逻辑条件, 它由构造函数确立; 公共成员函数必须确保执行前后不变式依然成立.</p>
 <p>一旦对象的不变式被确立 (一般由构造函数确立), 类的每个成员函数都可被该对象调用.</p>
 <p>不变式可以非正式地说明 (例如在注释中说明, 该类的成员 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="w"> </span><span class="n">value_</span></code> 必须大于 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code>), 或者通过 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Expects</span></code> 进行检查 (尚未纳入标准).</p>
 <p>如果所有数据成员都可以相互独立地发生改变, 那么不可能存在不变式.</p>
 </section>
-<section id="id15">
-<h2>示例<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>示例<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span>
 
 <span class="k">struct</span><span class="w"> </span><span class="nc">Pair</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// 数据成员间相互独立</span>
@@ -167,8 +169,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id16">
-<h2>注意<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>注意<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>如果一个类具有私有数据成员, 使用者就不能再不使用构造函数的情况下完全初始化该类的对象. 因此, 类的定义者在提供构造函数的同时, 必须确立它的意义. 这实际上意味着定义者需要定义不变式.</p>
 <div class="admonition seealso">
 <p class="admonition-title">参见</p>
@@ -180,8 +182,8 @@
 </ul>
 </div>
 </section>
-<section id="id18">
-<h2>建议<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
+<section id="id19">
+<h2>建议<a class="headerlink" href="#id19" title="Link to this heading"></a></h2>
 <p>检查那些全是私有数据成员的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code> 和具有公有数据成员的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>.</p>
 </section>
 </section>

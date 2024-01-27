@@ -53,31 +53,33 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id16">类与类层次</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id17">类与类层次</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../class_invariant/main.html">不变式: 类和结构体的区别 (class invariant)</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html#id17">特殊函数: 构造函数、赋值函数、析构函数</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#id18">特殊函数: 构造函数、赋值函数、析构函数</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -107,8 +109,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="id13">
-<h1>拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?<a class="headerlink" href="#id13" title="Link to this heading"></a></h1>
+  <section id="id14">
+<h1>拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?<a class="headerlink" href="#id14" title="Link to this heading"></a></h1>
 <p>拷贝函数用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
@@ -120,20 +122,20 @@
 <p>当用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code> 时, 我们就是在说, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span></code> 先进行拷贝传参, 传入参数后进行拷贝. 拷贝传参也是在拷贝 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span></code>, 所以我们要为了拷贝传参这次拷贝进行拷贝传参, 传入参数后进行拷贝……</p>
 <p>从前有座山, 山里有座庙, 庙里有个老和尚在讲故事, 讲的是从前有座山, 山里有座庙, 庙里有个老和尚在讲故事……</p>
 <p><strong>发生无限的递归.</strong></p>
-<figure class="align-center" id="id15" style="width: 75%">
+<figure class="align-center" id="id16" style="width: 75%">
 <img alt="../../_images/%E9%80%92%E5%BD%92%E6%8B%B7%E8%B4%9D.png" src="../../_images/%E9%80%92%E5%BD%92%E6%8B%B7%E8%B4%9D.png" />
 <figcaption>
-<p><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code> 带来的递归问题. (以前做的图, 用语不太一样)</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+<p><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code> 带来的递归问题. (以前做的图, 用语不太一样)</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
-<section id="id14">
-<h2>为什么不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code>?<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2>为什么不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span></code>?<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <section id="other">
 <h3>拷贝只是读取数据, 不会修改 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">other</span></code><a class="headerlink" href="#other" title="Link to this heading"></a></h3>
 <p>按照拷贝的逻辑, 我们是从 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">other</span></code> 中读取数据, 它本身的数据不应该发生任何变化, 为了避免被修改, 应该使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span></code> 传递参数. 将 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">other</span></code> 作为只读参数, 这称为输入参数.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="o">&amp;</span></code> 被意外修改</span><a class="headerlink" href="#id16" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="o">&amp;</span></code> 被意外修改</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Widget</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w"> </span><span class="k">public</span><span class="o">:</span>
 <span class="linenos"> 3</span><span class="w">  </span><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -156,8 +158,8 @@
 <li><p><a class="reference internal" href="../basic_concepts/value_category.html"><span class="doc">值类别 (value category)</span></a></p></li>
 </ul>
 </div>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="o">&amp;</span></code> 报错</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="o">&amp;</span></code> 报错</span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Widget</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w"> </span><span class="k">public</span><span class="o">:</span>
 <span class="linenos"> 3</span><span class="w">  </span><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>
@@ -171,8 +173,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span></code> 正常运行</span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span></code> 正常运行</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span><span class="w"> </span><span class="nc">Widget</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos"> 2</span><span class="w"> </span><span class="k">public</span><span class="o">:</span>
 <span class="linenos"> 3</span><span class="w">  </span><span class="n">Widget</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">other</span><span class="p">);</span>

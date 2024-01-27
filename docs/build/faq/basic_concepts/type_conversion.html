@@ -53,21 +53,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id14">基本概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id15">基本概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="object.html">对象 (object)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">类型转换 (type conversion)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">隐式类型转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">显式类型转换</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id17">相关解答</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">隐式类型转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">显式类型转换</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">相关解答</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="const.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
@@ -80,13 +82,13 @@
 <li class="toctree-l3"><a class="reference internal" href="c_string.html">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -119,26 +121,26 @@
   <section id="type-conversion">
 <h1>类型转换 (type conversion)<a class="headerlink" href="#type-conversion" title="Link to this heading"></a></h1>
 <p>类型转换是指从一个类型的值转换得到另一个类型的值, 这个过程是生成了新的对象或引用, <strong>原来的对象或引用保持不变</strong>.</p>
-<section id="id13">
-<h2>隐式类型转换<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>隐式类型转换<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p>当类型 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span></code> 用于不接受 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span></code> 但接受 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">U</span></code> 的语境时, 就会 <strong>自动发生</strong>.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code></span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text"><code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code></span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.1</span><span class="p">;</span>
 <span class="linenos">2</span><span class="kt">int</span><span class="w"> </span><span class="n">value2</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// double 隐式类型转换为 int, 截断为 1</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">C 风格数组隐式类型转换为指向首元素的指针</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">C 风格数组隐式类型转换为指向首元素的指针</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
 <span class="linenos">2</span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="w">     </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 <span class="linenos">3</span><span class="k">sizeof</span><span class="p">(</span><span class="n">array</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<section id="id14">
-<h3>常考的隐式类型转换<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
+<section id="id15">
+<h3>常考的隐式类型转换<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <dl class="simple">
 <dt>整型 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code></dt><dd><ul class="simple">
 <li><p>非 0 -&gt; <code class="code highlight cpp docutils literal highlight-cpp"><span class="nb">true</span></code>.</p></li>
@@ -188,8 +190,8 @@
 </dl>
 </div>
 </section>
-<section id="id15">
-<h3>最佳实践<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
+<section id="id16">
+<h3>最佳实践<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
 <ul>
 <li><p>使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="p">{}</span></code> 进行初始化, 它更通用, 且不允许 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">double</span></code> 转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 这样的缩窄转换.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="p">{</span><span class="mf">1.1</span><span class="p">};</span>
@@ -204,11 +206,11 @@
 </div>
 </li>
 </ul>
-<p>更好地, 参考 <a class="reference internal" href="../../cpp/main.html#id37"><span class="std std-ref">C++ 环境配置</span></a> 尽量开启静态检查来查找出隐式类型转换.</p>
+<p>更好地, 参考 <a class="reference internal" href="../../cpp/main.html#id36"><span class="std std-ref">C++ 环境配置</span></a> 尽量开启静态检查来查找出隐式类型转换.</p>
 </section>
 </section>
-<section id="id16">
-<h2>显式类型转换<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>显式类型转换<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>除了标准规定的隐式类型转换, 我们也可以显式地进行类型转换, 这让未来的读者知道, 这个转换是你明确需要的, 而不是一时疏忽.</p>
 <p>以下是 C++ 引入的类型转换符, 分别进行不同功能的类型转换: (仅介绍极小的部分)</p>
 <dl>
@@ -235,8 +237,8 @@
 </div>
 </div>
 </section>
-<section id="id17">
-<h2>相关解答<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
+<section id="id18">
+<h2>相关解答<a class="headerlink" href="#id18" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../condition/main.html"><span class="doc">条件判断 (condition)</span></a></p></li>
 </ul>

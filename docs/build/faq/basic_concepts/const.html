@@ -53,22 +53,24 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id14">基本概念</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id15">基本概念</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="object.html">对象 (object)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="type_conversion.html">类型转换 (type conversion)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与引用</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与指针</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">相关解答</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与引用</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与指针</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">相关解答</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="reference.html">引用 (reference)</a></li>
@@ -80,13 +82,13 @@
 <li class="toctree-l3"><a class="reference internal" href="c_string.html">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -131,8 +133,8 @@
 <p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 只是一种约定, 有众多方法可以修改 const 对象, 但绝不能因为能做到就去做!</p>
 <p>读者看到 const 对象时，必然假设该对象不会被修改；如果人为打破这种约定，只会让代码难以阅读，增加维护成本。</p>
 </div>
-<section id="id13">
-<h2><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与引用<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与引用<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p>由于引用不是对象, <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 不能作用于它.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ref1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 int; 引用的 int 对象不可改变</span>
@@ -140,8 +142,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id14">
-<h2><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与指针<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与指针<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 不仅可以作用于指针本身, 也可作用于指针指向的对象.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">pointer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 int; 指针指向的 int 对象不可改变</span>
@@ -158,8 +160,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id15">
-<h2>相关解答<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>相关解答<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../east_const/main.html"><span class="doc">const 的阅读: 常量指针? 指针常量?</span></a></p></li>
 <li><p><a class="reference internal" href="../variable_decleration_reading/main.html"><span class="doc">变量声明的阅读: int* (*(*const&amp; value)[3][4])(double, double)?</span></a></p></li>

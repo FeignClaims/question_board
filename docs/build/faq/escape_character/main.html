@@ -53,17 +53,19 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id15">表达式和语句</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id16">表达式和语句</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../east_const/main.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../variable_decleration_reading/main.html">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../condition/main.html">条件判断 (condition)</a></li>
@@ -73,12 +75,12 @@
 <li class="toctree-l3"><a class="reference internal" href="../comma_operator/main.html">逗号表达式 (comma operator)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -113,7 +115,7 @@
 <p>通常而言, 字符字面值直接表示要显示的内容, 例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;0&#39;</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;a&#39;</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;,&#39;</span></code> 等. 所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;0&#39;</span><span class="p">;</span></code> 会直接输出 0.</p>
 <p>但是我们又认为, 数值 0 也是一个比较重要的字符, 可 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;0&#39;</span></code> 已经用于表示数字 0 了, 于是我们决定用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\0&#39;</span></code> 来表示数值 0.</p>
 <p>其中, \ 是转义符号, 加上它表示该字符是有特殊的含义, 例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\0&#39;</span></code> 表示数值 0, <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\n&#39;</span></code> 表示换行符 (newline), <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\&#39;&#39;</span></code> 表示单引号.</p>
-<p>这引出另一个问题: 如果我要输出 \ 呢? 由于 \ 已经作为了转义字符, 我们使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="err">\</span>\</code> 来表示字符 \.</p>
+<p>这引出另一个问题: 如果我要输出 \ 呢? 由于 \ 已经作为了转义字符, 我们使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\\&#39;</span></code> 来表示字符 \.</p>
 </section>
 
 

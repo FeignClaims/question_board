@@ -53,32 +53,34 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id20">术语和惯用法</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id21">术语和惯用法</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../getter_setter/main.html">实现 setter 和 getter 函数</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">接口与实现相分离 (separate interface from implementation)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">分文件</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">抽象基类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">分文件</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">抽象基类</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -112,11 +114,11 @@
 <h1>接口与实现相分离 (separate interface from implementation)<a class="headerlink" href="#separate-interface-from-implementation" title="Link to this heading"></a></h1>
 <p>当题目上要求接口与实现相分离, 一般来说分文件即可; 如果题目涉及类层次和继承则是在要求写一个抽象基类, 而其他具体类继承自它.</p>
 <p>想了解更多请阅读 <a class="reference external" href="https://gitee.com/cpp_tutorial/weekly_question/raw/master/src/extra/16%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%8A%8A%E4%B8%80%E5%8F%AA%E7%8C%AB%E6%94%BE%E5%85%A5%E6%A0%88%E4%B8%AD.pdf">《Sixteen Ways to Stack a Cat》by Bjarne Stroustup</a>.</p>
-<section id="id13">
-<h2>分文件<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>分文件<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://godbolt.org/z/rsf76fMff">[在线代码 rsf76fMff]</a></p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">hello.hpp</span><a class="headerlink" href="#id15" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">hello.hpp</span><a class="headerlink" href="#id16" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#ifndef HELLO_HPP  </span><span class="c1">// 头文件自包含保护</span>
 <span class="linenos">2</span><span class="cp">#define HELLO_HPP</span>
 <span class="linenos">3</span>
@@ -126,8 +128,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">hello.cpp</span><a class="headerlink" href="#id16" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">hello.cpp</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.hpp&quot;</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -138,8 +140,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">main.cpp</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">main.cpp</span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;hello.hpp&quot;</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -149,11 +151,11 @@
 </div>
 </div>
 </section>
-<section id="id14">
-<h2>抽象基类<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2>抽象基类<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://godbolt.org/z/GMcvPseeE">[在线代码 GMcvPseeE]</a></p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">base.hpp</span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">base.hpp</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#ifndef BASE_HPP</span>
 <span class="linenos"> 2</span><span class="cp">#define BASE_HPP</span>
 <span class="linenos"> 3</span>
@@ -171,8 +173,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">concrete.hpp</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">concrete.hpp</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#ifndef CONCRETE_HPP</span>
 <span class="linenos"> 2</span><span class="cp">#define CONCRETE_HPP</span>
 <span class="linenos"> 3</span>
@@ -187,8 +189,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">concrete.cpp</span><a class="headerlink" href="#id20" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">concrete.cpp</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;concrete.hpp&quot;</span>
 <span class="linenos">2</span>
 <span class="linenos">3</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
@@ -199,8 +201,8 @@
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">main.cpp</span><a class="headerlink" href="#id21" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">main.cpp</span><a class="headerlink" href="#id22" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;base.hpp&quot;</span>
 <span class="linenos">2</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;concrete.hpp&quot;</span>
 <span class="linenos">3</span>

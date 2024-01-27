@@ -53,24 +53,26 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id18">输入输出</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id19">输入输出</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">共同部分</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id14">格式化输入</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id15">非格式化输入</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id16">最佳实践</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">共同部分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">格式化输入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">非格式化输入</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">最佳实践</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../binary_io/main.html">二进制输入输出 (binary I/O)</a></li>
@@ -79,10 +81,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../newline_character/main.html"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\n&#39;</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">标准库</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -127,20 +129,20 @@
 <p class="admonition-title">输入流</p>
 <p>通常输入区域就像管道里的水流一样, 你只能首先接触最开始的字符, 且没有回头路.</p>
 </div>
-<section id="id13">
-<h2>共同部分<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>共同部分<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p>无论以下何种方式, 都会在到达文件尾 (eof, end of file) 时结束输入.</p>
 <p>除 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">()</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">peek</span><span class="p">()</span></code>, 以下方式均返回输入流 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 本身, 从而允许链式调用和条件判断.</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">链式调用</span><a class="headerlink" href="#id17" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">链式调用</span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value1</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value2</span><span class="p">;</span>
 <span class="linenos">2</span><span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="p">)</span>
 <span class="linenos">3</span><span class="n">getline</span><span class="p">(</span><span class="n">getline</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="p">),</span><span class="w"> </span><span class="n">line</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">条件判断: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 能够隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code> 类型, 相当于表达式 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">!</span><span class="n">cin</span><span class="p">.</span><span class="n">fail</span><span class="p">()</span></code>.</span><a class="headerlink" href="#id18" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">条件判断: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 能够隐式类型转换为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">bool</span></code> 类型, 相当于表达式 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">!</span><span class="n">cin</span><span class="p">.</span><span class="n">fail</span><span class="p">()</span></code>.</span><a class="headerlink" href="#id19" title="Link to this code"></a></div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="linenos">2</span><span class="w">  </span><span class="cm">/* 读取成功 */</span>
 <span class="linenos">3</span><span class="p">}</span>
@@ -148,8 +150,8 @@
 </div>
 </div>
 </section>
-<section id="id14">
-<h2>格式化输入<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2>格式化输入<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <p>该方式输入的字符将会格式化为对应的类型值, 例如:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
 <span class="linenos">2</span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 读入的字符格式化为 int 类型值</span>
@@ -160,8 +162,8 @@
 </dd>
 </dl>
 </section>
-<section id="id15">
-<h2>非格式化输入<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>非格式化输入<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <p>该方式输入的就是字符本身.</p>
 <dl class="simple">
 <dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">ch</span><span class="p">);</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span></code></dt><dd><p>读入输入流中第一个字符.</p>
@@ -187,8 +189,8 @@
 </dd>
 </dl>
 </section>
-<section id="id16">
-<h2>最佳实践<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>最佳实践<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <p>由于格式化输入和非格式化输入间的行为差异, <strong>不建议混用格式化输入和非格式化输入</strong>.</p>
 <p>如果确实需要一行行读取内容, 并在行内进行格式化输入, 可以参考以下代码:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;fstream&gt;</span>

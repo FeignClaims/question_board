@@ -54,30 +54,32 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
-              <p class="caption" role="heading"><span class="caption-text">目录</span></p>
-<ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id14">基本概念</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">表达式和语句</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">类与类层次</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id18">输入输出</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id19">标准库</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id20">标准库</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">随机数的生成 (random number generation)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id13">C 随机数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">C 随机数</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#c-11">C++11 随机数</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">术语和惯用法</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">核心准则</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id22">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -110,8 +112,8 @@
   <section id="random-number-generation">
 <h1>随机数的生成 (random number generation)<a class="headerlink" href="#random-number-generation" title="Link to this heading"></a></h1>
 <p>通常我们生成的随机数并不是真正的随机数, 而是基于一个种子 (seed), 以一定算法生成的伪随机数 (pseudo-random number). 这意味着 <strong>如果使用相同的种子和算法, 将会生成一模一样的数.</strong></p>
-<section id="id13">
-<span id="id14"></span><h2>C 随机数<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<span id="id15"></span><h2>C 随机数<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p>首先需要设置随机数的种子, 这需要调用函数 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">srand</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span></code> 将 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">seed</span></code> 作为种子, 习惯上我们用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span></code> 获取当前时间作为种子.</p>
 <p>由于使用相同的种子和算法, 将会生成一模一样的随机数, <strong>我们应该只在程序运行开始时设置一次随机数种子</strong>.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;cstdlib&gt;</span><span class="c1">  // for std::srand</span>
@@ -141,11 +143,11 @@
 <p><a class="reference external" href="https://godbolt.org/z/bx7WfKd7r">[在线代码 bx7WfKd7r]</a></p>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
-<p>事实上, C 标准中明确指出, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">rand</span><span class="p">()</span></code> 不保证生成的随机数列质量. 故对于重要的随机数生成需求不推荐 <a class="reference internal" href="#id13"><span class="std std-ref">C 随机数</span></a>, 推荐使用 <a class="reference internal" href="#id15"><span class="std std-ref">C++11 随机数</span></a>.</p>
+<p>事实上, C 标准中明确指出, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">rand</span><span class="p">()</span></code> 不保证生成的随机数列质量. 故对于重要的随机数生成需求不推荐 <a class="reference internal" href="#id14"><span class="std std-ref">C 随机数</span></a>, 推荐使用 <a class="reference internal" href="#id16"><span class="std std-ref">C++11 随机数</span></a>.</p>
 </div>
 </section>
 <section id="c-11">
-<span id="id15"></span><h2>C++11 随机数<a class="headerlink" href="#c-11" title="Link to this heading"></a></h2>
+<span id="id16"></span><h2>C++11 随机数<a class="headerlink" href="#c-11" title="Link to this heading"></a></h2>
 <p>实际中要生成随机数最好是用 C++11 的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&lt;</span><span class="n">random</span><span class="o">&gt;</span></code>, 但教学内不涉及.</p>
 <p>首先我们获取一个真正的、但有限的随机数作为种子:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;random&gt;</span>

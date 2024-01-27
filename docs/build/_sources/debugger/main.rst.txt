@@ -153,7 +153,7 @@
 
 如上图中我在第二次调用 :cpp:`add_1()` 时中断, 从图中可知函数调用信息如下所示, 其中行号表示该函数目前执行到的语句:
 
-.. code-block:: txt
+.. code-block:: text
   :linenos:
 
   add_1() 行 9
