@@ -25,6 +25,7 @@ C++ 洋葱剥法交流群资料
 .. toctree::
   :maxdepth: 1
 
+  /meet_trouble.rst
   /searching_method/main.rst
   /debugger/main.rst
   /cpp/main.rst
