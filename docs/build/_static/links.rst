@@ -1,8 +1,8 @@
 .. _`我的 C++ 浏览器书签 (右键另存为再导入到浏览器)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_bookmarks.html
-.. _`我个人写的 Visual Studio 配置教程`: https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/others/visual_studio.html
-.. _`我个人写的 VSCode 配置教程`: https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/
+.. _`我个人写的 Visual Studio 配置教程`: https://cpp_tutorial.gitee.io/vscode_cpp_starter/others/visual_studio.html
+.. _`我个人写的 VSCode 配置教程`: https://cpp_tutorial.gitee.io/vscode_cpp_starter/
 .. _`FeignClaims/cmake_starter_template`: https://www.github.com/FeignClaims/cmake_starter_template/
-.. _`关于 CMake 及项目管理的声明`: https://windowsmacos-vscode-c-llvm-clang-clangd-lldb.readthedocs.io/appendix/cmake_disclaimer.html
+.. _`关于 CMake 及项目管理的声明`: https://cpp_tutorial.gitee.io/vscode_cpp_starter/appendix/cmake_disclaimer.html
 .. _`为天鹅书制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_starter.zip
 .. _`计软网智转系交流群公告`: https://gitee.com/FeignClaims/board
 .. _`计软智网转专业 C++ 试题及解答参考集合`: https://feignclaims.gitee.io/change_major_exam
