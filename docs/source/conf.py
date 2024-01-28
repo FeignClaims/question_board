@@ -15,7 +15,7 @@ release = 'v1.0.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx_togglebutton', 'sphinx.ext.todo',
+extensions = ['sphinx_togglebutton', 'sphinx_last_updated_by_git', 'sphinx.ext.todo',
               'sphinx.ext.graphviz', 'sphinx.ext.extlinks', 'sphinx_rtd_theme']
 
 extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'), 'coreguidelines': (
@@ -41,7 +41,7 @@ language = 'zh_CN'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 html_search_language = 'zh'
-html_last_updated_fmt = '%Y-%m-%d %H:%M:%S %z'
+html_last_updated_fmt = '%Y-%m-%d %H:%M:%S'
 
 
 def setup(app):
