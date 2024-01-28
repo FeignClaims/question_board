@@ -46,7 +46,7 @@ C.2: 如果类具有不变式则用 :cpp:`class`; 如果数据成员相互独立
     int volume;
   };
 
-但是：
+但是,
 
 .. code-block:: cpp
 
@@ -54,7 +54,7 @@ C.2: 如果类具有不变式则用 :cpp:`class`; 如果数据成员相互独立
 
   class Date {
    public:
-    // 验证 {year, month, day} 是合法的日期，然后初始化
+    // 验证 {year, month, day} 是合法的日期, 然后初始化
     Date(int year, Month month, char day);
     // ...
 

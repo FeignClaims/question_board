@@ -45,6 +45,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -128,7 +131,10 @@
 <li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span></code> 是相互绑定的 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="n">cout</span><span class="p">);</span></code>), 当 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 进行输入时, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span></code> 的缓冲区就会刷新.</p></li>
 </ul>
 <p>而 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 的效果相当于 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">flush</span></code>.</p>
+<div class="admonition hint">
+<p class="admonition-title">提示</p>
 <p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 不存在可直接使用的刷新方法, 可以使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span><span class="p">.</span><span class="n">ignore</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">streamsize</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">(),</span><span class="w"> </span><span class="n">delim</span><span class="p">)</span></code> 忽略缓冲区中内容直到 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">delim</span></code> 字符.</p>
+</div>
 </section>
 
 
@@ -142,7 +148,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

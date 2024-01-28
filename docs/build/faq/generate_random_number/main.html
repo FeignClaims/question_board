@@ -46,6 +46,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -132,10 +135,10 @@
 <span class="kt">double</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// 预期随机数的最大值</span>
 
 <span class="kt">double</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span>
-<span class="w">    </span><span class="c1">// rand() 生成随机数，转换为 double 与可能最大的随机数相除，得到一个概率，取值为 [0, 1]</span>
+<span class="w">    </span><span class="c1">// rand() 生成随机数, 转换为 double 与可能最大的随机数相除, 得到一个概率, 取值为 [0, 1]</span>
 <span class="w">    </span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">rand</span><span class="p">())</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">RAND_MAX</span><span class="p">)</span>
 <span class="w">        </span><span class="c1">// 概率 * 区间范围 = 该概率所对应的落在区间中的位置</span>
-<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="c1">// +1，因为是要映射到 [min - min, max - min] 这个闭区间，</span>
+<span class="w">        </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">max</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">min</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="c1">// +1, 因为是要映射到 [min - min, max - min] 这个闭区间,</span>
 <span class="w">                           </span><span class="c1">// 如果是 [min - min, max - min) 就不用 +1</span>
 <span class="w">    </span><span class="c1">// 加上偏移值</span>
 <span class="w">    </span><span class="o">+</span><span class="w"> </span><span class="n">min</span><span class="p">;</span>
@@ -203,7 +206,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

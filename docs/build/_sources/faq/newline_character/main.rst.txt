@@ -15,4 +15,4 @@
 
 .. hint::
 
-:cpp:`cin` 不存在可直接使用的刷新方法, 可以使用 :cpp:`cin.ignore(std::numeric_limits<std::streamsize>::max(), delim)` 忽略缓冲区中内容直到 :cpp:`delim` 字符.
+  :cpp:`cin` 不存在可直接使用的刷新方法, 可以使用 :cpp:`cin.ignore(std::numeric_limits<std::streamsize>::max(), delim)` 忽略缓冲区中内容直到 :cpp:`delim` 字符.

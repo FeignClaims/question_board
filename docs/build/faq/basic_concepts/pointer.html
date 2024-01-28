@@ -45,6 +45,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -126,7 +129,7 @@
 <li><p>通过该地址值, 指针能够访问指向的对象.</p></li>
 <li><p>通过修改指针存储的地址值, 指针能够切换指向的对象.</p></li>
 </ul>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">              </span><span class="c1">// 声明之后, 使用 &amp;value 能够获取对象的地址。</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">              </span><span class="c1">// 声明之后, 使用 &amp;value 能够获取对象的地址</span>
 <span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// pointer 存储了 &amp;value, 于是指向 value</span>
 
 <span class="o">*</span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">  </span><span class="c1">// 通过指针访问对象, 使得 value = 3</span>
@@ -140,7 +143,7 @@
 <p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 不仅可以作用于指针本身, 也可作用于指针指向的对象.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">pointer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 int; 指针指向的 int 对象不可改变</span>
-<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pointer2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 *; 指针本身不可改变，即不可切换指向的对象</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pointer2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 *; 指针本身不可改变, 即不可切换指向的对象</span>
 
 <span class="c1">// 修改指向的 int 对象</span>
 <span class="o">*</span><span class="n">pointer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误: 该指针指向的 int 对象不可改变</span>
@@ -187,7 +190,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

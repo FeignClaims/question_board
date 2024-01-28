@@ -45,6 +45,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -132,7 +135,7 @@
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 只是一种约定, 有众多方法可以修改 const 对象, 但绝不能因为能做到就去做!</p>
-<p>读者看到 const 对象时，必然假设该对象不会被修改；如果人为打破这种约定，只会让代码难以阅读，增加维护成本。</p>
+<p>读者看到 const 对象时, 必然假设该对象不会被修改；如果人为打破这种约定, 只会让代码难以阅读, 增加维护成本.</p>
 </div>
 <section id="id14">
 <h2><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 与引用<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
@@ -148,7 +151,7 @@
 <p><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 不仅可以作用于指针本身, 也可作用于指针指向的对象.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="kt">int</span><span class="w"> </span><span class="k">const</span><span class="o">*</span><span class="w"> </span><span class="n">pointer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 int; 指针指向的 int 对象不可改变</span>
-<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pointer2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 *; 指针本身不可改变，即不可切换指向的对象</span>
+<span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">pointer2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 从右往左读, const 作用于 *; 指针本身不可改变, 即不可切换指向的对象</span>
 
 <span class="c1">// 修改指向的 int 对象</span>
 <span class="o">*</span><span class="n">pointer1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// 错误: 该指针指向的 int 对象不可改变</span>
@@ -181,7 +184,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

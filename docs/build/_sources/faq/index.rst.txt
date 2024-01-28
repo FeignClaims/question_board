@@ -163,7 +163,7 @@
 
   - 面向对象编程
 
-  - 类型与对象: 这里的对象不是面向对象编程中所指的“对象”, `一个非正式的解释见此 <https://weekly-questions.readthedocs.io/2022_2023_autumn/week_00/doc/#object>`_.
+  - 类型与对象: 这里的对象不是面向对象编程中所指的 "对象", `一个非正式的解释见此 <https://weekly-questions.readthedocs.io/2022_2023_autumn/week_00/doc/#object>`_.
 
     - 类型与对象. `初始化 <https://weekly-questions.readthedocs.io/core_guidelines/ES/ES_20/>`_
 

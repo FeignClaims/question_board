@@ -18,7 +18,7 @@ C.131: 避免平凡的 getters 和 setters
 
 .. code-block:: cpp
 
-  class Point {  // 糟糕：啰嗦的
+  class Point {  // 糟糕: 啰嗦的
   public:
     Point(int xx, int yy) : x(xx), y(yy) {}
     int get_x() const {

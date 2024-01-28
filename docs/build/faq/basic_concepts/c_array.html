@@ -45,6 +45,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -368,6 +371,11 @@
 </pre></div>
 </div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>需要注意的是, 这种方式因为需要定义终止值而并不能泛用; 别人要是用你的函数必须也采用同样的终止值.</p>
+<p>想想你的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">char</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="sc">&#39;a&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">}</span></code> 为什么输出出奇怪的内容! 因为你没有加上终止字符 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">&#39;\0&#39;</span></code>.</p>
+</div>
 </section>
 <section id="id19">
 <h3>思维启发: 我一定要传入整个数组吗?<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
@@ -413,7 +421,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

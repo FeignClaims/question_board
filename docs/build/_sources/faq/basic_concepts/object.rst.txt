@@ -34,8 +34,8 @@ C++ 中的对象不是面向对象风格所说的 "类与对象" 的对象.
     int value;  // value 需要存储其值, 是对象
     int another_value;
 
-    int* pointer = &value;          // "指针" 需要存储 value 的地址，是对象
+    int* pointer = &value;          // "指针" 需要存储 value 的地址, 是对象
     pointer      = &another_value;  // 现在, "指针" 存储 another_value 的地址了
 
-    int& reference = value;  // "引用" 单纯是 value 的一个别名，并不存储地址，不是对象
-    // 既然 "引用" 没有存储地址，而是在最开始确定引用的对象，那自然无法切换引用的对象了
+    int& reference = value;  // "引用" 单纯是 value 的一个别名, 并不存储地址, 不是对象
+    // 既然 "引用" 没有存储地址, 而是在最开始确定引用的对象, 那自然无法切换引用的对象了

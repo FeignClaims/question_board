@@ -45,6 +45,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -154,7 +157,7 @@
 </ul>
 </dd>
 <dt>整型提升: 我没仔细记过, 因为没多少必要</dt><dd><ul class="simple">
-<li><p>同等等级下，有符号数转为无符号数</p></li>
+<li><p>同等等级下, 有符号数转为无符号数</p></li>
 <li><p>窄于 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 的整型 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">char</span></code> 也是整型!) 在算术运算 (不含比较运算) 时会转换成 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 或 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></code>, 所以 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="n">char变量</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></code> 其实是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code></p></li>
 </ul>
 </dd>
@@ -257,7 +260,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

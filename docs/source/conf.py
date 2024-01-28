@@ -27,8 +27,11 @@ togglebutton_hint_hide = ""
 templates_path = ['_templates']
 exclude_patterns = []
 
-rst_prolog = open('_static/inline_cpp.rst', 'r',
-                  encoding="utf8").read() + '\n' + open('_static/links.rst', 'r', encoding="utf8").read()
+rst_prolog = '\n'.join(
+    list(
+        map(
+            lambda filename: open(f'_static/{filename}', 'r', encoding="utf8").read(),
+            ['inline_cpp.rst', 'links.rst']))) + '\n'
 
 language = 'zh_CN'
 

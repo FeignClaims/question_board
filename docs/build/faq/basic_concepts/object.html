@@ -45,6 +45,9 @@
           <a href="../../index.html" class="icon icon-home">
             C++ 洋葱剥法交流群资料
           </a>
+              <div class="version">
+                v1.0.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
@@ -136,11 +139,11 @@
 <dt>内存区域</dt><dd><div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// value 需要存储其值, 是对象</span>
 <span class="linenos">2</span><span class="kt">int</span><span class="w"> </span><span class="n">another_value</span><span class="p">;</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">          </span><span class="c1">// &quot;指针&quot; 需要存储 value 的地址，是对象</span>
+<span class="linenos">4</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">pointer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">value</span><span class="p">;</span><span class="w">          </span><span class="c1">// &quot;指针&quot; 需要存储 value 的地址, 是对象</span>
 <span class="linenos">5</span><span class="n">pointer</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">another_value</span><span class="p">;</span><span class="w">  </span><span class="c1">// 现在, &quot;指针&quot; 存储 another_value 的地址了</span>
 <span class="linenos">6</span>
-<span class="linenos">7</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;引用&quot; 单纯是 value 的一个别名，并不存储地址，不是对象</span>
-<span class="linenos">8</span><span class="c1">// 既然 &quot;引用&quot; 没有存储地址，而是在最开始确定引用的对象，那自然无法切换引用的对象了</span>
+<span class="linenos">7</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">reference</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">;</span><span class="w">  </span><span class="c1">// &quot;引用&quot; 单纯是 value 的一个别名, 并不存储地址, 不是对象</span>
+<span class="linenos">8</span><span class="c1">// 既然 &quot;引用&quot; 没有存储地址, 而是在最开始确定引用的对象, 那自然无法切换引用的对象了</span>
 </pre></div>
 </div>
 </dd>
@@ -158,7 +161,9 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; 版权所有 2024, FeignClaims。</p>
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-28 03:09:49 +0000.
+      </span></p>
   </div>
 
   利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 

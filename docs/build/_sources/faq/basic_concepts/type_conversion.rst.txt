@@ -38,7 +38,7 @@
   - :cpp:`false` -> :cpp:`0`.
 
 整型提升: 我没仔细记过, 因为没多少必要
-  - 同等等级下，有符号数转为无符号数
+  - 同等等级下, 有符号数转为无符号数
   - 窄于 :cpp:`int` 的整型 (:cpp:`char` 也是整型!) 在算术运算 (不含比较运算) 时会转换成 :cpp:`int` 或 :cpp:`unsigned int`, 所以 :cpp:`sizeof(char变量 + 1)` 其实是 :cpp:`sizeof(int)`
 
 整型 -> 浮点数
