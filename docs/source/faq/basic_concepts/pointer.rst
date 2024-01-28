@@ -9,7 +9,7 @@
 
 .. code-block:: cpp
 
-  int value;              // 声明之后, 使用 &value 能够获取对象的地址。
+  int value;              // 声明之后, 使用 &value 能够获取对象的地址
   int* pointer = &value;  // pointer 存储了 &value, 于是指向 value
 
   *pointer = 3;  // 通过指针访问对象, 使得 value = 3

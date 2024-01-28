@@ -5,7 +5,7 @@ struct Lowest_terms_fraction {
  public:
   Lowest_terms_fraction(int numerator, int denominator) {
     if (denominator == 0) {  // 分母为 0
-      std::terminate();  // 进行错误处理，此处选择直接终止程序
+      std::terminate();  // 进行错误处理, 此处选择直接终止程序
     }
 
     numerator_   = numerator;
