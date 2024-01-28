@@ -9,7 +9,6 @@
 project = 'C++ 洋葱剥法交流群资料'
 copyright = '2024, FeignClaims'
 author = 'FeignClaims'
-version = 'v1.0.0'
 release = 'v1.0.0'
 
 # -- General configuration ---------------------------------------------------
