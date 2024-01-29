@@ -15,7 +15,7 @@ release = 'v1.0.0'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['sphinx_togglebutton', 'sphinx_last_updated_by_git', 'sphinx.ext.todo',
-              'sphinx.ext.graphviz', 'sphinx.ext.extlinks', 'sphinx_rtd_theme']
+              'sphinx.ext.graphviz', 'sphinx.ext.extlinks']
 
 extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'), 'coreguidelines': (
     'https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#%s', '[核心准则 %s]')}
@@ -40,7 +40,20 @@ html_show_sourcelink = False
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_book_theme'
+html_theme_options = {
+    'repository_url': 'https://github.com/FeignClaims/question_board',
+    'path_to_docs': 'docs/source/',
+    'use_source_button': True,
+    'use_edit_page_button': True,
+    'use_issues_button': True,
+    'show_prev_next': False,
+    'show_nav_level': 0,
+    'show_toc_level': 2,
+    "secondary_sidebar_items": {
+        "**": ["page-toc", "sourcelink"],
+    }
+}
 html_static_path = ['_static']
 html_favicon = '_static/favicon.png'
 html_search_language = 'zh'
@@ -49,6 +62,8 @@ git_last_updated_timezone = 'Asia/Shanghai'
 
 
 def setup(app):
+    app.add_css_file("custom.css")
+
     FORCE_RELOAD_JS = """
     (function () {
     if (window.localStorage) {
