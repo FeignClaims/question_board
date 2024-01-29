@@ -5,7 +5,6 @@
 .. TODO
 
   - `虚函数是如何运行的? <https://gitee.com/cpp_tutorial/question/issues/I7ARBT>`_
-  - `拷贝后发生释放错误 <https://gitee.com/cpp_tutorial/question/issues/I7GJ0R>`_
   - `关于迭代器的疑问 <https://gitee.com/cpp_tutorial/question/issues/I8SEIM>`
 
 ***********************************************************************************************************************
@@ -18,6 +17,7 @@
   :maxdepth: 1
 
   basic_concepts/object
+  basic_concepts/resource
   basic_concepts/type_conversion
   basic_concepts/const
   basic_concepts/reference
@@ -53,14 +53,24 @@
   class_invariant/main
 
 =======================================================================================================================
-特殊函数: 构造函数、赋值函数、析构函数
+构造函数、赋值函数、析构函数
 =======================================================================================================================
 
 这些函数控制了对象的生命周期: 创建、复制和销毁.
 
+其中有一些函数在不定义时会自动以默认行为定义, 称为特殊函数:
+
+- 默认构造函数: :cpp:`Widget()`
+- 拷贝构造函数: :cpp:`Widget(Widget const&)`
+- 拷贝赋值函数: :cpp:`Widget& operator=(Widget const&)`
+- 移动构造函数: :cpp:`Widget(Widget&&)`
+- 移动赋值函数: :cpp:`Widget& operator=(Widget&&)`
+- 析构函数: :cpp:`~Widget()`
+
 .. toctree::
   :maxdepth: 1
 
+  rule_of_350/main
   copy_functions_parameter/main
   copy_assignment_define/main
 
@@ -115,10 +125,11 @@
 
 .. toctree::
   :maxdepth: 1
-  :glob:
-  :reversed:
 
-  coreguidelines/*
+  coreguidelines/c_2
+  coreguidelines/c_40
+  coreguidelines/c_131
+  coreguidelines/es_45
 
 ***********************************************************************************************************************
 废弃资料

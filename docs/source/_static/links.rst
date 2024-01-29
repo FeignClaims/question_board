@@ -63,6 +63,7 @@
 .. _`Inheritance Is The Base Class of Evil - Sean Parent - GoingNative 2013`: https://www.youtube.com/watch?v=2bLkxj6EVoM
 .. _`LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017`: https://www.youtube.com/watch?v=uZI_Qla4pNA
 .. _`Learning and Teaching Modern C++ - Bjarne Stroustrup - CppCon 2017`: https://www.bilibili.com/video/BV1d3411579r
+.. _`Naming is Hard: Let's Do Better - Kate Gregory - CppCon 2019`: https://www.youtube.com/watch?v=MBRoCdtZOYg
 .. _`SOLID, Revisited - Tony Van Eerd - CppNow 2021`: https://www.youtube.com/watch?v=glYq-dvgby4
 .. _`STL and Its Design Principles - Alexander Stepanov`: https://www.youtube.com/watch?v=YlVUzJwN_Xc
 .. _`Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`: https://www.youtube.com/watch?v=n0Ak6xtVXno

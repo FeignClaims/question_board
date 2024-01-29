@@ -74,10 +74,10 @@ C.2: 如果类具有不变式则用 :cpp:`class`; 如果数据成员相互独立
 
 .. seealso:: 
 
-  - `C.8: 将具有私有数据成员的类定义为 class <https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#c8-use-class-rather-than-struct-if-any-member-is-non-public>`_
-  - `NL.16: 倾向于将接口 (public) 放在 class 的开头 <https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl16-use-a-conventional-class-member-declaration-order>`_
-  - `C.9: 尽量不暴露成员 <http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#c9-minimize-exposure-of-members>`_
-  - `C.133: 避免 protected 数据成员 <http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#c133-avoid-protected-data>`_
+  - :coreguidelines:`C.8: 将具有私有数据成员的类定义为 class <c8-use-class-rather-than-struct-if-any-member-is-non-public>`
+  - :coreguidelines:`NL.16: 倾向于将接口 (public) 放在 class 的开头 <nl16-use-a-conventional-class-member-declaration-order>`
+  - :coreguidelines:`C.9: 尽量不暴露成员 <c9-minimize-exposure-of-members>`
+  - :coreguidelines:`C.133: 避免 protected 数据成员 <c133-avoid-protected-data>`
 
 ========================================================================================================================
 建议
