@@ -77,11 +77,11 @@
   :maxdepth: 1
 
   input_methods/main
-  binary_io/main
   pointer_output/main
   c_string_output/main
   ascii_output/main
   newline_character/main
+  binary_io/main
 
 ***********************************************************************************************************************
 标准库
