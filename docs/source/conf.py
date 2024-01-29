@@ -9,7 +9,7 @@
 project = 'C++ 洋葱剥法交流群资料'
 copyright = '2024, FeignClaims'
 author = 'FeignClaims'
-release = 'v1.0.0'
+html_title = f'{project}'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
