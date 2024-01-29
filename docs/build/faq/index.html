@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="article:modified_time" content="2024-01-29T10:15:39+08:00" />
+    <meta property="article:modified_time" content="2024-01-29T14:20:44+08:00" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>常见问题解答 &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
@@ -128,13 +128,17 @@
 <li class="toctree-l3"><a class="reference internal" href="copy_assignment_define/main.html">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id22">核心准则</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id22">非答疑范畴问题</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="twos_complement/main.html">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id23">核心准则</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="coreguidelines/es_45.html">ES.45: 避免 “魔法常量”; 用符号常量代替它!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="coreguidelines/c_2.html">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="coreguidelines/c_131.html">C.131: 避免平凡的 getters 和 setters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id23">废弃资料</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id24">废弃资料</a></li>
 </ul>
 </li>
 </ul>
@@ -246,7 +250,15 @@
 </div>
 </section>
 <section id="id22">
-<h2>核心准则<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
+<h2>非答疑范畴问题<a class="headerlink" href="#id22" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="twos_complement/main.html">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+</ul>
+</div>
+</section>
+<section id="id23">
+<h2>核心准则<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
 <p>为了配合常见问题解答, 对 <a class="reference external" href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a> 中的部分准则进行调整并翻译.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -256,8 +268,8 @@
 </ul>
 </div>
 </section>
-<section id="id23">
-<h2>废弃资料<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
+<section id="id24">
+<h2>废弃资料<a class="headerlink" href="#id24" title="Link to this heading"></a></h2>
 <div class="dropdown admonition">
 <p class="admonition-title">常见答疑类型</p>
 <ul class="simple">
@@ -359,7 +371,7 @@
 
   <div role="contentinfo">
     <p>&#169; 版权所有 2024, FeignClaims。
-      <span class="lastupdated">最后更新于 2024-01-29 10:15:39.
+      <span class="lastupdated">最后更新于 2024-01-29 14:20:44.
       </span></p>
   </div>
 

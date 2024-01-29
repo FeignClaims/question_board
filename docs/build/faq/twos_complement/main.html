@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2024-01-29T14:20:44+08:00" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>补码的原理: 为什么 127 + 1 = -128? &mdash; C++ 洋葱剥法交流群资料 v1.0.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+
+  
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=76bc42f2"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>
+    (function () {
+    if (window.localStorage) {
+        if (!localStorage.getItem("firstLoad")) {
+        localStorage["firstLoad"] = true;
+        window.location.reload();
+        } else localStorage.removeItem("firstLoad");
+    }
+    })();
+    </script>
+        <script>let toggleHintShow = '';</script>
+        <script>let toggleHintHide = '';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="ES.45: 避免 “魔法常量”; 用符号常量代替它!" href="../coreguidelines/es_45.html" />
+    <link rel="prev" title="接口与实现相分离 (separate interface from implementation)" href="../separate_interface_from_implementation/main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            C++ 洋葱剥法交流群资料
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../rule_and_preface.html">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory.html">答疑原则和理论依据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../swan_preface.html">《Programming: Principles and Practice Using C++》引言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../personal_learning_map/main.html">个人学习大纲</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../meet_trouble.html">遇到问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../searching_method/main.html">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../debugger/main.html">断点调试的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cpp/main.html">C++ 学习建议</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">常见问题解答</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id15">基本概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id16">表达式和语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id17">类与类层次</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id19">输入输出</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id20">标准库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id21">术语和惯用法</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#id22">非答疑范畴问题</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id15">为什么不在答疑范畴?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id23">核心准则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#id24">废弃资料</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C++ 洋葱剥法交流群资料</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">常见问题解答</a></li>
+      <li class="breadcrumb-item active">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id14">
+<h1>补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?<a class="headerlink" href="#id14" title="Link to this heading"></a></h1>
+<section id="id15">
+<h2>为什么不在答疑范畴?<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<p>不知道为什么, C++ 课开始时很喜欢谈码制这些东西, 实际上对于 C++ 初期的学习是完全没用的.</p>
+<p>在 C++ 中, 有符号数的溢出 (例如此处的 127 + 1 = -128) 是未定义行为, 任何事情都可能发生: 你的软件可能因为这个未定义行为崩溃, 你的电脑可能因为这个未定义行为爆炸.</p>
+<p>跟码制同样没用的是记忆基础的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">long</span></code> 等类型的精度和存储大小, 这会根据所在平台不同而变化, 因而完全没有意义, 只是在初学者增加负担.</p>
+</section>
+<section id="id16">
+<h2>为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<p>码制存在的原因是, 计算机的存储是有限的而数字是无限的. 例如此处的 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code> 是由 8 位二进制构成的补码, 即 <code class="docutils literal notranslate"><span class="pre">0000'0000</span></code>, 总共有 <span class="math notranslate nohighlight">\(2^8\)</span> 种取值可能. 有限的取值可能意味着只能表示一定范围内的数字, 而补码的选择是表示一定范围内的负数、零及正数.</p>
+<p>更重要的是, 补码是为了便于计算机计算而产生的, 它在不溢出的情况下, 完美地支持 +1 和 -1 运算; 当溢出时, 超出表示范围的进位/借位可以忽略不计, 即:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>  1111&#39;1111
++ 0000&#39;0001
+-----------
+1|0000&#39;0000 (忽略超出范围的进位 1, 得到 0000&#39;0000)
+</pre></div>
+</div>
+<p>我们可以借此来推断它如何分配值:</p>
+<ul>
+<li><p>首先规定, <code class="docutils literal notranslate"><span class="pre">0000'0000</span></code> 表示零.</p></li>
+<li><p>-1 得到 <code class="docutils literal notranslate"><span class="pre">1111'1111</span></code>, 这就是 <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+<p>为什么是 <code class="docutils literal notranslate"><span class="pre">1111'1111</span></code> 呢? 这里理解起来比较方便的方法是反过来想: 什么东西 +1 能得到 <code class="docutils literal notranslate"><span class="pre">0000'0000</span></code>? 上面的例子中已经给出了, 是 <code class="docutils literal notranslate"><span class="pre">1111'1111</span></code>.</p>
+</li>
+<li><p>+1 得到 <code class="docutils literal notranslate"><span class="pre">0000'0001</span></code>, 这就是 <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+</ul>
+<p>这样我们便规定, <code class="docutils literal notranslate"><span class="pre">0000'0000</span></code> 表示零, <code class="docutils literal notranslate"><span class="pre">0xxx'xxxx</span></code> 表示正数, <code class="docutils literal notranslate"><span class="pre">1xxx'xxx</span></code> 表示负数.</p>
+<p>那么，</p>
+<ul>
+<li><p>最大的正数 (一直 +1) 就是 <code class="docutils literal notranslate"><span class="pre">0111'1111</span></code>, 即 10 进制 127.</p></li>
+<li><p>最小的负数 (一直 -1) 就是 <code class="docutils literal notranslate"><span class="pre">1000'0000</span></code>, 即 10 进制 -128.</p>
+<p>这里依然可以反过来理解，什么东西以 <code class="docutils literal notranslate"><span class="pre">1xxx'xxxx</span></code> 的格式，但是需要最多次 +1 才能得到最大的负数 <code class="docutils literal notranslate"><span class="pre">1111'1111</span></code>。</p>
+</li>
+</ul>
+<p>可以看到, 最大的正数再 +1, 就会得到最小的负数.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="../separate_interface_from_implementation/main.html" class="btn btn-neutral float-left" title="接口与实现相分离 (separate interface from implementation)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../coreguidelines/es_45.html" class="btn btn-neutral float-right" title="ES.45: 避免 “魔法常量”; 用符号常量代替它!" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, FeignClaims。
+      <span class="lastupdated">最后更新于 2024-01-29 14:20:44.
+      </span></p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
