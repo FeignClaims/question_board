@@ -80,6 +80,7 @@
   binary_io/main
   pointer_output/main
   c_string_output/main
+  ascii_output/main
   newline_character/main
 
 ***********************************************************************************************************************
