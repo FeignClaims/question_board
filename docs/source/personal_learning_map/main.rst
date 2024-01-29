@@ -142,6 +142,7 @@
 - `Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`_
 - `Documentation in the Era of Concepts and Ranges - Christopher Di Bella & Sy Brand - CppCon 2021`_
 - `Better Algorithm Intuition - Conor Hoekstra @code_report - Meeting C++ 2019`_
+- `STL and Its Design Principles - Alexander Stepanov`_
 - 《Elements of Programming》(《编程原本》)
 - 《From Mathematics to Generic Programming》(《从数学到泛型编程》)
 

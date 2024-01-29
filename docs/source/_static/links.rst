@@ -64,6 +64,7 @@
 .. _`LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017`: https://www.youtube.com/watch?v=uZI_Qla4pNA
 .. _`Learning and Teaching Modern C++ - Bjarne Stroustrup - CppCon 2017`: https://www.bilibili.com/video/BV1d3411579r
 .. _`SOLID, Revisited - Tony Van Eerd - CppNow 2021`: https://www.youtube.com/watch?v=glYq-dvgby4
+.. _`STL and Its Design Principles - Alexander Stepanov`: https://www.youtube.com/watch?v=YlVUzJwN_Xc
 .. _`Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`: https://www.youtube.com/watch?v=n0Ak6xtVXno
 .. _`Stop Teaching C - Kate Gregory - CppCon 2015`: https://www.bilibili.com/video/BV13P411D7eF/
 .. _`Undefined Behavior is Not an Error - Barbara Geller & Ansel Sermersheim - CppCon 2018`: https://www.youtube.com/watch?v=XEXpwis_deQ
