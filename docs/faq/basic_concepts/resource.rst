@@ -21,9 +21,10 @@
   :linenos:
 
   file* file = open_file("text.txt");
+  close_file(file);  // file 须负责释放文件资源, 它具有该资源的所有权
 
-  // file 须负责释放文件资源, 它具有该资源的所有权
-  close_file(file);
+  int value    = 0;
+  int* pointer = &value;  // pointer 不需要负责释放 value, 只是引用, 不具有所有权
 
 如果具有所有权的对象没有尽责地释放资源, 将会发生非常恐怖的事情. 例如 :cpp:`file` 占用了 ``text.txt`` 文件, 如果不进行释放, 则意味着往后再也没有对象可以对 ``text.txt`` 文件进行操作.
 
