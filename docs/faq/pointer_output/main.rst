@@ -6,9 +6,11 @@
 
 :cpp:`cout` 即认为 :cpp:`char const*` 是字符串, 提供了以下函数重载:
 
-.. note::
+.. hint::
 
-  注意此处我放弃了说谎, 直接写出了 :cpp:`operator<<`, 这就是 :cpp:`cout << value` 的由来: 标准库定义了一个名为 :cpp:`operator<<` 的函数.
+  所谓 :cpp:`cout << value` 不过是定义了一个名为 :cpp:`operator<<` 的函数.
+
+  例如 :cpp:`ostream& operator<<(ostream& cout, int value);`
 
 :cpp:`ostream& operator<<(ostream& cout, char const*)`: 作为字符串进行输出.
   :cpp:`char*` 和 :cpp:`char const*`, 可以转换/直接传参为 :cpp:`char const*`, 都优先采用这个版本.

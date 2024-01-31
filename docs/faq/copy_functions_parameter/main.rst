@@ -4,7 +4,7 @@
 
 拷贝函数用 :cpp:`Widget(Widget const& other)` 和 :cpp:`operator=(Widget const& other)`.
 
-.. note::
+.. hint::
 
   本解答是很多人用 :cpp:`&` 作为参数出错而提问, 我忍无可忍的结果.
 
