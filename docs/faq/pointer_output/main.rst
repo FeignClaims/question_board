@@ -24,7 +24,7 @@
   :linenos:
 
   char ch = 'a';
-  std::cout << static_cast<void const*>(&ch);
+  std::cout << static_cast<void const*>(&ch);  // 输出 ch 的地址
 
   char* pointer = &ch;
-  std::cout << static_cast<void const*>(pointer);
+  std::cout << static_cast<void const*>(pointer);  // 输出 pointer 存储的地址
