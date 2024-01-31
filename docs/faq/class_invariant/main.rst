@@ -85,8 +85,8 @@ C++ 因此特意引入了新的关键字 :cpp:`class`, 当使用关键字 :cpp:`
 
 .. admonition:: 相关核心准则
 
-  :doc:`/faq/coreguidelines/c_2`
-  :doc:`/faq/coreguidelines/c_40`
+  - :doc:`/faq/coreguidelines/c_2`
+  - :doc:`/faq/coreguidelines/c_40`
 
 ========================================================================================================================
 一个教学的黑点
