@@ -95,7 +95,7 @@ C++ 学习建议
 应对上机考试的进阶内容, 有余力可用
 -----------------------------------------------------------------------------------------------------------------------
 
-- `STL "简" 述 (摘自《C++标准库（第 2 版) 》by Nicolai Josuttis <https://gitee.com/cpp_tutorial/board/raw/main//src/cpp/stl_solution.pdf>`_
+- `STL "简" 述 (摘自《C++标准库（第 2 版) 》by Nicolai Josuttis <https://gitee.com/cpp_tutorial/board/raw/main/src/cpp/stl_solution.pdf>`_
 - `105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`_
 - `动态规划 入门 <https://www.bilibili.com/video/BV1xb411e7ww>`_
 - `动态规划 套路 <https://www.bilibili.com/video/BV1gp4y1t7xe>`_
