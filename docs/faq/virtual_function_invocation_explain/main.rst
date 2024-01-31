@@ -713,6 +713,11 @@
 
 既然拷贝构造函数不能是虚函数, 那么拷贝赋值函数为了一致性, 也应该是非虚函数.
 
+.. seealso::
+
+  - :doc:`/faq/rule_of_350/main` 中解释了拷贝构造函数、拷贝赋值函数、析构函数的定义原则.
+  - :doc:`/faq/copy_assignment_define/main` 中介绍了一种利用拷贝构造函数和析构函数直接定义拷贝赋值函数的惯用法.
+
 .. admonition:: 相关核心准则
 
   - :coreguidelines:`C.22: 让特殊函数保持一致 <c22-make-default-operations-consistent>`
