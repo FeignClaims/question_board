@@ -102,7 +102,7 @@
 
   所以此处选用了 Kate Gregory 在 `Naming is Hard: Let's Do Better - Kate Gregory - CppCon 2019`_ 中的命名.
 
-.. seealso::
+.. admonition:: 相关核心准则
 
   - :coreguidelines:`P.8: 不要泄露任何资源 <p8-dont-leak-any-resources>`
   - :coreguidelines:`C.30: 如果类在对象析构时需要显式操作, 定义析构函数 <c30-define-a-destructor-if-a-class-needs-an-explicit-action-at-object-destruction>`

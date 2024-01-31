@@ -564,7 +564,7 @@
   delete base;     // 错误: 不能调用保护用的析构函数
   delete derived;  // 正确
 
-.. seealso::
+.. admonition:: 相关核心准则
 
   - :coreguidelines:`C.35: 基类的析构函数要么是公用虚函数, 要么是保护用非虚函数 <c35-a-base-class-destructor-should-be-either-public-and-virtual-or-protected-and-non-virtual>`
   - :coreguidelines:`C.127: 具有虚函数的类应该有一个公用虚析构函数或一个保护非虚析构函数 <c127-a-class-with-a-virtual-function-should-have-a-virtual-or-protected-destructor>`
@@ -648,7 +648,7 @@
 - 构造函数不能被设置为虚函数, 毕竟构造函数之前不存在任何类型信息.
 - 析构函数可以是虚函数, 毕竟构造函数已经完成了, 而析构函数执行前类型信息是完整的, 只是开始执行后逐渐对信息进行析构.
 
-.. seealso::
+.. admonition:: 相关核心准则
 
   - :coreguidelines:`C.82: 不要在构造函数和析构函数中调用虚函数 <c82-dont-call-virtual-functions-in-constructors-and-destructors>`
 
@@ -713,7 +713,7 @@
 
 既然拷贝构造函数不能是虚函数, 那么拷贝赋值函数为了一致性, 也应该是非虚函数.
 
-.. seealso::
+.. admonition:: 相关核心准则
 
   - :coreguidelines:`C.22: 让特殊函数保持一致 <c22-make-default-operations-consistent>`
   - :coreguidelines:`C.60: 拷贝赋值函数应该是非虚函数, 按 const& 传参, 并按 & 返回自身 <c60-make-copy-assignment-non-virtual-take-the-parameter-by-const-and-return-by-non-const>`
@@ -732,6 +732,6 @@
   :language: cpp
   :linenos:
 
-.. seealso::
+.. admonition:: 相关核心准则
 
   - :coreguidelines:`C.130: 要进行多态类的深拷贝, 倾向于使用 clone 函数而不是公用拷贝构造/赋值函数 <c130-for-making-deep-copies-of-polymorphic-classes-prefer-a-virtual-clone-function-instead-of-public-copy-constructionassignment>`

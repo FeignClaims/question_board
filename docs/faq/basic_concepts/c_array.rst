@@ -54,7 +54,7 @@ C 风格数组: :cpp:`T array[size]` (C-style array)
   }
   std::cout << '\n';
 
-.. seealso::
+.. admonition:: 相关核心准则
 
   - :doc:`/faq/coreguidelines/es_45`
 
