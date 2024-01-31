@@ -4,9 +4,7 @@
 
 拷贝函数用 :cpp:`Widget(Widget const& other)` 和 :cpp:`operator=(Widget const& other)`.
 
-.. hint::
-
-  本解答是很多人用 :cpp:`&` 作为参数出错而提问, 我忍无可忍的结果.
+本解答是很多人用 :cpp:`&` 作为参数出错而提问, 我忍无可忍的结果.
 
 ========================================================================================================================
 为什么不是 :cpp:`Widget(Widget other)` 和 :cpp:`operator=(Widget other)`?
@@ -94,3 +92,11 @@
 .. admonition:: 相关核心准则
 
   - :coreguidelines:`C.60: 拷贝赋值函数应该是非虚函数, 按 const& 传参, 并按 & 返回自身 <c60-make-copy-assignment-non-virtual-take-the-parameter-by-const-and-return-by-non-const>`
+
+.. danger::
+
+  以上内容是针对 C++98~C++23 的泛用解答, 随着版本变化, 很多细节会有差异.
+
+  事实上很多解答都存在这样的问题, 因为教学使用的 C++98 太过时了, VS 2017 默认版本是 C++14, gcc 11 和 clang 16 默认版本是 C++17.
+
+  这里引起的争议比较大, 所以免责声明一下.
