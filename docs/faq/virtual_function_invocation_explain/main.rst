@@ -162,49 +162,54 @@
 
 对于上面的代码, 我们可以画出各个类的可见信息图, 继承在图中表现为嵌套关系:
 
-.. code-block:: cpp
-  :linenos:
-  :caption: :cpp:`class A`
+.. tabs::
 
-  class A {
-    public: void f(this A&, int value);
-    public: void f(this A&);
-    public: virtual void g(this A&);
-  }
+  .. tab:: :cpp:`class A`
 
-.. code-block:: cpp
-  :linenos:
-  :caption: :cpp:`class B`
+    .. code-block:: cpp
+      :linenos:
 
-  class A {
-    public: void f(this A&, int value);
-    public: void f(this A&);
-    public: virtual void g(this A&);
-
-    public: class B {
-      private: void f(this B&);
-      private: void g(this B&) override;
-    }
-  }
-
-.. code-block:: cpp
-  :linenos:
-  :caption: :cpp:`class C`
-
-  class A {
-    public: void f(this A&, int value);
-    public: void f(this A&);
-    public: virtual void g(this A&);
-
-    public: class B {
-      private: void f(this B&);
-      private: void g(this B&) override;
-
-      public: class C {
-        public: void f(this C&);
+      class A {
+        public: void f(this A&, int value);
+        public: void f(this A&);
+        public: virtual void g(this A&);
       }
-    }
-  }
+
+  .. tab:: :cpp:`class B`
+
+    .. code-block:: cpp
+      :linenos:
+
+      class A {
+        public: void f(this A&, int value);
+        public: void f(this A&);
+        public: virtual void g(this A&);
+
+        public: class B {
+          private: void f(this B&);
+          private: void g(this B&) override;
+        }
+      }
+
+  .. tab:: :cpp:`class C`
+
+    .. code-block:: cpp
+      :linenos:
+
+      class A {
+        public: void f(this A&, int value);
+        public: void f(this A&);
+        public: virtual void g(this A&);
+
+        public: class B {
+          private: void f(this B&);
+          private: void g(this B&) override;
+
+          public: class C {
+            public: void f(this C&);
+          }
+        }
+      }
 
 应该注意到, 基类中所有内容对于派生类都是可见的, :cpp:`public` 和 :cpp:`private` 等称为访问控制, 并不影响可见性.
 
@@ -283,36 +288,40 @@
 
 对于虚成员函数, 对象同样根据 **静态类型** 的可见信息图找到 *最合适的函数* 和 *确定可达性*:
 
-.. code-block:: cpp
-  :linenos:
-  :caption: 静态类型 :cpp:`A` 调用虚成员函数 :cpp:`g()`
+.. tabs::
 
-  class A {
-    public: void f(this A&, int value);
-    public: void f(this A&);
-    public: virtual void g(this A&);
-  }
+  .. tab:: 静态类型 :cpp:`A` 调用虚成员函数 :cpp:`g()`
 
-  A a;
-  a.g();  // 找到 A::g
+    .. code-block:: cpp
+      :linenos:
 
-.. code-block:: cpp
-  :linenos:
-  :caption: 静态类型 :cpp:`B` 调用虚成员函数 :cpp:`g()`
+      class A {
+        public: void f(this A&, int value);
+        public: void f(this A&);
+        public: virtual void g(this A&);
+      }
 
-  class A {
-    // public: void f(this A&, int value);
-    // public: void f(this A&);
-    // public: virtual void g(this A&);
+      A a;
+      a.g();  // 找到 A::g
 
-    public: class B {
-      private: void f(this B&);
-      private: void g(this B&) override;
-    }
-  }
+  .. tab:: 静态类型 :cpp:`B` 调用虚成员函数 :cpp:`g()`
 
-  B b;
-  b.g();  // 找到 B::g, 不可访问, 故调用失败
+    .. code-block:: cpp
+      :linenos:
+
+      class A {
+        // public: void f(this A&, int value);
+        // public: void f(this A&);
+        // public: virtual void g(this A&);
+
+        public: class B {
+          private: void f(this B&);
+          private: void g(this B&) override;
+        }
+      }
+
+      B b;
+      b.g();  // 找到 B::g, 不可访问, 故调用失败
 
 区别在于当虚成员函数发生调用时, 将会根据动态类型的可见信息图找到对应的重写函数, 对它进行实际调用:
 
