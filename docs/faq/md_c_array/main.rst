@@ -15,7 +15,6 @@
 例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]` (:doc:`复杂声明的阅读方法 </faq/variable_decleration_reading/main>`), 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
 
 .. code-block:: text
-  :linenos:
 
   0: 0 1 2 3  // 每个元素是一个长度为 4 的数组
   1: 0 1 2 3
@@ -79,10 +78,9 @@
 展平布局传递
 ------------------------------------------------------------------------------------------------------------------------
 
-另一种方式是, 我们可以将它的布局展平, 认为是 :cpp:`int` 的数组.
+另一种方式是, 我们可以将它的布局展平, 认为是 :cpp:`int` 的一维数组.
 
 .. code-block:: text
-  :linenos:
 
   0       1       2
   ↓       ↓       ↓
@@ -104,27 +102,9 @@
   int matrix[3][4] = {};
   print(&matrix[0][0], 3, 4);
 
-
-.. code-block:: cpp
-  :emphasize-lines: 2, 12
-  :linenos:
-
-  void print(int* array, int row_size, int column_size) {
-    int const size = row_size * column_size;
-    for (int i = 0; i < size; ++i) {
-      std::cout << array[i];
-      if (i % column_size == column_size - 1) {  // 矩阵每行的换行
-        std::cout << '\n';
-      }
-    }
-  }
-
-  int matrix[3][4] = {};
-  print(&matrix[0][0], 3, 4);
-
 .. hint::
 
-  反过来说, 那我们也能将一维数组直接当作多维数组.
+  反过来说, 那我们也能直接将一维数组当作多维数组.
 
   .. code-block:: cpp
     :linenos:
