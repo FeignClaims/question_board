@@ -74,4 +74,3 @@ git_last_updated_timezone = 'Asia/Shanghai'
 def setup(app):
     app.add_css_file("custom.css")
     app.add_css_file("monofont.css")
-    app.add_js_file("no_cache.js")
