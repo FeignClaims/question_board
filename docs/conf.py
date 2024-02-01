@@ -58,8 +58,8 @@ html_theme_options = {
         },
         {
             "name": "部署状态",
-            "url": "https://github.com/FeignClaims/question_board/actions/workflows/ci.yml",
-            "icon": "https://github.com/FeignClaims/question_board/actions/workflows/ci.yml/badge.svg",
+            "url": "https://readthedocs.org/projects/question-board/",
+            "icon": "https://readthedocs.org/projects/question-board/badge/?version=latest",
             "type": "url",
         }
     ],
