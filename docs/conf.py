@@ -14,8 +14,17 @@ html_title = f'{project}'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx_togglebutton', 'sphinx_last_updated_by_git', 'sphinx.ext.todo',
-              'sphinx.ext.graphviz', 'sphinx.ext.extlinks', 'sphinx_copybutton']
+extensions = [
+    'sphinx.ext.extlinks',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.todo',
+    'sphinx_copybutton',
+    'sphinx_design',
+    'sphinx_examples',
+    'sphinx_last_updated_by_git',
+    'sphinx_tabs.tabs',
+    'sphinx_togglebutton',
+]
 
 extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'), 'coreguidelines': (
     'https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#%s', '[核心准则 %s]')}
