@@ -7,6 +7,7 @@ copy-and-swap: 拷贝赋值函数的简单实现
 如果有定义的需求, 且拷贝仅仅是拷贝, 不是因为题目而有输出之类的特殊要求, 则可以先定义拷贝构造函数、析构函数, 然后利用它们定义拷贝赋值函数, 这称为 copy-and-swap 惯用法.
 
 .. code-block:: cpp
+  :linenos:
 
   Widget& operator=(Widget const& other) {
     Widget temp(other);  // 拷贝 other 到 temp
