@@ -30,29 +30,46 @@ C 风格字符串是一串以 :cpp:`'\\0'` 结尾的字符. 按照从 C 继承�
 
 你可以用一个字符串字面值初始化字符数组.
 
-.. code-block:: cpp
-  :linenos:
+.. tabs::
 
-  char array[] = "hello";
-  sizeof(array) == sizeof(char[6]);
-  // 相当于:
-  char array[6];
-  array[0] = 'h';
-  array[1] = 'e';
-  array[2] = 'l';
-  array[3] = 'l';
-  array[4] = 'o';
-  array[5] = '\0';
+  .. tab:: 数组长度由编译器推导
 
-  char array[8] = "hello";
-  array[0] = 'h';
-  array[1] = 'e';
-  array[2] = 'l';
-  array[3] = 'l';
-  array[4] = 'o';
-  array[5] = '\0';
-  array[6] = '\0';
-  array[7] = '\0';
+    .. code-block:: cpp
+      :linenos:
+
+      char array[] = "hello";
+      sizeof(array) == sizeof(char[6]);
+      // 相当于:
+      char array[6];
+      array[0] = 'h';
+      array[1] = 'e';
+      array[2] = 'l';
+      array[3] = 'l';
+      array[4] = 'o';
+      array[5] = '\0';
+
+  .. tab:: 数组长度过长
+
+    .. code-block:: cpp
+      :linenos:
+
+      char array[8] = "hello";
+      // 相当于:
+      array[0] = 'h';
+      array[1] = 'e';
+      array[2] = 'l';
+      array[3] = 'l';
+      array[4] = 'o';
+      array[5] = '\0';
+      array[6] = '\0';  // 之后的部分都会被初始化为 '\0', 即数值 0
+      array[7] = '\0';
+
+  .. tab:: 数组长度过短
+
+    .. code-block:: cpp
+      :linenos:
+
+      char array[5] = "hello";  // 错误: "hello" 需要长度至少为 6
 
 ========================================================================================================================
 相关解答
