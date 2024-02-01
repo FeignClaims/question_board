@@ -4,11 +4,15 @@
 
 指针是一种对象, 它储存对应类型对象的地址值, 被指针存储了地址值的对象称为 **指针指向的对象**.
 
+.. margin::
+
+  事实上, :cpp:`&value` 就是创建一个存储有 :cpp:`value` 地址的指针.
+
 .. code-block:: cpp
   :linenos:
 
   int value;              // 声明之后, 使用 &value 能够获取对象的地址
-  int* pointer = &value;  // pointer 存储了 &value, 于是指向 value
+  int* pointer = &value;  // pointer 存储了 value 的地址, 于是指向 value
 
 通过该地址值, 指针能够访问指向的对象.
 
@@ -29,7 +33,7 @@
   int* pointer = &value;
 
   int another;
-  pointer = &another;  // pointer 现在存储 &another, 于是指向 another
+  pointer = &another;  // pointer 现在存储 another 的地址, 于是指向 another
 
 ========================================================================================================================
 交叉内容

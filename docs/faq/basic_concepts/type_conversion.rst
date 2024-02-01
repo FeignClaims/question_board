@@ -67,6 +67,18 @@
       - 比如拷贝时 (按值传参也可以当做拷贝, 所以 :cpp:`int array[]` 或 :cpp:`int array[5]` 作为参数其实是 :cpp:`int* array`).
       - 比如运算时 (:cpp:`array + 0`, :cpp:`+array` 等等).
 
+  .. tab:: 函数
+
+    -> 指向该函数的指针
+
+    .. code-block:: cpp
+      :linenos:
+
+      void print();
+
+      void (*pointer)() = &print;  // 显式取地址, 得到指向该函数的指针
+      void (*pointer)() = print;   // 隐式类型转换为指向该函数的指针
+
 .. warning::
 
   数组 -> 指向首元素的指针 -> :cpp:`bool`

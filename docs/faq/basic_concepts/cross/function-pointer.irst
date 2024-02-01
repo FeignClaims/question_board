@@ -9,7 +9,7 @@
 
   int do_something(int, double);
 
-  int (*pointer)(int, double) = do_something;
+  int (*pointer)(int, double) = &do_something;
   pointer(1, 1.0);     // 函数指针本身就可以被调用
   (*pointer)(1, 1.0);  // 解引用后得到的函数也可以被调用
 
