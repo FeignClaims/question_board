@@ -218,41 +218,45 @@ rule of 3/5: 定义全部特殊函数
 
 回想一下刚刚我们进行的自定义析构和自定义拷贝, 如果只定义其中一个会发生什么?
 
-.. code-block:: cpp
-  :linenos:
-  :caption: 只定义析构函数
+.. tabs::
 
-  class Widget {
-   public:
-    Widget(std::string const& file_path) : file_(open_file(file_path)) {}
-    ~Widget() { close_file(file_); }
+  .. tab:: 只定义析构函数
 
-   private:
-    file* file_;
-  };
+    .. code-block:: cpp
+      :linenos:
 
-  int main() {
-    Widget a("text.txt");
-    Widget b(a);  // a、b 均占有 "text.txt" 文件资源
-  }  // 错误: a、b 析构时均调用 close_file, 因而关闭文件两次!
+      class Widget {
+      public:
+        Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+        ~Widget() { close_file(file_); }
 
-.. code-block:: cpp
-  :linenos:
-  :caption: 只定义拷贝函数
+      private:
+        file* file_;
+      };
 
-  class Widget {
-   public:
-    Widget(std::string const& file_path) : file_(open_file(file_path)) {}
-    Widget(Widget const&)            = delete;  // 显式地删除该函数
-    Widget& operator=(Widget const&) = delete;
+      int main() {
+        Widget a("text.txt");
+        Widget b(a);  // 拷贝后, a、b 均占有 "text.txt" 文件资源
+      }  // 错误: a、b 析构时均调用 close_file, 因而关闭文件两次!
 
-   private:
-    file* file_;
-  };
+  .. tab:: 只定义拷贝函数
 
-  int main() {
-    Widget file("text.txt");
-  }  // 错误: file 析构时没有释放所占有的资源
+    .. code-block:: cpp
+      :linenos:
+
+      class Widget {
+      public:
+        Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+        Widget(Widget const&)            = delete;
+        Widget& operator=(Widget const&) = delete;
+
+      private:
+        file* file_;
+      };
+
+      int main() {
+        Widget file("text.txt");
+      }  // 错误: file 析构时没有释放所占有的资源
 
 这正是 `本问题的提问人所犯的错误 <https://gitee.com/cpp_tutorial/question/issues/I7GJ0R>`_!
 
