@@ -10,6 +10,9 @@
 二进制输出
 =======================================================================================================================
 
+:cpp:`ofile.write(char const* string, streamsize count)`
+  将 :cpp:`[string, string + count)` 字符数组输出到 :cpp:`ofile` 中, 所以我们要将对象强行转换为字符数组.
+
 .. code-block:: cpp
 
   #include <fstream>
@@ -17,13 +20,14 @@
   int value = 0;
 
   std::ofstream ofile("输出文件路径", std::ios_base::binary);
-  // ofile.write(char const* string, streamsize count)
-  // 将 [string, string + count) 字符数组输出到 ofile 中, 所以我们要将 value 强行转换为字符数组
   ofile.write(reinterpret_cast<char const*>(value), sizeof(value));
 
 =======================================================================================================================
 二进制输入
 =======================================================================================================================
+
+:cpp:`ifile.read(char* string, streamsize count)`
+  从 :cpp:`ifile` 读入字符到 :cpp:`[string, string + count)` 字符数组中, 所以我们要将对象强行转换为字符数组.
 
 .. code-block:: cpp
 
@@ -32,6 +36,4 @@
   int value = 0;
 
   std::ofstream ifile("输入文件路径", std::ios_base::binary);
-  // ofile.read(char* string, streamsize count)
-  // 从 ifile 读入字符到 [string, string + count) 字符数组中, 所以我们要将 value 强行转换为字符数组
   ifile.read(reinterpret_cast<char*>(value), sizeof(value));
