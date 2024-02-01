@@ -84,6 +84,7 @@ C++ 因此特意引入了新的关键字 :cpp:`class`, 当使用关键字 :cpp:`
 - 要么 :cpp:`struct` + 无构造函数 (+ 公用数据成员).
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :doc:`/faq/coreguidelines/c_2`
   - :doc:`/faq/coreguidelines/c_40`

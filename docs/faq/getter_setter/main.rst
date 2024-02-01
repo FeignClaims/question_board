@@ -17,5 +17,6 @@
   - :doc:`/faq/class_invariant/main`
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :doc:`/faq/coreguidelines/c_131`

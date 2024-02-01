@@ -90,6 +90,7 @@
   }
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :coreguidelines:`C.60: 拷贝赋值函数应该是非虚函数, 按 const& 传参, 并按 & 返回自身 <c60-make-copy-assignment-non-virtual-take-the-parameter-by-const-and-return-by-non-const>`
 

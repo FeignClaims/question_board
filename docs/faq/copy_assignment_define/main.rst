@@ -16,6 +16,7 @@ copy-and-swap: 拷贝赋值函数的简单实现
   }  // temp 的析构函数将会对交换来的 *this 内容完成必要的清理
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :coreguidelines:`C.22: 让特殊函数保持一致 <c22-make-default-operations-consistent>`
   - :coreguidelines:`C.60: 拷贝赋值函数应该是非虚函数, 按 const& 传参, 并按 & 返回自身 <c60-make-copy-assignment-non-virtual-take-the-parameter-by-const-and-return-by-non-const>`

@@ -72,6 +72,7 @@ C++11 的初始化器列表规则消除了许多构造函数的需要. 例如:
 :cpp:`Rec2` 的构造函数是多余的. 同时, :cpp:`int` 的默认值初始化最好使用 :coreguidelines:`成员初始化器 <c48-prefer-in-class-initializers-to-member-initializers-in-constructors-for-constant-initializers>` 完成.
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :coreguidelines:`C.41: 构造函数应该创建一个完全被初始化的对象 <c41-a-constructor-should-create-a-fully-initialized-object>`.
   - :coreguidelines:`C.42: 如果构造函数不能构造一个有效对象, 抛出一个异常 <c42-if-a-constructor-cannot-construct-a-valid-object-throw-an-exception>`.

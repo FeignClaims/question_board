@@ -74,6 +74,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
   }
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :coreguidelines:`C.80: 如果必须明确使用默认语义, 使用 =default <c80-use-default-if-you-have-to-be-explicit-about-using-the-default-semantics>`
 
@@ -134,6 +135,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
   }  // widget 析构时调用 close_file 释放文件资源
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :coreguidelines:`C.30: 如果类在对象析构时需要显式操作, 定义析构函数 <c30-define-a-destructor-if-a-class-needs-an-explicit-action-at-object-destruction>`
   - :coreguidelines:`C.31: 类获取的所有资源必须由类的析构函数释放 <c31-all-resources-acquired-by-a-class-must-be-released-by-the-classs-destructor>`
@@ -198,6 +200,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
   };
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - :coreguidelines:`C.81: 如果想要禁用默认行为且没有替代方案, 使用 =delete <c81-use-delete-when-you-want-to-disable-default-behavior-without-wanting-an-alternative>`
 
@@ -256,7 +259,8 @@ rule of 3/5: 定义全部特殊函数
 如果需要自定义拷贝构造函数、拷贝赋值函数、(移动构造函数、移动赋值函数、) 析构函数, **总是定义它们所有**.
 如果默认的行为仍然可行, 用 :cpp:`=default` 明确定义; 如果该行为不成立, 用 :cpp:`=delete` 明确删除.
 
-.. admonition:: 相关核心准则 
+.. admonition:: 相关核心准则
+  :class: coreguidelines 
 
   - :coreguidelines:`C.21: 如果定义或 =delete 了任何复制、移动、析构函数, 定义或 =delete 它们全部 <c21-if-you-define-or-delete-any-copy-move-or-destructor-function-define-or-delete-them-all>`
 
@@ -281,6 +285,7 @@ rule of 0: 不定义任何特殊函数
   :linenos:
 
 .. admonition:: 相关核心准则
+  :class: coreguidelines
 
   - `cppreference: rule of 3/5/0 <https://en.cppreference.com/w/cpp/language/rule_of_three>`_
   - :coreguidelines:`C.20: 尽量避免定义任何特殊函数 <c20-if-you-can-avoid-defining-default-operations-do>`
