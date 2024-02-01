@@ -24,7 +24,7 @@ C 随机数
     std::srand(std::time(0));  // 只在启动程序时设置一次
   }
 
-此后即可调用 :cpp:`std::rand()` 生成随机数, 其生成的随机数为 :math:`[0, RAND\_MAX]` 区间的整数, 故建议用下面的方式生成 **对应区间的随机数 (整数、浮点数通用)**:
+此后即可调用 :cpp:`std::rand()` 生成随机数, 其生成的随机数为 :cpp:`[0, RAND_MAX]` 区间的整数, 故建议用下面的方式生成 **对应区间的随机数 (整数、浮点数通用)**:
 
 .. code-block:: cpp
 
@@ -81,26 +81,45 @@ C++11 随机数
 
 该随机数生成器就会生成一个随机数, 但我们需要的是一个特定的分布, 所以要将它传递给分布器来生成随机数:
 
-.. code-block:: cpp
-  :linenos:
+.. tabs::
 
-  #include <random>
+  .. tab:: :cpp:`[1, 100]` 间 :cpp:`int` 均匀分布
 
-  // 将随机数映射到 [1, 100] 之间 int 的均匀分布
-  std::uniform_int_distribution<int> dist1(1, 100);
-  int value1 = dist1(generator);  // 产生一个随机数
-  int value2 = dist1(generator);
+    .. code-block:: cpp
+      :linenos:
 
-  // 将随机数映射到 [1, 100] 之间 double 的均匀分布
-  std::uniform_real_distribution<double> dist2(1, 100);
-  double value3 = dist2(generator);
+      #include <random>
 
-  // 将随机数映射为 0.8 概率为真, 0.2 概率为假的贝努利分布
-  std::bernoulli_distribution dist3(0.8);
-  bool value4 = dist3(generator);
+      std::mt19937 generator{std::random_device{}()};
 
-  // 将随机数映射为均值为 5.0, 标准查为 2.0 的 double 正态分布
-  std::normal_distribution<double> dist4(5.0, 2.0);
-  double value5 = dist4(generator);
+      std::uniform_int_distribution<int> dist(1, 100);
+      int value1 = dist(generator);
+      int value2 = dist(generator);
+
+  .. tab:: :cpp:`[1, 100]` 间 :cpp:`double` 均匀分布
+
+    .. code-block:: cpp
+      :linenos:
+
+      #include <random>
+
+      std::mt19937 generator{std::random_device{}()};
+
+      std::uniform_real_distribution<double> dist(1, 100);
+      double value1 = dist(generator);
+      double value2 = dist(generator);
+
+  .. tab:: :cpp:`0.8` 概率的贝努利分布
+
+    .. code-block:: cpp
+      :linenos:
+
+      #include <random>
+
+      std::mt19937 generator{std::random_device{}()};
+
+      std::bernoulli_distribution dist(0.8);
+      double value1 = dist(generator);
+      double value2 = dist(generator);
 
 :godbolt:`fPvGdsfT5`
