@@ -3,5 +3,5 @@
 .. code-block:: cpp
 
   int value;
-  int const& ref1 = value;  // 从右往左读, const 作用于 int; 引用的 int 对象不可改变
-  int& const ref2;          // 错误! 引用本身不是对象, 不能用 const 限定它
+  int const& ref1 = value;  // const 向左作用于 int; 引用的 int 对象不可改变
+  int& const ref2;          // 错误: 引用本身不是对象, 不能用 const 限定它

@@ -1,16 +1,33 @@
-:cpp:`const` 不仅可以作用于指针本身, 也可作用于指针指向的对象.
+:cpp:`const` 不仅可以作用于指针对象本身, 也可作用于指针指向的对象.
 
-.. code-block:: cpp
+.. tabs::
 
-  int value = 0;
-  int const* pointer1 = &value;  // 从右往左读, const 作用于 int; 指针指向的 int 对象不可改变
-  int* const pointer2 = &value;  // 从右往左读, const 作用于 *; 指针本身不可改变, 即不可切换指向的对象
+  .. tab:: 作用于指针对象本身
 
-  // 修改指向的 int 对象
-  *pointer1 = 1;  // 错误: 该指针指向的 int 对象不可改变
-  *pointer2 = 1;
+    .. code-block:: cpp
+      :linenos:
 
-  // 切换指向的对象
-  int another_value = 0;
-  pointer1 = &another_value;
-  pointer2 = &another_value;  // 错误: 该指针不可切换指向的对象
+      int value = 0;
+      int* const pointer = &value;  // const 向左作用于 *; 指针本身不可改变, 即不可切换指向的对象
+
+      /* 修改指向的 int 对象 */
+      *pointer = 1;  // 正确
+
+      /* 切换指向的对象 */
+      int another_value = 0;
+      pointer = &another_value;  // 错误: 该指针不可切换指向的对象
+
+  .. tab:: 作用于指针指向的对象
+
+    .. code-block:: cpp
+      :linenos:
+
+      int value = 0;
+      int const* pointer = &value;  // const 向左作用于 int; 指针指向的 int 对象不可改变
+
+      /* 修改指向的 int 对象 */
+      *pointer = 1;  // 错误: 该指针指向的 int 对象不可改变
+
+      /* 切换指向的对象 */
+      int another_value = 0;
+      pointer = &another_value;  // 正确
