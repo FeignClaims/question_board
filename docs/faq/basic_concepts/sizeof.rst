@@ -2,26 +2,51 @@
 :cpp:`sizeof`
 ************************************************************************************************************************
 
-:cpp:`sizeof` 用于获取类型或表达式对应类型的大小, 返回该类型占多少字节, 跟实际存储的值没有任何关系. 如果类型为引用, 则返回被引用类型的大小.
+:cpp:`sizeof` 用于获取类型或表达式对应类型的大小, 返回该类型占多少字节, 跟值是多少没有任何关系.
 
-.. code-block:: cpp
-  :linenos:
+如果类型为引用, 则返回被引用类型的大小. 这是可以理解的, 因为引用只需要作为别名而非对象, 不要求被实际存储.
 
-  int value;
-  sizeof(value) == sizeof(int);
+.. tabs::
 
-  int& reference = value;
-  sizeof(reference) == sizeof(int);
+  .. tab:: :cpp:`int`
 
-  int* pointer;
-  sizeof(pointer)     == sizeof(int*);
-  sizeof(pointer + 1) == sizeof(int*);
+    .. code-block:: cpp
+      :linenos:
 
-  int array[5];
-  sizeof(array)     == sizeof(int) * 5;  // 数组本身的大小
-  sizeof(array[0])  == sizeof(int);      // 数组元素的大小
-  sizeof(array + 0) == sizeof(int*);     // C风格数组非常容易隐式类型转换为首元素的指针!
-  sizeof(+array)    == sizeof(int*);
+      int value;
+      sizeof(value) == sizeof(int);
+
+  .. tab:: 引用
+
+    .. code-block:: cpp
+      :linenos:
+
+      int value;
+      int& reference = value;
+      sizeof(reference) == sizeof(int);   // 返回被引用类型的大小
+      sizeof(int&)      == sizeof(int);   // 返回被引用类型的大小
+
+  .. tab:: 指针
+
+    .. code-block:: cpp
+      :linenos:
+
+      int* pointer;
+      sizeof(pointer)     == sizeof(int*);
+      sizeof(pointer + 1) == sizeof(int*);
+
+  .. tab:: 数组
+
+    .. code-block:: cpp
+      :linenos:
+
+      int array[5];
+      sizeof(array)     == sizeof(int) * 5;  // 数组本身的大小
+      sizeof(array[0])  == sizeof(int);      // 数组元素的大小
+
+      /* C风格数组非常容易隐式类型转换为首元素的指针! */
+      sizeof(array + 0) == sizeof(int*);
+      sizeof(+array)    == sizeof(int*);
 
 .. danger::
 
