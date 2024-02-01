@@ -10,7 +10,7 @@ copy-and-swap: 拷贝赋值函数的简单实现
 
   Widget& operator=(Widget const& other) {
     Widget temp(other);  // 拷贝 other 到 temp
-    swap(*this, temp);   // 交换 temp 和 *this 的内容
+    swap(*this, temp);   // 交换 temp 和 *this 的内容; 该函数怎么来的见下文
     return *this;
   }  // temp 的析构函数将会对交换来的 *this 内容完成必要的清理
 
