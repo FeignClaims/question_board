@@ -7,7 +7,7 @@
     .. code-block:: cpp
       :linenos:
 
-      int value = 0;
+      int value      = 0;
       int& reference = value;
 
   .. tab:: 不能引用临时对象
@@ -15,7 +15,7 @@
     .. code-block:: cpp
       :linenos:
 
-      double value = 0;
+      double value   = 0;
       int& reference = value;  // 错误: double 隐式类型转换为 int 是产生新的临时对象
 
   .. tab:: 基类引用派生类
@@ -25,13 +25,19 @@
 
       class A {};
       class B : public A {};
+
       B b;
       A& = b;  // 正确: 基类引用兼容派生类
 
-:cpp:`T const&` 既能引用左值又能引用右值: 既然能引用右值即临时值, 则会在引用时发生隐式类型转换.
+:cpp:`T const&` 既能引用左值又能引用右值.
+
+既然能引用右值即临时值, 则允许在引用时发生隐式类型转换; 但这将会引用转换产生的临时对象而不是原本的对象.
 
 .. code-block:: cpp
   :linenos:
 
-  double value = 0;
+  double value         = 0;
   int const& reference = value;  // 正确: T const& 能够引用临时对象
+
+  value = 1;
+  std::cout << reference;  // 输出 0
