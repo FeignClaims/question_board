@@ -8,6 +8,14 @@
   - 所有有名字的对象 (:cpp:`int value`).
   - 字符串字面值 (:cpp:`"hello"`, 它 :doc:`存储在一个特殊区域 </faq/basic_concepts/c_string>`).
 
+  左值实际存在, 这意味着它被存储在某个位置, 则可以通过 :cpp:`&` 获取它的地址:
+
+  .. code-block:: cpp
+    :linenos:
+
+    int value;
+    std::cout << &value;  // 获取地址并输出
+
 右值
   除了左值以外的值, 例如:
   
