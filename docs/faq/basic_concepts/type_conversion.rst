@@ -70,14 +70,13 @@
   .. tab:: 函数
 
     -> 指向该函数的指针
+      .. code-block:: cpp
+        :linenos:
 
-    .. code-block:: cpp
-      :linenos:
+        void print();
 
-      void print();
-
-      void (*pointer)() = &print;  // 显式取地址, 得到指向该函数的指针
-      void (*pointer)() = print;   // 隐式类型转换为指向该函数的指针
+        void (*pointer)() = &print;  // 显式取地址, 得到指向该函数的指针
+        void (*pointer)() = print;   // 隐式类型转换为指向该函数的指针
 
 .. warning::
 
