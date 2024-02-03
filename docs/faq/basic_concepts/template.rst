@@ -166,6 +166,7 @@
   template <typename T>
   class Complex {
    public:
+    Complex(T real, T imaginary);
     // ...
 
    private:
@@ -174,6 +175,28 @@
   };
 
   Complex<double> value;
+
+遗憾的是, 在 C++17 以前, 我们没办法根据构造函数推导类模板的模板参数:
+
+.. code-block:: cpp
+  :linenos:
+
+  Complex value(10.0, 5.0);  // C++17 以前错误: 无法推导类模板的参数类型
+                             // C++17 及以后正确: T -> double
+
+为此你可以编写一个函数模板来进行推导:
+
+.. code-block:: cpp
+  :linenos:
+
+  template <typename T>
+  Complex make_complex(T real, T imaginary) {
+    Complex<T> result(real, imaginary);
+    return result;
+  }
+
+  auto value1 = make_complex(1, 0);       // Complex<int>
+  auto value2 = make_complex(10.0, 5.0);  // Complex<double>
 
 而模板参数除了是类型外, 还可以是编译时可确定的值.
 
