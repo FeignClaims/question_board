@@ -2,6 +2,10 @@
 为什么字符指针不输出地址值, 而其他指针输出地址值?
 ************************************************************************************************************************
 
+.. seealso::
+
+  :cpp:`/faq/basic_concepts/operator_overloading`
+
 按照从 C 继承来的约定, :cpp:`char*` 和 :cpp:`char const*` 虽然是指针, 但很多时候会被认为是 :doc:`字符串 </faq/basic_concepts/c_string>` 进行处理 (若区别于 :cpp:`std::string`, 则称为 C 风格字符串).
 
 :cpp:`cout` 即认为 :cpp:`char const*` 是字符串, 提供了以下函数重载:

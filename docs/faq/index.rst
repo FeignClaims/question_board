@@ -2,10 +2,6 @@
 常见问题解答
 #######################################################################################################################
 
-.. TODO
-
-  - `关于迭代器的疑问 <https://gitee.com/cpp_tutorial/question/issues/I8SEIM>`
-
 .. admonition:: 免争议声明
   :class: dropdown
 
@@ -34,9 +30,12 @@
   basic_concepts/function
   basic_concepts/value_category
   basic_concepts/pointer
+  basic_concepts/auto
   basic_concepts/sizeof
   basic_concepts/c_array
   basic_concepts/c_string
+  basic_concepts/operator_overloading
+  basic_concepts/template
 
 ***********************************************************************************************************************
 表达式和语句
@@ -117,6 +116,7 @@
   :maxdepth: 1
 
   generate_random_number/main
+  range_and_iterator/main
 
 ***********************************************************************************************************************
 术语和惯用法
