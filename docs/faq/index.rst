@@ -116,7 +116,7 @@
   :maxdepth: 1
 
   generate_random_number/main
-  range_and_iterator/main
+  range_iterator_and_algorithm/main
 
 ***********************************************************************************************************************
 术语和惯用法
