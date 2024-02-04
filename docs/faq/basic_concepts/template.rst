@@ -191,8 +191,7 @@
 
   template <typename T>
   Complex make_complex(T real, T imaginary) {
-    Complex<T> result(real, imaginary);
-    return result;
+    return Complex<T>(real, imaginary);
   }
 
   auto value1 = make_complex(1, 0);       // Complex<int>
