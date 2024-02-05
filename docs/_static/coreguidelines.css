@@ -7,5 +7,5 @@ div.admonition.coreguidelines > .admonition-title {
 }
 div.admonition.coreguidelines > .admonition-title:after {
   color: #8f5194;
-  content: "\f2db"; /* fa-solid fa-tv */
+  content: "\f2db";
 }

@@ -1,0 +1,11 @@
+div.admonition.dontread {
+  border-color: #616161;
+}
+div.admonition.dontread > .admonition-title {
+  background-color: #ebebeb;
+  color: #222832;
+}
+div.admonition.dontread > .admonition-title:after {
+  color: #616161;
+  content: "\f05e";
+}

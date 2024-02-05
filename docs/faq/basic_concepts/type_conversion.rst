@@ -133,7 +133,7 @@
   C 本身也有类型转换, 但没有对功能进行区分, 因而不自带语义且更加危险.
 
   .. admonition:: 别看: C 类型转换与 C++ 类型转换的关系
-    :class: dropdown
+    :class: dontread, dropdown
 
     .. figure:: c_cast.png
 
