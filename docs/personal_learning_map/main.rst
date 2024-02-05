@@ -145,6 +145,7 @@
 - `STL and Its Design Principles - Alexander Stepanov`_
 - 《Elements of Programming》(《编程原本》)
 - 《From Mathematics to Generic Programming》(《从数学到泛型编程》)
+- `《Efficient Programming with Components》`_
 
 ========================================================================================================================
 并发
