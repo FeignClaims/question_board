@@ -30,7 +30,7 @@
 .. _`Bjarne Stroustrup's C++ Glossary`: https://www.stroustrup.com/glossary.html
 .. _`《Sixteen Ways to Stack a Cat》by Bjarne Stroustup`: https://gitee.com/cpp_tutorial/weekly_question/raw/master/src/extra/16%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%8A%8A%E4%B8%80%E5%8F%AA%E7%8C%AB%E6%94%BE%E5%85%A5%E6%A0%88%E4%B8%AD.pdf
 .. _`《The C++ Standard Library》补充章节`: http://www.cppstdlib.com/cppstdlib_supplementary.pdf
-.. _`《Effecient Programming with Components》`: https://www.jmeiners.com/efficient-programming-with-components/index.html
+.. _`《Efficient Programming with Components》`: https://www.jmeiners.com/efficient-programming-with-components/index.html
 
 .. _`Conan 2.0 Documentation`: https://docs.conan.io/2/
 .. _`Clang-Format 官方文档`: https://clang.llvm.org/docs/ClangFormat.html

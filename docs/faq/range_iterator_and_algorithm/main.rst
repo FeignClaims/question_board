@@ -1182,7 +1182,7 @@ TODO, 没想到好的解释.
 
   我们的迭代器是对数据结构中坐标的一种泛化, 是一种轻量级的东西: 它不做任何事情, 只是指向某些东西.
 
-  —— Alexander Stepanov `《Effecient Programming with Components》`_
+  —— Alexander Stepanov `《Efficient Programming with Components》`_
 
 ========================================================================================================================
 涉及的标准库内容
