@@ -1,0 +1,11 @@
+div.admonition.precontent {
+  border-color: #71c1de;
+}
+div.admonition.precontent > .admonition-title {
+  background-color: #def4fa;
+  color: #222832;
+}
+div.admonition.precontent > .admonition-title:after {
+  color: #71c1de;
+  content: "\f08d";
+}

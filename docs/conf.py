@@ -85,4 +85,7 @@ def setup(app):
     app.add_css_file("coreguidelines.css")
     app.add_css_file("dontread.css")
     app.add_css_file("monofont.css")
+    app.add_css_file("precontent.css")
+    app.add_css_file("seealso.css")
+
     app.add_css_file("theme.css")

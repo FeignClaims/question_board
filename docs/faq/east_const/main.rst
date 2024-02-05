@@ -2,7 +2,8 @@
 :cpp:`const` 的阅读: 常量指针? 指针常量?
 ***********************************************************************************************************************
 
-.. seealso::
+.. admonition:: 前置内容
+  :class: precontent
 
   - :doc:`/faq/basic_concepts/const`
   - :doc:`/faq/basic_concepts/reference`

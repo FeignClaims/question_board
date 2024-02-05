@@ -2,7 +2,8 @@
 多维数组 (multi-dimensional C-style array)
 ************************************************************************************************************************
 
-.. seealso::
+.. admonition:: 前置内容
+  :class: precontent
 
   - :doc:`/faq/basic_concepts/c_array`
 

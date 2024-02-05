@@ -2,7 +2,8 @@
 C 风格字符串和字符串字面值 (C-style string and string literal)
 ************************************************************************************************************************
 
-.. seealso::
+.. admonition:: 前置内容
+  :class: precontent
 
   - :doc:`/faq/basic_concepts/c_array`
 

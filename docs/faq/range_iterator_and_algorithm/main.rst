@@ -2,7 +2,8 @@
 范围、迭代器和算法 (range, iterator and algorithm)
 ************************************************************************************************************************
 
-.. seealso::
+.. admonition:: 前置内容
+  :class: precontent
 
   - :doc:`/faq/basic_concepts/auto`
   - :doc:`/faq/basic_concepts/c_array`
@@ -1098,7 +1099,8 @@ TODO, 没想到好的解释.
 用不同层次的迭代器定义算法
 ------------------------------------------------------------------------------------------------------------------------
 
-.. seealso::
+.. admonition:: 前置内容
+  :class: precontent
 
   :doc:`/faq/virtual_function_invocation_explain/main`
 

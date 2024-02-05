@@ -12,6 +12,11 @@
 .. admonition:: 阅读方法
   :class: dropdown
 
+  .. admonition:: 前置内容
+    :class: precontent
+
+    这是阅读本部分所需的前置内容.
+
   .. hint::
 
     这是对思维的进一步启发.
@@ -26,7 +31,7 @@
 
   .. seealso::
 
-    放在开头, 表示必需的前置知识; 放在最后, 表示可用的扩展内容.
+    这是可用的扩展资料.
 
   .. admonition:: 相关核心准则
     :class: coreguidelines

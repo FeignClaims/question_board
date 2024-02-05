@@ -1,0 +1,11 @@
+div.admonition.seealso {
+  border-color: #1a0357;
+}
+div.admonition.seealso > .admonition-title {
+  background-color: #e0d4ef;
+  color: #222832;
+}
+div.admonition.seealso > .admonition-title:after {
+  color: #1a0357;
+  content: "\f02d";
+}
