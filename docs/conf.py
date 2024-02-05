@@ -81,6 +81,8 @@ html_search_language = 'zh'
 html_last_updated_fmt = '%Y-%m-%d %H:%M:%S'
 git_last_updated_timezone = 'Asia/Shanghai'
 html_baseurl = 'https://question-board.readthedocs.io/'
+sitemap_filename = 'sitemapindex.xml'
+html_extra_path = ['robots.txt']
 
 
 def setup(app):
