@@ -21,6 +21,7 @@
 .. _`cppreference: string`: https://zh.cppreference.com/w/cpp/string/basic_string#.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0
 .. _`cppreference: vector`: https://zh.cppreference.com/w/cpp/container/vector#.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0
 .. _`cppreference: array`: https://zh.cppreference.com/w/cpp/container/array#.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0
+.. _`cppreference: algorithm`: https://zh.cppreference.com/w/cpp/header/algorithm
 
 .. _`《人的正确思想是从哪里来的？》`: https://zhuanlan.zhihu.com/p/467228101
 .. _`《实践论》`: https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm
