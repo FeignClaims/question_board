@@ -1,5 +1,5 @@
 .. _`我的 C++ 浏览器书签 (右键另存为再导入到浏览器)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_bookmarks.html
-.. _`我个人写的 Visual Studio 配置教程`: https://vscode-cpp-starter.readthedocs.io/others/visual_studio.html
+.. _`我个人写的 Visual Studio 配置教程`: https://vscode-cpp-starter.readthedocs.io/appendix/visual_studio.html
 .. _`我个人写的 VSCode 配置教程`: https://vscode-cpp-starter.readthedocs.io/
 .. _`FeignClaims/cmake_starter_template`: https://www.github.com/FeignClaims/cmake_starter_template/
 .. _`cpp_tutorial/question`: https://gitee.com/cpp_tutorial/question
