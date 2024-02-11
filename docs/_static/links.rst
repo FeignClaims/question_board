@@ -4,7 +4,6 @@
 .. _`FeignClaims/cmake_starter_template`: https://www.github.com/FeignClaims/cmake_starter_template/
 .. _`cpp_tutorial/question`: https://gitee.com/cpp_tutorial/question
 .. _`cpp_tutorial/board`: https://gitee.com/cpp_tutorial/board
-.. _`关于 CMake 及项目管理的声明`: https://vscode-cpp-starter.readthedocs.io/appendix/cmake_disclaimer.html
 .. _`为天鹅书制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_starter.zip
 .. _`计软网智转系交流群公告`: https://gitee.com/FeignClaims/board
 .. _`计软智网转专业 C++ 试题及解答参考集合`: https://change-major-exam.readthedocs.io/
@@ -31,6 +30,15 @@
 .. _`《Sixteen Ways to Stack a Cat》by Bjarne Stroustup`: https://gitee.com/cpp_tutorial/weekly_question/raw/master/src/extra/16%E7%A7%8D%E6%96%B9%E5%BC%8F%E6%8A%8A%E4%B8%80%E5%8F%AA%E7%8C%AB%E6%94%BE%E5%85%A5%E6%A0%88%E4%B8%AD.pdf
 .. _`《The C++ Standard Library》补充章节`: http://www.cppstdlib.com/cppstdlib_supplementary.pdf
 .. _`《Efficient Programming with Components》`: https://www.jmeiners.com/efficient-programming-with-components/index.html
+.. _`Modern CMake for C++: 代码`: https://github.com/PacktPublishing/Modern-CMake-for-Cpp
+.. _`Modern CMake for C++: ACCU 书评`: https://accu.org/bookreviews/2022/collyer_1988/
+.. _`《Professional CMake》`: https://crascit.com/professional-cmake/
+.. _`CMake 官方文档`: https://cmake.org/cmake/help/latest/
+.. _`Modern CMake`: https://cliutils.gitlab.io/modern-cmake/
+.. _`More Modern CMake`: https://hsf-training.github.io/hsf-training-cmake-webpage/
+.. _`Effective Modern CMake`: https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
+.. _`VSCode CMake 拓展用户手册`: https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/README.md
+.. _`preferred cmake project structure`: https://stackoverflow.com/questions/33534115/preferred-cmake-project-structure
 
 .. _`Conan 2.0 Documentation`: https://docs.conan.io/2/
 .. _`Clang-Format 官方文档`: https://clang.llvm.org/docs/ClangFormat.html
@@ -56,21 +64,27 @@
 .. _`Better Code: Concurrency - Sean Parent - NDC London 2017`: https://www.youtube.com/watch?v=zULU6Hhp42w
 .. _`C++ Seasoning - Sean Parent - GoingNative 2013`: https://www.youtube.com/watch?v=W2tWOdzgXHA
 .. _`CMake 2022 C++ Modules and More - Bill Hoffman - CppNow 2022`: https://www.youtube.com/watch?v=hkefPcWySzI
+.. _`Deep CMake for Library Authors - Craig Scott - CppCon 2019`: https://www.youtube.com/watch?v=m0DwB4OvDXk
 .. _`Documentation in the Era of Concepts and Ranges - Christopher Di Bella & Sy Brand - CppCon 2021`: https://www.youtube.com/watch?v=nm45t2fnUms
 .. _`Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`: https://www.youtube.com/watch?v=I52uPJSoAT4
 .. _`Effective CMake - Daniel Pfeifer - C++Now 2017`: https://www.youtube.com/watch?v=bsXLMQ6WgIk
+.. _`Git, CMake, Conan - How to ship and reuse our C++ projects - Mateusz Pusz - CppCon 2018`: https://www.youtube.com/watch?v=S4QSKLXdTtA
 .. _`Give me 15 minutes & I'll change your view of GDB - Greg Law - CppCon 2015`: https://www.youtube.com/watch?v=PorfLSr3DDI
 .. _`How C++20 Changes the Way We Write Code - Timur Doumler - CppCon 2020`: https://www.youtube.com/watch?v=ImLFlLjSveM
 .. _`How C++23 Changes the Way We Write Code - Timur Doumler - CppCon 2022`: https://www.youtube.com/watch?v=eD-ceG-oByA
 .. _`Inheritance Is The Base Class of Evil - Sean Parent - GoingNative 2013`: https://www.youtube.com/watch?v=2bLkxj6EVoM
 .. _`LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017`: https://www.youtube.com/watch?v=uZI_Qla4pNA
 .. _`Learning and Teaching Modern C++ - Bjarne Stroustrup - CppCon 2017`: https://www.bilibili.com/video/BV1d3411579r
+.. _`More Modern CMake - Deniz Bahadir - Meeting C++ 2018`: https://www.youtube.com/watch?v=y7ndUhdQuU8
 .. _`Naming is Hard: Let's Do Better - Kate Gregory - CppCon 2019`: https://www.youtube.com/watch?v=MBRoCdtZOYg
+.. _`Oh No! More Modern CMake - Deniz Bahadir - Meeting C++ 2019`: https://www.youtube.com/watch?v=y9kSr5enrSk
 .. _`SOLID, Revisited - Tony Van Eerd - CppNow 2021`: https://www.youtube.com/watch?v=glYq-dvgby4
 .. _`STL and Its Design Principles - Alexander Stepanov`: https://www.youtube.com/watch?v=YlVUzJwN_Xc
 .. _`Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`: https://www.youtube.com/watch?v=n0Ak6xtVXno
 .. _`Stop Teaching C - Kate Gregory - CppCon 2015`: https://www.bilibili.com/video/BV13P411D7eF/
 .. _`Undefined Behavior is Not an Error - Barbara Geller & Ansel Sermersheim - CppCon 2018`: https://www.youtube.com/watch?v=XEXpwis_deQ
+.. _`Using Modern CMake Patterns to Enforce a Good Modular Design - Mathieu Ropert - CppCon 2017`: https://www.youtube.com/watch?v=eC9-iRN2b04
 .. _`What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`: https://www.youtube.com/watch?v=bSkpMdDe4g4
 .. _`atomic Weapons 1 of 2 - Herb Sutter - C++ and Beyond 2012`: https://www.youtube.com/watch?v=A8eCGOqgvH4
 .. _`atomic Weapons 2 of 2 - Herb Sutter - C++ and Beyond 2012`: https://www.youtube.com/watch?v=KeLBd2EJLOU
+.. _`import CMake - 2023 State of C++20 modules in CMake - Bill Hoffman - CppNow 2023`: https://www.youtube.com/watch?v=c563KgO-uf4
