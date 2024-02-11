@@ -17,6 +17,7 @@ html_title = f'{project}'
 extensions = [
     'sphinx.ext.extlinks',
     'sphinx.ext.graphviz',
+    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx_copybutton',
     'sphinx_design',
@@ -26,6 +27,12 @@ extensions = [
     'sphinx_tabs.tabs',
     'sphinx_togglebutton',
 ]
+
+intersphinx_mapping = {
+    "vscode_cpp_starter": ("https://vscode-cpp-starter.readthedocs.io/", None),
+    "change_major_exam": ("https://change-major-exam.readthedocs.io/", None),
+}
+intersphinx_disabled_reftypes = ["*"]
 
 extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'), 'coreguidelines': (
     'https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#%s', '[核心准则 %s]')}
