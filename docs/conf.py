@@ -68,7 +68,8 @@ html_theme_options = {
         {
             "name": "Gitee",
             "url": "https://gitee.com/cpp_tutorial/board",
-            "icon": "fa-brands fa-git-alt",
+            "icon": "https://simpleicons.org/icons/gitee.svg",
+            "type": "url",
         },
         {
             "name": "部署状态",
