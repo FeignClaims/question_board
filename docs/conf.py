@@ -66,6 +66,11 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
         },
         {
+            "name": "Gitee",
+            "url": "https://gitee.com/cpp_tutorial/board",
+            "icon": "fa-brands fa-git-alt",
+        },
+        {
             "name": "部署状态",
             "url": "https://readthedocs.org/projects/question-board/",
             "icon": "https://readthedocs.org/projects/question-board/badge/?version=latest",
