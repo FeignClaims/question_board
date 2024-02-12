@@ -10,7 +10,3 @@
 ## 参与贡献
 
 如果你愿意为本文档做出贡献, 欢迎创建 pull requests! 请参阅 [CONTRIBUTING.md](CONTRIBUTING.md) 了解更多信息.
-
-## 许可证
-
-[UNLICENSE](UNLICENSE)
