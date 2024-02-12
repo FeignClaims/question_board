@@ -1,11 +1,22 @@
+html[data-theme="light"] {
+  --custom-color-coreguidelines: #fbe7fd;
+  --custom-color-coreguidelines-text: #222832;
+  --custom-color-coreguidelines-highlight: #582d5a;
+}
+html[data-theme="dark"] {
+  --custom-color-coreguidelines: #582d5a;
+  --custom-color-coreguidelines-text: #ced6dd;
+  --custom-color-coreguidelines-highlight: #fbe7fd;
+}
+
 div.admonition.coreguidelines {
-  border-color: #8f5194;
+  border-color: var(--custom-color-coreguidelines-highlight);
 }
 div.admonition.coreguidelines > .admonition-title {
-  background-color: #f7d4fa;
-  color: #222832;
+  background-color: var(--custom-color-coreguidelines);
+  color: var(--custom-color-coreguidelines-text);
 }
 div.admonition.coreguidelines > .admonition-title:after {
-  color: #8f5194;
+  color: var(--custom-color-coreguidelines-highlight);
   content: "\f2db";
 }

@@ -68,8 +68,7 @@ html_theme_options = {
         {
             "name": "Gitee",
             "url": "https://gitee.com/cpp_tutorial/board",
-            "icon": "https://simpleicons.org/icons/gitee.svg",
-            "type": "url",
+            "icon": "fa-custom fa-gitee",
         },
         {
             "name": "部署状态",
@@ -107,3 +106,5 @@ def setup(app):
     app.add_css_file("seealso.css")
 
     app.add_css_file("theme.css")
+
+    app.add_js_file("custom_icon.js")
