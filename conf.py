@@ -42,7 +42,7 @@ togglebutton_hint = "点击展开"
 togglebutton_hint_hide = "点击隐藏"
 
 templates_path = ['_templates']
-exclude_patterns = ['README.md', 'CONTRIBUTING.md']
+exclude_patterns = ['README.md']
 
 rst_prolog = '\n'.join(
     list(

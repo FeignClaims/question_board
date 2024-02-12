@@ -5,7 +5,7 @@
 ## 创建和提交 pull requests
 
 1. 首先 fork 本仓库.
-2. 在 fork 的仓库中基于 `main` 分支创建一个新分支 `fix/xxx` 或 `feat/xxx`, 并按照之后介绍的 [文档风格](#文档风格) 修复/添加内容.
+2. 在 fork 的仓库中基于 `main` 分支创建一个新分支 `fix/xxx` 或 `feat/xxx`, 并按照之后介绍的文档风格修复/添加内容.
 3. 一旦修改完成, 用该分支创建一个 pull requests, 并对修改内容进行简要描述.
 
 ## 文档风格
@@ -92,7 +92,7 @@
 
 #### C++ 核心准则
 
-请点击 [C++ 核心准则](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) 内容标题右边的链接符号, 复制对应的跳转链接, 以 `` :coreguidelines:`p3-express-intent` `` 的形式引用 `https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#p3-express-intent`.
+请点击 [C++ 核心准则](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) 内容标题右边的链接符号, 复制对应的跳转链接, 以 `` :coreguidelines:`对标题的翻译 <p3-express-intent>` `` 的形式引用 `https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#p3-express-intent`.
 
 #### 外部链接
 

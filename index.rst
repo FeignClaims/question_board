@@ -9,6 +9,13 @@ C++ 洋葱剥法交流群资料
 如果图片看不清, 请按 :KBD:`Ctrl`:KBD:`+` 放大网页或 :menuselection:`右键 --> 在新标签页中打开图片`.
 
 .. toctree::
+  :caption: 关于文档
+  :maxdepth: 1
+
+  /meet_trouble.rst
+  /CONTRIBUTING.md
+
+.. toctree::
   :caption: 理论依据
   :maxdepth: 1
 
@@ -21,7 +28,6 @@ C++ 洋葱剥法交流群资料
   :caption: 学习资料
   :maxdepth: 1
 
-  /meet_trouble.rst
   /searching_method/main.rst
   /debugger/main.rst
   /cpp/main.rst
