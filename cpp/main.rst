@@ -146,6 +146,7 @@ C++ 环境配置
   - C++11 的基于范围的 for 循环 + auto 基本用法
 
   .. code-block:: cpp
+    :linenos:
 
     // auto: 我不在乎 array 里的元素 value 类型具体是什么, 编译器你自己搞定;
     //       我只要求你把它按 const& 传给 value

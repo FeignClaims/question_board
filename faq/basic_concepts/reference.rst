@@ -5,6 +5,7 @@
 引用一个对象, 即创建已有对象的一个别名: 它只是一个别名而非新的对象.
 
 .. code-block:: cpp
+  :linenos:
 
   int value;
   int& ref = value;

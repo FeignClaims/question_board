@@ -17,6 +17,7 @@ C.131: 避免平凡的 getters 和 setters
 ========================================================================================================================
 
 .. code-block:: cpp
+  :linenos:
 
   class Point {  // 糟糕: 啰嗦的
   public:
@@ -43,6 +44,7 @@ C.131: 避免平凡的 getters 和 setters
 考虑将这样的类定义为 :cpp:`struct` ——即, 不含有特殊行为的数据组合 (不含有不变式), 所有数据是公用, 没有成员函数.
 
 .. code-block:: cpp
+  :linenos:
 
   struct Point {
    public:

@@ -5,6 +5,7 @@
 就像 :doc:`/faq/basic_concepts/object` 中所指出的, 类型决定了对象所能做的操作和存储方式.
 
 .. code-block:: cpp
+  :linenos:
 
   int value = 65;
   std::cout << value;  // 输出 65
@@ -15,6 +16,7 @@
 所以我们要做的就是通过将 :cpp:`char` 类型对象转换得到对应的 :cpp:`int` 类型对象.
 
 .. code-block:: cpp
+  :linenos:
 
   char ch = 'A';  // 使用字符字面值而非对应的数值, 这明显比代码里写一个 65 更好
   std::cout << static_cast<int>(ch);  // 输出 65

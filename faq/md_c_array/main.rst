@@ -16,6 +16,7 @@
 例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]` (:doc:`复杂声明的阅读方法 </faq/variable_decleration_reading/main>`), 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
 
 .. code-block:: text
+  :linenos:
 
   0: 0 1 2 3  // 每个元素是一个长度为 4 的数组
   1: 0 1 2 3
@@ -82,6 +83,7 @@
 另一种方式是, 我们可以将它的布局展平, 认为是 :cpp:`int` 的一维数组.
 
 .. code-block:: text
+  :linenos:
 
   0       1       2
   ↓       ↓       ↓

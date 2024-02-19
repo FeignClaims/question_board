@@ -14,6 +14,7 @@
   将 :cpp:`[string, string + count)` 字符数组输出到 :cpp:`ofile` 中, 所以我们要将对象强行转换为字符数组.
 
 .. code-block:: cpp
+  :linenos:
 
   #include <fstream>
 
@@ -30,6 +31,7 @@
   从 :cpp:`ifile` 读入字符到 :cpp:`[string, string + count)` 字符数组中, 所以我们要将对象强行转换为字符数组.
 
 .. code-block:: cpp
+  :linenos:
 
   #include <fstream>
 

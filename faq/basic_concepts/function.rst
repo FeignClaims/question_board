@@ -78,6 +78,7 @@
   这样一来可以更清晰地发现链式调用:
 
   .. code-block:: cpp
+    :linenos:
 
     auto multiply_by_2(int value) -> int;
     auto add_1(int value) -> int;

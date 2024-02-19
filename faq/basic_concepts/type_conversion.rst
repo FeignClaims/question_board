@@ -93,6 +93,7 @@
 - 使用 :cpp:`{}` 进行初始化, 它更通用, 且不允许 :cpp:`double` 转换为 :cpp:`int` 这样的缩窄转换.
 
   .. code-block:: cpp
+    :linenos:
 
     double value{1.1};
     int value2{value};  // 错误: 发生缩窄转换
@@ -100,6 +101,7 @@
 - 移除不需要的隐式类型转换, 将必需的转换用显式类型转换替代.
 
   .. code-block:: cpp
+    :linenos:
 
     double value{1.1};
     int value2{static_cast<int>(value)};
