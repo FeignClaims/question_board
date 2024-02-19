@@ -12,17 +12,9 @@ C++ 洋葱剥法交流群资料
   :caption: 关于文档
   :maxdepth: 1
 
+  /rule_and_preface.rst
   /meet_trouble.rst
   /CONTRIBUTING.md
-
-.. toctree::
-  :caption: 理论依据
-  :maxdepth: 1
-
-  /rule_and_preface.rst
-  /theory.rst
-  /swan_preface.rst
-  /personal_learning_map/main.rst
 
 .. toctree::
   :caption: 学习资料
@@ -38,3 +30,11 @@ C++ 洋葱剥法交流群资料
 - 群号: 730899457
 - `计软网智转系交流群公告`_
 - :ref:`计软智网转专业 C++ 试题及解答参考集合 <change_major_exam:main>`
+
+.. toctree::
+  :caption: 理论依据
+  :maxdepth: 1
+
+  /theory.rst
+  /swan_preface.rst
+  /personal_learning_map/main.rst
