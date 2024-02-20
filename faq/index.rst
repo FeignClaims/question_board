@@ -57,6 +57,7 @@
   :maxdepth: 1
 
   basic_concepts/object
+  basic_concepts/struct
   basic_concepts/resource
   basic_concepts/type_conversion
   basic_concepts/const

@@ -2,6 +2,11 @@
 不变式: 类和结构体的区别 (class invariant)
 ************************************************************************************************************************
 
+.. admonition:: 前置内容
+  :class: precontent
+
+  - :doc:`/faq/basic_concepts/struct`
+
 类 (:cpp:`class`) 和结构体 (:cpp:`struct`) 到底有什么区别? 
 
 从语法上, 它们没有区别, 写 :cpp:`struct Widget` 或者 :cpp:`class Widget` 都是自定义了类型 :cpp:`Widget`.

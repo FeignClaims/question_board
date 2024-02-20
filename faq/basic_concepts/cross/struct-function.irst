@@ -1,0 +1,17 @@
+一个函数可能有多个返回值, 与其用一些奇怪的方法, 用结构体来解决显得更为直接:
+
+.. code-block:: cpp
+  :linenos:
+
+  struct Symmetric_minus_result {
+    int lhs_minus_rhs;
+    int rhs_minus_lhs;
+  };
+
+  Symmetric_minus_result symmetric_minus(int lhs, int rhs) {
+    return {lhs - rhs, rhs - lhs};
+  }
+
+.. warning::
+
+  此处暂时没想到什么好的示例, 所以名字才这么随便. 实际写时只要有可能, 给一个更有道理的名字.
