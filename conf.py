@@ -70,12 +70,6 @@ html_theme_options = {
             "name": "Gitee",
             "url": "https://gitee.com/cpp_tutorial/board",
             "icon": "fa-custom fa-gitee",
-        },
-        {
-            "name": "部署状态",
-            "url": "https://readthedocs.org/projects/question-board/",
-            "icon": "https://readthedocs.org/projects/question-board/badge/?version=latest",
-            "type": "url",
         }
     ],
     "use_sidenotes": True,
