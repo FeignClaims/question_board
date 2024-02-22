@@ -29,18 +29,28 @@
   :linenos:
   :caption: 声明变量
 
-  int lhs = a;
-  int rhs = b;
-  int result = lhs + rhs;
+  int lhs    = a;
+  int rhs    = b;
+  int temp   = lhs + rhs;
+  int result = temp;
+
+.. code-block:: cpp
+  :linenos:
+  :caption: 用声明变量进行类比. :cpp:`result` 为返回值, :cpp:`lhs` 和 :cpp:`rhs` 是参数.
+
+  (int result) add(int lhs, int rhs) {
+    int temp = lhs + rhs;
+    result = temp;
+  }
 
 .. code-block:: cpp
   :linenos:
   :caption: 传参和传返回值
 
   int add(int lhs, int rhs) {
-    return lhs + rhs;
+    int temp = lhs + rhs;
+    return temp;
   }
-  int result = add(a, b);
 
 例如, 下面这段代码交换了 :cpp:`a` 和 :cpp:`b` 的值.
 
