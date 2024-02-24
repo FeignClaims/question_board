@@ -1,5 +1,6 @@
 .. _`我的 C++ 浏览器书签 (右键另存为再导入到浏览器)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_bookmarks.html
 .. _`FeignClaims/cmake_starter_template`: https://www.github.com/FeignClaims/cmake_starter_template/
+.. _`FeignClaims/customized_conan_recipes`: https://www.github.com/FeignClaims/customized_conan_recipes/
 .. _`cpp_tutorial/question`: https://gitee.com/cpp_tutorial/question
 .. _`cpp_tutorial/board`: https://gitee.com/cpp_tutorial/board
 .. _`为天鹅书制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_starter.zip
@@ -39,6 +40,7 @@
 .. _`preferred cmake project structure`: https://stackoverflow.com/questions/33534115/preferred-cmake-project-structure
 
 .. _`Conan 2.0 Documentation`: https://docs.conan.io/2/
+.. _`Adding Packages to ConanCenter`: https://github.com/conan-io/conan-center-index/blob/master/docs/adding_packages/README.md
 .. _`Clang-Format 官方文档`: https://clang.llvm.org/docs/ClangFormat.html
 .. _`Clang-Format 配置选项列表`: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 .. _`Clang-Tidy 官方文档`: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
