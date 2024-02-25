@@ -89,7 +89,13 @@ git_last_updated_timezone = 'Asia/Shanghai'
 html_baseurl = 'https://question-board.readthedocs.io/'
 sitemap_filename = 'sitemapindex.xml'
 sitemap_url_scheme = '{link}'
-html_extra_path = ['robots.txt']
+html_extra_path = [
+    'robots.txt',
+    '_verification/b53e94a16a3cbec878b95c242d74451e.txt',
+    '_verification/baidu_verify_codeva-DLE3U9izgB.html',
+    '_verification/google13ac7719c05e0aea.html',
+    '_verification/sogousiteverification.txt',
+]
 
 
 def setup(app):
