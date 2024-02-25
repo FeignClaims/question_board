@@ -38,6 +38,8 @@
 .. _`Effective Modern CMake`: https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
 .. _`VSCode CMake 拓展用户手册`: https://github.com/microsoft/vscode-cmake-tools/blob/main/docs/README.md
 .. _`preferred cmake project structure`: https://stackoverflow.com/questions/33534115/preferred-cmake-project-structure
+.. _`计算机教育中缺失的一课 - 课程`: https://www.bilibili.com/video/BV1Hu4y1A7kf
+.. _`计算机教育中缺失的一课 - 讲义`: https://missing-semester-cn.github.io/
 
 .. _`Conan 2.0 Documentation`: https://docs.conan.io/2/
 .. _`Adding Packages to ConanCenter`: https://github.com/conan-io/conan-center-index/blob/master/docs/adding_packages/README.md
