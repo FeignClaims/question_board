@@ -85,16 +85,21 @@
   - :cpp:`int f()` 写为 :cpp:`auto f() -> int`.
   - :cpp:`void f()` 保持不变.
 
-  这样一来可以更清晰地发现链式调用:
+  因为:
 
-  .. code-block:: cpp
-    :linenos:
+  - 从逻辑上, 返回值就该在函数调用 **后**.
+  - 这样一来一眼就能看到有无返回值和返回值是什么.
+  - 不会让新手产生 :cpp:`&` 到底作用于什么的疑惑, `auto f() -> int&`.
+  - 能更清晰地发生链式调用:
 
-    auto multiply_by_2(int value) -> int;
-    auto add_1(int value) -> int;
+    .. code-block:: cpp
+      :linenos:
 
-    // (int) -> (int) -> int
-    multiply_by_2(add_1(value));
+      auto multiply_by_2(int value) -> int;
+      auto add_1(int value) -> int;
+
+      // (int) -> (int) -> int
+      multiply_by_2(add_1(value));
 
 ========================================================================================================================
 函数的命名建议
