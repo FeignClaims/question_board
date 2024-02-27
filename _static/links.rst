@@ -1,4 +1,4 @@
-.. _`我的 C++ 浏览器书签 (右键另存为再导入到浏览器)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp/cpp_bookmarks.html
+.. _`我的 C++ 浏览器书签 (2024/02/27) (右键另存为再导入到浏览器)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp_bookmarks.html
 .. _`FeignClaims/cmake_starter_template`: https://www.github.com/FeignClaims/cmake_starter_template/
 .. _`FeignClaims/customized_conan_recipes`: https://www.github.com/FeignClaims/customized_conan_recipes/
 .. _`cpp_tutorial/question`: https://gitee.com/cpp_tutorial/question
