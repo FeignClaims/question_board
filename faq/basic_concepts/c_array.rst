@@ -10,10 +10,12 @@ C 风格数组: :cpp:`T array[size]` (C-style array)
   :linenos:
 
   int array[5] = {0, 1, 2, 3, 4};
+  // ↓ 返回类型的存储大小
   sizeof(array)    == sizeof(int) * 5;  // 连续存储了 5 个元素, 自然大小是 sizeof(int) * 5 了
   sizeof(array[0]) == sizeof(int);      // array[0] 访问第一个位置的元素
 
-  for (int i = 0; i < 5; ++i) {  // 输出数组内元素
+  int const size = sizeof(array) / sizeof(array[0]);  // 数组总大小 / 元素大小 = 5
+  for (int i = 0; i < size; ++i) {  // 输出数组内元素
     std::cout << array[i] << ' ';
   }
   std::cout << '\n';
@@ -89,8 +91,6 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
   int* pointer = array;  // 与上面等价
   sizeof(pointer) == sizeof(int*);  
 
-  sizeof(array) == sizeof(int) * 5;  // 隐式类型转换是产生了新的对象或引用, 原对象或引用不会发生变化
-
 如果是在一个函数中, 这样做没有什么影响, 毕竟指针也可以以下标访问内容,
 
 .. code-block:: cpp
@@ -144,7 +144,8 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 
     function(array);
 
-    for (int i = 0; i < 5; ++i) {  // 注意: 输出 5 1 2 3 4
+    // 注意: 输出 5 1 2 3 4
+    for (int i = 0; i < 5; ++i) {
       std::cout << i << ' ';
     }
     std::cout << '\n';
