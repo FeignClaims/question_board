@@ -11,7 +11,3 @@
   Symmetric_minus_result symmetric_minus(int lhs, int rhs) {
     return {lhs - rhs, rhs - lhs};
   }
-
-.. warning::
-
-  此处暂时没想到什么好的示例, 所以名字才这么随便. 实际写时只要有可能, 给一个更有道理的名字.
