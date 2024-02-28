@@ -2,12 +2,6 @@
 C 风格数组: :cpp:`T array[size]` (C-style array)
 ************************************************************************************************************************
 
-.. admonition:: 前置内容
-  :class: precontent
-
-  - :doc:`/faq/basic_concepts/auto`
-  - :doc:`/faq/basic_concepts/sizeof`
-
 有时候我们不止需要一个对象, 而需要一组同类型的对象.
 
 由此有了 C 风格数组 :cpp:`T array[size]`, 它连续存储一组同类型的对象 (称为数组中的元素), 并允许以 :cpp:`array[index]` 方式访问对应位置的元素.
