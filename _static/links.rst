@@ -4,8 +4,6 @@
 .. _`cpp_tutorial/question`: https://gitee.com/cpp_tutorial/question
 .. _`cpp_tutorial/board`: https://gitee.com/cpp_tutorial/board
 .. _`为天鹅书制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_starter.zip
-.. _`计软网智转系交流群公告`: https://gitee.com/FeignClaims/board
-.. _`计软智网转专业 C++ 试题及解答参考集合`: https://change-major-exam.readthedocs.io/
 
 .. _`aminya/project_options`: https://www.github.com/aminya/project_options
 
