@@ -30,7 +30,6 @@
   :caption: 链式调用
 
   std::cin >> value1 >> value2;
-  cin.ignore(100, )
   getline(getline(std::cin, line), line);
 
 .. code-block:: cpp
