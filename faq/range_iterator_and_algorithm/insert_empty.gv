@@ -1,0 +1,33 @@
+digraph {
+  node [shape = none;];
+  splines = line;
+  
+  subgraph {
+    array [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "1">
+      <TR>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p0" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a0" STYLE = "DASHED"></TD>
+      </TR>
+      </TABLE>>;];
+  }
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    begin;
+    end;
+  }
+  
+  array:a0 -> begin [style = invis;];
+  array:a0 -> end [style = invis;];
+  begin -> array:a0;
+  end -> array:a0;
+  
+  subgraph {
+    node [width = 0; height = 0;];
+    edge [arrowhead = vee; color = grey;];
+    p0 [label = "";];
+    
+    p0 -> array:p0 [label = ""; style = "dashed";];
+  }
+}
