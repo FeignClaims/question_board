@@ -81,7 +81,7 @@ html_theme_options = {
     'use_issues_button': True,
     'use_source_button': True,
 }
-html_static_path = ['_static']
+html_static_path = ['_static', '_theme']
 html_favicon = '_static/favicon.png'
 html_search_language = 'zh'
 html_last_updated_fmt = '%Y-%m-%d %H:%M:%S'
@@ -99,12 +99,5 @@ html_extra_path = [
 
 
 def setup(app):
-    app.add_css_file("coreguidelines.css")
-    app.add_css_file("dontread.css")
-    app.add_css_file("monofont.css")
-    app.add_css_file("precontent.css")
-    app.add_css_file("seealso.css")
-
     app.add_css_file("theme.css")
-
-    app.add_js_file("custom_icon.js")
+    app.add_js_file("gitee_icon.js")
