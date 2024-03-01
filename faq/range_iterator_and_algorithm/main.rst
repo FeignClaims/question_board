@@ -1139,18 +1139,15 @@
 
 .. [#2] 出自 `STL and Its Design Principles - Alexander Stepanov`_, STL——也就是此处涉及的所有内容和其他更多——的主要创造者的演讲.
 
-当我们返回 :cpp:`end`, 我们不仅告知了没有找到, 还告知了接下来该从哪开始查找. 例如, 假设我们要查找元素 :cpp:`3`, 已知它出现在前三个位置的概率为 90%:
+当我们返回 :cpp:`end`, 我们不仅告知了没有找到, 还告知了接下来该从哪开始查找. 例如, 假设我们要查找范围中 **所有** :cpp:`3`:
 
 .. code-block:: cpp
   :linenos:
 
-  auto begin      = begin(range);
-  auto middle_end = begin(range) + 3;
-  auto final_end  = end(range);
-
-  auto iter = find(begin, middle_end, 3);
-  if (iter == middle_end) {           // 前三个位置没找到
-    iter = find(iter, final_end, 3);  // 没事, 继续查找
+  for (auto iter = find(begin(range), end(range), 3);
+       iter != end;
+       iter = find(++iter, end(range), 3)) {
+    /* 范围内找到的所有 3 */
   }
 
 .. hint::
