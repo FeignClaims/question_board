@@ -245,4 +245,4 @@ C 优先
 - Stroustrup, Bjarne. *A Tour of C++.* Addison-Wesley, 2013. ISBN 0321958314.
 - Sutter, Herb. *Exceptional C++: 47 Engineering Puzzles, Programming Problems, and Solutions.* Addison-Wesley, 1999. ISBN 0201615622.
 
-更全面的参考文献列表可以在本书最后找到
+更全面的参考文献列表可以在本书最后找到.
