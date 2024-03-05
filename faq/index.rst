@@ -116,6 +116,7 @@
 .. toctree::
   :maxdepth: 1
 
+  lifetime/main
   rule_of_350/main
   copy_functions_parameter/main
   copy_assignment_define/main
