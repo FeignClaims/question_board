@@ -237,7 +237,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
   :linenos:
 
   void print(int const* begin, int const* end) {
-    for (; begin != begin; ++begin) {
+    for (; begin != end; ++begin) {
       std::cout << *begin << ' ';
     }
     std::cout << '\n';
