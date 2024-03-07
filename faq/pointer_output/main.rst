@@ -5,7 +5,7 @@
 .. admonition:: 前置内容
   :class: precontent
 
-  :cpp:`/faq/basic_concepts/operator_overloading`
+  - :doc:`/faq/basic_concepts/operator_overloading`
 
 按照从 C 继承来的约定, :cpp:`char*` 和 :cpp:`char const*` 虽然是指针, 但很多时候会被认为是 :doc:`字符串 </faq/basic_concepts/c_string>` 进行处理 (若区别于 :cpp:`std::string`, 则称为 C 风格字符串).
 
