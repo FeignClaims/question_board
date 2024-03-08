@@ -1,0 +1,149 @@
+
+- C++ – an Invisible Foundation of Everything
+- SG20 Education and Recommended Videos for Teaching C++ - Codeplay Software Ltd
+- Efficient Programming with Components
+- Stop using _out_ arguments
+- How Non-Member Functions Improve Encapsulation | Dr Dobb&amp;#39;s
+- Avoid Manual Loop Unrolling
+- A note on `namespace __cpo` – Arthur O&amp;#39;Dwyer – Stuff mostly about C++
+- artima - The Most Important C++ People...Ever
+- wg-best-practices-os-developers/Compiler-Options-...
+- Your “top five” ISO C++ feature proposals – Sutter’s Mill
+- The C++20 Naughty and Nice List for Game Devs – J...
+- `operator&lt;=&gt;` doesn&amp;#39;t obsolete the hidden friend idiom – Arthur O&amp;#39;Dwyer – Stuff mostly about C++
+- Concepts can&amp;#39;t do quantifiers – Arthur O&amp;#39;Dwyer – Stuff mostly about C++
+- Solving Undefined Behavior in Factories with constinit from C++20 - C++ Stories
+- Constrain your user-defined conversions | think-cell
+- Just how `constexpr` is C++20&amp;#39;s `std::string`? – Arthur O&amp;#39;Dwyer – Stuff mostly about C++
+- Using static and shared libraries across platforms
+- John Carmack on Functional Programming in C++
+- C++ Exceptions and Memory Allocation Failure
+- why choose sum types over exceptions?
+- Your own error code | Andrzej&amp;#39;s C++ blog
+- Should structs Have Constructors in C++ - Fluent C++
+- How `boost::is_base_of` matches private and/or ambiguous bases – Arthur O&amp;#39;Dwyer – Stuff mostly about C++
+- Lock-Free Data Structures with Hazard Pointers
+- Small Object Optimization for Polymorphic Types
+- How can you be so certan?
+- C++ Metaprogramming Exercises Vol. I - Ondřej Slámečka
+- Super-FAQ : Standard C++
+- Stroustrup: FAQ
+- C++ Core Guidelines
+- Google C++ Style Guide
+- LLVM Coding Standards — LLVM documentation
+- Issue 2485: get() should be overloaded for const tuple&amp;&amp;
+- P1601 Recommendations for Specifying &amp;quot;Hidden Friends&amp;quot; · Issue #383 · cplusplus/papers
+- Repairing input range adaptors and counted_iterat...
+- Guidelines For snake_case Concept Naming
+- P0668R5: Revising the C++ memory model
+- P1450 Enriching type modification traits · Issue #216 · cplusplus/papers
+- P1634 Naming guidelines for modules · Issue #423 · cplusplus/papers
+- P1851 Guidelines For snake_case Concept Naming · Issue #601 · cplusplus/papers
+- [ranges] P2214 A Plan for C++23 Ranges
+- [ranges] P2760 A Plan for C++26 Ranges
+- [games] P2966 Making C++ Better for Game Developers -- Progress Report
+- P2727 R2 std::iterator_interface · Issue #1404 · cplusplus/papers
+- Proxy Iterators for the Ranges Extensions
+- P3002 Guidelines for allocators in new library classes · Issue #1671 · cplusplus/papers
+- N4381 Suggested Design for Customization Points
+- P2831 Functions having a narrow contract should not be noexcept
+- P2861 The Lakos Rule: Narrow Contracts and noexcept Are Inherently Incompatible
+- [SG20] Guidelines for Teaching C++
+- [SG20] cplusplus/SG20: Study Group 20: Education
+- Bjarne Stroustrup Quotes | Hacker News
+- Stroustrup: C++ Glossary
+- A C++ acronym glossary – Arthur O&amp;#39;Dwyer – Stuff mostly about C++
+- Acronyms - cppreference.com
+- The new static constexpr std::integral_constant idiom
+- 术语的翻译
+- Understanding the different flavors of Clang C and C++ compilers in Windows
+- enable_shared_from multiple times
+- std::ranges::begin vs. std::begin
+- std::ranges::swap vs. std::swap
+- std::unique_ptr::get
+- templated operator() vs. templated function
+- neiboild
+- oop - C++ Design Pattern library? - Stack Overflow
+- use of [[nodiscard]]
+- weakness in neibolids
+- gsl::not_null&lt;T*&gt; vs. std::reference_wrapper&lt;T&gt; vs. T&amp;
+- int*_t vs. int_fast*_t vs. int_least*_t
+- Initializer lists and RHS of operators
+- initialize two members from a function returning a tuple
+- use std::cin to initialize a const variable
+- Current time and date in C++20 days
+- Can I list-initialize a vector of move-only type?
+- How to organize includes for a header-only library that wants to expose mutually recursive functions?
+- Composing boost::variant visitors for recursive variants
+- what is the new feature in c++20 [[no_unique_address]]?
+- [[no_unique_address]] and two member values of the same type
+- CRTP vs derived virtual functions
+- static constexpr
+- move assignment
+- is_convertible_v vs convertible_to
+- stringstream to_string stoi to_chars from_chars
+- random number generator: singleton
+- iterator_category vs iterator_concept
+- sfinae without decltype
+- Concept definition requiring a constrained template member function
+- unspecified types be used in C++20 &amp;#39;requires&amp;#39; expressions
+- container concept
+- Unit test naming best practices
+- std::scoped_lock or std::unique_lock or std::lock_guard?
+- std::lock_guard or std::scoped_lock?
+- constexpr variable at namespace scope with and without explicit inline definition
+- Should `const` and `constexpr` variables in headers be `inline` to prevent ODR violations?
+- static, extern, inline
+- Is there a reason why std::make_shared/std::make_unique don&amp;#39;t use list initialization?
+- Understanding std::atomic::compare_exchange_weak() in C++11
+- Return value or rvalue reference?
+- How to use span to wrap up command line args
+- How to use std::ranges on a vector for a function that needs two arguments?
+- Why does the implementation of declval in libstdc++-v3 look so complicated?
+- Is it possible to print a variable&amp;#39;s type in standard C++?
+- Meaning of acronym SSO in the context of std::string
+- Why does libc++&amp;#39;s implementation of std::string take up 3x memory as libstdc++?
+- Cost of std::vector::push_back either succeeding or having no effect?
+- Branch Prediction
+- overload of operator&lt;&lt; with basic_ostream
+- Package Manager: Conan or vcpkg? · Issue #4125 · XRPLF/rippled
+- CHAR_BIT replacement
+- Why use mem_fn?
+- Why does the C++ standard require the `Clock::now` function to be `static`?
+- Should I use static_cast or reinterpret_cast when casting a void* to whatever
+- Conditional Variable vs Semaphore
+- random string
+- Why does c++ ifstream read the file with duplicate records
+- How to use bit_cast to type pun a unsigned char array
+- Why is unique_ptr not equality_comparable_with nullptr_t in C++20?
+- Is it okay to instantiate a new random_distribution every time?
+- process - How do I execute a command and get the output of the command within C++ using POSIX? - Stack Overflow
+- c++ - How to concisely express the C++20 concept of range containing T-typed values? - Stack Overflow
+- Should I use std::function or a function pointer in C++? - Stack Overflow
+- exception - Implementing a good C++0x error_condition? - Stack Overflow
+- How do you get the current directory of the C++ executable? - Stack Overflow
+- c++ - How to implement subcommands using Boost.Program_options? - Stack Overflow
+- What is the significance of &amp;#39;strongly happens before&amp;#39; compared to &amp;#39;(simply) happens before&amp;#39;? - Stack Overflow
+- Is sequentially-consistent ordering documentation example still correct with SCfix? : cpp
+- cppreference.com
+- cppreference
+- [calendar] Date and time utilities - cppreference.com
+- [chrono] List of tz database time zones - Wikipedia
+- [chrono] Standard library header &lt;chrono&gt; (C++11) - cppreference.com
+- [concepts] Named Requirements - cppreference.com
+- [concepts] Standard library header &lt;concepts&gt; - cppreference.com
+- [fmt] formatter - cppreference.com
+- [fmt] Format String Syntax
+- [fmt] {fmt} Formatting &amp; Printing C++ Library | hacking C++
+- [Modules Report] royjacobson/modules-report
+- [iterator] Iterator library - cppreference.com
+- [ranges] Constrained algorithms (since C++20) - cppreference.com
+- [ranges] Standard library header &lt;ranges&gt; - cppreference.com
+- [value categories] Value categories - cppreference.com
+- The C++ Ecosystem in 2023: Growth of C++20, Wider Adoption of Clang-based Tools, AI Gaining Developers’ Confidence | The CLion Blog
+- C++ Programming - The State of Developer Ecosystem in 2023 Infographic | JetBrains: Developer Tools for Professionals and Teams
+- CppDevSurvey-2023-summary.pdf
+- 2022 年的 C++ 生态系统：C++17 和 C++20 的快速采用、C++ 工具集格局和更好的代码分析做法 | The CLion Blog
+- C++ 编程 - 2022 开发者生态系统现状信息图 | JetBrains: Developer Tools for Professionals and Teams
+- C++ at the end of 2022 - C++ Stories
+- CppDevSurvey-2022-summary.pdf
