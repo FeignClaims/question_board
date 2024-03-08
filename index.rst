@@ -25,12 +25,6 @@ C++ 洋葱剥法交流群资料
   /cpp/main.rst
   /faq/index.rst
 
-另有计软智网转专业相关资料:
-
-- 群号: 730899457
-- :ref:`计软网智转系交流群公告 <change_major_exam:board>`
-- :ref:`计软智网转专业 C++ 试题及解答参考集合 <change_major_exam:main>`
-
 .. toctree::
   :caption: 理论依据
   :maxdepth: 1
