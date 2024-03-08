@@ -15,17 +15,20 @@
   :linenos:
   :caption: 教程中使用的示例代码
 
-  void add_1(int* array, int size, int index) {
+  int index = 0;
+
+  void add_1(int* array, int size) {
     if (index == size) {
       return;
     }
     array[index] += 1;
-    add_1(array, size, index + 1);
+    ++index;
+    add_1(array, size);
   }
   
   int main() {
     int array[5] = {};
-    add_1(array, 5, 0);
+    add_1(array, 5);
   }
 
 ========================================================================================================================
