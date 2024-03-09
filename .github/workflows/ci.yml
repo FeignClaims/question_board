@@ -34,6 +34,20 @@ jobs:
           ref: docs
           path: docs
 
+      - name: Replace vscode-cpp-starter.readthedocs.io/ to cpp_tutorial.gitee.io/vscode_cpp_starter/
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: "main/conf.py"
+          find: '"https://vscode-cpp-starter.readthedocs.io/"'
+          replace: '"https://cpp_tutorial.gitee.io/vscode_cpp_starter/"'
+
+      - name: Replace change-major-exam.readthedocs.io/ to cpp_tutorial.gitee.io/change_major_exam/
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: "main/conf.py"
+          find: '"https://change-major-exam.readthedocs.io/"'
+          replace: '"https://cpp_tutorial.gitee.io/change_major_exam/"'
+
       - name: Install sphinx
         shell: bash
         run: |
