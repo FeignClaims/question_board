@@ -30,8 +30,8 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    "vscode_cpp_starter": ("https://vscode-cpp-starter.readthedocs.io/", None),
-    "change_major_exam": ("https://change-major-exam.readthedocs.io/", None),
+    "vscode_cpp_starter": ("https://vscode-cpp-starter.readthedocs.io/", "https://vscode-cpp-starter.readthedocs.io/objects.inv"),
+    "change_major_exam": ("https://change-major-exam.readthedocs.io/", "https://change-major-exam.readthedocs.io/objects.inv"),
 }
 intersphinx_disabled_reftypes = ["*"]
 
