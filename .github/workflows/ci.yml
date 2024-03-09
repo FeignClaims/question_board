@@ -48,6 +48,13 @@ jobs:
           find: '"https://change-major-exam.readthedocs.io/"'
           replace: '"https://cpp_tutorial.gitee.io/change_major_exam/"'
 
+      - name: Show mirror website
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: "main/index.rst"
+          find: '`本网站的国内网址 <https://cpp_tutorial.gitee.io/board/>`_'
+          replace: '`本网站的国外网址 <https://readthedocs.org/projects/question-board/>`_'
+
       - name: Install sphinx
         shell: bash
         run: |
