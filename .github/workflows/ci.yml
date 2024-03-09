@@ -53,7 +53,7 @@ jobs:
         with:
           include: "main/index.rst"
           find: '`本网站的国内网址 <https://cpp_tutorial.gitee.io/board/>`_'
-          replace: '`本网站的国外网址 <https://readthedocs.org/projects/question-board/>`_'
+          replace: '`本网站的国外网址 <https://question-board.readthedocs.io/>`_'
 
       - name: Install sphinx
         shell: bash
