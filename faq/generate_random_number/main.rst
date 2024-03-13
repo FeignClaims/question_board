@@ -123,3 +123,7 @@ C++11 随机数
       bool value2 = dist(generator);
 
 :godbolt:`fPvGdsfT5`
+
+.. hint::
+
+  更多随机数生成器和分布 (正态分布、泊松分布、柯西分布等) 见于 `cppreference: 随机数分布`_.

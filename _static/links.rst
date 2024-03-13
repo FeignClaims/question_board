@@ -18,6 +18,7 @@
 .. _`cppreference: vector`: https://zh.cppreference.com/w/cpp/container/vector#.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0
 .. _`cppreference: array`: https://zh.cppreference.com/w/cpp/container/array#.E6.88.90.E5.91.98.E5.87.BD.E6.95.B0
 .. _`cppreference: algorithm`: https://zh.cppreference.com/w/cpp/header/algorithm
+.. _`cppreference: 随机数分布`: https://zh.cppreference.com/w/cpp/numeric/random#.E9.9A.8F.E6.9C.BA.E6.95.B0.E5.88.86.E5.B8.83
 
 .. _`《人的正确思想是从哪里来的？》`: https://zhuanlan.zhihu.com/p/467228101
 .. _`《实践论》`: https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm
