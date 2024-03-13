@@ -69,7 +69,7 @@ C++ 环境配置
 
 - 阅读报错信息.
 - :doc:`进行断点调试 </debugger/main>`.
-- 如何用软件自动格式化代码 (Visual Studio 里 :KBD:`Ctrl`:KBD:`K`:KBD:`D`, VSCode 里 :KBD:`Shift`:KBD:`Alt`:KBD:`F`).
+- :doc:`如何自动格式化代码 </formatter/main>`.
 - ``#include <cassert>`` 里的 :cpp:`assert(condition)`.
 
 **学会这些比多刷几道力扣题提升更大**.
