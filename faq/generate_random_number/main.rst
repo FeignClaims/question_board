@@ -119,7 +119,7 @@ C++11 随机数
       std::mt19937 generator{std::random_device{}()};
 
       std::bernoulli_distribution dist(0.8);
-      double value1 = dist(generator);
-      double value2 = dist(generator);
+      bool value1 = dist(generator);
+      bool value2 = dist(generator);
 
 :godbolt:`fPvGdsfT5`
