@@ -101,7 +101,7 @@
 :cpp:`cin.ignore(streamsize count, char delim)`
   读过字符直到读过了 :cpp:`count` 个字符或读过了分隔符 :cpp:`delim`.
   
-  通常以 :cpp:`std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\\n')` 方式使用, 表示读过直到遇到换行符 :cpp:`'\\n'`.
+  通常 :cpp:`#include <limits>`, 然后以 :cpp:`std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\\n')` 方式使用, 表示一直读过字符直到读过换行符 :cpp:`'\\n'`.
 
 :cpp:`cin.read(char* output, streamsize count)`
   读入 :cpp:`count` 个字符到 :cpp:`output` 中, 通常用于 :doc:`/faq/binary_io/main`.
