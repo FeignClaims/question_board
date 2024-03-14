@@ -86,10 +86,10 @@
   查看输入流中第一个字符.
 
 :cpp:`cin.get(char* output, streamsize count, char delim = '\\n')`
-  读入字符到 :cpp:`output` 中, 直到读入了 :cpp:`count - 1` 个字符或查看到分隔符 :cpp:`delim` (默认为换行符 :cpp:`'\\n'`).
+  读入字符到 :cpp:`output` 中, 直到读入了 :cpp:`count - 1` 个字符或查看到分隔符 :cpp:`delim` (默认为换行符 :cpp:`'\\n'`); 若确实有读入字符, 则在之后附上终止字符 :cpp:'\\0'.
 
 :cpp:`cin.getline(char* output, streamsize count, char delim = '\\n')`
-  读入字符到 :cpp:`output` 中, 直到读入了 :cpp:`count - 1` 个字符或读过了分隔符 :cpp:`delim`.
+  读入字符到 :cpp:`output` 中, 直到读入了 :cpp:`count - 1` 个字符或读过了分隔符 :cpp:`delim`; 若确实有读入字符, 则在之后附上终止字符 :cpp:'\\0'.
 
 .. hint::
 
