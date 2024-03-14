@@ -132,7 +132,19 @@
 
     - 如果 **它对等地对待它的两个参数**, 实现为 *友元函数并在类内定义* (hidden friend 惯用法).
 
-TODO: 各种运算符模拟内置类型的实现示例.
+各种运算符模拟内置类型的实现示例 (C++98)
+  .. toctree::
+    :maxdepth: 1
+
+    operator_overloading_example/copy_assignment
+    operator_overloading_example/istream_ostream
+    operator_overloading_example/increment_decrement
+    operator_overloading_example/compund_assignment_and_binary_operation
+    operator_overloading_example/comparison
+    operator_overloading_example/subscript
+    operator_overloading_example/dereference
+    operator_overloading_example/logic_not
+    operator_overloading_example/rarely_overloaded
 
 ========================================================================================================================
 相关解答
