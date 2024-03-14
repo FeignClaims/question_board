@@ -19,7 +19,7 @@ class A {
   }
 };
 
-class Base : public A {
+class B : public A {
  public:
   void fun3() override {
     std::cout << "B::fun3 " << '\n';
@@ -32,7 +32,7 @@ class Base : public A {
 
 int main() {
   A a;
-  Base b;
+  B b;
   a.fun1();
   b.fun1();
   return 0;
