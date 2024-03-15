@@ -103,6 +103,8 @@
   
   通常 :cpp:`#include <limits>`, 然后以 :cpp:`std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\\n')` 方式使用, 表示一直读过字符直到读过换行符 :cpp:`'\\n'`.
 
+  此外, 你也可以使用 :cpp:`std::cin >> std::ws`, 这会读过所有的空白符 (空格、制表、换行等), 直到查看到非空白符.
+
 :cpp:`cin.read(char* output, streamsize count)`
   读入 :cpp:`count` 个字符到 :cpp:`output` 中, 通常用于 :doc:`/faq/binary_io/main`.
 
