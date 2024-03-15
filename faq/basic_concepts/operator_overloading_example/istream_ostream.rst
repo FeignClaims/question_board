@@ -75,17 +75,6 @@
 
   #include <istream>  // for std::istream
 
-  // 从 istream 中读取一个字符, 判断是不是预期字符 expected, 如果不是则放回字符
-  //  -> true : 获取到预期字符
-  //  -> false: 没获取到预期字符
-  bool check_and_ignore(std::istream& istream, char expected) {
-    if (istream.get() == expected) {
-      return true;
-    }
-    istream.unget();  // 没获取到预期字符, 将刚刚读取的字符放回
-    return false;
-  }
-
   class Complex {
    public:
     // 从流中读取 (real,imaginary) 为复数
@@ -95,11 +84,11 @@
       // 从流中读取特定格式的数据, 并暂存在变量中
       double real      = 0;
       double imaginary = 0;
-      if (check_and_ignore(istream, '(')) {
+      if (istream.get() == '(') {
         if (istream >> real) {
-          if (check_and_ignore(istream, ',')) {
+          if (istream.get() == ',') {
             if (istream >> imaginary) {
-              if (check_and_ignore(istream, ')')) {
+              if (istream.get() == ')') {
                 is_good = true;  // 输入成功
               }
             }
