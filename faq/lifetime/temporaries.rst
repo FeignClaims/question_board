@@ -92,7 +92,7 @@
   
   12 个字符, 一种时间单位.
 
-  大多数情况下, :cpp:`static_cast<new_type>(expression)` 相当于以 :cpp:`new_type temp(expression);` 初始化了一个虚拟变量 :cpp:`temp`, 一个变量是一个不指向非静态数据成员的引用或一个对象.
+  大多数情况下, :cpp:`static_cast<new_type>(expression)` 相当于以 :cpp:`new_type temp(expression);` 初始化了一个虚拟变量 :cpp:`temp`, 见于 :doc:`/faq/basic_concepts/type_conversion`.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
