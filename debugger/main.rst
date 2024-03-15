@@ -234,7 +234,7 @@ C 风格数组传参后怎么办?
   :linenos:
 
 .. admonition:: 点击查看答案
-  :class: dropdown
+  :class: dropdown, solution
 
   1. 在 :cpp:`main()` 函数内设置断点, 并在监视窗口填入 :cpp:`array` 和 :cpp:`array[0]` 得知, 它们的类型分别是 :cpp:`int[7]` 和 :cpp:`int`.
   2. 由 1, :cpp:`sizeof(array)` 获取整个数组的大小, :cpp:`sizeof(array[0])` 获取数组中元素的大小, 则相除得到数组的长度.

@@ -1,0 +1,22 @@
+html[data-theme="light"] {
+  --custom-color-solution: #c7e4e4;
+  --custom-color-solution-text: #222832;
+  --custom-color-solution-highlight: #2e5d5d;
+}
+html[data-theme="dark"] {
+  --custom-color-solution: #2e5d5d;
+  --custom-color-solution-text: #ced6dd;
+  --custom-color-solution-highlight: #c7e4e4;
+}
+
+div.admonition.solution {
+  border-color: var(--custom-color-solution-highlight);
+}
+div.admonition.solution > .admonition-title {
+  background-color: var(--custom-color-solution);
+  color: var(--custom-color-solution-text);
+}
+div.admonition.solution > .admonition-title:after {
+  color: var(--custom-color-solution-highlight);
+  content: "\f518";
+}

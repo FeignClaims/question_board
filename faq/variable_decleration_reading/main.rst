@@ -86,7 +86,7 @@
 :cpp:`int* (*(*const& value)[3][4])(double, double)`.
 
 .. admonition:: 点击查看答案
-  :class: dropdown
+  :class: dropdown, solution
 
   - :cpp:`(& value)`: :cpp:`value` 是一个引用; 其引用的对象是?
   - :cpp:`(const& value)`: 是一个 const 对象; const 作用于?
