@@ -124,7 +124,7 @@
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  12 个字符, :cpp:`std::vector<T>` 的特化版本, 证明了代理对象和 STL 容器不可兼得 (至少 C++23 以前) 的失败产物.
+  12 个字符, :cpp:`std::vector<T>` 的特化版本, 但不是 STL 容器, 证明了代理对象和 STL 容器不可兼得的失败产物, 且在 C++20 之前不该用于 STL 算法.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
