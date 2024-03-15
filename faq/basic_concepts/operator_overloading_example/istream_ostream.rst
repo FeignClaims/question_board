@@ -84,16 +84,13 @@
       // 从流中读取特定格式的数据, 并暂存在变量中
       double real      = 0;
       double imaginary = 0;
-      if (istream.get() == '(') {
-        if (istream >> real) {
-          if (istream.get() == ',') {
-            if (istream >> imaginary) {
-              if (istream.get() == ')') {
-                is_good = true;  // 输入成功
-              }
-            }
-          }
-        }
+      if (istream >> std::ws  // 忽略输入中最前面的所有空白符
+          && istream.get() == '('
+          && istream >> real
+          && istream.get() == ','
+          && istream >> imaginary
+          && istream.get() == ')') {
+        is_good = true;  // 输入成功
       }
 
       if (is_good) {
