@@ -68,8 +68,8 @@ C++ 环境配置
 软件是你的朋友, 手写代码不报错不算什么能力, 能用合适的软件写代码才是能力. 例如, 建议学习:
 
 - 阅读报错信息.
-- :doc:`进行断点调试 </debugger/main>`.
-- :doc:`如何自动格式化代码 </formatter/main>`.
+- :doc:`进行断点调试 </debugger/main>` 查找代码中的逻辑错误.
+- :doc:`如何自动格式化代码 </formatter/main>` 查找代码中的语法错误 (少加分号、括号不匹配等).
 - ``#include <cassert>`` 里的 :cpp:`assert(condition)`.
 
 **学会这些比多刷几道力扣题提升更大**.
