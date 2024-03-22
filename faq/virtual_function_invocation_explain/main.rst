@@ -579,7 +579,7 @@
   :class: coreguidelines
 
   - :coreguidelines:`C.35: 基类的析构函数要么是公用虚函数, 要么是保护用非虚函数 <c35-a-base-class-destructor-should-be-either-public-and-virtual-or-protected-and-non-virtual>`
-  - :coreguidelines:`C.127: 具有虚函数的类应该有一个公用虚析构函数或一个保护非虚析构函数 <c127-a-class-with-a-virtual-function-should-have-a-virtual-or-protected-destructor>`
+  - :coreguidelines:`C.127: 具有虚函数的类应该有一个公用虚析构函数或一个保护用非虚析构函数 <c127-a-class-with-a-virtual-function-should-have-a-virtual-or-protected-destructor>`
 
 .. _虚函数调用的感性理解_类层次与构造函数、析构函数:
 
