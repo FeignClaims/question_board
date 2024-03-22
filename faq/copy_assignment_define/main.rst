@@ -25,6 +25,10 @@ copy-and-swap: 拷贝赋值函数的简单实现
     /* 交换 lhs 和 rhs 的所有成员 */
   }
 
+.. hint::
+
+  注意到, 这样一来没有必要判断自赋值情况 :cpp:`widget = widget`——自赋值单纯就是得到一份自己的拷贝, 然后与该拷贝发生交换, 最终得到内容仍然是自己.
+
 .. admonition:: 相关核心准则
   :class: coreguidelines
 
