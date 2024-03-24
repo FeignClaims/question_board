@@ -14,7 +14,11 @@
 
 以下列举了一些常见软件的格式化方法:
 
-- Visual Studio: :KBD:`Ctrl`:KBD:`K`:KBD:`D`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:vs>`.
+.. hint::
+
+  连在一起的按键是说同时按, 是说同时按.
+
+- Visual Studio: :KBD:`Ctrl`:KBD:`K` 然后 :KBD:`Ctrl`:KBD:`D`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:vs>`.
 - VSCode: :KBD:`Shift`:KBD:`Alt`:KBD:`F`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:main>`.
 - CLion: :KBD:`Ctrl`:KBD:`Shift`:KBD:`Alt`:KBD:`L`.
 - Dev C++: 该换软件了😡.
