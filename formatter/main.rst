@@ -18,9 +18,9 @@
 
   连在一起的按键是说同时按, 是说同时按.
 
-- Visual Studio: :KBD:`Ctrl`:KBD:`K` 然后 :KBD:`Ctrl`:KBD:`D`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:vs>`.
-- VSCode: :KBD:`Shift`:KBD:`Alt`:KBD:`F`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:main>`.
-- CLion: :KBD:`Ctrl`:KBD:`Shift`:KBD:`Alt`:KBD:`L`.
+- Visual Studio: :KBD:`Ctrl` + :KBD:`K` 然后 :KBD:`Ctrl` + :KBD:`D`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:vs>`.
+- VSCode: :KBD:`Shift` + :KBD:`Alt` + :KBD:`F`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:main>`.
+- CLion: :KBD:`Ctrl` + :KBD:`Shift` + :KBD:`Alt` + :KBD:`L`.
 - Dev C++: 该换软件了😡.
 - Qt Creator: 好麻烦啊自己查.
 

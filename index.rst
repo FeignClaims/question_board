@@ -6,7 +6,7 @@ C++ 洋葱剥法交流群资料
 
 群号: 682132891, `本网站的国内网址 (不支持搜索) <https://cpp_tutorial.gitee.io/board/>`_
 
-如果图片看不清, 请按 :KBD:`Ctrl`:KBD:`+` 放大网页或 :menuselection:`右键 --> 在新标签页中打开图片`.
+如果图片看不清, 请按 :KBD:`Ctrl` + :KBD:`+` 放大网页或 :menuselection:`右键 --> 在新标签页中打开图片`.
 
 .. toctree::
   :caption: 关于文档
