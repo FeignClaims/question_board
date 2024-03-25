@@ -41,7 +41,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
     Widget widget;  // string_ 默认构造为 "", value_ 不进行初始化则值不确定
   }
 
-我们可以在成员后面添加初始化器改变它的行为:
+我们可以在成员后面添加默认初始化器改变它的行为:
 
 .. code-block:: cpp
   :linenos:
@@ -62,10 +62,11 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
   :linenos:
 
   class Widget {
-   private:
+   public:
     Widget() = default;  // 显式要求生成默认函数
     Widget(std::string string);
 
+   private:
     std::string string_{};
     int value_{};
   };
@@ -78,6 +79,35 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
   :class: coreguidelines
 
   - :coreguidelines:`C.80: 如果必须明确使用默认语义, 使用 =default <c80-use-default-if-you-have-to-be-explicit-about-using-the-default-semantics>`
+
+.. admonition:: 别看: 关于成员默认初始化器
+  :class: dontread, dropdown
+
+  成员后加的默认初始化器改变的是成员的默认构造行为: 只要构造函数没有显式写出该成员如何构造, 它都会按这个行为进行构造.
+
+  .. code-block:: cpp
+    :linenos:
+
+    class Widget {
+     public:
+      Widget(std::string string) : string_(string) {}
+
+     private:
+      std::string string_{"hello"};
+      int value_{5};
+    };
+
+    int main() {
+      Widget widget("world");  // string_ == "world"; value_ == 5
+    }
+
+  由于成员默认初始化器像这样一致地对待所有构造函数, 我们应该倾向于使用成员默认初始化器, 而非在默认构造函数处定义如何构造.
+
+  .. admonition:: 相关核心准则
+    :class: coreguidelines
+
+    - :coreguidelines:`C.45: 不要定义仅仅初始化数据成员的默认构造函数; 作为替代, 使用成员初始化器 <c45-dont-define-a-default-constructor-that-only-initializes-data-members-use-default-member-initializers-instead>`
+    - :coreguidelines:`C.48: 对于常量初始化, 倾向于默认成员初始化器而非在构造函数中进行成员初始化 <c48-prefer-default-member-initializers-to-member-initializers-in-constructors-for-constant-initializers>`
 
 ------------------------------------------------------------------------------------------------------------------------
 析构的默认行为
