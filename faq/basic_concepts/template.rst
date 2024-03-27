@@ -61,7 +61,7 @@
   }
   auto result = max(a, b);
 
-与 :cpp:`auto` 一样, 可以添加 :cpp:`const`、:cpp:`&` 和 :cpp:`*` 等修饰符:
+与 :cpp:`auto` 一样, :cpp:`T` 可以添加 :cpp:`const`、:cpp:`&` 和 :cpp:`*` 等修饰符:
 
 .. code-block:: cpp
   :linenos:
