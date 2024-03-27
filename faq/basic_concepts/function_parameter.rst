@@ -74,7 +74,7 @@
   :class: coreguidelines
 
   - :coreguidelines:`F.15: 倾向于简单常规的传递信息方式 <f15-prefer-simple-and-conventional-ways-of-passing-information>`
-  - :coreguidelines:`F.16: 对于输入参数, 按值传递拷贝开销低的类型, 按 const& 传递其他类型输出多个值 <f16-for-in-parameters-pass-cheaply-copied-types-by-value-and-others-by-reference-to-const>`
+  - :coreguidelines:`F.16: 对于输入参数, 按值传递拷贝开销低的类型, 按 const& 传递其他类型 <f16-for-in-parameters-pass-cheaply-copied-types-by-value-and-others-by-reference-to-const>`
   - :coreguidelines:`F.17: 对于输入输出参数, 按非 const 的 & 传递 <f17-for-in-out-parameters-pass-by-reference-to-non-const>`
   - :coreguidelines:`F.20: 对于输出值, 倾向于使用返回值而非输出参数 <f20-for-out-output-values-prefer-return-values-to-output-parameters>`
   - :coreguidelines:`F.21: 要输出多个值, 倾向于返回一个结构体 <f21-to-return-multiple-out-values-prefer-returning-a-struct>`
@@ -165,9 +165,9 @@
 
 以 :cpp:`by_pointer(int* pointer)` 和 :cpp:`by_value(int value)` 为例.
 
-:cpp:`by_value(int value)` 调用时, 拷贝的是 :cpp:`int` 类型, 而 :cpp:`by_pointer(int* pointer)` 调用时, 拷贝的是 :cpp:`int*` 类型.
+:cpp:`by_value(int value)` 调用时, 拷贝的是 :cpp:`int` 类型; 而 :cpp:`by_pointer(int* pointer)` 调用时, 拷贝的是 :cpp:`int*` 类型.
 
-而 :doc:`/faq/basic_concepts/pointer` 中指出, 指针是一个对象, 存储了指向对象的地址. 自然拷贝得到的新指针也存储了那个地址, 因此自然地, 这个新指针解引用也能访问那个指向的对象:
+在 :doc:`/faq/basic_concepts/pointer` 中已指出, 指针是一个对象, 它存储了指向对象的地址, 自然拷贝得到的新指针也存储了那个地址. 因此自然地, 这个新指针解引用也能访问那个指向的对象:
 
 .. code-block:: cpp
   :linenos:
