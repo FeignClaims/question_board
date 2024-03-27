@@ -175,7 +175,7 @@
   int temp = 5;
 
   void function(int* pointer) {
-    pointer  = &temp;  // pointer 指向 temp
+    pointer = &temp;  // pointer 指向 temp
   }
 
   int main() {
