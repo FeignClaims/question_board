@@ -1256,7 +1256,7 @@
  
 但请不要误会, 《Elements of Programming》(《编程原本》) 和 `STL and Its Design Principles - Alexander Stepanov`_ 都明确解释了, 各种概念是根据对大量已有数据结构和算法的观察才抽象出来的. 也就是说先有了对数组、链表等等数据结构的观察, 才抽象出了迭代器概念, 而这种精心设计的概念基于数学理论能应用于更多方面——这与抽象代数从其他数学领域中抽象得到是相通的.
 
-其他语言也存在迭代器, 但 C++ 的迭代器与它们来自不同的概念.
+其他语言也存在迭代器, `但 C++ 的迭代器与它们来自不同的概念 <https://www.jmeiners.com/efficient-programming-with-components/09_iterators.html>`_.
 
 .. epigraph::
 
