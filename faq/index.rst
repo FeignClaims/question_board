@@ -64,9 +64,10 @@
   basic_concepts/type_conversion
   basic_concepts/const
   basic_concepts/reference
-  basic_concepts/function
-  basic_concepts/value_category
   basic_concepts/pointer
+  basic_concepts/function
+  basic_concepts/function_parameter
+  basic_concepts/value_category
   basic_concepts/auto
   basic_concepts/sizeof
   basic_concepts/c_array

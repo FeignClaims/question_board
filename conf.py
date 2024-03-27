@@ -35,8 +35,9 @@ intersphinx_mapping = {
 }
 intersphinx_disabled_reftypes = ["*"]
 
-extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'), 'coreguidelines': (
-    'https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#%s', '[核心准则 %s]')}
+extlinks = {'godbolt': ('https://godbolt.org/z/%s', '[在线代码 %s]'),
+            'coreguidelines': ('https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#%s', '[核心准则 %s]'),
+            'wg21': ('https://wg21.link/%s', '[标准提案 %s]')}
 
 togglebutton_hint = "点击展开"
 togglebutton_hint_hide = "点击隐藏"
