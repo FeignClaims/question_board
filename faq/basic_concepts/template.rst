@@ -204,7 +204,7 @@
 
   template <typename T, int Size>
   class Array {
-  public:
+   public:
     T& operator[](int index) {
       return data_[index];
     }
