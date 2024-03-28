@@ -57,7 +57,7 @@
     try {
       Printer printer{Info{.ctor = "i", .copy_ctor = "n", .dtor = "t"}};
       throw printer;
-    } catch (Printer& printer) {
+    } catch (Printer printer) {
       Printer another{Info{.ctor = "8", .dtor = "_"}};
     }
   }
