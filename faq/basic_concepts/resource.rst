@@ -78,6 +78,7 @@
 
   class File {
    public:
+    //                                   ↓ 对 file_ 成员初始化
     File(std::string const& file_path) : file_{open_file(file_path)} {}
     ~File() { close_file(file_); }
     // ...
