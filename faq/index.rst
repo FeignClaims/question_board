@@ -176,6 +176,7 @@ Visual Studio 特定问题
 .. toctree::
   :maxdepth: 1
 
+  visual_studio/strcpy
   visual_studio/unresovable_external_symbol
 
 ***********************************************************************************************************************
