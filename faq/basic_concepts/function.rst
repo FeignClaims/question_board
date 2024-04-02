@@ -105,21 +105,21 @@
 
 定义函数后, 我们可以对函数进行调用. 所谓函数调用是 **我们自己** 传入实际参数"声明"形式参数, 进入函数内部进行运算, 再 (携带返回值) 返回回来. 换句话说, 函数调用没有其他人帮忙, 是 **我们自己** 进入函数、进行运算、从函数中返回, 然后我们才执行函数调用后的代码:
 
-  .. code-block:: cpp
-    :linenos:
+.. code-block:: cpp
+  :linenos:
 
-    void function() {
-      int another = 2;
-      std::cout << "2";
-    }
+  void function() {
+    int another = 2;
+    std::cout << "2";
+  }
 
-    int main() {
-      int value = 3;
-      std::cout << "1";
-      function();
-      std::cout << "3";
-    }
-    // 输出 123
+  int main() {
+    int value = 3;
+    std::cout << "1";
+    function();
+    std::cout << "3";
+  }
+  // 输出 123
 
 请在 :cpp:`main()` 函数最开始设置断点, :doc:`断点调试 </debugger/main>` 以上代码, 观察程序具体如何执行.
 
