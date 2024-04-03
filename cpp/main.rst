@@ -114,7 +114,7 @@ C++ 环境配置
 《C++ 程序设计（朱金付主编）》
   快跑!!! 简单列一些问题:
 
-  - 展示拷贝构造函数和拷贝赋值函数时, 参数使用 :cpp:`&`, :doc:`实际应该使用 const& </faq/copy_functions_parameter>`.
+  - 展示拷贝构造函数和拷贝赋值函数时, 参数使用 :cpp:`&`, :doc:`实际应该使用 const& </faq/copy_functions_parameter/main>`.
   - 解释链表时使用有序链表, 导致读者连怎么插入删除都搞不懂.
   - ……
 
