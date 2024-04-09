@@ -163,7 +163,7 @@
 
 这样以参数的实际用途来分析, 才是最反映我们编写代码的逻辑的, 也是最符合事实的: 传指针其实也是传值, 之所以区别开来教, 就是内含了用参数的实际用途来区别的想法.
 
-以 :cpp:`by_pointer(int* pointer)` 和 :cpp:`by_value(int value)` 为例.
+以 :cpp:`by_value(int value)` 和 :cpp:`by_pointer(int* pointer)` 为例.
 
 :cpp:`by_value(int value)` 调用时, 拷贝的是 :cpp:`int` 类型; 而 :cpp:`by_pointer(int* pointer)` 调用时, 拷贝的是 :cpp:`int*` 类型.
 
