@@ -58,3 +58,4 @@
 - :doc:`/faq/east_const/main`
 - :doc:`/faq/variable_decleration_reading/main`
 - :doc:`/faq/forward_list/main`
+- :doc:`/faq/dynamic_array/main`

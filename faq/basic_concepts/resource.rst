@@ -125,3 +125,4 @@
 
 - :doc:`/faq/rule_of_350/main`
 - :doc:`/faq/forward_list/main`
+- :doc:`/faq/dynamic_array/main`

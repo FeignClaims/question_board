@@ -64,3 +64,4 @@
 
 - :doc:`/faq/class_invariant/main`
 - :doc:`/faq/forward_list/main`
+- :doc:`/faq/dynamic_array/main`

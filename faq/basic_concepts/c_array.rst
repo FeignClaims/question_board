@@ -364,4 +364,5 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 - :doc:`/faq/c_string_output/main`
 - :doc:`/faq/pointer_output/main`
 - :doc:`/faq/visual_studio/strcpy`
+- :doc:`/faq/dynamic_array/main`
 - :doc:`/faq/range_iterator_and_algorithm/main`

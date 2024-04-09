@@ -158,6 +158,7 @@
   generate_random_number/main
   range_iterator_and_algorithm/main
   forward_list/main
+  dynamic_array/main
 
 ***********************************************************************************************************************
 术语和惯用法
