@@ -106,7 +106,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
   .. admonition:: 相关核心准则
     :class: coreguidelines
 
-    - :coreguidelines:`C.45: 不要定义仅仅初始化数据成员的默认构造函数; 作为替代, 使用成员初始化器 <c45-dont-define-a-default-constructor-that-only-initializes-data-members-use-default-member-initializers-instead>`
+    - :coreguidelines:`C.45: 不要定义仅仅初始化数据成员的默认构造函数; 作为替代, 使用默认成员初始化器 <c45-dont-define-a-default-constructor-that-only-initializes-data-members-use-default-member-initializers-instead>`
     - :coreguidelines:`C.48: 对于常量初始化, 倾向于默认成员初始化器而非在构造函数中进行成员初始化 <c48-prefer-default-member-initializers-to-member-initializers-in-constructors-for-constant-initializers>`
 
 ------------------------------------------------------------------------------------------------------------------------
