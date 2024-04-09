@@ -1,0 +1,55 @@
+digraph {
+  node [shape = none;];
+  edge [arrowhead = vee;];
+  splines = line;
+  rankdir = LR;
+  
+  subgraph {
+    
+    node0 [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+      <TR>
+      <TD WIDTH = "20" HEIGHT = "20">0</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "next"></TD>
+      </TR>
+      </TABLE>>;];
+    
+    node1 [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+      <TR>
+      <TD WIDTH = "20" HEIGHT = "20">1</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "next"></TD>
+      </TR>
+      </TABLE>>;];
+    
+    node2 [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+      <TR>
+      <TD WIDTH = "20" HEIGHT = "20">2</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "next"></TD>
+      </TR>
+      </TABLE>>;];
+    
+    nullptr [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+      <TR>
+      <TD WIDTH = "40" HEIGHT = "20" STYLE = "DASHED"></TD>
+      </TR>
+      </TABLE>>;];
+    
+    node0:next -> node1;
+    node1:next -> node2;
+    node2:next -> nullptr;
+  }
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    begin;
+    end;
+    { rank=same; node0 begin };
+    { rank=same; nullptr end };
+  }
+    
+  begin -> node0;
+  end -> nullptr;
+}

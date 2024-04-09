@@ -1,0 +1,19 @@
+digraph {
+  node [shape = none;];
+  edge [arrowhead = vee;];
+  fontcolor = red;
+  label = "begin == end;";
+  
+  array [label = <
+    <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+    <TR>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a0" STYLE = "DASHED"></TD>
+    </TR>
+    </TABLE>>;];
+  
+  begin [shape = note;width = 0;height = 0;];
+  end [shape = note;width = 0;height = 0;];
+  
+  begin -> array:a0;
+  end -> array:a0;
+}

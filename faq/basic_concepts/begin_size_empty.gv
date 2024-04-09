@@ -1,0 +1,25 @@
+digraph {
+  node [shape = none;];
+  edge [arrowhead = vee;];
+  splines = line;
+  fontcolor = red;
+  label = "size == 0;";
+  
+  subgraph cluster {
+    fontcolor = black;
+    label = "size == 0";
+    array [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+      <TR>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a0" STYLE = "DASHED"></TD>
+      </TR>
+      </TABLE>>;];
+  }
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    begin;
+  }
+  
+  begin -> array:a0;
+}

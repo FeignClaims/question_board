@@ -1,0 +1,37 @@
+digraph {
+  node [shape = none;];
+  edge [arrowhead = vee;];
+  splines = line;
+  
+  array [label = <
+    <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+    <TR>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a0">0</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a1">1</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a2">2</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a3">3</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a4">4</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a5">5</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a6">6</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a7">7</TD>
+    <TD WIDTH = "20" HEIGHT = "20" PORT = "a8" STYLE = "DASHED"></TD>
+    </TR>
+    </TABLE>>;];
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    begin;
+    end;
+  }
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    iter;
+  }
+  
+  begin -> array:a0;
+  end -> array:a8;
+  
+  iter -> array:a0 [constraint = false; fontcolor = red; label = "int* iter = begin;";];
+  array:a0 -> iter [style = invis;];
+}

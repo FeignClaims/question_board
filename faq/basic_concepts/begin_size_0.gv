@@ -1,0 +1,38 @@
+digraph {
+  node [shape = none;];
+  edge [arrowhead = vee;];
+  splines = line;
+  
+  subgraph cluster {
+    label = "size == 8";
+    array [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "0">
+      <TR>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a0">0</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a1">1</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a2">2</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a3">3</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a4">4</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a5">5</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a6">6</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a7">7</TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a8" STYLE = "DASHED"></TD>
+      </TR>
+      </TABLE>>;];
+  }
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    begin;
+  }
+  
+  subgraph {
+    node [shape = note; width = 0; height = 0;];
+    i [label = "begin[i]";];
+  }
+  
+  begin -> array:a0;
+  
+  i -> array:a0 [constraint = false; fontcolor = red; label = "int i = 0;";];
+  array:a0 -> i [style = invis;];
+}
