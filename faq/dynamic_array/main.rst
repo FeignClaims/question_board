@@ -277,37 +277,70 @@
 
 回忆一下, 你有多少次编写拷贝整个数组了?
 
-.. code-block:: cpp
-  :linenos:
+.. tabs::
 
-  int const size0   = 10;
-  int array0[size0] = {};
-  fill_n(array0, size0, 3);
+  .. tab:: :cpp:`strcpy`
 
-  int const size1   = 20;
-  int array1[size1] = {};
-  // 拷贝整个 array0 数组
-  for (int i = 0; i < size0; ++i) {
-    array1[i] = array0[i];
-  }
+    .. code-block:: cpp
+      :linenos:
 
-:cpp:`<algorithm>` 中有上百种算法, 而 :cpp:`std::copy_n` 就是其中一个:
+      #include <cstring>  // for std::strcpy
 
-.. code-block:: cpp
-  :linenos:
+      char const* input = "hello world";
+      int output[100] = {};
 
-  #include <algorithm>  // for std::copy_n
+      std::strcpy(output, input);
 
-  int const size0   = 10;
-  int array0[size0] = {};
-  std::fill_n(array0, size0, 3);  // 是的, 也有 std::fill_n
+      std::cout << output;  // 输出 "hello world"
 
-  int const size1   = 20;
-  int array1[size1] = {};
-  // 将 [array0, array0 + size0) 拷贝到 [array1, array1 + size0)
-  std::copy_n(array0, size0, array1);
+  .. tab:: 手写 :cpp:`int` 数组拷贝
 
-你可以自己实现 :cpp:`std::copy_n` 的简单版本: :godbolt:`Mh1frdb15`
+    .. code-block:: cpp
+      :linenos:
+
+      int input[10] = {5, 4, 2, 7};
+      int output[20] = {};
+
+      // 拷贝 [input, input + 10) 到 [output, output + 10)
+      for (int i = 0; i < 10; ++i) {
+        output[i] = input[i];
+      }
+
+:cpp:`<algorithm>` 中有上百种算法, 而 :cpp:`std::copy_n` 就是其中一个.
+
+相比于 :cpp:`std::strcpy(output, input)` 只能用于字符串拷贝, :cpp:`std::copy_n(input, size, output)` 能用于任何类型:
+
+.. tabs::
+
+  .. tab:: 拷贝 :cpp:`int` 数组
+
+    .. code-block:: cpp
+      :linenos:
+
+      #include <algorithm>  // for std::copy_n
+
+      int input[10] = {5, 4, 2, 7};
+      int output[20] = {};
+
+      // 拷贝 [input, input + 10) 到 [output, output + 10)
+      std::copy_n(input, 10, output);
+
+  .. tab:: 拷贝 :cpp:`char` 数组
+
+    .. code-block:: cpp
+      :linenos:
+
+      #include <algorithm>  // for std::copy_n
+
+      char const* input = "hello world";
+      int output[100] = {};
+
+      // 长度为 std::strlen(input) + 1, 因为还要拷贝终止字符
+      std::copy_n(input, std::strlen(input) + 1, output);
+
+      std::cout << output;  // 输出 "hello world"
+
+你可以自己实现 :cpp:`std::copy_n` 的简单版本: :godbolt:`55d95cbo5`
 
 .. code-block:: cpp
   :linenos:
@@ -320,11 +353,9 @@
   //   返回 output + size, 即如果继续对 output 进行拷贝, 应该使用的指针.
   value_type* copy_n(value_type const* input, int size, value_type* output) {
     for (int i = 0; i < size; ++i) {
-      *output = *input;
-      ++input;
-      ++output;
+      output[i] = input[i];
     }
-    return output;
+    return output + size;
   }
 
 请注意 :cpp:`copy_n` 有一个返回值, 之后你将会看到它的魅力.
@@ -790,7 +821,7 @@
     /* ... */
   };
 
-最终得到: :godbolt:`8neaxsvTe`
+最终得到: :godbolt:`44964Wrah`
 
 .. seealso::
 
@@ -873,7 +904,7 @@
 
   事实上, 我们常写的 :cpp:`using namespace std;` 就是将整个 :cpp:`std` 名字空间里的内容引入进来.
 
-我们于是将拷贝赋值函数定义为: :godbolt:`61xsxb3Ez`
+我们于是将拷贝赋值函数定义为: :godbolt:`qb3dqov4v`
 
 .. code-block:: cpp
   :linenos:
@@ -902,7 +933,7 @@
 
 也就是说, 我们申请 :cpp:`new_size` 长度的新数组, 再将原来数组中前 :cpp:`min(new_size, size_)` 个元素拷贝到新数组中.
 
-可以发现, 这依旧能沿用 copy-and-swap 的逻辑, 只是改成了 construct-and-swap: :godbolt:`zos3P4v7v`
+可以发现, 这依旧能沿用 copy-and-swap 的逻辑, 只是改成了 construct-and-swap: :godbolt:`Ys143Kh79`
 
 .. code-block:: cpp
   :linenos:
@@ -953,15 +984,13 @@
   // 返回值::
   //   返回 output + size, 即如果继续对 output 进行拷贝, 应该使用的指针.
   value_type* copy_n(value_type const* input, int size, value_type* output) {
-    for (int i = 0; i < size; ++i) {
-      *output = *input;
-      ++input;
-      ++output;
+    for (int i{0}; i < size; ++i) {
+      output[i] = input[i];
     }
-    return output;
+    return output + size;
   }
 
-"如果继续对 output 进行拷贝, 应该使用的指针": :godbolt:`19xfhKj83`
+"如果继续对 output 进行拷贝, 应该使用的指针": :godbolt:`eE4Mjh45a`
 
 .. code-block:: cpp
   :linenos:
@@ -989,7 +1018,7 @@
 
 :cpp:`self += other` 与之前所见的 :cpp:`swap` 或 :cpp:`operator+` 不同, 它的左右参数地位不是对等的: 当我们使用 :cpp:`operator+=`, 是达到与 :cpp:`operator=` 即赋值运算符类似的效果, 是将 :cpp:`other` 的内容添加到 :cpp:`self` 上. 因此应该将 :cpp:`operator+=` 定义为成员函数.
 
-但我们仍能复用 :cpp:`operator+(lhs, rhs)` 来实现它: :godbolt:`TTP7co5Po`
+但我们仍能复用 :cpp:`operator+(lhs, rhs)` 来实现它: :godbolt:`aKxr34esz`
 
 .. code-block:: cpp
   :linenos:
@@ -1062,7 +1091,7 @@
     /* ... */
   };
 
-最终得到: :godbolt:`4c7oMKMKv`
+最终得到: :godbolt:`drTPGdsfx`
 
 ------------------------------------------------------------------------------------------------------------------------
 等价性、偏序关系: :cpp:`bool operator<(lhs, rhs)`
@@ -1140,7 +1169,7 @@
     /* ... */
   };
 
-最终得到: :godbolt:`M4b5Mjca3`
+最终得到: :godbolt:`MMv73G61f`
 
 .. hint::
 
@@ -1156,7 +1185,7 @@
 
 调用 :cpp:`print` 函数实在太麻烦了, 让我们的动态数组也支持 :cpp:`std::cout << value` 吧.
 
-这其实没什么大不了的, 只是重载 :cpp:`operator<<(std::ostream& ostream, Dynamic_array const& array)` 罢了: :godbolt:`8MrTq8vzf`
+这其实没什么大不了的, 只是重载 :cpp:`operator<<(std::ostream& ostream, Dynamic_array const& array)` 罢了: :godbolt:`5vGqjGsWx`
 
 .. code-block:: cpp
   :linenos:
@@ -1228,7 +1257,7 @@
 整个动态数组类的附解释代码
 ========================================================================================================================
 
-:godbolt:`eKsPjdPfq`
+:godbolt:`Yc6e5Pf4M`
 
 ========================================================================================================================
 扩展: 让动态数组能包含任何类型的数据

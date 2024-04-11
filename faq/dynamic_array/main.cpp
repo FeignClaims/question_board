@@ -21,11 +21,11 @@ using value_type = int;
 //   char data[100]{};
 //
 //   char* output{&data[0]};
-//   output  = copy(string1, strlen(string1), output);
-//   output  = copy(string2, strlen(string2), output);
+//   output  = copy_n(string1, strlen(string1), output);
+//   output  = copy_n(string2, strlen(string2), output);
 //   *output = '\0';
 //
-//   cout << data;  // 输出 "hello world"
+//   cout << data;  // 输出 "helloworld"
 //
 // 注意到, 我们直接解决了拷贝问题, 还解决了连接问题——连续 copy 多次就是了
 value_type* copy_n(value_type const* input, int size, value_type* output) {
