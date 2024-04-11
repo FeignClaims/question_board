@@ -287,7 +287,7 @@
       #include <cstring>  // for std::strcpy
 
       char const* input = "hello world";
-      int output[100] = {};
+      int output[100]   = {};
 
       std::strcpy(output, input);
 
@@ -298,7 +298,7 @@
     .. code-block:: cpp
       :linenos:
 
-      int input[10] = {5, 4, 2, 7};
+      int input[10]  = {5, 4, 2, 7};
       int output[20] = {};
 
       // 拷贝 [input, input + 10) 到 [output, output + 10)
@@ -319,7 +319,7 @@
 
       #include <algorithm>  // for std::copy_n
 
-      int input[10] = {5, 4, 2, 7};
+      int input[10]  = {5, 4, 2, 7};
       int output[20] = {};
 
       // 拷贝 [input, input + 10) 到 [output, output + 10)
@@ -333,7 +333,7 @@
       #include <algorithm>  // for std::copy_n
 
       char const* input = "hello world";
-      int output[100] = {};
+      int output[100]   = {};
 
       // 长度为 std::strlen(input) + 1, 因为还要拷贝终止字符
       std::copy_n(input, std::strlen(input) + 1, output);
