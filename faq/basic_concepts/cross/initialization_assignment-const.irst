@@ -1,0 +1,9 @@
+const 限定的对象不能被修改, 因而只能进行初始化, 不能赋值.
+
+.. code-block:: cpp
+  :linenos:
+
+  int const a;  // 错误: 未初始化 const 限定的对象
+
+  int const b{0};  // 必须在这里初始化它
+  b = 3;           // 错误: 试图修改 const 限定的对象

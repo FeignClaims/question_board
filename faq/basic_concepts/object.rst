@@ -25,7 +25,7 @@ C++ 中的对象不是面向对象风格所说的 "类与对象" 的对象.
 
     int value;           // 未初始化
     std::cout << value;  // 鬼知道输出什么
-    value = 10;          // 初始化为 10
+    value = 10;          // 赋值为 10
 
 内存区域
   .. code-block:: cpp

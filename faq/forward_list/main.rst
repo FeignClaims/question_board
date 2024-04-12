@@ -5,8 +5,10 @@
 .. admonition:: 前置内容
   :class: precontent
 
-  - :doc:`/faq/basic_concepts/pointer`
+  - :doc:`/faq/basic_concepts/object`
+  - :doc:`/faq/basic_concepts/initialization_assignment`
   - :doc:`/faq/basic_concepts/struct`
+  - :doc:`/faq/basic_concepts/pointer`
   - :doc:`/faq/class_invariant/main`
 
 ========================================================================================================================
@@ -351,6 +353,7 @@
 .. admonition:: 前置内容
   :class: precontent
 
+  - :doc:`/faq/basic_concepts/initialization_assignment`
   - :doc:`/faq/basic_concepts/resource`
 
 目前我们已经建立了单向链表, 但这真的好用吗?

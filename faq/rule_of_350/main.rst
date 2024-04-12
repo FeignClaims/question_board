@@ -5,7 +5,10 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. admonition:: 前置内容
   :class: precontent
 
+  - :doc:`/faq/basic_concepts/initialization_assignment`
   - :doc:`/faq/basic_concepts/resource`
+  - :doc:`/faq/class_invariant/main`
+  - :doc:`/faq/member_initializer/main`
 
 ========================================================================================================================
 特殊函数

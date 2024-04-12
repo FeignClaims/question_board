@@ -59,6 +59,7 @@
   :maxdepth: 1
 
   basic_concepts/object
+  basic_concepts/initialization_assignment
   basic_concepts/struct
   basic_concepts/resource
   basic_concepts/type_conversion
@@ -99,6 +100,7 @@
   :maxdepth: 1
 
   class_invariant/main
+  member_initializer/main
 
 =======================================================================================================================
 构造函数、赋值函数、析构函数

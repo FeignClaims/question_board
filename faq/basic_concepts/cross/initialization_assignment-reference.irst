@@ -1,0 +1,10 @@
+引用在声明时必须确定引用的对象, 因而必须被初始化, 往后对它的所有操作都是对其引用的对象进行:
+
+.. code-block:: cpp
+  :linenos:
+
+  int& a;  // 错误: 未初始化引用
+
+  int value{0};
+  int& reference{value};  // 必须在这里初始化它
+  reference = 3;          // 相当于 value = 3
