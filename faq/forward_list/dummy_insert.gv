@@ -1,0 +1,51 @@
+digraph {
+  node [shape = none;];
+  splines = line;
+  
+  subgraph {
+    array [label = <
+      <TABLE BORDER = "0" CELLBORDER = "1" CELLSPACING = "1">
+      <TR>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a0">-</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p0" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a1">0</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p1" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a2">1</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p2" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a3">2</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p3" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a4">3</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p4" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a5">4</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p5" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a6">5</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p6" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a7">6</TD>
+      <TD WIDTH = "5" HEIGHT = "20" PORT = "p7" BGCOLOR = "GREY" BORDER = "0"></TD>
+      <TD WIDTH = "20" HEIGHT = "20" PORT = "a8" STYLE = "DASHED"></TD>
+      </TR>
+      </TABLE>>;];
+  }
+  
+  subgraph {
+    node [width = 0; height = 0;];
+    edge [arrowhead = vee; color = grey;];
+    p0 [label = "";];
+    p1 [label = "";];
+    p2 [label = "";];
+    p3 [label = "";];
+    p4 [label = "";];
+    p5 [label = "";];
+    p6 [label = "";];
+    p7 [label = "";];
+    
+    p0 -> array:p0 [label = ""; style = "dashed";];
+    p1 -> array:p1 [label = ""; style = "dashed";];
+    p2 -> array:p2 [label = ""; style = "dashed";];
+    p3 -> array:p3 [label = ""; style = "dashed";];
+    p4 -> array:p4 [label = ""; style = "dashed";];
+    p5 -> array:p5 [label = ""; style = "dashed";];
+    p6 -> array:p6 [label = ""; style = "dashed";];
+    p7 -> array:p7 [label = ""; style = "dashed";];
+  }
+}
