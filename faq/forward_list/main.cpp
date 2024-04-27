@@ -11,7 +11,8 @@ struct Node {
 
 // 在 position 之后插入 new_node
 // 前置条件:：
-//  position != nullptr, 即 position 是确实存在的结点.
+//  - position != nullptr, 即 position 是确实存在的结点.
+//  - new_node != nullptr, 即 new_node 是确实存在的结点.
 //
 // 返回值::
 //  返回指向新插入结点的指针.
