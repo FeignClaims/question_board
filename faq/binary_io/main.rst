@@ -37,5 +37,5 @@
 
   int value = 0;
 
-  std::ofstream ifile("输入文件路径", std::ios_base::binary);
+  std::ifstream ifile("输入文件路径", std::ios_base::binary);
   ifile.read(reinterpret_cast<char*>(value), sizeof(value));
