@@ -1,0 +1,604 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2024-03-14T18:47:45+08:00" /><meta property="og:title" content="极少重载的运算符" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="faq/basic_concepts/operator_overloading_example/rarely_overloaded/" />
+<meta property="og:site_name" content="C++ 洋葱剥法交流群资料" />
+<meta property="og:description" content="取址运算符: operator&, 由于该运算符存在重载的可能, 泛型库使用 std::addressof 来获取用户自定义类型对象的地址.,, 布尔逻辑运算符: operator&& 和 operator||, 不像内置的版本, 重载后的布尔逻辑运算符不遵循 短路求值规则.,, 逗号运算符: operator,, 由于该运算符存在重载的可能, 泛型库使用诸如 a, void(), b 或者..." />
+<meta name="description" content="取址运算符: operator&, 由于该运算符存在重载的可能, 泛型库使用 std::addressof 来获取用户自定义类型对象的地址.,, 布尔逻辑运算符: operator&& 和 operator||, 不像内置的版本, 重载后的布尔逻辑运算符不遵循 短路求值规则.,, 逗号运算符: operator,, 由于该运算符存在重载的可能, 泛型库使用诸如 a, void(), b 或者..." />
+
+    <title>极少重载的运算符 &#8212; C++ 洋葱剥法交流群资料</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/theme.css?v=fd6f595c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=cd85ae70"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = '点击展开';</script>
+    <script>let toggleHintHide = '点击隐藏';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'faq/basic_concepts/operator_overloading_example/rarely_overloaded';</script>
+    <link rel="canonical" href="https://question-board.readthedocs.io/faq/basic_concepts/operator_overloading_example/rarely_overloaded/" />
+    <link rel="icon" href="../../../../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../../../../genindex/" />
+    <link rel="search" title="搜索" href="../../../../search/" />
+    <link rel="next" title="模板 (template)" href="../../template/" />
+    <link rel="prev" title="逻辑非: operator!" href="../logic_not/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2024-03-14 18:47:45"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">C++ 洋葱剥法交流群资料</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/FeignClaims/question_board" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">关于文档</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../rule_and_preface/">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../meet_trouble/">遇到问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../CONTRIBUTING/">参与贡献</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">学习资料</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../searching_method/">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../share_code/">如何用网页链接分享代码?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../how_to_ask/">如何询问 C++ 代码问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../debugger/">断点调试的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../formatter/">自动格式化代码的方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../cpp/">C++ 学习建议、环境配置等</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../">常见问题解答</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../object/">对象 (object)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../initialization_assignment/">初始化、赋值 (initialization, assignment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../struct/">结构体 (struct)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../resource/">资源 (resource)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../type_conversion/">类型转换 (type conversion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/">引用 (reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pointer/">指针 (pointer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../function/">函数 (function)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../function_parameter/">函数参数 (function parameter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../value_category/">值类别 (value category)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../auto/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">auto</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sizeof/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c_array/">C 风格数组: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">]</span></code> (C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../c_string/">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../operator_overloading/">运算符重载及示例 (operator overloading)</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../copy_assignment/">拷贝赋值函数: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../istream_ostream/">输入流、输出流: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ostream</span><span class="p">,</span><span class="w"> </span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../increment_decrement/">自增自减: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">()</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../compund_assignment_and_binary_operation/">复合赋值和二元算术: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+=</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../comparison/">比较运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">==</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../subscript/">数组下标: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="p">[]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dereference/">解引用: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">-&gt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../logic_not/">逻辑非: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">!</span></code></a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">极少重载的运算符</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../template/">模板 (template)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../move_semantics/">移动语义 (move semantics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../east_const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../variable_decleration_reading/">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../condition/">条件判断 (condition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../md_c_array/">多维数组 (multi-dimensional C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../escape_character/">转义字符: 为什么 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'0'</span></code> 的值不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code> (escape character)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../comma_operator/">逗号表达式 (comma operator)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../exception_throwing/">异常的抛出与捕获 (exception throwing)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../exception_throwing/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exception_throwing/normal/">正常题: 抛出时栈回溯 (stack unwinding)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exception_throwing/hardcore/">硬核题: 抛出一个构造函数和析构函数会输出的类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../class_invariant/">不变式: 类和结构体的区别 (class invariant)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../member_initializer/">成员初始化器: 构造函数的冒号是啥?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../lifetime/">生命期 (lifetime): 带输出的构造、析构如何阅读?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/automatic_storage_duration/">1. 自动存储周期 (automatic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/static_storage_duration/">2. 静态存储周期 (static storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/dynamic_storage_duration/">3. 动态存储周期 (dynamic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/thread_local_storage_duration/">4. 线程局部存储周期 (thread_local storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/temporary_object/">5. 临时对象 (temporary object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/mix/">6. 综合题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lifetime/make_more_exercises/">制作更多习题</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rule_of_350/">rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../copy_functions_parameter/">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../virtual_function_invocation_explain/">虚函数调用的感性理解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../input_methods/">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../pointer_output/">为什么字符指针不输出地址值, 而其他指针输出地址值?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../c_string_output/">为什么我的字符数组输出很奇怪?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../ascii_output/">如何输出字符对应的 ASCII 码?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../fstream/">文件读写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../binary_io/">二进制输入输出 (binary I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../instantiation/">实例化: 对类模板写友元函数出现问题? (instantiation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generate_random_number/">随机数的生成 (random number generation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../range_iterator_and_algorithm/">范围、迭代器和算法 (range, iterator and algorithm)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../forward_list/">实例分析: 单向链表 (forward list)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../dynamic_array/">实例分析: 动态数组 (dynamic array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../getter_setter/">实现 setter 和 getter 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../separate_interface_from_implementation/">接口与实现相分离 (separate interface from implementation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../visual_studio/strcpy/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy</span></code> 报错了, 让用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy_s</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../visual_studio/unresovable_external_symbol/">无法解析的外部符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../exercise/split_digits/">拆分整数的各位数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../exercise/base_conversion/">整数进制转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../twos_complement/">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coreguidelines/c_2/">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coreguidelines/c_40/">C.40: 如果类具有不变式, 则定义构造函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coreguidelines/c_131/">C.131: 避免平凡的 getters 和 setters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coreguidelines/es_45/">ES.45: 避免 "魔法常量"; 用符号常量代替它!</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">理论依据</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../c_or_cpp/">课上的 C 和 C++ 有什么区别?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../theory/">答疑原则和理论依据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ppp3_chapter0/">天鹅书第三版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../ppp2_chapter0/">天鹅书第二版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../learning_map/">学习大纲</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/blob/main/faq/basic_concepts/operator_overloading_example/rarely_overloaded.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/edit/main/faq/basic_concepts/operator_overloading_example/rarely_overloaded.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/issues/new?title=Issue%20on%20page%20%2Ffaq/basic_concepts/operator_overloading_example/rarely_overloaded.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>极少重载的运算符</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id16">
+<h1>极少重载的运算符<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<dl class="simple">
+<dt>取址运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&amp;</span></code></dt><dd><p>由于该运算符存在重载的可能, 泛型库使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">addressof</span></code> 来获取用户自定义类型对象的地址.</p>
+</dd>
+<dt>布尔逻辑运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&amp;&amp;</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">||</span></code></dt><dd><p>不像内置的版本, 重载后的布尔逻辑运算符不遵循 <strong>短路求值规则</strong>.</p>
+</dd>
+<dt>逗号运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="p">,</span></code></dt><dd><p>由于该运算符存在重载的可能, 泛型库使用诸如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="p">(),</span><span class="w"> </span><span class="n">b</span></code> 或者 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">b</span></code> 的表达式而非 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span></code> 来控制涉及用户自定义类型的表达式的顺序执行.</p>
+</dd>
+<dt>通过指针访问成员的成员访问运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">-&gt;*</span></code></dt><dd><p>没什么实际的应用场景.</p>
+</dd>
+</dl>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../logic_not/"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">逻辑非: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">!</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../template/"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">模板 (template)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： FeignClaims
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, FeignClaims.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  最后更新于 2024-03-14 18:47:45.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
