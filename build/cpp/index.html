@@ -1,0 +1,1709 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-02-04T15:41:58+08:00" /><meta property="og:title" content="C++ 学习建议、环境配置等" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="cpp/" />
+<meta property="og:site_name" content="C++ 洋葱剥法交流群资料" />
+<meta property="og:description" content="C++ 环境配置: 哪怕按下面列出的 Visual Studio 配置教程 (Windows 可用) 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 因此我更建议你使用 VSCode 配置教程 (Windows/MacOS/Linux 均可用). 直接装 Visual Studio (Windows 可用) 就好; 当然更建议按下文配置 V..." />
+<meta name="description" content="C++ 环境配置: 哪怕按下面列出的 Visual Studio 配置教程 (Windows 可用) 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 因此我更建议你使用 VSCode 配置教程 (Windows/MacOS/Linux 均可用). 直接装 Visual Studio (Windows 可用) 就好; 当然更建议按下文配置 V..." />
+
+    <title>C++ 学习建议、环境配置等 &#8212; C++ 洋葱剥法交流群资料</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme.css?v=ae8a9af6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=cd85ae70"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/jquery.min.js?v=94f7166b"></script>
+    <script src="../_static/zoom-image.js?v=56ef8405"></script>
+    <script>let toggleHintShow = '点击展开';</script>
+    <script>let toggleHintHide = '点击隐藏';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'cpp/index';</script>
+    <link rel="canonical" href="https://question-board.readthedocs.io/cpp/" />
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="常见问题解答" href="../faq/" />
+    <link rel="prev" title="自动格式化代码的方法" href="../formatter/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2025-02-04 15:41:58"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">C++ 洋葱剥法交流群资料</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/FeignClaims/question_board" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">关于文档</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../rule_and_preface/">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meet_trouble/">遇到问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">参与贡献</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">学习资料</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../searching_method/">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../share_code/">如何用网页链接分享代码?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_ask/">如何询问 C++ 代码问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugger/">断点调试的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatter/">自动格式化代码的方法</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">C++ 学习建议、环境配置等</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../faq/">常见问题解答</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/object/">对象 (object)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/initialization_assignment/">初始化、赋值 (initialization, assignment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/struct/">结构体 (struct)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/resource/">资源 (resource)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/type_conversion/">类型转换 (type conversion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/reference/">引用 (reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/pointer/">指针 (pointer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/function/">函数 (function)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/function_parameter/">函数参数 (function parameter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/value_category/">值类别 (value category)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/auto/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">auto</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/sizeof/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/c_array/">C 风格数组: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">]</span></code> (C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/c_string/">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/basic_concepts/operator_overloading/">运算符重载及示例 (operator overloading)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/copy_assignment/">拷贝赋值函数: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/istream_ostream/">输入流、输出流: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ostream</span><span class="p">,</span><span class="w"> </span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/increment_decrement/">自增自减: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">()</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/compund_assignment_and_binary_operation/">复合赋值和二元算术: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+=</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/comparison/">比较运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">==</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/subscript/">数组下标: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="p">[]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/dereference/">解引用: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">-&gt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/logic_not/">逻辑非: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">!</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/rarely_overloaded/">极少重载的运算符</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/template/">模板 (template)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/move_semantics/">移动语义 (move semantics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/east_const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/variable_decleration_reading/">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/condition/">条件判断 (condition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/md_c_array/">多维数组 (multi-dimensional C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/escape_character/">转义字符: 为什么 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'0'</span></code> 的值不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code> (escape character)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/comma_operator/">逗号表达式 (comma operator)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/exception_throwing/">异常的抛出与捕获 (exception throwing)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/normal/">正常题: 抛出时栈回溯 (stack unwinding)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/hardcore/">硬核题: 抛出一个构造函数和析构函数会输出的类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/class_invariant/">不变式: 类和结构体的区别 (class invariant)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/member_initializer/">成员初始化器: 构造函数的冒号是啥?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/lifetime/">生命期 (lifetime): 带输出的构造、析构如何阅读?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/automatic_storage_duration/">1. 自动存储周期 (automatic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/static_storage_duration/">2. 静态存储周期 (static storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/dynamic_storage_duration/">3. 动态存储周期 (dynamic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/thread_local_storage_duration/">4. 线程局部存储周期 (thread_local storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/temporary_object/">5. 临时对象 (temporary object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/mix/">6. 综合题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/make_more_exercises/">制作更多习题</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/rule_of_350/">rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_functions_parameter/">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/virtual_function_invocation_explain/">虚函数调用的感性理解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/input_methods/">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/pointer_output/">为什么字符指针不输出地址值, 而其他指针输出地址值?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/c_string_output/">为什么我的字符数组输出很奇怪?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/ascii_output/">如何输出字符对应的 ASCII 码?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/fstream/">文件读写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/binary_io/">二进制输入输出 (binary I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/instantiation/">实例化: 对类模板写友元函数出现问题? (instantiation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/generate_random_number/">随机数的生成 (random number generation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/range_iterator_and_algorithm/">范围、迭代器和算法 (range, iterator and algorithm)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/forward_list/">实例分析: 单向链表 (forward list)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/dynamic_array/">实例分析: 动态数组 (dynamic array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/getter_setter/">实现 setter 和 getter 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/separate_interface_from_implementation/">接口与实现相分离 (separate interface from implementation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/visual_studio/strcpy/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy</span></code> 报错了, 让用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy_s</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/visual_studio/unresovable_external_symbol/">无法解析的外部符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exercise/split_digits/">拆分整数的各位数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exercise/base_conversion/">整数进制转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/twos_complement/">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_2/">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_40/">C.40: 如果类具有不变式, 则定义构造函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_131/">C.131: 避免平凡的 getters 和 setters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/es_45/">ES.45: 避免 "魔法常量"; 用符号常量代替它!</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">理论依据</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../c_or_cpp/">课上的 C 和 C++ 有什么区别?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">答疑原则和理论依据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ppp3_chapter0/">天鹅书第三版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ppp2_chapter0/">天鹅书第二版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning_map/">学习大纲</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/blob/main/cpp/index.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/edit/main/cpp/index.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/issues/new?title=Issue%20on%20page%20%2Fcpp/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>C++ 学习建议、环境配置等</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">C++ 环境配置</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">学习方法</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">在学会如何走得好看之前, 先跑起来</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">不要记忆技术细节</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">实际编程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">学习使用软件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">使用最新的软件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">不要通过询问人工智能大模型学习</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">更多学习方法</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">非应试自学学习路径</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">应试教育学习路径</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">网课参考</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">教材参考</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">习题参考</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">C++ 资料查询</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">C++ 术语不全书</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="c">
+<span id="cpp"></span><h1>C++ 学习建议、环境配置等<a class="headerlink" href="#c" title="Link to this heading">#</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">危险</p>
+<p>以下建议内容中所涉及的, 学习 <a class="reference internal" href="#id22"><span class="std std-ref">辩证唯物论</span></a> 对于学习的作用都是实践事实, 并非所谓粉红无脑爱国才有的捏造.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">你凭什么说是实践事实?!</p>
+<p>我在 2021 年初正式接触 C++ 并进行学习, 至 2024 年 3 月 8 日写下这段:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">阅览 C++ 相关书目并找到记录的有</p>
+<ul class="simple">
+<li><p>《C++ Primer Plus, 6th Edition》</p></li>
+<li><p>《编码：隐匿在计算机软硬件背后的语言》</p></li>
+<li><p>《Programming: Principles and Practice Using C++, 2nd Edition》</p></li>
+<li><p>《A Tour of C++, 2rd Edition》</p></li>
+<li><p>《The C++ Programming Language, 4th Edition》</p></li>
+<li><p>《世界是数字的》</p></li>
+<li><p>《Effective C++》</p></li>
+<li><p>《More Effective C++》</p></li>
+<li><p>《Effective STL》</p></li>
+<li><p>《Exceptional C++》</p></li>
+<li><p>《More Exceptional C++》</p></li>
+<li><p>《Exceptional C++ Style》</p></li>
+<li><p>《Effective Modern C++》</p></li>
+<li><p>《C++ Best Practices》</p></li>
+<li><p>《The C++ Standard Library, 2nd Edition》</p></li>
+<li><p>《C++17 - The Complete Guide》</p></li>
+<li><p>《Modern CMake for C++》</p></li>
+<li><p>《Beautiful C++》</p></li>
+<li><p>《Functional Programming in C++》</p></li>
+<li><p>《C++ Software Design》</p></li>
+<li><p>《C++ Core Guidelines》</p></li>
+<li><p>《A Tour of C++, 3rd Edition》</p></li>
+<li><p>《Elements of Programming》</p></li>
+<li><p>《From Mathematics to Generic Programming》</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">阅览 C++ 相关文章并找到记录的有</p>
+<ul class="simple">
+<li><p>C++ – an Invisible Foundation of Everything</p></li>
+<li><p>SG20 Education and Recommended Videos for Teaching C++ - Codeplay Software Ltd</p></li>
+<li><p>Efficient Programming with Components</p></li>
+<li><p>Stop using _out_ arguments</p></li>
+<li><p>How Non-Member Functions Improve Encapsulation | Dr Dobb&amp;amp;#39;s</p></li>
+<li><p>Avoid Manual Loop Unrolling</p></li>
+<li><p>A note on <cite>namespace __cpo</cite> – Arthur O&amp;amp;#39;Dwyer – Stuff mostly about C++</p></li>
+<li><p>artima - The Most Important C++ People...Ever</p></li>
+<li><p>wg-best-practices-os-developers/Compiler-Options-...</p></li>
+<li><p>Your “top five” ISO C++ feature proposals – Sutter’s Mill</p></li>
+<li><p>The C++20 Naughty and Nice List for Game Devs – J...</p></li>
+<li><p><cite>operator&amp;lt;=&amp;gt;</cite> doesn&amp;amp;#39;t obsolete the hidden friend idiom – Arthur O&amp;amp;#39;Dwyer – Stuff mostly about C++</p></li>
+<li><p>Concepts can&amp;amp;#39;t do quantifiers – Arthur O&amp;amp;#39;Dwyer – Stuff mostly about C++</p></li>
+<li><p>Solving Undefined Behavior in Factories with constinit from C++20 - C++ Stories</p></li>
+<li><p>Constrain your user-defined conversions | think-cell</p></li>
+<li><p>Just how <cite>constexpr</cite> is C++20&amp;amp;#39;s <cite>std::string</cite>? – Arthur O&amp;amp;#39;Dwyer – Stuff mostly about C++</p></li>
+<li><p>Using static and shared libraries across platforms</p></li>
+<li><p>John Carmack on Functional Programming in C++</p></li>
+<li><p>C++ Exceptions and Memory Allocation Failure</p></li>
+<li><p>why choose sum types over exceptions?</p></li>
+<li><p>Your own error code | Andrzej&amp;amp;#39;s C++ blog</p></li>
+<li><p>Should structs Have Constructors in C++ - Fluent C++</p></li>
+<li><p>How <cite>boost::is_base_of</cite> matches private and/or ambiguous bases – Arthur O&amp;amp;#39;Dwyer – Stuff mostly about C++</p></li>
+<li><p>Lock-Free Data Structures with Hazard Pointers</p></li>
+<li><p>Small Object Optimization for Polymorphic Types</p></li>
+<li><p>How can you be so certan?</p></li>
+<li><p>C++ Metaprogramming Exercises Vol. I - Ondřej Slámečka</p></li>
+<li><p>Super-FAQ : Standard C++</p></li>
+<li><p>Stroustrup: FAQ</p></li>
+<li><p>C++ Core Guidelines</p></li>
+<li><p>Google C++ Style Guide</p></li>
+<li><p>LLVM Coding Standards — LLVM documentation</p></li>
+<li><p>Issue 2485: get() should be overloaded for const tuple&amp;amp;&amp;amp;</p></li>
+<li><p>P1601 Recommendations for Specifying &amp;amp;quot;Hidden Friends&amp;amp;quot; · Issue #383 · cplusplus/papers</p></li>
+<li><p>Repairing input range adaptors and counted_iterat...</p></li>
+<li><p>Guidelines For snake_case Concept Naming</p></li>
+<li><p>P0668R5: Revising the C++ memory model</p></li>
+<li><p>P1450 Enriching type modification traits · Issue #216 · cplusplus/papers</p></li>
+<li><p>P1634 Naming guidelines for modules · Issue #423 · cplusplus/papers</p></li>
+<li><p>P1851 Guidelines For snake_case Concept Naming · Issue #601 · cplusplus/papers</p></li>
+<li><p>[ranges] P2214 A Plan for C++23 Ranges</p></li>
+<li><p>[ranges] P2760 A Plan for C++26 Ranges</p></li>
+<li><p>[games] P2966 Making C++ Better for Game Developers -- Progress Report</p></li>
+<li><p>P2727 R2 std::iterator_interface · Issue #1404 · cplusplus/papers</p></li>
+<li><p>Proxy Iterators for the Ranges Extensions</p></li>
+<li><p>P3002 Guidelines for allocators in new library classes · Issue #1671 · cplusplus/papers</p></li>
+<li><p>N4381 Suggested Design for Customization Points</p></li>
+<li><p>P2831 Functions having a narrow contract should not be noexcept</p></li>
+<li><p>P2861 The Lakos Rule: Narrow Contracts and noexcept Are Inherently Incompatible</p></li>
+<li><p>[SG20] Guidelines for Teaching C++</p></li>
+<li><p>[SG20] cplusplus/SG20: Study Group 20: Education</p></li>
+<li><p>Bjarne Stroustrup Quotes | Hacker News</p></li>
+<li><p>Stroustrup: C++ Glossary</p></li>
+<li><p>A C++ acronym glossary – Arthur O&amp;amp;#39;Dwyer – Stuff mostly about C++</p></li>
+<li><p>Acronyms - cppreference.com</p></li>
+<li><p>The new static constexpr std::integral_constant idiom</p></li>
+<li><p>术语的翻译</p></li>
+<li><p>Understanding the different flavors of Clang C and C++ compilers in Windows</p></li>
+<li><p>enable_shared_from multiple times</p></li>
+<li><p>std::ranges::begin vs. std::begin</p></li>
+<li><p>std::ranges::swap vs. std::swap</p></li>
+<li><p>std::unique_ptr::get</p></li>
+<li><p>templated operator() vs. templated function</p></li>
+<li><p>neiboild</p></li>
+<li><p>oop - C++ Design Pattern library? - Stack Overflow</p></li>
+<li><p>use of [[nodiscard]]</p></li>
+<li><p>weakness in neibolids</p></li>
+<li><p>gsl::not_null&amp;lt;T*&amp;gt; vs. std::reference_wrapper&amp;lt;T&amp;gt; vs. T&amp;amp;</p></li>
+<li><p>int*_t vs. int_fast*_t vs. int_least*_t</p></li>
+<li><p>Initializer lists and RHS of operators</p></li>
+<li><p>initialize two members from a function returning a tuple</p></li>
+<li><p>use std::cin to initialize a const variable</p></li>
+<li><p>Current time and date in C++20 days</p></li>
+<li><p>Can I list-initialize a vector of move-only type?</p></li>
+<li><p>How to organize includes for a header-only library that wants to expose mutually recursive functions?</p></li>
+<li><p>Composing boost::variant visitors for recursive variants</p></li>
+<li><p>what is the new feature in c++20 [[no_unique_address]]?</p></li>
+<li><p>[[no_unique_address]] and two member values of the same type</p></li>
+<li><p>CRTP vs derived virtual functions</p></li>
+<li><p>static constexpr</p></li>
+<li><p>move assignment</p></li>
+<li><p>is_convertible_v vs convertible_to</p></li>
+<li><p>stringstream to_string stoi to_chars from_chars</p></li>
+<li><p>random number generator: singleton</p></li>
+<li><p>iterator_category vs iterator_concept</p></li>
+<li><p>sfinae without decltype</p></li>
+<li><p>Concept definition requiring a constrained template member function</p></li>
+<li><p>unspecified types be used in C++20 &amp;amp;#39;requires&amp;amp;#39; expressions</p></li>
+<li><p>container concept</p></li>
+<li><p>Unit test naming best practices</p></li>
+<li><p>std::scoped_lock or std::unique_lock or std::lock_guard?</p></li>
+<li><p>std::lock_guard or std::scoped_lock?</p></li>
+<li><p>constexpr variable at namespace scope with and without explicit inline definition</p></li>
+<li><p>Should <cite>const</cite> and <cite>constexpr</cite> variables in headers be <cite>inline</cite> to prevent ODR violations?</p></li>
+<li><p>static, extern, inline</p></li>
+<li><p>Is there a reason why std::make_shared/std::make_unique don&amp;amp;#39;t use list initialization?</p></li>
+<li><p>Understanding std::atomic::compare_exchange_weak() in C++11</p></li>
+<li><p>Return value or rvalue reference?</p></li>
+<li><p>How to use span to wrap up command line args</p></li>
+<li><p>How to use std::ranges on a vector for a function that needs two arguments?</p></li>
+<li><p>Why does the implementation of declval in libstdc++-v3 look so complicated?</p></li>
+<li><p>Is it possible to print a variable&amp;amp;#39;s type in standard C++?</p></li>
+<li><p>Meaning of acronym SSO in the context of std::string</p></li>
+<li><p>Why does libc++&amp;amp;#39;s implementation of std::string take up 3x memory as libstdc++?</p></li>
+<li><p>Cost of std::vector::push_back either succeeding or having no effect?</p></li>
+<li><p>Branch Prediction</p></li>
+<li><p>overload of operator&amp;lt;&amp;lt; with basic_ostream</p></li>
+<li><p>Package Manager: Conan or vcpkg? · Issue #4125 · XRPLF/rippled</p></li>
+<li><p>CHAR_BIT replacement</p></li>
+<li><p>Why use mem_fn?</p></li>
+<li><p>Why does the C++ standard require the <cite>Clock::now</cite> function to be <cite>static</cite>?</p></li>
+<li><p>Should I use static_cast or reinterpret_cast when casting a void* to whatever</p></li>
+<li><p>Conditional Variable vs Semaphore</p></li>
+<li><p>random string</p></li>
+<li><p>Why does c++ ifstream read the file with duplicate records</p></li>
+<li><p>How to use bit_cast to type pun a unsigned char array</p></li>
+<li><p>Why is unique_ptr not equality_comparable_with nullptr_t in C++20?</p></li>
+<li><p>Is it okay to instantiate a new random_distribution every time?</p></li>
+<li><p>process - How do I execute a command and get the output of the command within C++ using POSIX? - Stack Overflow</p></li>
+<li><p>c++ - How to concisely express the C++20 concept of range containing T-typed values? - Stack Overflow</p></li>
+<li><p>Should I use std::function or a function pointer in C++? - Stack Overflow</p></li>
+<li><p>exception - Implementing a good C++0x error_condition? - Stack Overflow</p></li>
+<li><p>How do you get the current directory of the C++ executable? - Stack Overflow</p></li>
+<li><p>c++ - How to implement subcommands using Boost.Program_options? - Stack Overflow</p></li>
+<li><p>What is the significance of &amp;amp;#39;strongly happens before&amp;amp;#39; compared to &amp;amp;#39;(simply) happens before&amp;amp;#39;? - Stack Overflow</p></li>
+<li><p>Is sequentially-consistent ordering documentation example still correct with SCfix? : cpp</p></li>
+<li><p>cppreference.com</p></li>
+<li><p>cppreference</p></li>
+<li><p>[calendar] Date and time utilities - cppreference.com</p></li>
+<li><p>[chrono] List of tz database time zones - Wikipedia</p></li>
+<li><p>[chrono] Standard library header &amp;lt;chrono&amp;gt; (C++11) - cppreference.com</p></li>
+<li><p>[concepts] Named Requirements - cppreference.com</p></li>
+<li><p>[concepts] Standard library header &amp;lt;concepts&amp;gt; - cppreference.com</p></li>
+<li><p>[fmt] formatter - cppreference.com</p></li>
+<li><p>[fmt] Format String Syntax</p></li>
+<li><p>[fmt] {fmt} Formatting &amp;amp; Printing C++ Library | hacking C++</p></li>
+<li><p>[Modules Report] royjacobson/modules-report</p></li>
+<li><p>[iterator] Iterator library - cppreference.com</p></li>
+<li><p>[ranges] Constrained algorithms (since C++20) - cppreference.com</p></li>
+<li><p>[ranges] Standard library header &amp;lt;ranges&amp;gt; - cppreference.com</p></li>
+<li><p>[value categories] Value categories - cppreference.com</p></li>
+<li><p>The C++ Ecosystem in 2023: Growth of C++20, Wider Adoption of Clang-based Tools, AI Gaining Developers’ Confidence | The CLion Blog</p></li>
+<li><p>C++ Programming - The State of Developer Ecosystem in 2023 Infographic | JetBrains: Developer Tools for Professionals and Teams</p></li>
+<li><p>CppDevSurvey-2023-summary.pdf</p></li>
+<li><p>2022 年的 C++ 生态系统：C++17 和 C++20 的快速采用、C++ 工具集格局和更好的代码分析做法 | The CLion Blog</p></li>
+<li><p>C++ 编程 - 2022 开发者生态系统现状信息图 | JetBrains: Developer Tools for Professionals and Teams</p></li>
+<li><p>C++ at the end of 2022 - C++ Stories</p></li>
+<li><p>CppDevSurvey-2022-summary.pdf</p></li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">阅览 C++ 相关视频并找到记录的有</p>
+<ul class="simple">
+<li><p>Back to the Basics! Essentials of Modern C++ Style - Herb Sutter - CppCon 2014</p></li>
+<li><p>Back to Basics: Virtual Dispatch and its Alternatives - Inbal Levi - CppCon 2019</p></li>
+<li><p>Back to Basics: Move Semantics (part 1 of 2) - Klaus Iglberger - CppCon 2019</p></li>
+<li><p>Back to Basics: Move Semantics (part 2 of 2) - Klaus Iglberger - CppCon 2019</p></li>
+<li><p>Back to Basics: Smart Pointers - Arthur O&amp;amp;#39;Dwyer - CppCon 2019</p></li>
+<li><p>Back to Basics: Smart Pointers - Rainer Grimm - CppCon 2020</p></li>
+<li><p>Back to Basics: Exceptions - Klaus Iglberger - CppCon 2020</p></li>
+<li><p>Back to Basics: Casting - Brian Ruth - CppCon 2021</p></li>
+<li><p>Back to Basics: Designing Classes (part 1 of 2) - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Back to Basics: Designing Classes (part 2 of 2) - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Back To Basics: The Special Member Functions - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Back to Basics: Lambdas - Nicolai Josuttis - CppCon 2021</p></li>
+<li><p>Back to Basics: Move Semantics - Nicolai Josuttis - CppCon 2021</p></li>
+<li><p>Back to Basics: Debugging in C++ - Mike Shah - CppCon 2022</p></li>
+<li><p>Back to Basics: Templates in C++ - Nicolai Josuttis - CppCon 2022</p></li>
+<li><p>Back to Basics: Cpp Value Semantics - Klaus Iglberger - CppCon 2022</p></li>
+<li><p>Back to Basics: (Range) Algorithms in C++ - Klaus Iglberger - CppCon 2023</p></li>
+<li><p>Back to Basics: Iterators in C++ - Nicolai Josuttis - CppCon 2023</p></li>
+<li><p>Back to Basics: Debugging in Cpp - Greg Law - CppCon 2023</p></li>
+<li><p>C++17 in Breadth (part 1 of 2) - Alisdair Meredith - CppCon 2016</p></li>
+<li><p>C++17 in Breadth (part 2 of 2) - Alisdair Meredith - CppCon 2016</p></li>
+<li><p>Getting Allocators out of Our Way - Alisdair Meredith &amp;amp; Pablo Halpern - CppCon 2019</p></li>
+<li><p>Reflection in C++ - Past, Present, and Hopeful Future - Andrei Alexandrescu - CppCon 2022</p></li>
+<li><p>Expect the expected - Andrei Alexandrescu - CppCon 2018</p></li>
+<li><p>Reflection in C++ - Past, Present, and Hopeful Future - Andrei Alexandrescu - CppCon 2022</p></li>
+<li><p>Robots Are after Your Job: Exploring Generative AI for C++ - Andrei Alexandrescu - CppCon 2023</p></li>
+<li><p>Concepts in 60: Everything you need to know and nothing you don&amp;amp;#39;t - Andrew Sutton - CppCon 2018</p></li>
+<li><p>Trivially Relocatable - Arthur O&amp;amp;#39;Dwyer - CppCon 2018</p></li>
+<li><p>Deducing this Patterns - Ben Deane - CppCon 2021</p></li>
+<li><p>std:: exchange Idioms - Ben Deane - CppCon 2017</p></li>
+<li><p>Applicative: The Forgotten Functional Pattern in C++ - Ben Deane - CppNow 2023</p></li>
+<li><p>Lightning Talk: A Static Alternative to Virtual Functions, Using Expression SFINAE - Ben Deane - CppCon 2016</p></li>
+<li><p>Ligntning Talk: Easing into Modern C++ - Ben Deane - C++Now 2018</p></li>
+<li><p>Ligntning Talk: How We Used To Be - Ben Deane - CppCon 2020</p></li>
+<li><p>Lightning Talk: C++20 Lambdas: Familiar Template Syntax - Ben Deane - CppCon 2020</p></li>
+<li><p>Lightning Talk: The Process Is The Problem - Ben Deane - CppCon 2021</p></li>
+<li><p>constexpr ALL the Things! - Ben Deane &amp;amp; Jason Turner - CppCon 2017</p></li>
+<li><p>Operator Overloading: History, Principles and Practice - Ben Deane - CppCon 2018</p></li>
+<li><p>Keynote: Optimizing for Change in C++ - Ben Deane - CppNorth 2023</p></li>
+<li><p>Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018</p></li>
+<li><p>Why you should avoid Linked Lists - Bjarne Stroustrup - GoingNative 2012</p></li>
+<li><p>Make Simple Tasks Simple! - Bjarne Stroustrup - CppCon 2014</p></li>
+<li><p>The Essence of C++ - Bjarne Stroustrup</p></li>
+<li><p>Writing Good C++14 - Bjarne Stroustrup - CppCon 2015</p></li>
+<li><p>The Evolution of C++ Past, Present and Future - Bjarne Stroustrup - CppCon 2016</p></li>
+<li><p>Learning and Teaching Modern C++ - Bjarne Stroustrup - CppCon 2017</p></li>
+<li><p>Concepts: The Future of Generic Programming (the future is here) - Bjarne Stroustrup - CppCon 2018</p></li>
+<li><p>Keynote: What can C++ do for embedded systems developers? - Bjarne Stroustrup - NDC Techtown 2018</p></li>
+<li><p>C++20: C++ at 40 - Bjarne Stroustrup - CppCon 2019</p></li>
+<li><p>Plenary: The Beauty and Power of &amp;amp;quot;Primitive&amp;amp;quot; C++ - Bjarne Stroustrup - CppCon 2020</p></li>
+<li><p>Bjarne Stroustrup: C++ | Lex Fridman Podcast #48</p></li>
+<li><p>Type-and-resource Safety in Modern C++ - Bjarne Stroustrup - CppCon 2021</p></li>
+<li><p>C++20: Reaching for the Aims of C++ - Bjarne Stroustrup - CppCon 2021</p></li>
+<li><p>C++ in Constrained Environments - Bjarne Stroustrup - CppCon 2022</p></li>
+<li><p>Hardening C++ with Bjarne Stroustrup - BjarneStroustrup - Software Daily</p></li>
+<li><p>Approaching C++ Safety - Bjarne Stroustrup - Core C++ 2023</p></li>
+<li><p>Delivering Safe C++ - Bjarne Stroustrup - CppCon 2023</p></li>
+<li><p>C++17 Features (part 1 of 2) -Bryce Adelstein Lelbach - CppCon 2017</p></li>
+<li><p>Multidimensional C++ - Bryce Adelstein Lelbach - CppNorth 2022</p></li>
+<li><p>The C++ Execution Model - Bryce Adelstein Lelbach - CppCon 2018</p></li>
+<li><p>What is C++ - Chandler Carruth, Titus Winters - CppCon 2019</p></li>
+<li><p>High Performance Code 201: Hybrid Data Structures - Chandler Carruth - CppCon 2016</p></li>
+<li><p>LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017</p></li>
+<li><p>Documentation in the Era of Concepts and Ranges - Christopher Di Bella &amp;amp; Sy Brand - CppCon 2021</p></li>
+<li><p>Discovering a User-Facing Concept - Christopher Di Bella - CppCon 2021</p></li>
+<li><p>Removing Metaprogramming From C++, Part 1 of N: constexpr Function Params - David Stone - CppCon 2019</p></li>
+<li><p>Implementing static_vector: How Hard Could it Be? - David Stone - CppCon 2021</p></li>
+<li><p>Faster, Easier, Simpler Vectors - David Stone - CppCon 2021</p></li>
+<li><p>Lightning Talk: Quantum Interpretations of the C++ Object Model - David Stone - CppCon 2021</p></li>
+<li><p>Ranges for the Standard Library - Eric Niebler - CppCon 2015</p></li>
+<li><p>Working with Asynchrony Generically: A Tour of C++ Executors (part 1/2) - Eric Niebler - CppCon 2021</p></li>
+<li><p>Working with Asynchrony Generically: A Tour of C++ Executors (part 2/2) - Eric Niebler - CppCon 2021</p></li>
+<li><p>Rich Code for Tiny Computers: A Simple Commodore 64 Game in C++17 - Jason Turner - CppCon 2016</p></li>
+<li><p>Thinking Portable: How and why to make your C++ cross platform - Jason Turner - CppNow 2016</p></li>
+<li><p>constexpr ALL the Things! - Ben Deane &amp;amp; Jason Turner - CppCon 2017</p></li>
+<li><p>C++ Code Smells - Jason Turner - CppCon 2019</p></li>
+<li><p>The Best Parts of C++ - Jason Turner - CppCon 2019</p></li>
+<li><p><em>(char</em>)0 = 0; - What Does the C++ Programmer Intend With This Code? - JF Bastien - C++ on Sea 2023</p></li>
+<li><p>Stop Teaching C - Kate Gregory - CppCon 2015</p></li>
+<li><p>10 Core Guidelines You Need to Start Using Now -  Kate Gregory - CppCon 2017</p></li>
+<li><p>Simplicity: not just for beginners - Kate Gregory [ACCU 2018] - YouTube</p></li>
+<li><p>Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018</p></li>
+<li><p>What Do We Mean When We Say Nothing At All? - Kate Gregory - CppCon 2018</p></li>
+<li><p>Naming is Hard: Let&amp;amp;#39;s Do Better - Kate Gregory - CppCon 2019</p></li>
+<li><p>What Do We Mean When We Say Nothing At All? - Kate Gregory [ACCU 2019] - YouTube</p></li>
+<li><p>Naming is Hard: Let&amp;amp;#39;s Do Better - Kate Gregory - C++ on Sea 2020</p></li>
+<li><p>Naming is Hard: Let&amp;amp;#39;s Do Better - Kate Gregory - ACCU 2021</p></li>
+<li><p>Keynote: Abstraction Patterns - Kate Gregory - NDC TechTown 2022</p></li>
+<li><p>Keynote: Am I A Good Programmer? - Kate Gregory - CppNorth 2022</p></li>
+<li><p>Abstraction Patterns: Making Code Reliably Better Without Deep Understanding - Kate Gregory - ACCU 2022</p></li>
+<li><p>Keynote: Become a Better Programmer by Using Words and Ideas From Casual Gaming - Kate Gregory - ACCU 2023</p></li>
+<li><p>Keynote: Emotional Code - ACCU Conference 2019 - Kate Gregory</p></li>
+<li><p>Free Your Functions! - Klaus Iglberger - CppCon 2017</p></li>
+<li><p>Back to Basics: Move Semantics (part 1 of 2) - Klaus Iglberger - CppCon 2019</p></li>
+<li><p>Back to Basics: Move Semantics (part 2 of 2) - Klaus Iglberger - CppCon 2019</p></li>
+<li><p>Back to Basics: Exceptions - Klaus Iglberger - CppCon 2020</p></li>
+<li><p>Back to Basics: Designing Classes (part 1 of 2) - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Back to Basics: Designing Classes (part 2 of 2) - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Design Patterns: Facts and Misconceptions - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Back To Basics: The Special Member Functions - Klaus Iglberger - CppCon 2021</p></li>
+<li><p>Back to Basics: Cpp Value Semantics - Klaus Iglberger - CppCon 2022</p></li>
+<li><p>Back to Basics: (Range) Algorithms in C++ - Klaus Iglberger - CppCon 2023</p></li>
+<li><p>Regular Expressions Redefined in C++ - Hana Dusikova - CppCon 2017</p></li>
+<li><p>atomic Weapons 1 of 2 - Herb Sutter - C++ and Beyond 2012</p></li>
+<li><p>atomic Weapons 2 of 2 - Herb Sutter - C++ and Beyond 2012</p></li>
+<li><p>Lock-Free Programming (or, Juggling Razor Blades), Part I - Herb Sutter - CppCon 2014</p></li>
+<li><p>Lock-Free Programming (or, Juggling Razor Blades), Part II - Herb Sutter - CppCon 2014</p></li>
+<li><p>Back to the Basics! Essentials of Modern C++ Style - Herb Sutter - CppCon 2014</p></li>
+<li><p>Writing Good C++14... By Default - Herb Sutter - CppCon 2015</p></li>
+<li><p>Leak-Freedom in C++... By Default - CppCon 2016 - Herb Sutter</p></li>
+<li><p>Thoughts on a more powerful and simpler C++ (5 of N)” - Herb Sutter - CppCon 2018</p></li>
+<li><p>Extending and Simplifying C++: Thoughts on Pattern Matching using <cite>is</cite> and <cite>as</cite> - Herb Sutter - CppCon2021</p></li>
+<li><p>Meta: Thoughts on generative C++ - Herb Sutter - CppCon 2017</p></li>
+<li><p>De-fragmenting C++: Making Exceptions and RTTI More Affordable and Usable - Herb Sutter - CppCon 2019</p></li>
+<li><p>Empirically Measuring, &amp;amp; Reducing, C++’s Accidental Complexity - Herb Sutter - CppCon 2020</p></li>
+<li><p>C++ Standards Committee Fireside Chat hosted by Herb Sutter - CppCon 2020 - YouTube</p></li>
+<li><p>Can C++ be 10x Simpler &amp;amp; Safer? - Herb Sutter - CppCon 2022</p></li>
+<li><p>Keynote: The Evolution of C++ - A Typescript for C++ - Herb Sutter - CppNow 2023</p></li>
+<li><p>Plenary: Cooperative C++ Evolution – Toward a Typescript for C++ - Herb Sutter - CppCon 2023</p></li>
+<li><p>A C++14 approach to dates and times - Howard Hinnant - CppCon 2015</p></li>
+<li><p>A ＜chrono＞ Tutorial - Howard Hinnant - CppCon 2016</p></li>
+<li><p>Welcome To The Time Zone - Howard Hinnant - CppCon 2016</p></li>
+<li><p>＜chrono＞ Then and Now - Howard Hinnant - CppCon 2018</p></li>
+<li><p>Back to Basics: Virtual Dispatch and its Alternatives - Inbal Levi - CppCon 2019</p></li>
+<li><p>Customization Methods: Connecting User and C++ Library Code - Inbal Levi - CppCon 2023</p></li>
+<li><p>A C++ Approach to Physical Units - Mateusz Pusz - CppCon 2019</p></li>
+<li><p>The Nightmare of Move Semantics for Trivial Classes - Nicolai Josuttis - CppCon 2017</p></li>
+<li><p>The Nightmare of Initialization in C++ - Nicolai Josuttis - CppCon 2018</p></li>
+<li><p>C++17: The Best Features - Nicolai Josuttis - ACCU 2018</p></li>
+<li><p>50 shades of C++ - Nicolai Josuttis - Meeting C++ 2018 Closing Keynote</p></li>
+<li><p>When C++ Style Guides Contradict - Nicolai Josuttis - CppCon 2019</p></li>
+<li><p>The Hidden Secrets of Move Semantics - Nicolai Josuttis - CppCon 2020</p></li>
+<li><p>Why and How we fixed std::thread by std::jthread - Nicolai Josuttis - C++ on Sea 2020</p></li>
+<li><p>Back to Basics: Move Semantics - Nicolai Josuttis - CppCon 2021</p></li>
+<li><p>C++20: My Favorite Code Examples - Nico Josuttis - Meeting C++ 2021</p></li>
+<li><p>Back to Basics: Lambdas - Nicolai Josuttis - CppCon 2021</p></li>
+<li><p>Back to Basics: Templates in C++ - Nicolai Josuttis - CppCon 2022</p></li>
+<li><p>Belle Views on C++ Ranges, their Details and the Devil - Nico Josuttis - Meeting C++ 2022</p></li>
+<li><p>Universal/Forwarding References - Nicolai Josuttis - Meeting C++ 2022</p></li>
+<li><p>Back to Basics: Iterators in C++ - Nicolai Josuttis - CppCon 2023</p></li>
+<li><p>Using the filter view in practice - Nicolai Josuttis - Meeting C++ 2023</p></li>
+<li><p>Failing Successfully: Reporting and Handling Errors - Robert Leahy - CppCon 2021</p></li>
+<li><p>Taking a Byte Out of C++: Avoiding Punning by Starting Lifetimes - Robert Leahy - CppCon 2022</p></li>
+<li><p>Lightning Talk: I Need a Different Variant in C++ - Robert Allan Hennigan Leahy - C++ on Sea 2023</p></li>
+<li><p>C++ Seasoning - Sean Parent - GoingNative 2013</p></li>
+<li><p>Inheritance Is The Base Class of Evil - Sean Parent - GoingNative 2013</p></li>
+<li><p>Better Code: Data Structures - Sean Parent - CppCon 2015</p></li>
+<li><p>Better Code: Concurrency - Sean Parent - NDC London 2017</p></li>
+<li><p>(undefined behaviour) Secret Lightning Talks: Polymorphic Task - Sean Parent - Meeting C++ 2017</p></li>
+<li><p>Better Code: Human Interface - Sean Parent - CppCon 2018</p></li>
+<li><p>Better Code: Relationships - Sean Parent - CppCon 2019</p></li>
+<li><p>Warning: std::find() is Broken! - Sean Parent - CppCon 2021</p></li>
+<li><p>All the Safeties: Safety in C++ - Sean Parent - CppNow 2023</p></li>
+<li><p>Better Code: Runtime Polymorphism - Sean Parent - NDC London 2017</p></li>
+<li><p>Type Deduction and Why You Care - Scott Meyers - CppCon 2014</p></li>
+<li><p>How to Write Well-Behaved Value Wrappers - Simon Brand - CppCon 2018</p></li>
+<li><p>Documentation in the Era of Concepts and Ranges - Christopher Di Bella &amp;amp; Sy Brand - CppCon 2021</p></li>
+<li><p>What’s New in C++23 - Sy Brand - CppCon 2022 - YouTube</p></li>
+<li><p>STL Features And Implementation Techniques - Stephan T. Lavavej - CppCon 2014</p></li>
+<li><p>functional: What&amp;amp;#39;s New, And Proper Usage - Stephan T. Lavavej - CppCon 2015</p></li>
+<li><p>Don&amp;amp;#39;t Help the Compiler - Stephan T. Lavavej - GoingNative 2013</p></li>
+<li><p>Readable C++ - Timur Doumler - CppCon 2016</p></li>
+<li><p>Want fast C++? Know your hardware! - Timur Doumler - CppCon 2016</p></li>
+<li><p>Can I has grammar? - Timur Doumler - CppCon 2018</p></li>
+<li><p>Class template argument deduction in C++17 - Timur Doumler - CppCon 2018</p></li>
+<li><p>Type punning in modern C++ - Timur Doumler - CppCon 2019</p></li>
+<li><p>ISO/IEC 14882 - Timur Doumler - CppCon 2019</p></li>
+<li><p>C++20: The small things - Timur Doumler - CppCon 2019</p></li>
+<li><p>How C++20 Changes the Way We Write Code - Timur Doumler - CppCon 2020</p></li>
+<li><p>Lightning Talk: Direct Aggregate Initialisation - Timur Doumler - CppCon 2021</p></li>
+<li><p>How C++23 Changes the Way We Write Code - Timur Doumler - CppCon 2022</p></li>
+<li><p>C++ Lambda Idioms - Timur Doumler - CppCon 2022</p></li>
+<li><p>Guide to Safety in C++ - Timur Doumler - CppNorth 2023</p></li>
+<li><p>Lightning Talk: Into the Lambdaverse - Weird C++ Lambda Shenanigans - Timur Doumler - CppNow 2023</p></li>
+<li><p>Keynote: C++ Contracts, Testing &amp;amp; the Pursuit of Well Defined Behaviour - Timur Doumler - CppNorth23</p></li>
+<li><p>Maintainability and Refactoring Impact of Higher-Level Design Features - Titus Winters - CppCon 2019</p></li>
+<li><p>What is C++ - Chandler Carruth, Titus Winters - CppCon 2019</p></li>
+<li><p>C++ Past vs. Future - Titus Winters - Pacific++ 2018</p></li>
+<li><p>An Overview of Standard Ranges - Tristan Brindle - CppCon 2019</p></li>
+<li><p>C++20 Ranges in Practice - Tristan Brindle - CppCon 2020</p></li>
+<li><p>Quick Game Development with C++11 / C++14 - Vittorio Romeo - CppCon2014</p></li>
+<li><p>Moving an <cite>int</cite> Is Slow: Debug Performance Matters! - Vittorio Romeo - ACCU 2022</p></li>
+<li><p>Lightning Talk: quick-bench.com - Fred Tingaud - CppCon 2017</p></li>
+<li><p>Lightning Talk: This is Why We Can’t Have Nice Things - Jon Kalb - CppCon 2018</p></li>
+<li><p>Lightning Talk: One Friend Ain&amp;amp;#39;t Enough - Jody Hagins - CppNow 2021</p></li>
+<li><p>Lightning Talk: CodeCompass: An open source code navigator for C++ based on LLVM/Clang - Gábor Horváth - CppCon 2016</p></li>
+<li><p>Lightning Talk: C++ Debug Performance is Improving: What Now? - Vittorio Romeo - CppCon 2022</p></li>
+<li><p>Lightning Talk: Become A Game Developer In 5 Minutes Or Less - Mathieu Ropert - CppCon 2020</p></li>
+<li><p>Lightning Talk: MP: ~~Template~~ Meta-Programming in C++ - Kris Jusiak - CppCon 2022</p></li>
+<li><p>Lightning Talk: Modernizing SFML in Cpp - Chris Thrasher - CppCon 2022</p></li>
+<li><p>Lightning Talk: Finding Whether a Number is a Power of 2 - Ankur Satle - CppCon 2022</p></li>
+<li><p>Lightning Talk: C++20 - A New Way of Meta-Programming? - Kris Jusiak - CppCon 2022</p></li>
+<li><p>Lightning Talk: 2D Graphics with SFML - Lukas Dürrenberger - Meeting C++ 2018 Lightning Talks</p></li>
+<li><p>Lightning Talk: Static Reflection on the Budget in C++23 - Kris Jusiak - CppNow 2023</p></li>
+<li><p>Lightning Talk: Writing a Lookup Table in C++ - Richard Smith - CppNow 2023</p></li>
+<li><p>Lightning Talk: Source/Sink vs. Ranges in C++ - What&amp;amp;#39;s the Difference? - Tony Van Eerd - CppNow 2023</p></li>
+<li><p>Lightning Talk: Into the Lambdaverse - Weird C++ Lambda Shenanigans - Timur Doumler - CppNow 2023</p></li>
+<li><p>Lightning Talk: When C++ Singletons Fail... Richard Shepherd - C++ on Sea 2023</p></li>
+<li><p>Lightning Talks: 5 Things You Didn&amp;amp;#39;t Know Your CPU Did For You - Matt Godbolt - C++ on Sea 2023</p></li>
+<li><p>Lightning Talks: Reading CSV Files with Standard C++ - Jens Weller - Meeting C++ 2023</p></li>
+<li><p>105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018</p></li>
+<li><p>C++23 Standard Library Preview - Jeff Garland - CppCon 2021</p></li>
+<li><p>C++20’s ＜chrono＞ Calendars and Time Zones in MSVC - Miya Natsuhara - CppCon 2021</p></li>
+<li><p>Back to Basics: Casting - Brian Ruth - CppCon 2021</p></li>
+<li><p>Variants: Past, Present, and Future - David Sankel - CppCon 2016</p></li>
+<li><p>Mix Tests and Production Code With Doctest... - Viktor Kirilov - CppCon 2017</p></li>
+<li><p>Generic Graph Libraries in C++20 - Andrew Lumsdaine &amp;amp; Phil Ratzloff - CppCon 2021</p></li>
+<li><p>&amp;amp;quot;unit&amp;amp;quot;_test: Implementing a Macro-free Unit Testing Framework from Scratch in C++20 - Kris Jusiak - CppCon 2021</p></li>
+<li><p>OOP Is Dead, Long Live Data-oriented Design - Stoyan Nikolov - CppCon 2018</p></li>
+<li><p>Effective replacement of dynamic polymorphism with std::variant - Mateusz Pusz - CppCon 2018</p></li>
+<li><p>Building a C++ Reflection System in One Weekend Using Clang and LLVM - Arvid Gerstmann - CppCon 2018</p></li>
+<li><p>clang-useful: Building useful tools with LLVM and clang for fun and profit - P. Goldsborough - CppNow 2017</p></li>
+<li><p>What&amp;amp;#39;s New in Conan 2.0 C/C++ Package Manager - Diego Rodriguez-Losada - CppCon 2022</p></li>
+<li><p>GitHub Features Every C++ Developer Should Know - Michael Price - CppCon 2022</p></li>
+<li><p>Reflection without Reflection TS - Fabian Renn Giles - Meeting C++ 2022</p></li>
+<li><p>Back to Basics: Debugging in C++ - Mike Shah - CppCon 2022</p></li>
+<li><p>Refactoring Legacy Codebases with LibTooling - James Bennett - CppCon 2018</p></li>
+<li><p>Bringing Clang-tidy Magic to Visual Studio C++ Developers - Victor Ciura - CppCon 2017</p></li>
+<li><p>Time Travel: Applying Gradual Typing to Time Types with Clang&amp;amp;#39;s LibTooling - Hyrum Wright - CppCon 2019</p></li>
+<li><p>Colonies, performance and why you should care - Matthew Bentley - CppCon 2016</p></li>
+<li><p>Reproducible Developer Environments in C++ - Michael Price - CppCon 2022</p></li>
+<li><p>A Test a Day Keeps Your Manager Away! - Rian Quinn - CppCon 2017</p></li>
+<li><p>Custom Views for the Rest of Us - Jacob Rice - CppCon 2021</p></li>
+<li><p>What Is an Image? - Will Rosesrans - CppCon 2022</p></li>
+<li><p>C++ atomics, from basic to advanced. What do they really do? - Fedor Pikus - CppCon 2017</p></li>
+<li><p>Give me 15 minutes &amp;amp; I&amp;amp;#39;ll change your view of GDB - Greg Law - CppCon 2015</p></li>
+<li><p>Conan 2.0 demo - Chris McArthur - Meeting C++ online book &amp;amp; tool fair</p></li>
+<li><p>Abstraction the true superpower of C++ - Guy Davidson - Meeting C++ 2022</p></li>
+<li><p>Multi Threading Model in Paradox Games: Past, Present and Future - Mathieu Ropert - CppCon 2021</p></li>
+<li><p>Game Audio Programming in C++ - Guy Somberg - CppCon 2017</p></li>
+<li><p>What C++ developers should know about globals (and the linker) - Nir Friedman - CppCon 2017</p></li>
+<li><p>Linux Debuginfo Formats - DWARF, ELF, dwo, dwp - What are They All? - Greg Law - CppCon 2022</p></li>
+<li><p>import CMake, CMake and C++20 Modules - Bill Hoffman - CppCon 2022</p></li>
+<li><p>SOLID, Revisited - Tony Van Eerd - CppNow 2021</p></li>
+<li><p>Data-Oriented Design and C++ - Mike Acton - CppCon 2014</p></li>
+<li><p>Branchless Programming in C++ - Fedor Pikus - CppCon 2021</p></li>
+<li><p>GDB: A Lot More Than You Knew - Greg Law - CppCon 2016</p></li>
+<li><p>What C++ Programmers Need to Know about Header ＜random＞ - Walter E. Brown - CppCon 2016</p></li>
+<li><p>How to Write Effective Documentation for C++ Libraries... - Robert Ramey - CppCon 2017</p></li>
+<li><p>Adapting C++20 Ranges Algorithms for Most Metaprogramming Needs in Fewer Than 1,000 Lines of Code - Daisy Hollman &amp;amp; Kris Jusiak - CppNow 2023</p></li>
+<li><p>What&amp;amp;#39;s New in Compiler Explorer? - Matt Godbolt - C++ on Sea 2023</p></li>
+<li><p>Better Algorithm Intuition - Conor Hoekstra &#64;code_report - Meeting C++ 2019</p></li>
+<li><p>Typical C++, But Why? - Björn Fahller - CppNorth 2023</p></li>
+<li><p>Most Malleable Memory Management Method in C++ - Björn Fahller - C++ on Sea 2023</p></li>
+<li><p>C++ Feature Coroutines, Beginner Friendly - Andreas Fertig - CppNorth 2023</p></li>
+<li><p>Value Oriented Programming. Part 1: You Say You Want To Write A Function - Tony Van Eerd - CppNorth 22</p></li>
+<li><p>Value Oriented Programming Part V: Return of the Values - Tony Van Eerd - CppNorth 2023</p></li>
+<li><p>What Has My Compiler Done for Me Lately? Unbolting the Compiler&amp;amp;#39;s Lid - Matt Godbolt - CppCon 2017</p></li>
+<li><p>More C++ Ranges Please - Roi Barkan - CppCon 2023</p></li>
+<li><p>Expressing Implementation Sameness and Similarity: Polymorphism in Modern C++ - Daisy Hollman - CppCon 2023</p></li>
+<li><p>Exceptionally Bad: The Misuse of Exceptions in C++ &amp;amp; How to Do Better - Peter Muldoon - CppCon 2023</p></li>
+<li><p>C++ Modules: Getting Started Today - Andreas Weis - CppCon 2023</p></li>
+<li><p>A Common Package Specification: Getting Build Tools to Talk to Each Other: Lessons Learned From Making thousands of Binaries Consumable by Any Build System - Diego Rodriguez-Losada - CppCon 2023</p></li>
+<li><p>C++20 Modules: The Packaging and Binary Redistribution Story - Luis Caro Campos - CppCon 2023</p></li>
+<li><p>Undefined Behavior is Not an Error - Barbara Geller &amp;amp; Ansel Sermersheim - CppCon 2018</p></li>
+<li><p>How to Build Your First C++ Automated Refactoring Tool - Kristen Shaker - CppCon 2023</p></li>
+<li><p>Conan 2.0 - C and C++ Package Manager Documentation — conan 2.0.0 documentation</p></li>
+<li><p>Why not Conan? - Diego Rodriguez-Losada - CppCon 2016</p></li>
+<li><p>Conan, a C and C++ package manager for developers - Diego Rodriguez-Losada - CppCon 2016</p></li>
+<li><p>Why not Conan (part II)? - Diego Rodriguez-Lopez - CppCon 2017</p></li>
+<li><p>Why not Conan (part III)? - Diego Rodriguez-Losada - CppCon 2018</p></li>
+<li><p>Why Conan? 5 reasons to use Conan package manager - Diego Rodriguez-Losada - CppCon 2019</p></li>
+<li><p>Why Conan (part II, 5 reasons to use Conan in 2020) - Diego Rodriguez-Losada - CppCon 2020</p></li>
+<li><p>What&amp;amp;#39;s New in Conan 2.0 C/C++ Package Manager - Diego Rodriguez-Losada - CppCon 2022</p></li>
+<li><p>What&amp;amp;#39;s new in Conan 2.0 - CoreCppIL - Christopher McArthur</p></li>
+<li><p>CMake and Conan: past, present and future - Diego Rodriguez-Losada - Meeting C++ 2023</p></li>
+<li><p>(discouraged) C++ Development with Visual Studio Code - Rong Lu - CppCon 2017</p></li>
+<li><p>(discouraged) Concepts in C++20: Revolution or Evolution - Rainer Grimm - CppCon 2019</p></li>
+<li><p>(discouraged) C++20 String Formatting Library: An Overview and Use with Custom Types - Marc Gregoire - CppCon 2020</p></li>
+<li><p>(discouraged) Back to Basics: Unit Tests - Ben Saks - CppCon 2020</p></li>
+<li><p>(discouraged) The Hidden Performance Price of C++ Virtual Functions - Ivica Bogosavljevic - CppCon 2022</p></li>
+<li><p>(discouraged) Text - Corentin Jabot - CppCon 2019</p></li>
+<li><p>(discouraged) New in Visual Studio Code! Clang-Tidy, makefile, CMake, GitHub, &amp;amp; More - Marian Luparu, Sinem Akinci - CppCon 2022</p></li>
+<li><p>(discouraged) Back to Basics: Concurrency - Mike Shah - CppCon 2021</p></li>
+<li><p>(discouraged) This Videogame Programmer Used the STL and You Will Never Guess What Happened Next - Mathieu Ropert - CppCon 2019</p></li>
+<li><p>(discouraged) Modern C and What We Can Learn From It - Luca Sas - ACCU 2021</p></li>
+<li><p>(discouraged) Game engine using STD C++ 11 - Jason Jurecka - CppCon 2016</p></li>
+<li><p>(discouraged) The Quiet Little Gem in Modern C++: ＜system_error＞ - Charles Bay - CppCon 2017</p></li>
+<li><p>(discouraged) Lightning Talk: Cute Approach for Polymorphism in C++ - Liad Aben Sour Asayag - CppCon 2022</p></li>
+<li><p>(discouraged) I Just Wanted a Random Integer! - Cheinan Marks - CppCon 2016</p></li>
+<li><p>(discouraged) ASTImporter: Merging Clang ASTs - G. Márton - 2019 LLVM Developers’ Meeting</p></li>
+<li><p>(discouraged) Lightning Talk: operator for - C++ Generator Ranges Without Coroutine Overhead - Jonathan Müller</p></li>
+<li><p>(discouraged) C++ Common Knowledge - Dawid Zalewski - Meeting C++ 2023</p></li>
+<li><p>STL and Its Design Principles - Alexander Stepanov</p></li>
+<li><p>C++ Weekly</p>
+<ul>
+<li><p>SE.Why -0xFFFFFFFF == 1</p></li>
+<li><p>Chapter 1 - Answers</p></li>
+<li><p>Chapter 1 - Notes</p></li>
+<li><p>Chapter 2 - Answers</p></li>
+<li><p>Chapter 2 - Notes</p></li>
+<li><p>Chapter 3 - Notes</p></li>
+<li><p>Chapter 4 - The Evolution of Lambdas</p></li>
+<li><p>Chapter 5 - Lambdas To The Limits</p></li>
+<li><p>6.Intro To Variadic Templates</p></li>
+<li><p>7.Stop Using std::endl - YouTube</p></li>
+<li><p>9.std::future Quick-Start</p></li>
+<li><p>10.Variadic Expansion Wrap-Up</p></li>
+<li><p>11.std::future Part 2</p></li>
+<li><p>12.C++17&amp;amp;#39;s std::any</p></li>
+<li><p>13.Fibonacci: You&amp;amp;#39;re Doing It Wrong</p></li>
+<li><p>14 Standard Library Gems: <cite>next</cite> and <cite>exchange</cite></p></li>
+<li><p>15.Using <cite>std::bind</cite></p></li>
+<li><p>16.Avoiding <cite>std::bind</cite></p></li>
+<li><p>17.C++17&amp;amp;#39;s <cite>std::invoke</cite></p></li>
+<li><p>SE.Using C++17&amp;amp;#39;s constexpr if</p></li>
+<li><p>18.C++17&amp;amp;#39;s constexpr if</p></li>
+<li><p>20.C++17&amp;amp;#39;s Fold Expressions</p></li>
+<li><p>21.C++17&amp;amp;#39;s <cite>if</cite> and <cite>switch</cite> Init Statements</p></li>
+<li><p>22.C++17&amp;amp;#39;s Nested Namespaces and <cite>std::clamp</cite></p></li>
+<li><p>23.C++17&amp;amp;#39;s __has_include</p></li>
+<li><p>24.C++17&amp;amp;#39;s Structured Bindings</p></li>
+<li><p>25.C++17&amp;amp;#39;s Aggregate Initializations</p></li>
+<li><p>26.Language Features Removed in C++17</p></li>
+<li><p>27.C++17 Changes To Sequence Containers</p></li>
+<li><p>28.C++17&amp;amp;#39;s [[fallthrough]] Attribute - YouTube</p></li>
+<li><p>29.C++17&amp;amp;#39;s [[maybe_unused]] Attribute - YouTube</p></li>
+<li><p>30.C++17&amp;amp;#39;s [[nodiscard]] Attribute - YouTube</p></li>
+<li><p>32.Lambdas For Free</p></li>
+<li><p>33.Start Using Default Member Initializers</p></li>
+<li><p>34.Reading Assembly Language - Part 1</p></li>
+<li><p>35.Reading Assembly Language - Part 2</p></li>
+<li><p>36.Reading Assembly Language - Part 3</p></li>
+<li><p>37.Stateful Lambdas</p></li>
+<li><p>38.C++17&amp;amp;#39;s Class Template Argument Type Deduction</p></li>
+<li><p>39.C++17&amp;amp;#39;s Deduction Guides</p></li>
+<li><p>40.Inheriting From Lambdas</p></li>
+<li><p>41.C++17&amp;amp;#39;s constexpr Lambda Support</p></li>
+<li><p>42.Clang&amp;amp;#39;s Heap Elision</p></li>
+<li><p>48.C++17&amp;amp;#39;s Variadic <cite>using</cite></p></li>
+<li><p>49.Why Inherit From Lambdas?</p></li>
+<li><p>50.Inheriting Lambdas vs Generic Lambdas</p></li>
+<li><p>51.Advanced Stateful Lambdas</p></li>
+<li><p>53.Gotos Are Everywhere</p></li>
+<li><p>60.std::quoted</p></li>
+<li><p>61.Storage Duration with Lambdas</p></li>
+<li><p>64.C++11&amp;amp;#39;s std::min (and my version)</p></li>
+<li><p>65.C++11&amp;amp;#39;s std::fmin</p></li>
+<li><p>66.Variadic fmin for C++11</p></li>
+<li><p>67.C++17&amp;amp;#39;s std::gcd and std::lcm</p></li>
+<li><p>69.C++17&amp;amp;#39;s Searchers</p></li>
+<li><p>71.Hidden C++ 17 - Part 1</p></li>
+<li><p>72.Hidden C++17 - Part 2</p></li>
+<li><p>75.Why You Cannot Move From Const</p></li>
+<li><p>81.Basic Computer Architecture</p></li>
+<li><p>83.Installing Compiler Explorer</p></li>
+<li><p>87.std::optional</p></li>
+<li><p>88.Don&amp;amp;#39;t Forget About puts</p></li>
+<li><p>89.Overusing Lambdas</p></li>
+<li><p>92.function-try-blocks</p></li>
+<li><p>93.Custom Comparators for Containers</p></li>
+<li><p>94.Lambdas as Comparators</p></li>
+<li><p>95.Transparent Comparators</p></li>
+<li><p>96.Transparent Lambda Comparators</p></li>
+<li><p>97.Lambda To Function Pointer Conversion</p></li>
+<li><p>98.Precision Loss with Accumulate</p></li>
+<li><p>99.C++ 20&amp;amp;#39;s Default Bit-field Member Initializers</p></li>
+<li><p>100.All The Assignment Operators</p></li>
+<li><p>106.Disabling Move From const</p></li>
+<li><p>107.The Power of =delete</p></li>
+<li><p>108.Understanding emplace_back</p></li>
+<li><p>109.When noexcept Really Matters</p></li>
+<li><p>116.Trying Out The Conan Package Manager</p></li>
+<li><p>122.`constexpr` With <cite>optional</cite> And <cite>variant</cite></p></li>
+<li><p>123.Using in_place_t</p></li>
+<li><p>125.The Optimal Way To Return From A Function</p></li>
+<li><p>126.Lambdas With Destructors</p></li>
+<li><p>127.C++20&amp;amp;#39;s Designated Initializers</p></li>
+<li><p>128.C++20&amp;amp;#39;s Template Syntax For Lambdas</p></li>
+<li><p>129.The One Feature I&amp;amp;#39;d Remove From C++</p></li>
+<li><p>130.C++20&amp;amp;#39;s for init-statements</p></li>
+<li><p>132.Lambdas In Fold Expressions</p></li>
+<li><p>133.What Exactly IS A Lambda Anyhow?</p></li>
+<li><p>134.The Best Possible Way To Create A Visitor?</p></li>
+<li><p>135.{fmt} is Addictive! Using {fmt} and spdlog</p></li>
+<li><p>136.How <cite>inline</cite> Might Affect The Optimizer</p></li>
+<li><p>137.C++ Is Not An Object Oriented Language</p></li>
+<li><p>139.References To Pointers</p></li>
+<li><p>140.Use <cite>cout</cite>, <cite>cerr</cite>, and <cite>clog</cite> Correctly</p></li>
+<li><p>141.C++20&amp;amp;#39;s Designated Initializers And Lambdas</p></li>
+<li><p>142.Short Circuiting With Logical Operators</p></li>
+<li><p>144.Pure Functions in C++</p></li>
+<li><p>146.C++20&amp;amp;#39;s std::to_address</p></li>
+<li><p>149.C++20&amp;amp;#39;s Lambda Usability Changes</p></li>
+<li><p>150.C++20&amp;amp;#39;s Lambdas For Resource Management</p></li>
+<li><p>151.C++20&amp;amp;#39;s Lambdas As Custom Comparators</p></li>
+<li><p>152.Lambdas: The Key To Understanding C++</p></li>
+<li><p>159.`constexpr` <cite>virtual</cite> Members In C++20</p></li>
+<li><p>162.Recursive Lambdas</p></li>
+<li><p>165.C++20&amp;amp;#39;s is_constant_evaluated()</p></li>
+<li><p>166.C++20&amp;amp;#39;s Uniform Container Erasure</p></li>
+<li><p>168.Discovering Warnings You Should Be Using</p></li>
+<li><p>169.C++20 Aggregates With User Defined Constructors</p></li>
+<li><p>170.C++17&amp;amp;#39;s <cite>inline</cite> Variables</p></li>
+<li><p>171.C++20&amp;amp;#39;s Parameter Packs In Captures</p></li>
+<li><p>172.Execution Support in Compiler Explorer</p></li>
+<li><p>173.The Important Parts of C++98 in 13 Minutes</p></li>
+<li><p>174.C++20&amp;amp;#39;s <cite>std::bind_front</cite></p></li>
+<li><p>175.Spaceships in C++20: operator 〈=〉</p></li>
+<li><p>176.Important Parts of C++11 in 12 Minutes</p></li>
+<li><p>177.`std::bind_front` Implemented With Lambdas</p></li>
+<li><p>178.The Important Parts of C++14 In 9 Minutes</p></li>
+<li><p>181.Fixing Our bind_front with std::invoke</p></li>
+<li><p>183.Start Using Raw String Literals</p></li>
+<li><p>184.What Are Higher Order Functions?</p></li>
+<li><p>185.Stop Using reinterpret_cast!</p></li>
+<li><p>186.What Are Callables?</p></li>
+<li><p>187.C++20&amp;amp;#39;s <cite>constexpr</cite> Algorithms</p></li>
+<li><p>188.C++20&amp;amp;#39;s <cite>constexpr</cite> <cite>new</cite> Support</p></li>
+<li><p>189.C++14&amp;amp;#39;s Variable Templates</p></li>
+<li><p>190.The Important Parts of C++17 in 10 Minutes</p></li>
+<li><p>192.Stop Using Double Underscores</p></li>
+<li><p>193.C++20&amp;amp;#39;s <cite>contains</cite> Members</p></li>
+<li><p>194.From SFINAE To Concepts With C++20</p></li>
+<li><p>195.C++20&amp;amp;#39;s <cite>constinit</cite></p></li>
+<li><p>196.What is <cite>requires requires</cite>?</p></li>
+<li><p>198.Surprise Uses For <cite>explicit</cite> Constructors</p></li>
+<li><p>199.[[nodiscard]] Constructors And Their Uses</p></li>
+<li><p>200.Christmas Class 2019 - Chapter 1 of 5 - Understanding Lambdas</p></li>
+<li><p>201.Christmas Class 2019 - Chapter 2 of 5 - Building On Lambdas</p></li>
+<li><p>202.Christmas Class 2019 - Chapter 3 of 5 - Utilizing Lambdas</p></li>
+<li><p>203.Christmas Class 2019 - Chapter 4 of 5 - The Evolution of Lambdas</p></li>
+<li><p>204.Christmas Class 2019 - Chapter 5 of 5 - Lambdas To The Limits</p></li>
+<li><p>205.Christmas Class 2019 - Chapter 5 of 5 Answers</p></li>
+<li><p>206.Surprising Conversions with CTAD</p></li>
+<li><p>207.C++20&amp;amp;#39;s jthread and stop_token</p></li>
+<li><p>211.C++20&amp;amp;#39;s Bit Manipulation Functions</p></li>
+<li><p>213.CTRE: Compile Time Regular Expressions</p></li>
+<li><p>216.C++20&amp;amp;#39;s lerp, midpoint And Why They Are Necessary</p></li>
+<li><p>218.C++20&amp;amp;#39;s std::to_array</p></li>
+<li><p>220.C++20&amp;amp;#39;s [[likely]] and [[unlikely]] With Practical use Case</p></li>
+<li><p>223.Know Your Standard Library: std::nextafter</p></li>
+<li><p>225.Understanding Operator Overloading</p></li>
+<li><p>228.C++20&amp;amp;#39;s (High Precision) Mathematical Constants</p></li>
+<li><p>229.C++20: Why Deprecate The Comma Operator?</p></li>
+<li><p>231.Multiple Destructors in C++20?! How and Why</p></li>
+<li><p>232.C++20&amp;amp;#39;s <cite>using enum</cite></p></li>
+<li><p>233.std::map vs constexpr map (huge perf difference!)</p></li>
+<li><p>234.map[] vs map.at()</p></li>
+<li><p>237.Teach Yourself C++ in ∞ Days</p></li>
+<li><p>238.const mutable Lambdas?</p></li>
+<li><p>239.std::mem_fun vs std::mem_fn Fight!</p></li>
+<li><p>240.Start Using [[nodiscard]]! - YouTube</p></li>
+<li><p>241.Using <cite>explicit</cite> to Find Expensive Accidental Copies</p></li>
+<li><p>242.Design By Introspection in C++20 (concepts + if constexpr)</p></li>
+<li><p>246.(+[](){})() What Does It Mean?</p></li>
+<li><p>249.Types That Shall Not Be Named</p></li>
+<li><p>251.constexpr Parameters With C++20&amp;amp;#39;s CNTTP</p></li>
+<li><p>253.C++20 is Official! How To Get Your Copy of the Standard - YouTube</p></li>
+<li><p>254.C++23&amp;amp;#39;s signed / unsigned size_t Literals</p></li>
+<li><p>256.C++11&amp;amp;#39;s Garbage Collector</p></li>
+<li><p>257.Garbage In, Garbage Out - Why Initialization Matters</p></li>
+<li><p>258.The Awesome Power of C++20&amp;amp;#39;s std::source_location - YouTube</p></li>
+<li><p>259.CRTP: What It Is, Some History and Some Uses</p></li>
+<li><p>261.C++20&amp;amp;#39;s New consteval Keyword - YouTube</p></li>
+<li><p>262.std::string&amp;amp;#39;s 11 Confusing Constructors</p></li>
+<li><p>264.Covariant Return Types and Covariant Smart Pointers</p></li>
+<li><p>265.C++20&amp;amp;#39;s std::bit_cast</p></li>
+<li><p>266.C++20&amp;amp;#39;s std::shift_left and std::shift_right</p></li>
+<li><p>267.C++20&amp;amp;#39;s starts_with and ends_with</p></li>
+<li><p>269.How To Use C++20&amp;amp;#39;s constexpr std::vector and std::string</p></li>
+<li><p>271.string.clear() vs string = &amp;amp;quot;&amp;amp;quot;</p></li>
+<li><p>276.C++20&amp;amp;#39;s Conditionally <cite>explicit</cite> Conversions</p></li>
+<li><p>277.Quick Perf Tip: Avoid Integer Conversions</p></li>
+<li><p>278.`emplace_back` vs <cite>push_back</cite></p></li>
+<li><p>279.Quick Perf Tip: Use The Right Iterator Comparison</p></li>
+<li><p>283.Stop Using const_cast!</p></li>
+<li><p>284.C++20&amp;amp;#39;s Safe Integer Comparisons</p></li>
+<li><p>287.Understanding <cite>auto</cite></p></li>
+<li><p>288.Quick Perf Tip: Prefer <cite>auto</cite></p></li>
+<li><p>289.Returning From The <cite>void</cite></p></li>
+<li><p>290.C++14&amp;amp;#39;s Digit Separators and Binary Literals</p></li>
+<li><p>291.Start Using <cite>as_const</cite></p></li>
+<li><p>292.Safely Using <cite>goto</cite> In C++</p></li>
+<li><p>296.Constraining <cite>auto</cite> in C++20</p></li>
+<li><p>304.C++23&amp;amp;#39;s &amp;amp;#39;if consteval&amp;amp;#39;</p></li>
+<li><p>307.Making C++ Fun and Accessible</p></li>
+<li><p>312.Stop Using <cite>constexpr</cite> (And Use This Instead!)</p></li>
+<li><p>313.The <cite>constexpr</cite> Problem That Took Me 5 Years To Fix!</p></li>
+<li><p>315.constexpr vs static constexpr</p></li>
+<li><p>318.My Meetup Got Nerd Sniped! A C++ Curry Function</p></li>
+<li><p>322.Top 4 Places To Never Use <cite>const</cite></p></li>
+<li><p>328.Recursive Lambdas in C++23</p></li>
+<li><p>328.Recursive Lambdas in C++23</p></li>
+<li><p>329.How LTO Easily Makes Your Program Faster</p></li>
+<li><p>330.Faster Builds with <cite>extern template</cite> (And How It Relates to LTO)</p></li>
+<li><p>331.This Game Teaches C++!</p></li>
+<li><p>332.C++ Lambda vs std::function vs Function Pointer</p></li>
+<li><p>333.A Simplified std::function Implementation</p></li>
+<li><p>334.How to Put a Lambda in a Container</p></li>
+<li><p>336.C++23&amp;amp;#39;s Awesome std::stacktrace Library</p></li>
+<li><p>337.C23 Features That Affect C++ Programmers</p></li>
+<li><p>339.`static constexpr` vs <cite>inline constexpr</cite></p></li>
+<li><p>340.Finally! A Simple String Split in C++!</p></li>
+<li><p>341.std format vs lib {fmt}</p></li>
+<li><p>342.C++20&amp;amp;#39;s Ranges: A Quick Start</p></li>
+<li><p>343.Digging Into Type Erasure</p></li>
+<li><p>344.decltype(auto): An Overview of How, Why and Where</p></li>
+<li><p>345.No Networking in C++20 or C++23! Now What?</p></li>
+<li><p>346.C++23&amp;amp;#39;s bind_back</p></li>
+<li><p>347.This PlayStation Jailbreak NEVER SHOULD HAVE HAPPENED</p></li>
+<li><p>350.The Right Way to Write C++ Code in 2022</p></li>
+<li><p>354.Can AI And ChatGPT Replace C++ Programmers?</p></li>
+<li><p>359.std::array&amp;amp;#39;s Implementation Secret (That You Can&amp;amp;#39;t Use!)</p></li>
+<li><p>361.Is A Better <cite>main</cite> Possible?</p></li>
+<li><p>362.C++ vs Python vs Python (jit) vs Python With C++!</p></li>
+<li><p>363.A (Complete?) Guide To C++ Unions</p></li>
+<li><p>365.Modulo (%): More Complicated Than You Think</p></li>
+<li><p>367.Forgotten C++: std::valarray</p></li>
+<li><p>368.The Power of template-template Parameters: A Basic Guide</p></li>
+<li><p>371.Best Practices for Using AI Code Generators (ChatGPT and GitHub Copilot)</p></li>
+<li><p>374.C++23&amp;amp;#39;s out_ptr and inout_ptr</p></li>
+<li><p>375.Using IPO and LTO to Catch UB, ODR, and ABI Issues</p></li>
+<li><p>376.Ultimate CMake C++ Starter Template (2023 Updates)</p></li>
+<li><p>377.Looking Forward to C++26: What C++ Needs Next</p></li>
+<li><p>378.Should You Ever std::move An std::array?</p></li>
+<li><p>379.clang-tidy&amp;amp;#39;s &amp;amp;quot;Easily Swappable Parameters&amp;amp;quot; Warning - And How to Fix It!</p></li>
+<li><p>380.What Are std::ref and std::cref and When Should You Use Them?</p></li>
+<li><p>381.C++23&amp;amp;#39;s basic_string::resize_and_overwrite</p></li>
+<li><p>385.The Important Parts of C++20</p></li>
+<li><p>386.C++23&amp;amp;#39;s Lambda Attributes</p></li>
+<li><p>391.Finally! C++23&amp;amp;#39;s std::views::enumerate - YouTube</p></li>
+<li><p>392.Google&amp;amp;#39;s Bloaty McBloatface</p></li>
+<li><p>393.C++23&amp;amp;#39;s std::unreachable</p></li>
+<li><p>394.C++11&amp;amp;#39;s Most Overlooked Feature: Delegating Constructors</p></li>
+<li><p>398.C++23&amp;amp;#39;s zip_view</p></li>
+<li><p>399.C++23&amp;amp;#39;s slide_view vs adjacent_view</p></li>
+<li><p>400.C++ is 40... Is C++ DYING?</p></li>
+<li><p>403.Easier Coroutines with CppCoro</p></li>
+<li><p>C++ Weekly - 404.How (and Why) To Write Code That Avoids std::move</p></li>
+<li><p>407.C++98 Code Restoration</p></li>
+<li><p>408.Implementing C++23&amp;amp;#39;s constexpr unique_ptr in C++20</p></li>
+<li><p>410.What Are Padding and Alignment? (And Why You Might Care)</p></li>
+<li><p>Ep 411.Intro to C++ Exceptions - YouTube</p></li>
+<li><p>412.Possible Uses of C++23&amp;amp;#39;s [[assume]] Attribute</p></li>
+<li><p>415.Moving From C++98 to C++11</p></li>
+<li><ol class="arabic simple" start="416">
+<li><p>Moving From C++11 to C++14</p></li>
+</ol>
+</li>
+<li><p>417.Turbocharge Your Build With Mold?</p></li>
+<li><p>Ask.`std::exchange` vs <cite>std::swap</cite></p></li>
+<li><p>Cᐩᐩ Weekly With Jason Turner - YouTube</p></li>
+<li><p>SE.clang-tidy Auto Fixes in Compiler Explorer - Tribute to Hubert Matthews</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">进行的答疑工作有</p>
+<ul>
+<li><p>我所写 <a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/#main" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">手把手 VSCode 配置教程</span></a> 目前已累积有 5w 阅读量和 76 条反馈和提问.</p></li>
+<li><p>2021 年起, 我自发为转计软智网的同学整理资料和答疑.</p></li>
+<li><p>2021 年起, 在教务处答疑室进行了两期答疑, 第一期未找到记录, 第二期答疑数占总答疑数的 196/617.</p></li>
+<li><p>2022 年末, 发现教务处答疑室的局限性, 在其中不能比较广泛地对东大 C++ 学习产生影响, 而且经常有重复问题, 故不再报名答疑.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">为什么不再在教务处答疑室答疑?</p>
+<p>写于 2023 年 6 月 2 日.</p>
+<p>因为教务处安排的答疑室形式上有不少不足之处.</p>
+<dl class="simple">
+<dt>答疑者能力不足</dt><dd><ul class="simple">
+<li><p>教务处目前是用 C++ 课程成绩作为答疑者能力的评判标准, 这意味着不少答疑者 (至少我两学期所见) 实际并不了解 C++, 只是基于自己的感性认识在回答. 我所见最有趣的两个回答是: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">String</span><span class="o">&amp;</span><span class="w"> </span><span class="n">string2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string1</span></code> 调用了 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">String</span></code> 的拷贝赋值函数; 对字符串字面值的存储胡编乱造来作为 &quot;每周一题&quot; 发布 (后已联系改正). 可以不为同学拓展内容, 但应该至少保证所说内容的正确.</p></li>
+</ul>
+</dd>
+<dt>答疑者答疑不及时</dt><dd><ul class="simple">
+<li><p>有的答疑者会选择在一天某个时间段集中回答问题, 则此时提问者一般是不在线的, 明明能实时进行的交互答疑却变成了一问一答.</p></li>
+<li><p>有的答疑者 <strong>完全不答疑</strong>, 留下的问题第二天的答疑者可能会作答, 可能因为消息同步等原因直接忽视掉.</p></li>
+<li><p>这样的做法, 再加上 2023 年上半年寒假时根本不去答——那 C++ 期末考试前一天同学一共提出的 45 个问题该怎么办——我寒假中后期决定接手每天回答时, 有不少提问的熟面孔已经不再向答疑室提问.</p></li>
+<li><p>在此列一下上学期的 C++ 答疑数作为参考 (我的答疑数/平均答疑数/总答疑数): 196/69/617.</p></li>
+</ul>
+</dd>
+<dt>时间有限</dt><dd><ul class="simple">
+<li><p>在教务处答疑室中我仅有一天里固定的时间能答疑, 这不能满足我的调查需要.</p></li>
+</ul>
+</dd>
+<dt>答疑内容无法归档, 方便以后的同学查找</dt><dd><ul class="simple">
+<li><p>目前教务处答疑室采取的形式是 QQ 聊天中进行提问和回答, 这意味着提问和回答都是一次性的. 即使针对同一个同学, 也很难记起来以前回答过他哪些问题; 而其他同学也无法了解到别的同学所提的问题. 这严重降低了答疑效率和对同学的有用程度.</p></li>
+<li><p>针对该问题, 负责的同学所提出的解决方案是要求答疑者每周精选题目并提交, 但实际提交时常有敷衍, 且最终采用图片形式呈现. 是的, 代码图片, <strong>也就是无法直接运行的代码!</strong> 为了对抗这种形式, 我把每周一题整理在 readthedocs 中, 但这实在过于繁琐了, 最终效果不佳.</p></li>
+</ul>
+</dd>
+<dt>代码交流困难</dt><dd><ul class="simple">
+<li><p>QQ 上没有对代码的语法显示, 更没有对代码的直接运行支持. 提问者和答疑者往往以图片、文本、文件等方式进行交流, 而我值班时则尽量以 Compiler Explorer 提供可运行的在线代码链接, 但这些方式总归是间接的.</p></li>
+</ul>
+</dd>
+</dl>
+<figure class="align-default" id="id43">
+<img alt="../_images/%E7%AD%94%E7%96%91%E5%AE%A4%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.png" src="../_images/%E7%AD%94%E7%96%91%E5%AE%A4%E6%AF%8F%E5%91%A8%E4%B8%80%E9%A2%98%E7%BD%91%E9%A1%B5%E5%9B%BE%E7%89%87.png" />
+<figcaption>
+<p><span class="caption-text">我的每周一题文档</span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</li>
+<li><p>2023 年 6 月, 学习了老三篇、两论, <strong>我受其影响而自建答疑室</strong> 进行 C++ 答疑工作.</p></li>
+<li><p>由于个人答疑室的答疑方式对于新手过于复杂且宣传难度高, 一年来答疑人数很少; 2023 年末, 经询问同学意见, 决定为个人答疑室建立群聊.</p></li>
+</ul>
+</div>
+<p>直到 2023 年 3 月 23 日, 我才有幸阅读了 2021 年双十一时为了凑折扣而买下的《为什么是毛泽东》, 进而有了学习毛选的意愿, 进而学习了老三篇、两论、《毛主席论教育革命》和《辩证法唯物论（讲授提纲）》等一干内容.</p>
+<p>我于是发现在以前的学习、答疑经历中, 我早有自我总结出的、实际的辩证法 (即所谓做某事的方法论), 而系统性地应用唯物辩证法之后, 学习和答疑显得更为顺利: 理解了认识从实践中发生而服务于实践, 我不再担心做某事没有把握; 理解了合适的温度能使鸡蛋生出小鸡而不能使石子生出小鸡, 即外因是变化的条件而内因是变化的根据, 我才懂得利用常识进行启发式和反复地答疑最为简单……这无一不在向我证实, 辩证法唯物论确实就是我认识周围世界、改造周围世界的方法, 是我应有的宇宙观、世界观, 因为——也仅仅因为——它站在了与我同样的立场, 也确实能指导我的实践行动.</p>
+<blockquote class="epigraph">
+<div><p>我们说马克思主义是对的，决不是因为马克思这个人是什么“先哲”，而是因为他的理论，在我们的实践中，在我们的斗争中，证明了是对的。我们的斗争需要马克思主义。我们欢迎这个理论，丝毫不存什么“先哲”一类的形式的甚至神秘的念头在里面。</p>
+<p class="attribution">——1930年5月《反对本本主义》</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>然而马克思主义看重理论, 正是, 也仅仅是, 因为它能够指导行动. 如果有了正确的理论, 只在把它空谈一会, 束之高阁, 并不实行, 那么这种理论再好也是没有用的.</p>
+<p class="attribution">——1937年7月、8月《辩证法唯物论（讲授提纲）》</p>
+</div></blockquote>
+<blockquote class="epigraph">
+<div><p>我们学习辩证法是为了什么呢? 不为别的, 单单为了要改造这个世界, 要改造这个世界上面人与人、人与物的老关系. 这个世界上面的人类, 大多数过着苦难的日子, 受着少数人所控制的各种政治经济制度的压迫. 在我们中国这个地方生活着的人类, 受着惨无人道的双重性制度的压迫——民族压迫与社会压迫, 我们必须改变这些老关系, 争取民族解放与社会解放.</p>
+<p class="attribution">——1937年7月、8月《辩证法唯物论（讲授提纲）》</p>
+</div></blockquote>
+</div>
+</div>
+<section id="id16">
+<span id="id17"></span><h2>C++ 环境配置<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<p>哪怕按下面列出的 <a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/visual_studio/#vs" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">Visual Studio 配置教程 (Windows 可用)</span></a> 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 因此我更建议你使用 <a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/#main" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">VSCode 配置教程 (Windows/MacOS/Linux 均可用)</span></a>.</p>
+<ul class="simple">
+<li><p>直接装 <a class="reference external" href="https://visualstudio.microsoft.com/zh-hans/">Visual Studio (Windows 可用)</a> 就好; 当然更建议按下文配置 Visual Studio 或 <strong>VSCode</strong>.</p></li>
+<li><p>如需在线编译运行, 可用 <a class="reference internal" href="../share_code/"><span class="doc">Compiler Explorer</span></a>, 它能检测 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">=</span></code> 错写成 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">==</span></code> 等 Visual Studio 默认没检查的问题.</p></li>
+<li><p><a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/visual_studio/#vs" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">Visual Studio 配置教程 (Windows 可用)</span></a>, 在 Visual Studio 默认配置基础上添加自动格式化、代码行间显示报错、更多诊断.</p></li>
+<li><p><a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/#main" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">VSCode 配置教程 (Windows/MacOS/Linux 均可用)</span></a>, 相比 Visual Studio 配置教程, 它还能 <strong>自动添加头文件</strong>, 有更丰富的字体和颜色, 且检查代码速度更快.</p></li>
+</ul>
+</section>
+<section id="id18">
+<h2>学习方法<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p>以下学习方法均参考自</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../ppp2_chapter0/"><span class="doc">天鹅书第二版第 0 章.读者须知</span></a></p></li>
+<li><p><a class="reference internal" href="../ppp3_chapter0/"><span class="doc">天鹅书第三版第 0 章.读者须知</span></a> (第三版第 0 章并不包括第二版第 0 章全部内容. 尤其是, 第三版删去了对天鹅书不采用的教学方法的罗列和解释.)</p></li>
+<li><p>《毛主席论教育革命》</p></li>
+</ul>
+<section id="id19">
+<span id="id20"></span><h3>在学会如何走得好看之前, 先跑起来<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>小孩子学走路从来不是从走路开始的, 而是向前猛跑摔倒几次, 有了走路的整体感觉, 再慢下来对各个过程进行准确的理解.</p>
+<p>所以建议先将 C++ 整体内容粗略过一遍再进行细节学习, 这粗略的一遍不需要解决 &quot;C++ 如何做到什么&quot;, 只需要解决 &quot;C++ 可以做什么&quot;. 知道了可以做什么, 便能有效地学习或提问如何去做. 例如, 你不必掌握函数递归怎么写或怎么分析, 但在这一遍中会知道 C++ 可以进行递归.</p>
+</section>
+<section id="id21">
+<h3>不要记忆技术细节<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>&quot;编程语言特性的存在是为了支持各种程序设计风格和技术. 因此, 编程语言的学习应该更关注掌握其固有的、内在的风格, 而不是试图了解每个语言特性的所有细节.&quot;</p>
+<p>二进制原码和补码? 我不知道. <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 的大小? 我不知道. 运算符的结合性和优先级? 我不知道.</p>
+<p>我不知道, 因为我没必要知道. 如果实在需要知道 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span></code> 的大小 (它并不固定) 那可以去查, 如果实在不清楚运算符的结合性优先级那可以加括号. 问题在于, 知道这些细节会帮助初学者写出程序吗? 对于初学者, 更重要的是如 <a class="reference internal" href="#id19"><span class="std std-ref">在学会如何走得好看之前, 先跑起来</span></a> 所述建立起对编程的感性认识. 这些细节并不是学习的重点, 且 <strong>在有了总体认识后很容易补充上</strong>.</p>
+<p>考试可能是闭卷考试, 但编程不是, 编程学习过程也不是. <a class="reference internal" href="../searching_method/"><span class="doc">在哪查找中文的 C++ 资料?</span></a></p>
+</section>
+<section id="id22">
+<span id="id23"></span><h3>实际编程<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>请阅读</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://zhuanlan.zhihu.com/p/467228101">《人的正确思想是从哪里来的？》</a>.</p></li>
+<li><p>或更详细的 <a class="reference external" href="https://www.marxists.org/chinese/maozedong/marxist.org-chinese-mao-193707.htm">《实践论》</a>.</p></li>
+<li><p>或更更详细的 <a class="reference external" href="https://www.marxists.org/chinese/maozedong/1937/index.htm">《辩证法唯物论（讲授提纲）》</a>.</p></li>
+</ul>
+<p>明确编程能力不是靠听课听来的, 而是从实际的编程中理解掌握的.</p>
+<p>实际的编程并不一定是刷力扣题等 (从考试的角度, 刷力扣题是偏题的; 从编程语言学习的角度, 刷力扣题是有害的), 对于新手来说可以是抄书上例题实际运行进行理解, 可以是对一些突发奇想加以实际验证, 可以是学习练习如何使用软件等等.</p>
+</section>
+<section id="id24">
+<span id="id25"></span><h3>学习使用软件<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p>软件是你的朋友, 手写代码不报错不算什么能力, 能用合适的软件写代码才是能力. 例如, 建议学习:</p>
+<ul class="simple">
+<li><p>阅读报错信息.</p></li>
+<li><p><a class="reference internal" href="../debugger/"><span class="doc">进行断点调试</span></a> 查找代码中的逻辑错误.</p></li>
+<li><p><a class="reference internal" href="../formatter/"><span class="doc">如何自动格式化代码</span></a> 查找代码中的语法错误 (少加分号、括号不匹配等).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;cassert&gt;</span></code> 里的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">assert</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span></code>.</p></li>
+</ul>
+<p><strong>学会这些比多刷几道力扣题提升更大</strong>.</p>
+</section>
+<section id="id26">
+<h3>使用最新的软件<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="#id24"><span class="std std-ref">学习使用软件</span></a> 中所说的用合适的软件还意味着 <strong>你应该用最新的软件</strong>.</p>
+<p>如果仅仅因为考试时用的软件是 Dev-C++、VS 2010 等就在平时的学习中使用这些软件, 只会严重影响新手的学习: 它们因为过老不会为新手提供某些报错, 甚至可能没有 <a class="reference internal" href="../debugger/"><span class="doc">断点调试</span></a> 或 <a class="reference internal" href="../formatter/"><span class="doc">自动格式化</span></a> 等功能.</p>
+<p>既然有的新手所主张的 &quot;面向考试学习&quot; 是为了考试取得好成绩, 使用这些影响自己学习的软件岂不是本末倒置? 上文 <a class="reference internal" href="#id19"><span class="std std-ref">在学会如何走得好看之前, 先跑起来</span></a> 已经强调了, 新手需要在走得好看之前跑起来, 而当新手通过在 <a class="reference internal" href="#id16"><span class="std std-ref">最新软件</span></a> 上持之以恒地练习从而入门程序设计后, 熟悉考试软件只需要一两天时间.</p>
+<p>此外, 哪怕按 <a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/visual_studio/#vs" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">Visual Studio 配置教程 (Windows 可用)</span></a> 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 我更建议你使用 <a class="reference external" href="https://feignclaims.github.io/vscode_cpp_starter/#main" title="（在 Windows/MacOS/Linux 上 VSCode 配置 C++: Clang + Clang-based Tools + CMake + Conan）"><span class="xref std std-ref">VSCode 配置教程 (Windows/MacOS/Linux 均可用)</span></a>.</p>
+</section>
+<section id="id27">
+<h3>不要通过询问人工智能大模型学习<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p>人工智能大模型如 chatgpt 等不存在同理心, 主观上并不知道什么代码是好的, 什么代码是适合初学者的等等. 因此, 询问它所获得的建议往往会影响你的学习. <strong>我基本一直在群里</strong>, 如果有问题, 请尝试询问我解决.</p>
+<p>如果实在需要使用人工智能大模型, 请在提问时加上:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">点击查看提示词</p>
+<p>如果觉得看不懂, 将第 3 条第 1 点从 C++20 改为 C++98.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;input&gt;
+填入你的问题
+&lt;/input&gt;
+
+&lt;thinking&gt;
+
+Before answer questions as requested, think and output IN CHINESE within &lt;thinking&gt; tag, insert a newline after every item and tag
+
+1. Infer specific mistakes at least 5, refer to 《C++ Core Guidelines》
+  - ...
+
+2. Reconstruct the question by &lt;inputs&gt;
+  - ...
+
+3. Check to use every force patch to against confusion:
+  - [ ] &lt;HIGHEST PRIORITY&gt; YOU MUST ONLY USE C++20 STANDARD no matter what is forced in the following &lt;/HIGHEST PRIORITY&gt;
+  - [ ] List what new features that aren&#39;t currently in the code you&#39;d like to use and why you think them make the code even better
+  - [ ] Obey best practices specified in 《C++ Core Guidelines》
+  - [ ] Keep the code simple so novices can understand it
+
+4. Bayes decision step 1
+  - Deduce 4 reasonable answer directions as the 1st part in concise sentence. Evaluate them by: If illogical; If not compilable; If too expert; If lack proactivity. Set their weight W (SUM(W)=100).
+    a. {{Direction}}|{{Evaluation}}|{{W}}
+    b…
+  - Execute direction with highest W. Merge elements (if non-conflicting the executed direction) from W&gt;21 directions.
+
+5. Bayes decision step 2 (the exact same way to analyze the 2nd part plot)
+
+6. Answer processing
+  - …
+
+7. Say anything as well-known modern C++ educator for current question
+
+&lt;/thinking&gt;
+
+output the chosen answer...
+</pre></div>
+</div>
+</div>
+<p>当然你也可以在配置 VSCode 后切换为使用 <span class="xref std std-ref">Cursor</span> 这个 ai 编辑器.</p>
+</section>
+<section id="id28">
+<h3>更多学习方法<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p>更多学习方法请直接阅读 <a class="reference internal" href="../ppp2_chapter0/"><span class="doc">天鹅书第二版第 0 章.读者须知</span></a> 和《毛主席论教育革命》.</p>
+</section>
+</section>
+<section id="id29">
+<span id="id30"></span><h2>非应试自学学习路径<a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
+<p>学习路径分为 <a class="reference internal" href="#id29"><span class="std std-ref">非应试自学学习路径</span></a> 和 <a class="reference internal" href="#id31"><span class="std std-ref">应试教育学习路径</span></a>. 非应试入门其实更为简单, 并且如果已经非应试入门, 补全应试知识点不过是一两天的事.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../learning_map/#id23"><span class="std std-ref">入门</span></a></p></li>
+<li><p><a class="reference internal" href="../learning_map/#id16"><span class="std std-ref">学习大纲</span></a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/cpp_bookmarks.html">我的 C++ 浏览器书签 (2024/08/30) (右键另存为再导入到浏览器)</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/cpp_feedbro.opml">我的 C++ 订阅源 (2024/08/30) (右键另存为再导入浏览器 feedbro 插件)</a></p></li>
+</ul>
+<div class="dropdown admonition">
+<p class="admonition-title">为什么会有应试和非应试的区别?</p>
+<p><strong>C++ 越新越简单</strong>, 但很多教学 (尤其是大学中) 采用了旧版 C++, 因为:</p>
+<ul class="simple">
+<li><p>老师并不都以 C++ 为主要语言, 对 C++ 使用理念和发展路线不太熟悉.</p></li>
+<li><p>课程教 C++ 只是在利用 C++ 多编程范式的特点, 让学生了解诸如面向对象、面向过程、数据抽象等编程范式, 并不着重于学好 C++.</p></li>
+<li><p>课程大纲偷懒不愿更新罢了, 很多老师的 PPT 仍是十几年前的, 而实验作业也是祖传的 (甚至其中诸多错误始终没更正).</p></li>
+</ul>
+<p>C++ 拥有 &quot;向后兼容性&quot;, 即新版本也能直接使用依据旧版本编写的代码.
+这种 &quot;向后兼容性&quot; 本意是为了让程序员流畅地学习新版本特性, 同时保证旧有代码依然能执行, 但却被人利用来躲在旧版本舒适区.</p>
+<p>新版本 C++ 拥有更简单的语法、更灵活的特性, 一套完整规范的 <a class="reference external" href="https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines (C++ 核心准则)</a> 和每年举行的诸多社区分享活动 (CppCon、CppNow、cpponsea……).</p>
+</div>
+</section>
+<section id="id31">
+<span id="id32"></span><h2>应试教育学习路径<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
+<p><strong>我个人完全不推荐应试教育学习路径</strong>, 它只会教一些 C++ 语法, 不会教程序设计的思路、方法、原理或技术. 当我说学 C++ 时, 从来都是包括设计哲学、最佳实践、设计模式、惯用法、工具链使用等在内, <strong>这些综合起来才是 C++</strong>.</p>
+<p>如果你只是想考试拿高分, 那么 <a class="reference internal" href="#id29"><span class="std std-ref">非应试自学学习路径</span></a> 更简单、更适合你. 如果还有疑虑, 请再阅读上方的学习方法, 并请尝试阅读:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../c_or_cpp/"><span class="doc">课上的 C 和 C++ 有什么区别?</span></a></p></li>
+<li><p><a class="reference internal" href="../ppp2_chapter0/"><span class="doc">天鹅书第二版第 0 章.读者须知</span></a></p></li>
+<li><p><a class="reference internal" href="../ppp3_chapter0/"><span class="doc">天鹅书第三版第 0 章.读者须知</span></a></p></li>
+</ul>
+<p>这里还保留应试教育学习路径, 仅仅是为了告诉你我了解它们, 知道它们有多么糟糕.</p>
+<section id="id33">
+<h3>网课参考<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1Yv411t7qe">嵌入式技术公开课的《C++ Primer Plus》</a></p></li>
+<li><p>黑马程序员</p></li>
+</ul>
+</section>
+<section id="id34">
+<h3>教材参考<a class="headerlink" href="#id34" title="Link to this heading">#</a></h3>
+<p><strong>看书记得看前言! 看书记得看前言! 看书记得看前言!</strong></p>
+<dl>
+<dt>《C++ Primer Plus》</dt><dd><p>矮子里的高个, <strong>我针对应试唯一推荐的书</strong>, 看书一个月左右即可速通 C++ 上下册所有内容 (如果感觉看书有难度, 可以先看一部分上面的网课领会).</p>
+</dd>
+<dt>《C++ 程序设计实践教程（机械工业出版社）》</dt><dd><p>部分非电类专业 C++ 用的教材, 虽然不怎么好, 但写得比《C++ 大学教程》清晰地多. 如果不想新买书, 可以考虑用这本.</p>
+<p>但还是有非常非常糟糕的部分, 比如将内置类型和用户自定义类型割裂开来, 明明用户自定义类型的传参等跟内置类型没有区别, 却进行强行解释, 完全不符合 C++ 的设计原则——<em>为用户自定义类型提供与内置类型同等的支持</em>.</p>
+</dd>
+<dt>《C++ How to Program, 9th Edition》(《C++ 大学教程（第9版）》)</dt><dd><p>电类 C++ 用的教材, 但 <strong>个人</strong> 完全不推荐, <a class="reference external" href="https://accu.org/bookreviews/2002/haley_791/">ACCU 给出最低分的垃圾书</a>. 简单列一些问题:</p>
+<ul class="simple">
+<li><p>使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span></code> 而不是更符合语言习惯的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span></code>.</p></li>
+<li><p>使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">explicit</span></code> 而不解释为什么, 而且使用方法完全错误.</p></li>
+<li><p>第一次写构造函数时就用了成员初始化列表且没给出合理解释, 让人以为构造函数不能作为正常函数看待.</p></li>
+<li><p>第一次用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">sort</span></code> 算法时没有任何解释, 几百页后才解释 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">sort</span></code> 到底怎么用.</p></li>
+<li><p>……</p></li>
+</ul>
+</dd>
+<dt>《C++ 程序设计（朱金付主编）》</dt><dd><p>快跑!!! 简单列一些问题:</p>
+<ul class="simple">
+<li><p>展示拷贝构造函数和拷贝赋值函数时, 参数使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">&amp;</span></code>, <a class="reference internal" href="../faq/copy_functions_parameter/"><span class="doc">实际应该使用 const&amp;</span></a>.</p></li>
+<li><p>解释链表时使用有序链表, 导致读者连怎么插入删除都搞不懂.</p></li>
+<li><p>……</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id35">
+<h3>习题参考<a class="headerlink" href="#id35" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt>《C++ Primer Plus》课后习题</dt><dd><p>主要是语法的练习. github 上可找到别人完成的版本作为解答的参考.</p>
+</dd>
+</dl>
+<div class="seealso dropdown admonition">
+<p class="admonition-title">应对上机考试的进阶内容, 有余力可用</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../faq/range_iterator_and_algorithm/"><span class="doc">范围、迭代器和算法 (range, iterator and algorithm)</span></a></p></li>
+<li></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1VU4y1U7rL">105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1xb411e7ww">动态规划 入门</a></p></li>
+<li><p><a class="reference external" href="https://www.bilibili.com/video/BV1gp4y1t7xe">动态规划 套路</a></p></li>
+<li><p><a class="reference external" href="https://leetcode.cn/leetbook/detail/recursion-and-divide-and-conquer/">递归与分治精讲</a></p></li>
+<li><p><a class="reference external" href="https://leetcode.cn/leetbook/detail/top-interview-questions-easy/">初级算法</a></p></li>
+</ul>
+<p>尤其是转专业考试, 强烈建议在应试学习基础上学习这些内容, 即学习范围为</p>
+<ul>
+<li><p>课内必修</p>
+<ul class="simple">
+<li><p>C++98/03 (即应试网课、教材所教授的版本)</p></li>
+<li><p>淡化指针 (很多地方都能用引用代替)</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> 基本用法.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span></code> 基本用法.</p></li>
+</ul>
+</li>
+<li><p>可选</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">stringstream</span></code>: 用于数字和字符串间的转换和分割单词等. 可用于 2023 年计软智转专业上机第 1 题, 秒杀 2022 年网安转专业编写程序题第 1 题.</p></li>
+<li><p>STL 容器基本用法</p>
+<ul>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span><span class="o">&gt;</span></code>: 动态数组, 且无需手动管理内存.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="o">&gt;</span></code>: 固定长度的数组, 且不会隐式类型转换为首元素的指针.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="o">&gt;</span></code>: 关联数组. 可秒杀 2021 年计软智转专业第 3 题.</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">Key</span><span class="o">&gt;</span></code>: 元素唯一且自动排序. 2020 年计软智转专业第 4 题和 2023 年计软智转专业上机第 2 题均考了此概念.</p></li>
+</ul>
+</li>
+<li><p>STL 算法 + Lambdas</p></li>
+<li><p>C++11 的基于范围的 for 循环 + auto 基本用法</p></li>
+</ul>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1">// auto: 我不在乎 array 里的元素 value 类型具体是什么, 编译器你自己搞定;</span>
+<span class="linenos">2</span><span class="c1">//       我只要求你把它按 const&amp; 传给 value</span>
+<span class="linenos">3</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">array</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">4</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="id40">
+<h2>C++ 资料查询<a class="headerlink" href="#id40" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../searching_method/"><span class="doc">在哪查找中文的 C++ 资料?</span></a>.</p></li>
+<li><p><a class="reference external" href="https://hackingcpp.com/cpp/cheat_sheets.html">小抄 (可能过于进阶)</a>.</p></li>
+</ul>
+</section>
+<section id="id42">
+<h2>C++ 术语不全书<a class="headerlink" href="#id42" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.stroustrup.com/glossary.html">Bjarne Stroustrup's C++ Glossary</a></p></li>
+</ul>
+<p>这一个应该足够了, 遇到不理解的再去查就行, 没必要全部记忆. 其余术语网站可以在 <a class="reference external" href="https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/cpp_bookmarks.html">我的 C++ 浏览器书签 (2024/08/30) (右键另存为再导入到浏览器)</a> 中找到.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../formatter/"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">自动格式化代码的方法</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../faq/"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">常见问题解答</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">C++ 环境配置</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">学习方法</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">在学会如何走得好看之前, 先跑起来</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">不要记忆技术细节</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">实际编程</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">学习使用软件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">使用最新的软件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">不要通过询问人工智能大模型学习</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">更多学习方法</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">非应试自学学习路径</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">应试教育学习路径</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">网课参考</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">教材参考</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">习题参考</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id40">C++ 资料查询</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id42">C++ 术语不全书</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： FeignClaims
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, FeignClaims.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  最后更新于 2025-02-04 15:41:58.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

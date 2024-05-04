@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-02-04T15:41:58+08:00" /><meta property="og:title" content="天鹅书第三版第 0 章.读者须知" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="ppp3_chapter0/" />
+<meta property="og:site_name" content="C++ 洋葱剥法交流群资料" />
+<meta property="og:description" content="e^{i\pi} + 1 — Leonhard Euler, 本章汇集了各种信息, 旨在让你对本书其余部分有初步了解. 请略读本章, 细读其中你感兴趣的部分. 在编写任何代码之前, 请阅读 0.4 天鹅书支持库. 对于教师, 可以发现大部分内容都是直接有用的. 如果你是作为初学者阅读本书, 请不要试图理解本章所有内容. 待你感觉能自如编写和执行小规模的程序时, 你可能需要回过头来重读本章. ..." />
+<meta name="description" content="e^{i\pi} + 1 — Leonhard Euler, 本章汇集了各种信息, 旨在让你对本书其余部分有初步了解. 请略读本章, 细读其中你感兴趣的部分. 在编写任何代码之前, 请阅读 0.4 天鹅书支持库. 对于教师, 可以发现大部分内容都是直接有用的. 如果你是作为初学者阅读本书, 请不要试图理解本章所有内容. 待你感觉能自如编写和执行小规模的程序时, 你可能需要回过头来重读本章. ..." />
+
+    <title>天鹅书第三版第 0 章.读者须知 &#8212; C++ 洋葱剥法交流群资料</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme.css?v=ae8a9af6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=cd85ae70"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/jquery.min.js?v=94f7166b"></script>
+    <script src="../_static/zoom-image.js?v=56ef8405"></script>
+    <script>let toggleHintShow = '点击展开';</script>
+    <script>let toggleHintHide = '点击隐藏';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ppp3_chapter0';</script>
+    <link rel="canonical" href="https://question-board.readthedocs.io/ppp3_chapter0/" />
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="天鹅书第二版第 0 章.读者须知" href="../ppp2_chapter0/" />
+    <link rel="prev" title="答疑原则和理论依据" href="../theory/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2025-02-04 15:41:58"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">C++ 洋葱剥法交流群资料</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/FeignClaims/question_board" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">关于文档</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../rule_and_preface/">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meet_trouble/">遇到问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">参与贡献</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">学习资料</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../searching_method/">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../share_code/">如何用网页链接分享代码?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how_to_ask/">如何询问 C++ 代码问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugger/">断点调试的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatter/">自动格式化代码的方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/">C++ 学习建议、环境配置等</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../faq/">常见问题解答</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/object/">对象 (object)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/initialization_assignment/">初始化、赋值 (initialization, assignment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/struct/">结构体 (struct)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/resource/">资源 (resource)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/type_conversion/">类型转换 (type conversion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/reference/">引用 (reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/pointer/">指针 (pointer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/function/">函数 (function)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/function_parameter/">函数参数 (function parameter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/value_category/">值类别 (value category)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/auto/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">auto</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/sizeof/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/c_array/">C 风格数组: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">]</span></code> (C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/c_string/">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/basic_concepts/operator_overloading/">运算符重载及示例 (operator overloading)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/copy_assignment/">拷贝赋值函数: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/istream_ostream/">输入流、输出流: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ostream</span><span class="p">,</span><span class="w"> </span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/increment_decrement/">自增自减: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">()</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/compund_assignment_and_binary_operation/">复合赋值和二元算术: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+=</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/comparison/">比较运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">==</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/subscript/">数组下标: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="p">[]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/dereference/">解引用: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">-&gt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/logic_not/">逻辑非: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">!</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/rarely_overloaded/">极少重载的运算符</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/template/">模板 (template)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/move_semantics/">移动语义 (move semantics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/east_const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/variable_decleration_reading/">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/condition/">条件判断 (condition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/md_c_array/">多维数组 (multi-dimensional C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/escape_character/">转义字符: 为什么 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'0'</span></code> 的值不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code> (escape character)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/comma_operator/">逗号表达式 (comma operator)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/exception_throwing/">异常的抛出与捕获 (exception throwing)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/normal/">正常题: 抛出时栈回溯 (stack unwinding)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/hardcore/">硬核题: 抛出一个构造函数和析构函数会输出的类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/class_invariant/">不变式: 类和结构体的区别 (class invariant)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/member_initializer/">成员初始化器: 构造函数的冒号是啥?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/lifetime/">生命期 (lifetime): 带输出的构造、析构如何阅读?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/automatic_storage_duration/">1. 自动存储周期 (automatic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/static_storage_duration/">2. 静态存储周期 (static storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/dynamic_storage_duration/">3. 动态存储周期 (dynamic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/thread_local_storage_duration/">4. 线程局部存储周期 (thread_local storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/temporary_object/">5. 临时对象 (temporary object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/mix/">6. 综合题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/make_more_exercises/">制作更多习题</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/rule_of_350/">rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_functions_parameter/">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/virtual_function_invocation_explain/">虚函数调用的感性理解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/input_methods/">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/pointer_output/">为什么字符指针不输出地址值, 而其他指针输出地址值?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/c_string_output/">为什么我的字符数组输出很奇怪?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/ascii_output/">如何输出字符对应的 ASCII 码?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/fstream/">文件读写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/binary_io/">二进制输入输出 (binary I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/instantiation/">实例化: 对类模板写友元函数出现问题? (instantiation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/generate_random_number/">随机数的生成 (random number generation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/range_iterator_and_algorithm/">范围、迭代器和算法 (range, iterator and algorithm)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/forward_list/">实例分析: 单向链表 (forward list)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/dynamic_array/">实例分析: 动态数组 (dynamic array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/getter_setter/">实现 setter 和 getter 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/separate_interface_from_implementation/">接口与实现相分离 (separate interface from implementation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/visual_studio/strcpy/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy</span></code> 报错了, 让用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy_s</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/visual_studio/unresovable_external_symbol/">无法解析的外部符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exercise/split_digits/">拆分整数的各位数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exercise/base_conversion/">整数进制转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/twos_complement/">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_2/">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_40/">C.40: 如果类具有不变式, 则定义构造函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_131/">C.131: 避免平凡的 getters 和 setters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/es_45/">ES.45: 避免 "魔法常量"; 用符号常量代替它!</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">理论依据</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../c_or_cpp/">课上的 C 和 C++ 有什么区别?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">答疑原则和理论依据</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">天鹅书第三版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ppp2_chapter0/">天鹅书第二版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning_map/">学习大纲</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/blob/main/ppp3_chapter0.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/edit/main/ppp3_chapter0.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/issues/new?title=Issue%20on%20page%20%2Fppp3_chapter0.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>天鹅书第三版第 0 章.读者须知</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">0.1 本书的结构</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">0.1.1 一般方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">0.1.2 简单练习和习题等</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">0.1.3 本书之后是什么?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">0.2 传授和学习本书的哲学方法</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">0.2.1 学生须知</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">0.2.2 教师须知</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iso-c">0.3 ISO 标准 C++</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#portability">0.3.1 可移植性 (portability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">0.3.2 代码保证</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">0.3.3 C++ 简史</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">0.4 天鹅书支持库</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">0.4.1 网站资源</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">0.5 作者简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">0.6 参考文献</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">后记</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id16">
+<h1>天鹅书第三版第 0 章.读者须知<a class="headerlink" href="#id16" title="Link to this heading">#</a></h1>
+<blockquote class="epigraph">
+<div><p><span class="math notranslate nohighlight">\(e^{i\pi} + 1\)</span></p>
+<p class="attribution">—— Leonhard Euler</p>
+</div></blockquote>
+<p>本章汇集了各种信息, 旨在让你对本书其余部分有初步了解. 请略读本章, 细读其中你感兴趣的部分. 在编写任何代码之前, 请阅读 <a class="reference internal" href="#id25"><span class="std std-ref">0.4 天鹅书支持库</span></a>. 对于教师, 可以发现大部分内容都是直接有用的. 如果你是作为初学者阅读本书, 请不要试图理解本章所有内容. 待你感觉能自如编写和执行小规模的程序时, 你可能需要回过头来重读本章.</p>
+<section id="id17">
+<h2>0.1 本书的结构<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<p>本书包含三个部分:</p>
+<dl class="simple">
+<dt>第一部分, 基础知识</dt><dd><p>第 1 章至第 8 章. 介绍了程序设计的基本概念和技术, 以及开始编写代码所需的 C++ 语言和库设施. 这包括类型系统、算术运算、控制结构、错误处理, 以及函数和用户自定义类型的设计、实现和使用.</p>
+</dd>
+<dt>第二部分, 输入和输出</dt><dd><p>第 9 章至第 14 章. 首先描述了如何从键盘和文件中获取数字和文本数据, 以及如何在屏幕和文件中产生相应的输出. 接着, 我们展示如何将数字数据、文本和几何形状呈现为图形输出, 以及如何从图形用户界面 (Graphical User Interface, GUI) 中获取程序的输入. 作为其中的一部分, 我们介绍了面向对象程序设计的基本原理和技术.</p>
+</dd>
+<dt>第三部分, 数据与算法</dt><dd><p>第 15 章至第 21 章. 聚焦于 C++ 标准库的容器和算法框架 (通常被称为 STL). 我们展示了容器 (例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">vector</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">list</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">map</span></code>) 的实现和使用. 在此过程中, 我们引入了指针、数组和动态内存等底层设施. 我们还展示了如何用异常处理错误, 以及如何通过模板参数化我们的类和函数. 作为其中的一部分, 我们介绍了泛型程序设计的基本原理和技术. 此外, 我们还演示了如何设计和使用标准库算法 (如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">sort</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">find</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">inner_product</span></code>).</p>
+</dd>
+</dl>
+<p>主题的顺序安排由程序设计技术而非编程语言特性决定的.</p>
+<p><em>CC</em> 为了便于你复习, 以及帮助你在初次阅读、尚未确定哪些内容非常重要时不遗漏关键点, 我们在页边空白处放置了三种 &quot;警示标记&quot;:</p>
+<ul class="simple">
+<li><p>CC: 概念 (concepts) 与技术 (techniques) (本段为该主题的一个示例)</p></li>
+<li><p>AA: 建议 (advice)</p></li>
+<li><p>XX: 警告 (warning)</p></li>
+</ul>
+<p>使用 CC、AA 和 XX, 而不是使用单个符号的不同颜色, 是为了在颜色难以区分的情况下提供帮助. (译注: 译文中难以表现它的颜色和样式, 仅在对应段落最前面进行了标识.)</p>
+<section id="id18">
+<h3>0.1.1 一般方法<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p>本书中我们直接与你对话. 这种方式比大多科学论文中约定俗成的专业间接称呼更简单、更清晰. 当我们说 &quot;你&quot; 时, 我们是指 &quot;你这位读者&quot;, 而当我们说 &quot;我们&quot; 时, 我们要么指的是 &quot;你跟我们这些作者和老师&quot; 一起来解决一个问题, 就像我们在同一个房间会做的那样. 当我提及我自己的贡献或个人观点时, 我使用 &quot;我&quot; 来表达.</p>
+<p><em>AA</em> 本书的内容组织适合从头到尾逐章阅读, 当然, 你也常常要回过头来对某些内容读上第二遍、第三遍. 实际上, 这是唯一合理的方法, 因为当遇到还看不出什么门道的地方时, 你通常会快速掠过. 对于这种情况, 你最终还是需要再次回到这个地方. 尽管书后有索引且书中有交叉引用, 但这不是一本你随便翻开一页开始学习还妄想能学懂的书. 本书每一节、每一章的内容安排, 都假定你已经理解了之前的内容.</p>
+<p>本书的每一章都是一个合理的自包含单元, 这意味着应一口气读完 (当然这只是理论上, 实际上由于学生紧密的学习计划, 不总是可行). 这是将内容划分为章的主要标准. 其他标准包括: 从简单练习 (drill) 和习题 (exercise) 的角度, 每章是一个合适的单元; 每一章提出一些特定的概念、思想或技术. 这种标准的多样性使得少数章过长, 所以不要教条地遵循 &quot;一口气读完&quot; 的准则. 特别是当你已经脑内回答了思考题 (review question), 完成了简单练习, 并做了一些习题时, 你通常会发现你需要回过头去重读一些小节 (section).</p>
+<p>对一本教科书常见的赞誉是: &quot;它回答了我所有的问题, 就在我刚好想到这些问题的时候!&quot; 这对细节技术问题是很理想的, 而早期的读者也发现本书有这样的特性. 但是, 这还不够理想. 我们提出初学者可能未曾想到的问题. 我们的目标是, 提出并回答那些你在编写供他人使用的高质量软件时需要考虑的问题. 学习回答好的 (通常也是困难的) 问题是学习如何像一个程序员那样思考所必需的. 只回答那些简单的、浅显的问题会使你感觉良好, 但无助于你成长为一名程序员.</p>
+<p>我们努力尊重你的智力, 珍惜你的时间. 在陈述时, 我们追求的是专业口吻而不是可爱口吻, 并且我们宁可低调表达一个观点也不大肆渲染它. 我们尽力不夸大一种程序设计技术或一个语言特性的重要性, 但请不要因此低估 &quot;这通常是有用的&quot; 这种简单陈述的重要程度. 如果我们不经意间强调某些内容是重要的, 那是想说明, 你如果不掌握它, 或早或晚都会因此而浪费时间.</p>
+<p>我们对幽默的运用比我们本来希望的要有限, 但经验表明, 人们对什么是有趣的想法差异巨大, 而一次失败的幽默尝试可能会引起困惑.</p>
+<p>我们不会伪称本书中的思想和工具是完美的. 实际上没有任何一种工具、库、语言或者技术能够解决程序员所面临的所有难题, 至多能帮助你开发、表达你的问题求解方案而已. 我们尽量避免 &quot;无害的谎言&quot;, 也就是说, 我们会尽力避免过于简单的解释, 虽然这些解释清晰易懂, 但在实际编程和问题求解时却并不真实.</p>
+</section>
+<section id="id19">
+<h3>0.1.2 简单练习和习题等<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>程序设计不仅仅是一种脑力活动, 实际动手编写程序是掌握程序设计技巧必不可少的一环. 本书提供三个层次的程序设计练习:</p>
+<dl class="simple">
+<dt>简单练习</dt><dd><p>简单练习是一种非常简单的习题, 其目的是帮助学生掌握一些相对死板的实际编程技巧. 一个简单练习通常由一系列的单个程序修改练习组成. 你应该完成所有简单练习. 完成简单练习不需要很强的理解能力、很聪明或者很有创造性. 我们将简单练习作为本书的基本组成部分. 如果你没有完成简单练习, 就不能说 &quot;完成&quot; 了本书的学习.</p>
+</dd>
+<dt>习题</dt><dd><p>有些习题比较简单, 有些则很难, 但多数习题都是想给学生留下一定的创造和想象空间. 如果时间紧张, 你可以做少量习题, 但题量至少应该能使你弄清楚哪些内容对你来说比较困难. 在此基础上应该再多做一些. 这样你将能学到最多知识. 我们希望本书的习题都是学生能够做出来的, 而不是需要超乎常人的智力才能解答的复杂难题. 但是, 我们还是希望我们提供的习题能给你足够多的挑战, 能耗尽甚至是最好的学生的所有时间. 我们不期待你能完成所有习题, 但请尽情尝试.</p>
+</dd>
+<dt>试试这个 (try this)</dt><dd><p>有些人喜欢把书放在一边, 在读完一章之前先尝试一些例子; 而另一些人则喜欢先读完整章, 然后再尝试运行代码. 为了支持有前一种偏好的读者, 我们提供了一些简单的实践任务建议. 它们以 <em>试试这个</em> 开头, 添加在在文内分段处. <em>试试这个</em> 通常是一种简单练习, 但仅聚焦于前面刚刚介绍的主题. 如果你略过了一个 <em>试试这个</em> 而没有尝试它——可能因为你身边没有电脑或者你被之后的内容吸引——那么最好在做本章的简单练习时回头去做一下这个题目; &quot;试一试&quot; 要么是该章简单练习的补充, 要么干脆就是其中的一部分.</p>
+</dd>
+</dl>
+<p>此外, 每章末尾我们都提供了一些帮助来巩固所学的内容:</p>
+<dl class="simple">
+<dt>思考题</dt><dd><p>在每章末尾你都会看到一些思考题. 这些思考题是想为你指出这一章中的重点内容. 一种学习思考题的方法是把它们作为习题的补充: 习题关注程序设计的实践层面, 而思考题则试图帮你强化思想和概念. 因此, 思考题有点像出色的面试题.</p>
+</dd>
+<dt>术语 (terms)</dt><dd><p>每章最后都有 &quot;术语&quot; 一节, 给出本章中提出的程序设计或 C++ 方面的基本词汇表. 如果你希望理解别人关于程序设计的陈述, 或者想明确表达出自己的思想, 就应该首先弄清术语表中每个术语的含义.</p>
+</dd>
+<dt>后记 (postscript)</dt><dd><p>一段旨在为本章所呈现的材料提供一些观点的文字.</p>
+</dd>
+</dl>
+<p>另外, 我们建议每个学生都能参与到一个小的项目中去 (如果时间允许, 能参与更多项目当然就更好了). 一个项目的目的就是要编写一个完整的有用程序. 理想情况下, 项目由一个多人小组 (比如三个人) 共同完成 (比如在学习本书末尾章节时). 大多数人会发现做这种项目最为有趣, 并能将所有内容融会贯通.</p>
+<p><em>CC</em> 学习离不开重复. 我们的理想是每个重要的知识点都在书中至少出现两次, 并通过习题再次强调.</p>
+</section>
+<section id="id20">
+<h3>0.1.3 本书之后是什么?<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p><em>AA</em> 当你完成本书的学习时, 是否能成为一名程序设计和 C++ 方面的专家呢? 当然不能! 如果做得好的话, 程序设计会是一门建立在多种专业技能上的精妙的、深刻的、需要高度技巧的艺术. 你不能指望在四个月内成为程序设计专家, 就像你不能指望花四个月时间——或半年、一年时间——就成为一名生物学专家、一名数学家、一名自然语言 (如中文、英文或丹麦文) 方面的专家, 或是一名小提琴演奏家. 但如果你认真地学完了这本书, 你可以期待也应该期待的是: 你已经在程序设计领域有了一个很好的开始, 已经可以写相对简单的、有用的程序, 能读更复杂的程序, 而且已经为进一步的学习打下了良好的理论和实践基础.</p>
+<p>学习完这门入门课程后, 进一步学习的最好方法是开发一个真正能被别人使用的程序. 在完成这个项目之后或者同时 (同时可能更好) 学习一本专业水平的通用教材, 学习一本与你做的项目相关的更专业的书, 或者学习一本专注于 C++ 某个特定方面的教材 (如算法、图形学、科学计算、金融或游戏); 参考 <a class="reference internal" href="#id32"><span class="std std-ref">0.6 参考文献</span></a>.</p>
+<p><em>AA</em> 最后, 你应该学习另一门程序设计语言. 我们认为, 如果只懂一门语言, 要成为软件领域的专家 (即使你并不是想做一名程序员) 是不可能的. 为什么呢? 因为没有哪个大型程序是用单一语言编写的. 此外, 不同语言通常在思考代码和程序构建的方式上有所不同. 其设计技术、可用的库和程序构建的方式有所差异——很多时候迥然不同. 即便两个语言的语法很相似, 这种相似通常仅体现在表面层次. 其性能、错误检测能力以及对表达内容的限制通常不同. 这与自然语言和文化的差异类似。 只知道一种语言和文化隐含着一种危险观念: 认为 &quot;我们做事的方式&quot; 是唯一的方式或唯一优秀的方式. 这样一来会错失很多机会, 并产生出欠佳的程序. 避免这种问题的最佳方式之一就是熟悉多种语言 (编程语言和自然语言).</p>
+</section>
+</section>
+<section id="id21">
+<h2>0.2 传授和学习本书的哲学方法<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<p>我们试图帮助你学习什么? 又是如何安排学习进程的? 我们的做法是, 尽力为你提供编写高效的实用程序所需的最基本的概念、技术和工具, 包括</p>
+<ul class="simple">
+<li><p>程序组织</p></li>
+<li><p>调试和测试</p></li>
+<li><p>类设计</p></li>
+<li><p>计算</p></li>
+<li><p>函数和算法设计</p></li>
+<li><p>图形学 (仅介绍二维图形)</p></li>
+<li><p>图形用户界面 (Graphical User Interface, GUI)</p></li>
+<li><p>文件和流输入输出 (I/O)</p></li>
+<li><p>内存管理</p></li>
+<li><p>设计和程序设计思想</p></li>
+<li><p>C++ 标准库</p></li>
+<li><p>软件开发策略</p></li>
+</ul>
+<p>为了让这本书比编写它所用的笔记本电脑跟轻便, 第二版中的一些补充材料被放在了网站上 (<a class="reference internal" href="#id27"><span class="std std-ref">0.4.1 网站资源</span></a>):</p>
+<ul class="simple">
+<li><p>计算机、人与程序设计 (第二版第 1 章)</p></li>
+<li><p>理念与历史 (第二版第 22 章)</p></li>
+<li><p>文本处理 (含正则表达式匹配) (第二版第 23 章)</p></li>
+<li><p>数值 (第二版第 24 章)</p></li>
+<li><p>嵌入式系统程序设计 (第二版第 25 章)</p></li>
+<li><p>C 语言程序设计技术 (第二版第 27 章)</p></li>
+</ul>
+<p>我们在各个章节中逐一介绍了如下程序设计技术: 过程式程序设计 (同时学习 C 语言程序)、数据抽象、面向对象程序设计和泛型程序设计. 本书的主题是 <strong>程序设计</strong>, 也就是表达代码意图所需的思想、技术和工具. C++ 语言是我们的主要工具, 因此我们比较详细地描述了很多 C++ 语言的特性. 但请记住, C++ 只是一种工具, 而不是本书的主题. 本书是 &quot;用 C++ 语言进行程序设计&quot;, 而不是 &quot;C++ 和一点程序设计理论&quot;.</p>
+<p>我们介绍的每个主题都至少出于两个目的: 提出一种技术、概念或原理, 介绍一个实用的语言特性或库特性. 例如, 我们用一个二维图形绘制系统的接口展示如何使用类和继承. 这使我们节省了篇幅 (也节省了你的时间), 并且还强调了程序设计不只是简单地将代码拼装起来以尽快地得到一个结果. C++ 标准库是这种 &quot;双重作用&quot; 例子的主要来源, 其中很多主题甚至具有三重作用. 例如, 我们会介绍标准库中的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">vector</span></code>, 用它来展示一些广泛使用的设计技术, 并展示很多用来实现 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">vector</span></code> 的程序设计技术. 我们的一个目标是向你展示一些主要的标准库功能是如何实现的, 以及它们如何映射到硬件上. 我们坚持认为一个工匠必须了解他的工具, 而不是仅仅把工具当作 &quot;有魔法的东西&quot;.</p>
+<p>对于一个程序员来说, 总是会对某些主题比对其他主题更感兴趣. 但是, 我们建议你不要预先判断你需要什么 (你怎么知道你将来会需要什么呢?), 至少每一章都要浏览一下. 如果你学习本书是作为一门课程的一部分, 你的老师会指导你如何选择学习内容.</p>
+<p><em>CC</em> 我们的教学方法可以描述为 &quot;深度优先&quot;, 同时也是 &quot;具体优先&quot; 和 &quot;基于概念&quot;. 首先, 我们快速地 (好吧, 是相对快速地, 从第 1 章到第 9 章) 将一些编写小的实用程序所需的技巧组装给你. 在这期间, 我们还简明扼要地提出很多工具和技术. 我们着重于简单具体的代码实例, 因为相对于抽象概念, 人们能更快领会具体实例, 这就是多数人的学习方法. 在最初阶段, 你不应期望理解每个小的细节. 特别是, 你会发现对刚刚还工作得好好的程序稍加改动, 便会呈现出 &quot;神秘&quot; 的效果. 尽管如此, 你还是要尝试一下! 还有, 请完成我们提供的简单练习和习题. 请记住, 在学习初期你只是没有掌握足够的概念和技巧来准确判断什么是简单的, 什么是复杂的. 请等待一些惊奇的事情发生, 并从中学习吧.</p>
+<p><em>AA</em> 我们会快速通过上段所述的初始阶段——我们想尽可能快地让你进入能编写有趣程序的阶段. 有些人可能会质疑, &quot;我们的进展应该慢些、谨慎些, 我们应该先学会走, 再学跑!&quot; 但是你见过小孩学习走路吗? 实际上小孩在学会平稳地慢慢走路之前就自己开始尝试跑了. 与之相似, 你可以先勇猛向前, 偶尔摔一跤, 从中获得编程的感觉, 然后再慢下来, 获得必要的精确控制能力和准确的理解. 你必须在学会走之前就开始跑!</p>
+<p><em>XX</em> 你不要投入大量精力试图学习一些语言或技术细节的所有相关内容. 例如, 你可以熟记所有 C++ 的内置类型及其使用规则. 你当然可以这么做, 而且这么做会使你觉得自己很博学. 但是, 这不会使你成为一名程序员. 如果你学习中略过一些细节, 将来可能偶尔会因为缺少相关知识而被 &quot;灼伤&quot;, 但这是获取编写好程序所需的完整知识结构的最快途径. 注意, 我们的这种方法本质上就是小孩学习其母语的方法, 也是教授外语的最有效方法. 有时你不可避免地被难题困住, 我们鼓励你向授课老师、朋友、同事、指导教师等寻求帮助. 请放心, 在前面这些章节中, 所有内容本质上都不困难. 但是, 很多内容是你所不熟悉的, 因此最初可能会感觉有点难.</p>
+<p>随后, 我们介绍一些入门技巧来拓宽你的知识. 我们通过实例和习题来强化你的理解, 为你提供一个程序设计的概念基础.</p>
+<p><em>AA</em> 我们非常强调思想和原理. 思想能指导你求解实际问题——可以帮助你知道在什么情况下问题求解方案是好的、合理的. 你还应该理解这些思想背后的原理, 从而理解为什么要接受这些思想, 为什么遵循这些思想会对你和使用你的代码的用户有帮助. 没有人会满意 &quot;因为事情就是如此&quot; 这样的解释. 更为重要的是, 如果真正理解了思想和原理, 你就能将自己已知的知识推广到新的情况; 就能用新的方法将思想和工具结合来解决新的问题. 知其所以然是学会程序设计技巧所必需的. 相反, 仅仅不求甚解地记住大量规则和语言特性有很大局限, 是错误之源, 是在浪费时间. 我们认为你的时间很珍贵, 尽量不要浪费它.</p>
+<p>我们把很多 C++ 语言层面的技术细节驱除到了其他地方, 大多数放在了网站上 (<a class="reference internal" href="#id27"><span class="std std-ref">0.4.1 网站资源</span></a>). 我们假定你会主动查找需要的信息. 要学会用本书的索引和目录. 不要忘了你编译器的在线帮助文档. 但要记住, 要对所有互联网资源保持足够的怀疑, 直至你有足够的理由相信它们. 因为很多看起来很权威的网站实际上是由程序设计新手或者想要出售什么东西的人建立的. 而另外一些网站的内容完全过时了. 我们在支持网站 <a class="reference external" href="https://www.stroustrup.com/programming.html">https://www.stroustrup.com/programming.html</a> 上列出了一些网站链接和信息 (译注: 我提供的见于 <a class="reference internal" href="../searching_method/"><span class="doc">在哪查找中文的 C++ 资料?</span></a> 和 <a class="reference internal" href="../learning_map/#id19"><span class="std std-ref">常用网络资源</span></a>).</p>
+<p>请不要过于急切地期盼 &quot;实际的&quot; 例子. 我们理想的实例都是能直接说明一种语言特性、一个概念或者一种技术的简短代码. 很多现实世界中的实例比我们给出的实例要凌乱很多, 而且不过是我们所展示内容的组合. 包含数十万行代码的成功商业程序正是基于我们用几个 50 行规模的程序所展示出来的技术. 理解现实世界程序的最快途径, 就是深入掌握基础知识.</p>
+<p>我们不会用 &quot;涉及乖巧动物的可爱风格&quot; 来阐述我们的观点. 我们假定你的目标是编写供他人使用的实用程序. 因此书中给出的实例要么是用来说明语言特性, 要么是从实际应用中提取出来的. 我们的叙述风格都是用专业人员对 (将来的) 专业人员的那种口气.</p>
+<p>C++ 建立在两个支柱上:</p>
+<dl class="simple">
+<dt>能够高效直接地访问机器资源</dt><dd><p>它使得 C++ 能高效地进行底层而接近机器的程序设计, 而这在许多应用领域是必不可少的.</p>
+</dd>
+<dt>强大的 (零开销 (zero-overhead)) 抽象机制</dt><dd><p>它通过提供高层次程序设计所需的优雅、灵活、类型和资源安全而又保持高效的机制, 使得摆脱易于出错的低层次程序设计成为可能.</p>
+</dd>
+</dl>
+<p>本书涵盖了两种程序设计层次. 我们用高层次抽象的实现作为示例, 来介绍低层次的语言特性和程序设计技术. 我们的目标是总是尽可能编写高层次的代码. 但这往往需要先用低层次的机制和技术构建出一个基础. 我们的目标是让你掌握这两种程序设计层次.</p>
+<section id="id22">
+<h3>0.2.1 学生须知<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>数以万计的大一新生在使用本书的前两个版本学习程序设计之前, 从未接触过哪怕一行代码. 他们中大多数都成功了, 因此你也可以做到.</p>
+<p>你不必将本书作为课程的一部分来阅读. 本书被广泛用于自学. 然而, 无论你是通过课程学习还是自学程序设计, 尝试与他人合作. 程序设计被曲解为一项孤独的活动. 但对于大多数人, 当他们加入一个拥有共同目标的团体时, 会工作得更好, 学习得更快. 与朋友一起学习并讨论问题并不是作弊! 这是最有效率——也是最愉快——的进步方式. 不说别的, 与朋友合作迫使你清楚表达你的想法, 而这几乎是测试你理解情况和确保你能牢记的最有效途径. 你不必亲自去探求每个晦涩用语和编程环境问题的答案. 然而, 请不要欺骗你自己, 偷懒不去做简单练习和一定量的习题 (即使没有老师强迫你做). 记住: 程序设计 (相比于其他) 是一项你必须通过实践来掌握的实用技能.</p>
+<p>大多数学生——尤其是那些考虑周到的优秀学生——都会经历质疑自己辛勤付出是否值得的时刻. 当 (不是 &quot;如果&quot;) 这种情况发生在你身上时, 休息一下, 重读本章读者须知, 查看网站上 (<a class="reference internal" href="#id27"><span class="std std-ref">0.4.1 网站资源</span></a>) 发布的 &quot;计算机、人与程序设计&quot; 和 &quot;理念与历史&quot; 章节. 在那里, 我试图阐明我感兴趣于程序设计的原因, 以及我为何认为它是为世界做出积极贡献的关键工具.</p>
+<p>请别太心急. 学习任何重要的新技能都需要时间.</p>
+<p>这本书的主要目的在于帮助你用代码表达你的想法, 而非教你如何获取这些想法. 在这个过程中, 我们提供了许多例子来解释我们是如何解决某些问题的, 通常是通过对问题进行分析, 然后逐步优化解决方案. 我们认为程序设计本身就是一种解决问题的形式: 只有完全理解一个问题及其解决方案, 你才能为它编写出正确的程序; 同样, 只有通过构建和测试程序, 你才能确信你的理解是全面的. 因此, 程序设计本质上是为了增进理解而进行的一种努力. 然而, 我们试图通过实例来演示这一点, 而不是通过 &quot;传教布道&quot; 或展示对问题解决方案的详细描述</p>
+</section>
+<section id="id23">
+<h3>0.2.2 教师须知<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p><em>CC</em> 不, 本书不是在教传统的计算机科学 101 课程. 这是一本关于如何构建可使用软件的书. 因此, 它省略了许多计算机科学学生在传统课程中常常接触到的内容 (图灵完备性、状态机、离散数学、形式文法等). 甚至, 基于学生从幼儿园起就以不同方式使用过计算机的假设, 硬件也被本书所忽略. 本书甚至不尝试提及大多数重要的计算机科学主题. 它关注程序设计 (或更广泛地说, 关注如何开发程序), 因此相比许多传统课程, 它更深入地探讨了更少的主题. 本书力求仅将一件事做到极致, 而计算机科学并非单一课程所能涵盖的. 如果本书/课程被用作计算机科学、计算机工程、电气工程 (我们的首批学生中有很多是电气工程专业)、信息科学或其他涉及程序设计的专业的一部分, 我们希望它与其他课程一起讲授, 作为整体介绍的一部分.</p>
+<p>许多学生都希望了解为什么要教授这些科目，以及为什么要以这种方式教授这些科目. 因此请在教学过程中向学生传达我的教学理念、总体方法等. 此外, 为了激励学生, 请简要展示一些 C++ 广泛应用的领域和应用程序, 如航空航天、医学、游戏、动画、汽车、金融和科学计算.</p>
+</section>
+</section>
+<section id="iso-c">
+<h2>0.3 ISO 标准 C++<a class="headerlink" href="#iso-c" title="Link to this heading">#</a></h2>
+<p>C++ 由 ISO 标准定义. 首个 ISO C++ 标准于 1998 年获得批准, 因而该版本 C++ 被称为 C++98. 本书这一版的代码采用当代 C++ (Contemporary C++), 即 C++20 (加上一些 C++23 的内容). 如果你的编译器不支持 C++20 [C++20], 请更新至最新版本编译器. 你可以从各种供应商处下载优秀的现代 C++ 编译器, 请参见 <a class="reference external" href="https://www.stroustrup.com/compilers.html">https://www.stroustrup.com/compilers.html</a>. 使用较早且支持性较差的语言版本学习程序设计可能会遇到不必要的困难. (译注: <a class="reference internal" href="../cpp/#id16"><span class="std std-ref">我的 C++ 环境配置教程</span></a>.)</p>
+<p>另一方面, 你看处于只能使用 C++14 或 C++17 的环境中. 本书的大部分内容仍然适用, 但你会因缺乏 C++20 引入的特性而遇到问题:</p>
+<dl class="simple">
+<dt>模块 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">module</span></code>) (§7.7.1)</dt><dd><p>使用头文件 (§7.7.2) 替代模块. 特别是, 使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;PPPheaders.h&quot;</span></code> 来编译我们的示例和你的习题, 而不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;PPP.h&quot;</span></code> (<a class="reference internal" href="#id25"><span class="std std-ref">0.4 天鹅书支持库</span></a>).</p>
+</dd>
+<dt>范围 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">range</span></code>) (§20.7)</dt><dd><p>使用显式迭代器, 而不是使用范围. 例如, 使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">())</span></code>, 而不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">ranges</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></code>. 如果/当这变得乏味, 你可以为你喜欢的算法编写自己的范围版本 (§21.1).</p>
+</dd>
+<dt><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">span</span></code> (§16.4.1)</dt><dd><p>重新使用古老的 &quot;指针和大小&quot; 技巧. 例如, 使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">void</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">);</span></code> 而不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">void</span><span class="w"> </span><span class="n">f</span><span class="p">(</span><span class="n">span</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">)</span></code>, 然后根据需要自己进行范围检查.</p>
+</dd>
+<dt>概念 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">concept</span></code>) (§18.1.3)</dt><dd><p>使用无修饰的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span></code> 并期盼一切顺利. 哪怕这样的代码中仅有简单错误, 也会产生出非常可怕的错误信息.</p>
+</dd>
+</dl>
+<section id="portability">
+<h3>0.3.1 可移植性 (portability)<a class="headerlink" href="#portability" title="Link to this heading">#</a></h3>
+<p>编写运行于多种平台的 C++ 程序是很常见的情况. 一些重要的 C++ 应用甚至运行于我们闻所未闻的平台! 我们认为在各种及其架构和操作系统能使用 C++ 是非常重要的特性. 本质上, 本书的每个例子都不仅是 ISO 标准 C++ 程序, 还是可移植的. 所谓移植性, 我们指的是除了假设存在一个符合最新标准的 C++ 实现之外, 我们不对计算机、操作系统以及编译器做其他任何假设. 除非特别之处, 本书的代码都能运行于任何一种 C++ 实现, 并且确实已经在多种计算机平台和操作系统上测试通过了.</p>
+<p>不同系统编译、链接和运行 C++ 程序的细节各不相同, 此外, 大多数系统都提供了多个编译器和工具供选择. 本书并不包括解释众多且常常变化的工具集. 我们可能会在本书的支持网站 (<a class="reference internal" href="#id25"><span class="std std-ref">0.4 天鹅书支持库</span></a>) 上添加一些这类的信息.</p>
+<p>如果你在使用任何一种流行的但相对复杂的 IDE (集成开发环境, Integrated Development Environment) 时遇到了困难, 我们建议你尝试命令行工作方式; 它极其简单. 例如, 下面给出的是在 Unix 或 Linux 平台用 GNU C++ 编译器编译、链接和运行一个包含两个源文件 my_file1.cpp 和 my_file2.cpp 的简单程序所需的全部命令:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">c</span><span class="o">++</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="n">my_program</span><span class="w"> </span><span class="n">my_file1</span><span class="p">.</span><span class="n">cpp</span><span class="w"> </span><span class="n">my_file2</span><span class="p">.</span><span class="n">cpp</span>
+<span class="linenos">2</span><span class="p">.</span><span class="o">/</span><span class="n">my_program</span>
+</pre></div>
+</div>
+<p>是的, 这真的就是全部.</p>
+<p>另一种入门方法是使用构建系统, 例如 CMake (<a class="reference internal" href="#id25"><span class="std std-ref">0.4 天鹅书支持库</span></a>). 然而, 这条路径最好由有经验的人员来指导最开始的步骤.</p>
+<p>(译注: <a class="reference internal" href="../cpp/#id16"><span class="std std-ref">我的 C++ 环境配置教程</span></a> 中直接为天鹅书第二版、第三版提供了支持.)</p>
+</section>
+<section id="id24">
+<h3>0.3.2 代码保证<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p>除非用于说明错误, 本书中的代码都是类型安全的 (对象 (object) 仅根据其定义 (definition) 被使用). 我们遵循《C++ 核心准则》(<em>The C++ Core Guidelines</em>) 中的规则来简化程序设计并消除常见错误. 你可以在网上找到《C++ 核心准则》[CG], 而且在需要确保遵循准则时使用规则检查器. (译注: <a class="reference internal" href="../cpp/#id16"><span class="std std-ref">我的 C++ 环境配置教程</span></a> 默认配置了规则检查器 clang-tidy 并开启了一些不影响初学者学习的常见检查.)</p>
+<p>我们不推荐你在初学阶段深究这部分内容, 但它让你放心地知道, 本书推荐的风格和技术都有工业支持. 一旦你熟悉了 C++ 并了解了潜在的错误 (比如在读完 16 章之后), 我们建议你阅读《C++ 核心准则》的介绍并尝试使用一个《C++ 核心准则》检查器, 看看检查器是如何在代码运行之前消除其中的错误.</p>
+</section>
+<section id="c">
+<h3>0.3.3 C++ 简史<a class="headerlink" href="#c" title="Link to this heading">#</a></h3>
+<p>我从 1979 年末开始设计并实现 C++, 大约六个月后为我的第一个用户提供了支持. 初始功能包括带有构造函数和析构函数的类 (§8.4.2, §15.5), 以及函数参数声明 (§3.5.2). 起初, 该语言被称为 <em>C with Classes</em>, 但为了避免与 C 混淆, 它在1985 年被重命名为 <em>C++</em>.</p>
+<p>C++ 的基本理念是将 C 语言高效利用硬件的能力 (如设备驱动、内存管理器、进程调度器等) [K&amp;R] 与 Simula 组织代码的机制 (特别是类和派生类) [Simula] 结合起来. 我需要它来完成一个项目, 即构建一个分布式 Unix 系统. 如果成功, 它可能会成为首个 Unix 集群, 但对 C++ 的开发 &quot;分散&quot; 了我的注意力, 使我没能专注于这一目标.</p>
+<p>1985 年, 首个 C++ 编译器和基础库的商业化实现正式发布. 我编写了其中大部分代码及大部分文档. 首部关于 C++ 的书籍《C++程序设计语言》(<em>The C++ Programming Language</em>) [TC++PL] 也同期出版. 当时, 该语言支持被称为数据抽象 (data abstraction) 和面向对象 (object-oriented) 程序设计 (§12.3, §12.5). 此外, 它对泛型程序设计 (generic programming) 提供了基础性支持 (§21.1.2).</p>
+<p>20 世纪 80 年代末, 我致力于设计异常 (exception) (§4.6) 和模板 (template) (第 18 章). 模板旨在沿袭 Alex Stepanov 的研究 [AS,2009], 支持泛型程序设计.</p>
+<p>1989 年, 几家大型企业认定我们需要为 C++ 制定 ISO 标准. 与 Margaret Ellis 一起, 我撰写了成为 C++ 标准化基石的文档——《ARM》(The Annotated C++ Reference Manual) [ARM]. 首个 ISO 标准于 1998 年由 20 个国家批准, 称为 C++98. 在之后十年时间里, C++98 支撑了 C++ 使用的迅猛增长, 并为后续发展提供了大量宝贵反馈. 除语言外, 标准还规定了一个大规模的标准库. 在 C++98 中, 最重要的标准库组件是 STL, 其提供了迭代器(§19.3.2)、容器 (例如 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">vector</span></code> (§3.6) 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">map</span></code> (§20.2)) 和算法 (§21).</p>
+<p>C++11 是一次重大升级, 它为编译时计算 (§3.3.1) 添加了改进设施, 加入了 lambdas (§13.3.3, §21.2.3), 并正式支持了并发. 并发在 C++ 早期就有应用, 但这个既有趣又重要的话题已超出本书的讨论范围. 学完本书后你可以参考 [AW,2019]. C++11 标准库新增了许多使用组件, 特别是随机数生成 (§4.7.5) 和资源管理指针 (<code class="code highlight cpp docutils literal highlight-cpp"><span class="n">unique_ptr</span></code> (§18.5.2) 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">shared_ptr</span></code> (§18.5.3)).</p>
+<p>C++14 和 C++17 增加了许多实用的特性, 但并未增加对全新程序设计风格的支持.</p>
+<p>C++20 [C++20] 是 C++ 的一次重大改进, 其重要性与 C++11 相当, 并且接近于实现我在 1994 年《C++的设计与演化》(<em>The Design and Evolution of C++</em>) [DnE] 中所阐述的, 对 C++ 的理想. 它进行了许多扩展, 包括添加了模块 (module) (§7.7.1)、概念 (concept) (§18.1.3)、协程 (coroutine) (超出本书范围) 以及范围 (range) (§20.7).</p>
+<p>这些改动在几十年来逐渐演进, 并且高度重视向后兼容性 (backwards compability) (译注: 向后兼容性指新版本仍能直接使用旧版本代码). 我有一些上世纪 80 年代的小程序至今仍能正常运行. 如果旧的代码无法正常编译或运行, 原因通常是操作系统或第三方库的变更. 这提供了一定程度的稳定性，对于那些维护使用了几十年的软件的组织来说, 这是 C++ 的一大特色.</p>
+<p>关于 C++ 设计与演化的更全面讨论, 请参考《C++ 的设计与演化》[DnE] 以及我的三篇 ACM 程序设计历史会议 (ACM History of Programming Conference) 论文 [HOPL-2] [HOPL-3] [HOPL-4]. 不过, 这些不是为初学者编写的.</p>
+</section>
+</section>
+<section id="id25">
+<span id="id26"></span><h2>0.4 天鹅书支持库<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<p>本书中的所有代码均为 ISO 标准 C++ 代码. 要开始编译并运行示例, 请在代码开头添加以下两行:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">import</span><span class="w"> </span><span class="n">std</span><span class="p">;</span>
+<span class="linenos">2</span><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>这使得标准库可用.</p>
+<p>不幸的是, 标准并未保证对 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">vector</span></code> 等容器进行范围检查 (range checking), 而大多数实现默认情况下也不强制执行这样的检查. 通常, 这样的强制检查必须通过启用因编译器而异的选项来开启. 我们认为范围检查对于简化学习过程并减少挫败感至关重要. 因此, 我们提供了一个名为 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">PPP_support</span></code> 的模块, 该模块提供了一个保证对下标操作进行范围检查的 C++ 标准库版本 (参见 <a class="reference external" href="https://www.stroustrup.com/programming.html">https://www.stroustrup.com/programming.html</a>). 因此, 请勿直接使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span></code> 模块, 而是改为使用:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;PPP.h&quot;</span>
+</pre></div>
+</div>
+<p>我们还提供了与 <code class="code highlight cpp docutils literal highlight-cpp"><span class="s">&quot;PPP.h&quot;</span></code> 类似的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="s">&quot;PPPheaders.h&quot;</span></code>, 供无法使用具有良好模块支持的编译器的人使用. 该版本提供的 C++ 标准库内容更少, 且编译速度更慢.</p>
+<p>有些人对我们为本书第一版和第二版使用支持头文件的做法 (译注: 如这里用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;PPP.h&quot;</span></code> 而不是用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">import</span><span class="w"> </span><span class="n">std</span><span class="p">;</span></code>) 作出评论, 称 &quot;使用非标准的头文件不是实际的 C++&quot;. 然而这是合理的, 因为这些支持头文件的内容 100% 符合 ISO C++ 标准, 并且不会改变正确程序的含义. 我们认为, 我们的支持库能够很好地帮助你避免不可移植的代码和意外行为, 这一点非常重要. 此外, 编写出能够更容易地支持高质量高效代码的库是 C++ 的主要用途之一. <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">PPP_support</span></code> 模块只是其中一个简单的例子.</p>
+<p><em>AA</em> 如果你不能下载本书的支持库, 或者在编译时遇到困难, 可以直接使用标准库, 但要设法找到启用范围检查的方法. 所有主要 C++ 实现都有这样的选项, 但要设法找到并启用它并非易事. 对于所有环境配置问题, 最佳做法是向有经验的人寻求建议.</p>
+<p>此外, 当你阅读到第 10 章并需要运行图形学 (Graphics) 和图形用户界面 (Graphical User Interface, GUI) 的代码时, 你需要安装 Qt graphics/GUI 系统以及为本书专门设计的接口库. 参见 <em>印刷错误</em> 和 <a class="reference external" href="https://www.stroustrup.com/programming.html">https://www.stroustrup.com/programming.html</a>.</p>
+<p>(译注: <a class="reference internal" href="../cpp/#id16"><span class="std std-ref">我的 C++ 环境配置教程</span></a> 默认配置了检查, 并直接支持天鹅书第二版、第三版使用的教学库和 Qt.)</p>
+<section id="id27">
+<span id="id28"></span><h3>0.4.1 网站资源<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p>网上关于 C++ 的资料浩如烟海, 包括文本和视频. 遗憾的是, 这些资料的质量参差不齐, 许多针对高水平用户, 许多已经过时. 因此, 使用时请小心谨慎, 并保持足够的怀疑态度.</p>
+<p><em>AA</em> 本书的支持网站是 <a class="reference external" href="https://www.stroustrup.com/programming.html">https://www.stroustrup.com/programming.html</a>. 在那里, 你可以找到</p>
+<ul class="simple">
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">PPP_support</span></code> 模块源代码 (<a class="reference internal" href="#id25"><span class="std std-ref">0.4 天鹅书支持库</span></a>).</p></li>
+<li><p><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">PPP</span><span class="p">.</span><span class="n">h</span></code> 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">PPPheaders</span><span class="p">.</span><span class="n">h</span></code> 头文件 (<a class="reference internal" href="#id25"><span class="std std-ref">0.4 天鹅书支持库</span></a>).</p></li>
+<li><p>一些本书支持库的安装指南.</p></li>
+<li><p>一些代码示例.</p></li>
+<li><p>勘误表.</p></li>
+<li><p>天鹅书第二版 (《Programming: Principles and Practice Using C++》第二版) [PPP2] 中为了节省篇幅和因为有其他资源可用而被删减的章节. 这些章节可在 <a class="reference external" href="https://www.stroustrup.com/programming.html">https://www.stroustrup.com/programming.html</a> 获取, 并在天鹅书第三版文本中以如下形式引用: PPP2.Ch22 或 PPP2.§22.1.2.</p></li>
+</ul>
+<p>其他网络资源:</p>
+<ul class="simple">
+<li><p>我的网站 <a class="reference external" href="https://www.stroustrup.com">https://www.stroustrup.com</a> 包含大量与 C++ 相关的资料.</p></li>
+<li><p>C++ 基金会的网站 <a class="reference external" href="https://www.isocpp.org">https://www.isocpp.org</a> 提供了各种有用且有趣的信息, 其中有很多与标准化相关, 但也有大量文章和新闻.</p></li>
+<li><p>我推荐用 <a class="reference external" href="https://cppreference.com">https://cppreference.com</a> 作为在线的参考手册. 我自己每天都用它来查阅语言和标准库中晦涩的细节. 但我不推荐将它当成教程使用.</p></li>
+<li><p>主要的 C++ 实现者, 如 Clang、GCC 和 Microsoft, 都提供了其产品良好版本的免费下载 (<a class="reference external" href="https://www.stroustrup.com/compilers.html">https://www.stroustrup.com/compilers.html</a>). 所有这些产品均具备强制执行下标范围检查的选项.</p></li>
+<li><p>有很多网站提供 (免费) 在线 C++ 编译服务, 如 <a class="reference external" href="https://godbolt.org">Compiler Explorer</a>. 这些网站易于使用, 非常适合测试小的示例和查看不同编译器及其不同版本如何处理源代码.</p></li>
+<li><p>有关如何使用当代 C++ (Contemporary C++) 的指南, 参见 <a class="reference external" href="https://github.com/isocpp/CppCoreGuidelines">C++ 核心准则</a> [CG] 和 <a class="reference external" href="https://github/microsoft/GSL">它的小型支持库</a>. 除非用于说明错误, 本书中的代码均遵循核心准则.</p></li>
+<li><p>对于第 10 章到第 14 章的内容, 我们使用 <a class="reference external" href="https://www.qt.io">Qt</a> 作为图形学和 GUI 代码的基础.</p></li>
+</ul>
+</section>
+</section>
+<section id="id31">
+<h2>0.5 作者简介<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
+<p>你可能有理由问: &quot;你是谁, 凭什么认为能帮助我学习程序设计?&quot; 以下是我预制的个人简介:</p>
+<p>Bjarne Stroustrup 是 C++ 的设计者和最初实现者, 也是《C++程序设计语言（第4版）》(<em>The C++ Programming Language (4th Edition)</em>)、《C++之旅（第3版）》(<em>A Tour of C++ (3rd Edition)</em>)、《程序设计：使用C++的原理与实践（第3版）》(<em>Programming: Principles and Practice Using C++ (3rd Edition)</em>) 以及许多流行和学术出版物的作者. 他目前在纽约市的哥伦比亚大学 (Columbia University) 担任计算机科学教授. Stroustrup 博士是美国国家工程院 (the US National Academy of Engineering) 成员, 也是 IEEE、ACM 和计算机历史博物馆 (CHM) 会士 (fellow). 他荣获了 2018 年 Charles Stark Draper 奖, IEEE 计算机协会 2018 年的计算机先锋奖以及 2017 年英国工程技术学会 (IET) 法拉第奖章. 加入哥伦比亚大学之前, 他是得克萨斯农工大学 (Texas A&amp;M University) 的特聘教授以及摩根士丹利 (Morgan Stanley) 的技术院士和董事总经理. 他的许多重要工作都是在贝尔实验室完成的. 他的研究兴趣包括分布式系统、设计、程序设计技术、软件开发工具和编程语言. 为使 C++ 成为现实世界软件开发的稳定且不断更新的基础, 他在 ISO C++ 标准制定工作中担任了超过 30 年的领导角色. 他持有奥胡斯大学 (Aarhus University) 数学硕士学位, 并在该校计算机科学系担任荣誉教授; 他还持有剑桥大学 (Cambridge University) 计算机科学博士学位, 并是丘吉尔学院 (Churchill College) 的荣誉院士. 他还是马德里卡洛斯三世大学 (Universidad Carlos III de Madrid) 的荣誉博士. <a class="reference external" href="https://www.stroustrup.com">https://www.stroustrup.com</a>.</p>
+<p>换句话说, 我拥有丰富的工业和学术经验.</p>
+<p>我曾使用本书的早期版本教授过数千名大一新生, 其中许多人之前从未写过一行代码. 除此之外, 我还教授过从本科生到经验丰富的开发人员和科学家等各个层次的人群. 我现在在哥伦比亚大学教授本科生和研究生的最后一年课程.</p>
+<p>我的确有工作之外的生活. 我已婚, 有两个孩子和五个孙子孙女. 我读很多书, 包括历史、科幻小说、犯罪小说和时事. 我喜欢各种音乐, 包括古典音乐、经典摇滚、蓝调和乡村音乐. 与朋友一起品尝美食是必不可少的, 而且我喜欢游览世界各地有趣的地方. 为了能够享受美食, 我坚持跑步.</p>
+<p>要了解更多生平信息, 请访问 <a class="reference external" href="https://www.stroustrup.com/bio.html">https://www.stroustrup.com/bio.html</a>.</p>
+</section>
+<section id="id32">
+<span id="id33"></span><h2>0.6 参考文献<a class="headerlink" href="#id32" title="Link to this heading">#</a></h2>
+<p>下面列出了本章提及的参考文献, 以及可能对你有用的一些文献.</p>
+<dl class="simple">
+<dt>[ARM]</dt><dd><ol class="upperalpha simple" start="13">
+<li><p>Ellis and B. Stroustrup: <em>The Annotated C++ Reference Manual</em>. Addison-Wesley. 1990. ISBN 0-201-51459-1.</p></li>
+</ol>
+</dd>
+<dt>[AS,2009]</dt><dd><p>Alexander Stepanov and Paul McJones: <em>Elements of Programming</em>. Addison-Wesley. 2009. ISBN 978-0-321-63537-2.</p>
+</dd>
+<dt>[AW,2019]</dt><dd><p>Anthony Williams: <em>C++ Concurrency in Action: Practical Multithreading (Second edition)</em>. Manning Publishing. 2019. ISBN 978-1617294693.</p>
+</dd>
+<dt>[BS,2022]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup: <em>A Tour of C++ (3rd edition)</em>. Addison-Wesley, 2022. ISBN 978-0136816485.</p></li>
+</ol>
+</dd>
+<dt>[CG]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup and H. Sutter: <em>C++ Core Guidelines</em>. <a class="github reference external" href="https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md">isocpp/CppCoreGuidelines</a>.</p></li>
+</ol>
+</dd>
+<dt>[C++20]</dt><dd><p>Richard Smith (editor): <em>The C++ Standard</em>. ISO/IEC 14882:2020.</p>
+</dd>
+<dt>[DnE]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup: <em>The Design and Evolution of C++</em>. Addison-Wesley, 1994. ISBN 0201543303.</p></li>
+</ol>
+</dd>
+<dt>[HOPL-2]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup: <em>A History of C++: 1979–1991</em>. Proc. ACM History of Programming Languages Conference (HOPL-2). ACM Sigplan Notices. Vol 28, No 3. 1993.</p></li>
+</ol>
+</dd>
+<dt>[HOPL-3]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup: <em>Evolving a language in and for the real world: C++ 1991-2006</em>. ACM HOPL-III. June 2007.</p></li>
+</ol>
+</dd>
+<dt>[HOPL-4]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup: <em>Thriving in a crowded and changing world: C++ 2006-2020</em>. ACM/SIGPLAN History of Programming Languages conference, HOPL-IV. June 2021.</p></li>
+</ol>
+</dd>
+<dt>[K&amp;R]</dt><dd><p>Brian W. Kernighan and Dennis M. Ritchie: <em>The C Programming Language</em>. Prentice-Hall. 1978. ISBN 978-0131101630.</p>
+</dd>
+<dt>[Simula]</dt><dd><p>Graham Birtwistle, Ole-Johan Dahl, Bjørn Myhrhaug, and Kristen Nygaard: <em>SIMULA BEGIN</em>. Studentlitteratur. 1979. ISBN 91-44-06212-5.</p>
+</dd>
+<dt>[TC++PL]</dt><dd><ol class="upperalpha simple" start="2">
+<li><p>Stroustrup: <em>The C++ Programming Language (Fourth Edition)</em>. Addison-Wesley, 2013. ISBN 0321563840.</p></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="id34">
+<h2>后记<a class="headerlink" href="#id34" title="Link to this heading">#</a></h2>
+<p>每章最后都附有一个简短的 &quot;后记&quot;, 试图对该章节所呈现的内容提供一些看法. 我们这样做是因为认识到这些内容可能——而且通常是——令人望而生畏的, 而只有在完成习题, 阅读后续章节 (应用本章中的概念) 并回顾本章之后, 才能完全理解. <em>不要慌!</em> 放轻松; 会有这种情况是很自然的, 而且在我们预料之中. 你不会在一天内就成为专家, 但通过学习本书, 你可以成为一名相当称职的程序员. 在此过程中, 你会遇到许多信息, 众多示例和诸多技术, 这些都曾令成千上万的程序员感到振奋和有趣.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../theory/"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">答疑原则和理论依据</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ppp2_chapter0/"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">天鹅书第二版第 0 章.读者须知</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">0.1 本书的结构</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">0.1.1 一般方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">0.1.2 简单练习和习题等</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">0.1.3 本书之后是什么?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">0.2 传授和学习本书的哲学方法</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">0.2.1 学生须知</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">0.2.2 教师须知</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iso-c">0.3 ISO 标准 C++</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#portability">0.3.1 可移植性 (portability)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">0.3.2 代码保证</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c">0.3.3 C++ 简史</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">0.4 天鹅书支持库</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">0.4.1 网站资源</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">0.5 作者简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">0.6 参考文献</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">后记</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： FeignClaims
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, FeignClaims.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  最后更新于 2025-02-04 15:41:58.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
