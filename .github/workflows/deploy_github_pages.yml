@@ -1,0 +1,92 @@
+name: deploy_github_pages
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build_commit_and_publish:
+    if: ${{ !contains(github.event.head_commit.message, '[no deploy]') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5.0.0
+        with:
+          python-version: "3.11"
+
+      - name: Checkout sources
+        uses: actions/checkout@v4.1.1
+        with:
+          path: main
+          fetch-depth: 0
+
+      - name: Checkout github_docs
+        uses: actions/checkout@v4.1.1
+        with:
+          ssh-key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          ref: github_docs
+          path: github_docs
+
+      - name: Replace vscode-cpp-starter.readthedocs.io/ to feignclaims.github.io/vscode_cpp_starter/
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: "main/conf.py"
+          find: '"https://vscode-cpp-starter.readthedocs.io/"'
+          replace: '"https://feignclaims.github.io/vscode_cpp_starter/"'
+          regex: false
+
+      - name: Replace change-major-exam.readthedocs.io/ to feignclaims.github.io/change_major_exam/
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: "main/conf.py"
+          find: '"https://change-major-exam.readthedocs.io/"'
+          replace: '"https://feignclaims.github.io/change_major_exam/"'
+          regex: false
+
+      - name: Show mirror website
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          include: "main/index.rst"
+          find: "`本网站的国外备用网址 (不支持搜索) <https://feignclaims.github.io/question_board/>`_"
+          replace: "`本网站的国外主网址 (支持搜索) <https://question-board.readthedocs.io/>`_"
+          regex: false
+
+      - name: Install sphinx
+        shell: bash
+        run: |
+          pip install -r main/requirements.txt
+
+      - name: Build docs
+        shell: bash
+        run: |
+          rm -rf github_docs/build
+          sphinx-build main github_docs/build
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9.1.3
+        with:
+          cwd: github_docs
+          commit: "--amend"
+          push: "--force"
+          default_author: github_actions
+          message: "[bot] Build gitee pages"
+
+      - name: Setup Github Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Github Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "github_docs/build"
+
+      - name: Build Github Pages
+        uses: actions/deploy-pages@v4
