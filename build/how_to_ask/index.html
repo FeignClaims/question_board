@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="article:modified_time" content="2025-02-04T15:41:58+08:00" /><meta property="og:title" content="如何询问 C++ 代码问题?" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="how_to_ask/" />
+<meta property="og:site_name" content="C++ 洋葱剥法交流群资料" />
+<meta property="og:description" content="当一个人寻求建议, 但却从不接受任何建议, 因为他们确信这些建议实际上与他们的问题无关……最终, 建议者会停止提供建议——他们觉得就算建议了也毫无意义. —Kate Gregory, 英语原文见此, 翻译有一些排版上的调整. 最近有很多人在写 C++ 代码时求助于我. 我通常很高兴并且能够提供帮助. 但有时候, 我要么帮不上忙, 要么选择不帮忙. 我认为对其中的一些情况稍加解释可能会有所帮助..." />
+<meta name="description" content="当一个人寻求建议, 但却从不接受任何建议, 因为他们确信这些建议实际上与他们的问题无关……最终, 建议者会停止提供建议——他们觉得就算建议了也毫无意义. —Kate Gregory, 英语原文见此, 翻译有一些排版上的调整. 最近有很多人在写 C++ 代码时求助于我. 我通常很高兴并且能够提供帮助. 但有时候, 我要么帮不上忙, 要么选择不帮忙. 我认为对其中的一些情况稍加解释可能会有所帮助..." />
+
+    <title>如何询问 C++ 代码问题? &#8212; C++ 洋葱剥法交流群资料</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css?v=e236af4b" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/theme.css?v=ae8a9af6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=cd85ae70"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/jquery.min.js?v=94f7166b"></script>
+    <script src="../_static/zoom-image.js?v=56ef8405"></script>
+    <script>let toggleHintShow = '点击展开';</script>
+    <script>let toggleHintHide = '点击隐藏';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'how_to_ask';</script>
+    <link rel="canonical" href="https://question-board.readthedocs.io/how_to_ask/" />
+    <link rel="icon" href="../_static/favicon.png"/>
+    <link rel="index" title="索引" href="../genindex/" />
+    <link rel="search" title="搜索" href="../search/" />
+    <link rel="next" title="断点调试的使用" href="../debugger/" />
+    <link rel="prev" title="如何用网页链接分享代码?" href="../share_code/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="2025-02-04 15:41:58"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">跳转至主要内容</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>回到顶部</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="版本警告"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">C++ 洋葱剥法交流群资料</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/FeignClaims/question_board" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">搜索</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">关于文档</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../rule_and_preface/">群规和前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../meet_trouble/">遇到问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING/">参与贡献</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">学习资料</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../searching_method/">在哪查找中文的 C++ 资料?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../share_code/">如何用网页链接分享代码?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">如何询问 C++ 代码问题?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../debugger/">断点调试的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../formatter/">自动格式化代码的方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cpp/">C++ 学习建议、环境配置等</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../faq/">常见问题解答</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/object/">对象 (object)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/initialization_assignment/">初始化、赋值 (initialization, assignment)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/struct/">结构体 (struct)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/resource/">资源 (resource)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/type_conversion/">类型转换 (type conversion)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/reference/">引用 (reference)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/pointer/">指针 (pointer)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/function/">函数 (function)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/function_parameter/">函数参数 (function parameter)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/value_category/">值类别 (value category)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/auto/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">auto</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/sizeof/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">sizeof</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/c_array/">C 风格数组: <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">T</span><span class="w"> </span><span class="n">array</span><span class="p">[</span><span class="n">size</span><span class="p">]</span></code> (C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/c_string/">C 风格字符串和字符串字面值 (C-style string and string literal)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/basic_concepts/operator_overloading/">运算符重载及示例 (operator overloading)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/copy_assignment/">拷贝赋值函数: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/istream_ostream/">输入流、输出流: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">ostream</span><span class="p">,</span><span class="w"> </span><span class="n">Widget</span><span class="w"> </span><span class="k">const</span><span class="o">&amp;</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/increment_decrement/">自增自减: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">()</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">++</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/compund_assignment_and_binary_operation/">复合赋值和二元算术: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+=</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">+</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/comparison/">比较运算符: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">&lt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">==</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/subscript/">数组下标: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="p">[]</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/dereference/">解引用: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">-&gt;</span></code>、<code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">*</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/logic_not/">逻辑非: <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">operator</span><span class="o">!</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/basic_concepts/operator_overloading_example/rarely_overloaded/">极少重载的运算符</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/template/">模板 (template)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/basic_concepts/move_semantics/">移动语义 (move semantics)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/east_const/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="k">const</span></code> 的阅读: 常量指针? 指针常量?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/variable_decleration_reading/">变量声明的阅读: <code class="code highlight cpp docutils literal highlight-cpp"><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="k">const</span><span class="o">&amp;</span><span class="w"> </span><span class="n">value</span><span class="p">)[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">])(</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">)</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/condition/">条件判断 (condition)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/md_c_array/">多维数组 (multi-dimensional C-style array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/escape_character/">转义字符: 为什么 <code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'0'</span></code> 的值不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code> (escape character)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/comma_operator/">逗号表达式 (comma operator)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/exception_throwing/">异常的抛出与捕获 (exception throwing)</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/normal/">正常题: 抛出时栈回溯 (stack unwinding)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/exception_throwing/hardcore/">硬核题: 抛出一个构造函数和析构函数会输出的类</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/class_invariant/">不变式: 类和结构体的区别 (class invariant)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/member_initializer/">成员初始化器: 构造函数的冒号是啥?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../faq/lifetime/">生命期 (lifetime): 带输出的构造、析构如何阅读?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/preface/">题目中所使用的类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/automatic_storage_duration/">1. 自动存储周期 (automatic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/static_storage_duration/">2. 静态存储周期 (static storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/dynamic_storage_duration/">3. 动态存储周期 (dynamic storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/thread_local_storage_duration/">4. 线程局部存储周期 (thread_local storage duration)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/temporary_object/">5. 临时对象 (temporary object)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/mix/">6. 综合题</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../faq/lifetime/make_more_exercises/">制作更多习题</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/rule_of_350/">rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_functions_parameter/">拷贝构造/赋值函数的参数: 为什么我的拷贝函数报错?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/access_specifiers/">访问控制: 公用、保护用、私用 (access specifiers)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/virtual_function_invocation_explain/">虚函数调用的感性理解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/input_methods/">几种 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">cin</span></code> 输入方式的区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/pointer_output/">为什么字符指针不输出地址值, 而其他指针输出地址值?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/c_string_output/">为什么我的字符数组输出很奇怪?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/ascii_output/">如何输出字符对应的 ASCII 码?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/newline_character/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="sc">'\n'</span></code> 是什么? 和 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code> 有什么区别?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/fstream/">文件读写</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/binary_io/">二进制输入输出 (binary I/O)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/instantiation/">实例化: 对类模板写友元函数出现问题? (instantiation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/generate_random_number/">随机数的生成 (random number generation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/range_iterator_and_algorithm/">范围、迭代器和算法 (range, iterator and algorithm)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/forward_list/">实例分析: 单向链表 (forward list)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/dynamic_array/">实例分析: 动态数组 (dynamic array)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/getter_setter/">实现 setter 和 getter 函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/separate_interface_from_implementation/">接口与实现相分离 (separate interface from implementation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/copy_assignment_define/">copy-and-swap: 拷贝赋值函数的简单实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/visual_studio/strcpy/"><code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy</span></code> 报错了, 让用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">strcpy_s</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/visual_studio/unresovable_external_symbol/">无法解析的外部符号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exercise/split_digits/">拆分整数的各位数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/exercise/base_conversion/">整数进制转换</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/twos_complement/">补码的原理: 为什么 <code class="docutils literal notranslate"><span class="pre">127</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">=</span> <span class="pre">-128</span></code>?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_2/">C.2: 如果类具有不变式则用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">class</span></code>; 如果数据成员相互独立则使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">struct</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_40/">C.40: 如果类具有不变式, 则定义构造函数</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/c_131/">C.131: 避免平凡的 getters 和 setters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/coreguidelines/es_45/">ES.45: 避免 "魔法常量"; 用符号常量代替它!</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">理论依据</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../c_or_cpp/">课上的 C 和 C++ 有什么区别?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory/">答疑原则和理论依据</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ppp3_chapter0/">天鹅书第三版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ppp2_chapter0/">天鹅书第二版第 0 章.读者须知</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../learning_map/">学习大纲</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/blob/main/how_to_ask.rst?plain=1" target="_blank"
+   class="btn btn-sm btn-source-file-button dropdown-item"
+   title="Show source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">Show source</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/edit/main/how_to_ask.rst" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FeignClaims/question_board/issues/new?title=Issue%20on%20page%20%2Fhow_to_ask.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="创建议题"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="亮色"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="暗色"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>如何询问 C++ 代码问题?</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">前言</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">提问的地点和方式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">换位思考</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">向我们展示你的代码和错误信息, 并且千万不要是以截图的形式!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">与答疑者对话</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">写好变量名和函数名</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugger">使用调试器 (Debugger)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">添加一些测试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">拆解大块的东西</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">发挥主观能动性</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">试试别人告诉你的替换方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">如果帮助你的人告诉你, 你的代码按你的方式更难读, 那就试试那些对你不重要的东西</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">自己编写代码</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">不管是谁在和你说话, 都要和他协作</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">结语</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="c">
+<h1>如何询问 C++ 代码问题?<a class="headerlink" href="#c" title="Link to this heading">#</a></h1>
+<blockquote class="epigraph">
+<div><p>当一个人寻求建议, 但却从不接受任何建议, 因为他们确信这些建议实际上与他们的问题无关……最终, 建议者会停止提供建议——他们觉得就算建议了也毫无意义.</p>
+<p class="attribution">——Kate Gregory</p>
+</div></blockquote>
+<p><a class="reference external" href="http://www.gregcons.com/KateBlog/HowToAskForCCodingHelp.aspx">英语原文见此</a>, 翻译有一些排版上的调整.</p>
+<p>最近有很多人在写 C++ 代码时求助于我. 我通常很高兴并且能够提供帮助. 但有时候, 我要么帮不上忙, 要么选择不帮忙. 我认为对其中的一些情况稍加解释可能会有所帮助. 因为社区里的其他成员很可能也有一套类似于我的标准, 用于决定什么情况帮助别人写代码以及什么情况不帮助别人.</p>
+<section id="id17">
+<h2>前言<a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<p>警告: 这篇文章很长, 但绝对值得全部阅读.</p>
+<p>你以为我会说 TLDR (太长了别看)? 实际上, 你只需提问就可能得到来自成功人士的免费指导和商议! 但如果你期望帮助者帮上你绝大部分忙, 并且接受你的指示和引导, 那么除非你知道如何有效地提问, 你能得到的帮助将很少很少.</p>
+</section>
+<section id="id18">
+<h2>提问的地点和方式<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p>第一个选择是提问的地点和方式.</p>
+<p>人们经常给我发电子邮件, 在 LinkedIn 上给我发消息, 在 Twitter 上给我发私信, 在 #include &lt;C++&gt; Discord 上给我发私信等等, 希望从我这里得到个性化、即时而一对一的帮助.</p>
+<p>这不是对我时间的很好利用. 我更喜欢在其他人能看到问题和答案的地方提供帮助. 这可以帮助更多的人. 它还使更多的人能够提供帮助——因此它可以提供更好的建议并帮助这些人学习和成长. 通常, 我能从其他人插的话中学到很多.</p>
+<p>因此, 我鼓励您在 StackOverflow (如果你有适合该网站的、类似于一问一答形式的问题), 或者在 #include &lt;C++&gt; Discord 或其他公开场合上提问. 随着时间推移, 很多人都能看到问题和答案.</p>
+</section>
+<section id="id19">
+<h2>换位思考<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<p>其余的问题都在于提问者希望我做多少工作, 或者他们会为我省多少精力.</p>
+<p>想一想你的第一个问题是怎么问的. 比较一下:</p>
+<ul class="simple">
+<li><p>&quot;这是包含了我项目中所有文件的一个压缩包, 你能告诉我它有什么问题吗?&quot;</p></li>
+<li><p>&quot;这是一个在线编译器 (<a class="reference internal" href="../share_code/"><span class="doc">如何用网页链接分享代码?</span></a>) 的链接, 在其中第 43 行有一个我不明白的编译器错误; 你能告诉我如何解决这个错误吗?&quot;</p></li>
+</ul>
+<p>指望着别人安装一些东西, 翻阅许多文件, 猜测你的问题, 然后解决你的问题并耐心向你解释这一切, 实在是太过分了. 至少要告诉别人你的问题到底是什么!</p>
+<p>经常有人在寻求帮助时说 &quot;它不工作&quot; 或者 &quot;这有什么问题&quot; 一类的话, 而我面对这种问题时甚至不知道它是一个编译器错误、运行时错误还是一个运行正常但计算错误的答案. 所以举例来说, 在你发帖之前, 尽量有一个干脆利落的问题, 而不仅仅是 &quot;救命啊, 它没正常运行&quot;.</p>
+<section id="id20">
+<h3>向我们展示你的代码和错误信息, 并且千万不要是以截图的形式!<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>你可以把代码复制到 Godbolt 或者 Wandbox 这样的在线编译器中 (<a class="reference internal" href="../share_code/"><span class="doc">如何用网页链接分享代码?</span></a>), 或者如果它少于 20 行左右, 你可以把它粘贴到聊天窗口中——但在这么做之前, 记得格式化代码.</p></li>
+<li><p>将错误信息复制并粘贴为文本, 从而使它们更加容易阅读并方便我们在向你解释的时候复制和粘贴部分内容.</p></li>
+<li><p>如果你因为代码太大或者因工作原因不能展示你的真实代码, 那就创造一个有相同问题的小例子并展示给我们.</p></li>
+</ul>
+<p>无论你以什么形式提问, 永远不要随便地在聊天框里编写一些自认为展示了相同问题的代码, 然后每当人们指出缺少分号或未声明的变量时, 回答说: &quot;啊对对对, 但那不是我真正的代码, 只是我输入的一些东西, 给你一个大致的概念.&quot;</p>
+<p>编译器 (和运行环境) 是很挑剔的, 通过与你真正的代码大差不差的东西寻求帮助是毫无意义的.</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../formatter/"><span class="doc">自动格式化代码的方法</span></a> 中介绍了常见软件的格式化代码方法.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="id21">
+<h2>与答疑者对话<a class="headerlink" href="#id21" title="Link to this heading">#</a></h2>
+<p>现在假设你设法与试图帮助你的人进行对话. 例如, 他们解决了那个编译器错误, 但现在你又有了另一个错误.</p>
+<p>在这个过程中, 我经常向人们提出建议却被他们拒绝. 在我看来, 他们以为这些建议只是为了让他们自己未来更轻松, 因为他们总是说着 &quot;等问题解决了, 我会这么做的&quot; 之类的话. 于是我又不得不花费大量精力进行解释: 我希望他们现在就按我的建议来做, 以便我可以帮助他们解决问题.</p>
+<p>这些建议包括:</p>
+<section id="id22">
+<h3>写好变量名和函数名<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>如果你的变量都叫 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">i</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">n</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">c</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">r</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">s</span></code> 等等, 我不知道它们代表什么.</p>
+<p>如果我要求你把这些改成 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">next</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">rate</span></code>, <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">total</span></code> 等或改成你自己想出来的其他名字, 那是因为如果没有一些帮助, 我无法理解你的代码 (我不知道你想解决什么问题).</p>
+<p>好名字不是某一天才去做的事情, 你绝不该在代码正常运行后才去考虑它. 它们是你让别人能读懂你的代码的途径. 既然你要求我阅读这段代码, 那就应该让它变得可读.</p>
+</section>
+<section id="debugger">
+<h3>使用调试器 (Debugger)<a class="headerlink" href="#debugger" title="Link to this heading">#</a></h3>
+<p>当我问 &quot;你有没有在调试器中查看循环之前的 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">a</span></code> 的值?&quot; 时, 回答 &quot;我不知道如何使用调试器, 我今天没时间学习&quot; 是结束我们对话的好方法.</p>
+<p>真正的程序员会使用调试器. 我们可没在脑子里安装什么神奇的编译器模拟器, 可以读取代码并告诉你它是否通过编译, 而且我们也没有神奇的运行环境模拟器.</p>
+<p>当然, 也许我一眼就能看出 <code class="code highlight cpp docutils literal highlight-cpp"><span class="n">a</span></code> 在循环之前是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code>, 这就是为什么它不能工作, 但在这种情况下我会告诉你. 更有可能的是, 我想让你快速检查一下它到底是不是 <code class="code highlight cpp docutils literal highlight-cpp"><span class="mi">0</span></code>. 当你拒绝调试时, 你会使帮助你的工作变得更加困难. 你需要学习使用任何你可以使用的调试器, 并且你可能当天就会因学习了它节省很多时间, 从而弥补了你学习它的时间.</p>
+<div class="admonition seealso">
+<p class="admonition-title">参见</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../debugger/"><span class="doc">断点调试的使用</span></a> 中以 Visual Studio 2022 为例解释了断点调试的使用.</p></li>
+</ul>
+</div>
+</section>
+<section id="id23">
+<h3>添加一些测试<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p>你不需要去学习整个单元测试框架. 但是, 如果你正在写一个函数来做某些事, 人为地算出它对简单的值会产生什么结果, 并写一个测试用例 (test harness) 来传递这些简单的值. 然后你可以调试这个测试用例来查看函数的返回值, 并确认它对简单的值是否能正确运行.</p>
+<p>你可能是在原地反转一个字符串、计算斐波那契数列、计算事物的总和……无论如何, 你应该能够想出一些简单的测试案例, 并用它们来测试你的代码.</p>
+<p>最终, 你应该在写代码的同时写测试. 这是你现在就该开始养成的好习惯.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kt">int</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">lhs</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">rhs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">lhs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">rhs</span><span class="p">;</span>
+<span class="linenos">3</span><span class="p">}</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="kt">void</span><span class="w"> </span><span class="nf">test_add</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">                         </span><span class="c1">// 测试用例</span>
+<span class="linenos">6</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 4 == add(1, 3) 则输出 1; 否则输出 0</span>
+<span class="linenos">7</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="id24">
+<h3>拆解大块的东西<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p>你不必 (译注: 也不应该) 做到完全的面向对象编程, 或者写纯粹的函数式程序, 但不要给我 1000 行代码, 让我把它装进我的脑子里. 写一些函数. 还有求你一定要添加一些注释和空行.</p>
+<p>展示出你的代码结构, 这样它就不是一堵文字墙了.</p>
+</section>
+</section>
+<section id="id25">
+<h2>发挥主观能动性<a class="headerlink" href="#id25" title="Link to this heading">#</a></h2>
+<p>还有一些好习惯能让你变得更好:</p>
+<section id="id26">
+<h3>试试别人告诉你的替换方法<a class="headerlink" href="#id26" title="Link to this heading">#</a></h3>
+<p>很多时候, 遇到困难的人不想学习新东西. 我自己就经常遇到这种情况. 我已经很沮丧了, 我已经花了比我预计的更多的时间, 我不能理解其中哪怕一点, 我不希望你现在告诉我去学习别的东西.</p>
+<p>不过, 多年来我积累了许多经验, 其中包括: 有时, 放弃所有那些一知半解的、不能真正发挥作用的乱七八糟的东西而去做一些更简单的事情, 是最好的前进方式.</p>
+<p>如果有人告诉你 vector 在这里会更好并且提供了几行示例代码, 那么坚持己见而拒绝尝试并不能让你学会什么. 如果你所遇到的问题是因为你尝试手动管理内存却忘记了复制等等, 那么使用智能指针、或者完全放弃指针而使用栈上的对象, 将会使一大堆麻烦消失.</p>
+<p>建议你尝试这样做的人知道这将节省多少精力. 你不知道, 所以你才会来寻求帮助. 一个初学者坚持用困难的且没有任何好处的方法做一件事, 做错了, 并且拒绝接受除了用这种困难方法写出的代码以外的任何帮助……这真的很令人沮丧.</p>
+<p>我不想再用那种困难的方法写代码了: 凭什么我要为了你写那种代码?</p>
+</section>
+<section id="id27">
+<h3>如果帮助你的人告诉你, 你的代码按你的方式更难读, 那就试试那些对你不重要的东西<a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<p>比如在构造函数中使用 <code class="code highlight cpp docutils literal highlight-cpp"><span class="o">:</span></code> 语法而不是在函数体内初始化成员, 或者添加一些 <code class="code highlight cpp docutils literal highlight-cpp"><span class="k">using</span></code> 语句: 这些对你来说可能并不重要, 但对于一个忙碌的帮助者来说, 让事情变得太难, 就可能意味着这个帮助者太 &quot;忙&quot; 了于是今天不会帮助你——甚至永远不会.</p>
+<p>我不想教你养成坏习惯, 我不想教你等到问题解决后才 &quot;把代码弄漂亮&quot;, 我也不想费心竭力去阅读难读的代码只因为你嫌麻烦不打算做正确的事情.</p>
+<p>另外, 当一个人寻求建议, 但却从不接受任何建议, 因为他们确信这些建议实际上与他们的问题无关……最终, 建议者会停止提供建议——他们觉得就算建议了也毫无意义.</p>
+</section>
+<section id="id28">
+<h3>自己编写代码<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p>如果我告诉你 &quot;问题是你没有初始化 x&quot;, 不要要求我为你编辑代码, 发送给你新版本的函数或其他什么. 你需要明白你犯了什么错, 而这需要你自己纠正过代码才能明白.</p>
+<p>如果你不明白如何解决别人告诉你的问题, 就问他们 &quot;我如何解决这个问题&quot;; 如果你不能理解他们的回答, 就说 &quot;我不知道 [xxx] 是什么, 你能解释一下或展示给我看吗&quot;.</p>
+<p>不要只问 &quot;那一行代码改好后是什么样子的&quot;, 那感觉就像你在要求我为你打字.</p>
+</section>
+<section id="id29">
+<h3>不管是谁在和你说话, 都要和他协作<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
+<p>也许当你第一次问的时候, 某个人有一些想法, 这些想法很好. 但是当你在修改你的代码、验证是否有效的时候, 其他人也加入进来. 这很好. 这本就是群聊.</p>
+<p>不要告诉他们你正在与 xxx 合作或类似的事情而拒绝他们的帮助. 考虑你得到的所有建议. 如果你正在和某人交谈, 然后他们不回复了, 这也没什么. 许多人会在等待电话会议开始时, 或在吃午饭时, 会突然进入群聊 5 或 10 分钟, 但不会呆太久. 他们也可能会离开自己的键盘.</p>
+<p>不要开始骚扰对方让他们回来, 或者问他们是否有更多的想法, 或者私聊说你仍然没搞懂. 如果你仍然没搞懂, 你完全可以告诉整个房间或频道, 也许其他人会有一些想法. 你的问题可能会在一个小时左右的时间里与三个不同的人解决.</p>
+<p>解决即是胜利!</p>
+</section>
+</section>
+<section id="id30">
+<h2>结语<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
+<p>我知道, 这里给出了许多建议. 但问题在于, 如果你以正确的方式提问, 你就会从互联网上的陌生人那里得到很多帮助; 如果你问的方式不对, 大多数人只会耸耸肩, 说: &quot;看起来你有一个问题.&quot; 然后继续网上冲浪.</p>
+<p>他们甚至不会告诉你为什么他们不帮助你!</p>
+<p>为了获得奇妙的免费帮助并真正加入社区, 你必须付出一些努力. 相信我, 这绝对值得!</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../share_code/"
+       title="上一页">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">如何用网页链接分享代码?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../debugger/"
+       title="下一页">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">断点调试的使用</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">前言</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">提问的地点和方式</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">换位思考</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">向我们展示你的代码和错误信息, 并且千万不要是以截图的形式!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">与答疑者对话</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">写好变量名和函数名</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#debugger">使用调试器 (Debugger)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">添加一些测试</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">拆解大块的东西</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">发挥主观能动性</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">试试别人告诉你的替换方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">如果帮助你的人告诉你, 你的代码按你的方式更难读, 那就试试那些对你不重要的东西</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">自己编写代码</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">不管是谁在和你说话, 都要和他协作</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">结语</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： FeignClaims
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, FeignClaims.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  最后更新于 2025-02-04 15:41:58.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
