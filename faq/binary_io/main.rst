@@ -21,7 +21,7 @@
   int value = 0;
 
   std::ofstream ofile("输出文件路径", std::ios_base::binary);
-  ofile.write(reinterpret_cast<char const*>(value), sizeof(value));
+  ofile.write(reinterpret_cast<char const*>(&value), sizeof(value));
 
 =======================================================================================================================
 二进制输入
@@ -38,4 +38,4 @@
   int value = 0;
 
   std::ifstream ifile("输入文件路径", std::ios_base::binary);
-  ifile.read(reinterpret_cast<char*>(value), sizeof(value));
+  ifile.read(reinterpret_cast<char*>(&value), sizeof(value));
