@@ -5,6 +5,7 @@
 .. _`cpp_tutorial/board`: https://gitee.com/cpp_tutorial/board
 .. _`为天鹅书第二版制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_novice.zip
 .. _`为天鹅书第三版制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp3_novice.zip
+.. _`Git: 我备份的安装包`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/Windows%20%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E5%8C%85/Git-2.40.1-64-bit.exe
 
 .. _`aminya/project_options`: https://www.github.com/aminya/project_options
 
