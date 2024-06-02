@@ -42,3 +42,16 @@
   strcpy_s(result, 100, input);
 
 通过 :cpp:`#define _CRT_SECURE_NO_DEPRECATE`, 我们将能强行使用 :cpp:`strcpy`.
+
+.. error::
+
+  strcpy_s 的目的是为了限制字符串拷贝的长度, 防止黑客传入的几亿长度的字符串也会被完全拷贝, 所以你不应该像下面这样写代码:
+  
+  .. code-block:: cpp
+    :linenos:
+  
+    char const* input = "this is a very long string";
+    char result[5];
+    strcpy_s(result, strlen(input), input);  // strlen(input) 是最大的拷贝长度, 那 strcpy_s 的意义何在？！
+
+  这样的写法和直接用 :cpp:`strcpy(result, input)` 没有区别.
