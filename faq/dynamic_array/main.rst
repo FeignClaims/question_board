@@ -437,7 +437,7 @@
   class Dynamic_array {
    public:
     Dynamic_array(int size = 0)
-        : size_(size), data_(size == 0 ? nullptr : new value_type[size]()) {}
+        : size_(size), data_(size == 0 ? nullptr : new value_type[size]{}) {}
 
     /* ... */
 
@@ -482,7 +482,7 @@
   class Dynamic_array {
    public:
     explicit Dynamic_array(int size = 0)
-        : size_(size), data_(size == 0 ? nullptr : new value_type[size]()) {}
+        : size_(size), data_(size == 0 ? nullptr : new value_type[size]{}) {}
 
     /* ... */
 
@@ -491,7 +491,7 @@
     value_type* data_;
   };
 
-最终得到: :godbolt:`d1YqvP19W`
+最终得到: :godbolt:`G78cPj8Pq`
 
 .. code-block:: cpp
   :linenos:
@@ -536,7 +536,7 @@
 
 :cpp:`size()` 很容易实现, 而对于下标访问操作, 它除了函数名字变成了 :cpp:`operator[]` 以外, 其余的与正常函数没有什么区别.
 
-由于 :cpp:`fill` 需要通过下标访问修改数组元素的内容, 下标访问应该返回对元素的引用: :godbolt:`Y9Tddv3MM`
+由于 :cpp:`fill` 需要通过下标访问修改数组元素的内容, 下标访问应该返回对元素的引用: :godbolt:`Pc6TMcf7z`
 
 .. code-block:: cpp
   :linenos:
@@ -615,7 +615,7 @@
     /* ... */
   }
 
-最终得到: :godbolt:`97c5cf7c1`
+最终得到: :godbolt:`EYqb9Tqhs`
 
 .. code-block:: cpp
   :linenos:
