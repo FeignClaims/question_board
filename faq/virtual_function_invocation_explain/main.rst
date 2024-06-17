@@ -514,8 +514,11 @@
 .. code-block:: cpp
   :linenos:
 
-  class Derived {
-    /* Derived 的信息 */
+  class Base {
+    /* Base 的信息已经被析构了 */
+    class Derived {
+      /* Derived 的信息还在 */
+    }
   }
 
 我们最终泄露了 :cpp:`Derived` 部分的内存. 更可怕的是这实际上是未定义行为, 程序可以做任何事, 甚至炸掉你的电脑!
