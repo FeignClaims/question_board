@@ -399,7 +399,9 @@
 
   :godbolt:`4WMx8YTWa`
 
-  由于 :cpp:`A a` 动态类型已经是基类 :cpp:`A`, 所有函数都调用 :cpp:`A` 中的. 而 :cpp:`B b` 经历如下调用,
+  由于 :cpp:`A a` 动态类型已经是基类 :cpp:`A`, 所有函数都调用 :cpp:`A` 中的.
+
+  而 :cpp:`B b` 经历如下调用,
 
   37 行 :cpp:`b.fun1()`
     静态类型为 :cpp:`B&`, 查找到虚函数 :cpp:`A::fun1()`, 基于动态类型 :cpp:`B&` 调用 :cpp:`A::fun1()`.
