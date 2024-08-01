@@ -42,6 +42,7 @@
 .. _`preferred cmake project structure`: https://stackoverflow.com/questions/33534115/preferred-cmake-project-structure
 .. _`计算机教育中缺失的一课 - 课程`: https://www.bilibili.com/video/BV1Hu4y1A7kf
 .. _`计算机教育中缺失的一课 - 讲义`: https://missing-semester-cn.github.io/
+.. _`Learn Git Branching`: https://learngitbranching.js.org/?locale=zh_CN
 
 .. _`Conan 2.0 Documentation`: https://docs.conan.io/2/
 .. _`Adding Packages to ConanCenter`: https://github.com/conan-io/conan-center-index/blob/master/docs/adding_packages/README.md
