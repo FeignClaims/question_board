@@ -184,6 +184,7 @@ C++ 环境配置
 
 - :doc:`/personal_learning_map/main`
 - `我的 C++ 浏览器书签 (2024/06/22) (右键另存为再导入到浏览器)`_
+- `我的 C++ 订阅源 (2024/06/22) (右键另存为再导入浏览器 feedbro 插件)`_
 
 .. admonition:: 为什么会有应试和非应试的区别?
   :class: dropdown
