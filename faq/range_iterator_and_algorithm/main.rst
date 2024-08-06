@@ -251,6 +251,8 @@
   :linenos:
   :caption: 基于范围的 for 循环
 
+  int range[4] = {0, 1, 2, 3};
+
   for (auto const& value : range) {
     std::cout << value << ' ';
   }
@@ -259,6 +261,8 @@
 .. code-block:: cpp
   :linenos:
   :caption: 对应的一般循环
+
+  int range[4] = {0, 1, 2, 3};
 
   auto begin = begin(range);
   auto end   = end(range);
@@ -398,7 +402,19 @@
 据此我们可以找到 :cpp:`cin` 的迭代器 :cpp:`Cin_iterator<T>` 的 **一种** 实现方式:
 
 成员
-  如果想让对同一迭代器解引用返回同一对象, 我们需要将 :cpp:`T value_` 存储起来.
+  如果想让同一迭代器几次解引用返回的是同一对象, 我们需要将 :cpp:`T value_` 存储起来.
+
+  .. code-block:: cpp
+    :linenos:
+
+    template <typename T>
+    class Cin_iterator {
+     public:
+      /* ... */
+
+     private:
+      T value_;
+    };
 
 自增操作
   这意味着处理下一个输入.
@@ -406,7 +422,7 @@
   .. code-block:: cpp
     :linenos:
 
-    Reverse_iterator& operator++() {
+    Cin_iterator& operator++() {
       cin >> value_;
       return *this;
     }
@@ -424,7 +440,7 @@
 相等比较
   对于此处设计的 :cpp:`cin` 迭代器, 相等比较的唯一目的是判断 :cpp:`begin == end` 是否成立, 这是通过判断 :cpp:`cin` 是否读取失败而不能继续读取, 即 :cpp:`cin.fail()` 是否为 :cpp:`true` 来获得的.
 
-  但 :cpp:`cin.fail()` 跟对象本身没有任何关系, 使用另外的类型表示 :cpp:`end` 会更加清晰:
+  但 :cpp:`cin.fail()` 跟我们当前迭代器所存储的 :cpp:`T value_` 没有任何关系, 使用另外的类型来表达这样的判断会更加清晰:
 
   .. code-block:: cpp
     :linenos:
@@ -449,7 +465,7 @@
     }
 
 构造函数
-  我们选择自增操作时读取下一个输入, 解引用时直接返回 :cpp:`value_`, 这意味着以下代码存在问题:
+  我们选择自增操作时读取下一个输入, 解引用时直接返回 :cpp:`value_`, 这意味着如果我们构造迭代器时不管不顾, 则以下代码存在问题:
 
   .. code-block:: cpp
     :emphasize-lines: 2
@@ -462,7 +478,7 @@
     cout << *iter;  // 输出刚刚输入的 value_
     cout << *iter;  // 输出刚刚输入的 value_
 
-  我们可以自定义默认构造函数, 在默认构造函数中输入数据:
+  为此, 我们可以自定义默认构造函数, 在默认构造函数中输入数据:
 
   .. code-block:: cpp
     :emphasize-lines: 5
@@ -483,13 +499,16 @@
 
     你也可以修改解引用和自增操作的实现来修复这个问题, 无论怎么实现, 只要能建模迭代器概念就是迭代器.
 
-  但这带来新的问题: 我们是用两个迭代器来表示范围的.
+  但这带来新的问题: 我们是用两个迭代器 :cpp:`[begin, end)` 来表示范围的, 而 :cpp:`end` 的默认构造函数也会读入一个数据. 也就是说, 当我们读入 :cpp:`0 1 2 3` 时, :cpp:`begin` 和 :cpp:`end` 将分别读入 :cpp:`0` 和 :cpp:`1`, 而由于 :cpp:`end` 仅仅用于逾尾判断不会被解引用, 我们在构造 :cpp:`end` 迭代器时, 就丢失了这个数据.
 
   .. code-block:: cpp
     :linenos:
 
-    print(Cin_iterator<int>(),
-          Cin_iterator<int>())  // end 的默认构造函数也读入一个数据, 这个数据不会被实际使用
+    /* 输入 0 1 2 3 */
+
+    Cin_iterator begin;  // 读入 0
+    Cin_iterator end;    // 读入 1
+    print(begin, end);   // 输出 0 2 3!
 
   因此我们需要为 :cpp:`begin` 和 :cpp:`end` 进行不同的构造:
 
@@ -562,6 +581,8 @@
             }
 
            private:
+            Cin_iterator() {}  // 仅允许私用
+
             T value_;
           };
 
@@ -576,7 +597,7 @@
   :language: cpp
   :linenos:
 
-需要注意的是, 由于我们判断 :cpp:`cin.fail()` 时范围终止, 我们需要通过 Windows 下 :KBD:`Ctrl` + :KBD:`z`, MacOS 下 :KBD:`Ctrl` + :KBD:`d`, 或输入错误数据的方式来终止范围. **无论如何, 我们确实成功为输入制作了迭代器!**
+需要注意的是, 由于我们规定 :cpp:`cin.fail()` 成立时范围终止, 我们需要通过 Windows 下 :KBD:`Ctrl` + :KBD:`z`, MacOS 下 :KBD:`Ctrl` + :KBD:`d`, 或输入错误数据的方式来终止范围. **无论如何, 我们确实成功为输入制作了迭代器!**
 
 .. code-block:: cpp
   :linenos:
@@ -912,12 +933,12 @@
 输入迭代器 (input iterator)
   它建模了迭代器概念, 此外:
 
-  - 它只保证单次遍历的有效性: 一旦迭代器发生自增操作, 那么所有在它之前的迭代器的拷贝都可能会失效.
+  - 它只保证单次遍历的有效性: 一旦迭代器发生自增操作, 那么所有之前拷贝它得到的迭代器都可能会失效.
 
 前向迭代器 (forward iterator)
   它建模了输入迭代器概念, 此外:
 
-  - 它保证多次遍历的有效性: 迭代器发生自增操作不影响之前的迭代器的拷贝.
+  - 它保证多次遍历的有效性: 迭代器发生自增操作不影响之前拷贝它得到的迭代器.
 
 双向迭代器 (bidirectional iterator)
   它建模了前向迭代器概念, 此外:
@@ -1185,7 +1206,7 @@
   :emphasize-lines: 1, 9
   :linenos:
 
-  // 双向迭代器版本 <- 随机访问迭代器也调用这个!
+  // 双向迭代器版本
   template <typename Iter, typename T>
   Iter find_last(Iter begin, Iter end, T const& value) {
   }
@@ -1199,7 +1220,7 @@
 我们的需求是:
 
 - 允许函数对不同迭代器类型进行区分定义.
-- 为迭代器调用最精化概念的实现 (例如上面代码中随机访问迭代器调用双向迭代器).
+- 为迭代器调用最精化概念的实现 (如果对上面的代码传入随机访问迭代器, 则应该调用双向迭代器版本).
 
 我们可以使用标签分发 (tag dispatch) 惯用法, 利用类层次的特点来做到:
 
@@ -1207,9 +1228,9 @@
   :linenos:
 
   struct input_iterator_tag {};
-  struct forward_iterator_tag       : public input_iterator {};
-  struct bidirectional_iterator_tag : public forward_iterator {};
-  struct random_access_iterator_tag : public bidirectional_iterator {};
+  struct forward_iterator_tag       : public input_iterator_tag {};
+  struct bidirectional_iterator_tag : public forward_iterator_tag {};
+  struct random_access_iterator_tag : public bidirectional_iterator_tag {};
 
   template <typename Iter, typename T>
   Iter find_last_impl(Iter begin, Iter end,
@@ -1225,17 +1246,17 @@
     /* 前向迭代器版本的实现 */
   }
 
-而自定义的类型应该以某种方式记录自己的迭代器层次:
+而自定义的类型应该以某种方式记录自己所建模的迭代器层次:
 
 .. code-block:: cpp
   :linenos:
 
   class Iter {
    public:
-    using iterator_category = bidirectional_iterator_tag;
+    using iterator_category = random_access_iterator_tag;
   };
 
-则 :cpp:`forward_iterator` 定义为:
+则 :cpp:`find_last` 定义为:
 
 .. code-block:: cpp
   :linenos:
@@ -1244,6 +1265,21 @@
   Iter find_last(Iter begin, Iter end, T const& value) {
     return find_last_impl(begin, end, value, Iter::iterator_category());
   }
+
+注意到, 我们传入了 :cpp:`Iter::iterator_category()`, 其类型为 :cpp:`random_access_iterator_tag`, 则 :cpp:`find_last_impl` 将根据其类层次选择最下层的 tag 进行调用: (具体原理基于重载决议 (overload resolution))
+
+.. code-block:: text
+  :linenos:
+
+  input_iterator_tag
+  ↑
+  forward_iterator_tag
+  ↑
+  bidirectional_iterator_tag
+  ↑
+  random_access_iterator_tag
+
+此处即调用 :cpp:`bidirectional_iterator_tag` 版本.
 
 ========================================================================================================================
 关于迭代器的设计
