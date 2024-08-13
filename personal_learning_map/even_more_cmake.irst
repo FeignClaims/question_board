@@ -15,7 +15,7 @@
     
     - 本教程的配置方案已借用这个项目来搭建, 以供 CMake 学习参考.
   
-  - `FeignClaims/cmake_starter_template`_
+  - `FeignClaims/cpp_conan_template`_
 
     - 我基于 `aminya/project_options`_ 的 C++ 项目配置模板, 使用 Conan 2.0 进行包管理.
 

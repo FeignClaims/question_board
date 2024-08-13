@@ -125,7 +125,7 @@
 
 - 《Modern CMake for C++ - Discover a better approach to building, testing and packaging your software》
 - `LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017`_
-- `FeignClaims/cmake_starter_template`_
+- `FeignClaims/cpp_conan_template`_
 - `aminya/project_options`_
 - `Effective CMake - Daniel Pfeifer - C++Now 2017`_
 - `CMake 2022 C++ Modules and More - Bill Hoffman - CppNow 2022`_
@@ -141,7 +141,7 @@
 
 - `Conan 2.0 Documentation`_
 - `Adding Packages to ConanCenter`_
-- `FeignClaims/cmake_starter_template`_
+- `FeignClaims/cpp_conan_template`_
 - `FeignClaims/customized_conan_recipes`_
 
 ------------------------------------------------------------------------------------------------------------------------
@@ -151,7 +151,7 @@
 - `LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017`_
 - `Clang-Format 官方文档`_
 - `Clang-Format 配置选项列表`_
-- `FeignClaims/cmake_starter_template`_
+- `FeignClaims/cpp_conan_template`_
 - `aminya/project_options`_
    
 ------------------------------------------------------------------------------------------------------------------------
@@ -161,7 +161,7 @@
 - `LLVM: A Modern, Open C++ Toolchain - Chandler Carruth - Pacific++ 2017`_
 - `Clang-Tidy 官方文档`_
 - `Clang-Tidy 诊断选项列表`_
-- `FeignClaims/cmake_starter_template`_
+- `FeignClaims/cpp_conan_template`_
 - `aminya/project_options`_
 
 ========================================================================================================================
