@@ -35,7 +35,7 @@
 .. code-block:: cpp
   :linenos:
 
-  struct Lowest_terms_fraction {
+  struct Irreducible_fraction {
    public:
     int numerator;    // 分子
     int denominator;  // 分母
@@ -49,11 +49,11 @@
   :linenos:
 
   int main() {
-    Lowest_terms_fraction fraction1 = {1, 3};  // 1/3, 是最简分式
+    Irreducible_fraction fraction1 = {1, 3};  // 1/3, 是最简分式
     fraction1.numerator             = 3;       // 3/3, 分子和分母之间有公因数 3, 这不是最简分式!
     fraction1.denominator           = 0;       // 3/0, 分母为 0, 这不是最简分式!
 
-    Lowest_terms_fraction fraction2 = {3, 3};  // 3/3, 从构造起就不是最简分式了!
+    Irreducible_fraction fraction2 = {3, 3};  // 3/3, 从构造起就不是最简分式了!
   }
 
 使用者为什么要破坏我们的最简分式? 因为我们让分子分母是公用数据成员, 而公用就是开放给他们任意使用的.
@@ -64,7 +64,7 @@
 
 上面的例子中, 使用者有两处地方可以破坏我们的最简分式:
 
-- 对象构造时: :cpp:`Lowest_terms_fraction fraction2 = {3, 3};`. 这意味着我们应该规定如何构造对象——我们应该定义构造函数.
+- 对象构造时: :cpp:`Irreducible_fraction fraction2 = {3, 3};`. 这意味着我们应该规定如何构造对象——我们应该定义构造函数.
 - 对象使用时: :cpp:`fraction1.numerator = 3;`. 这意味着我们应该规定如何使用对象——我们应该将数据设为私用成员 (:cpp:`private`), 用公用成员函数告知使用者应该怎么访问.
 
 即,
@@ -83,7 +83,7 @@ C++ 因此特意引入了新的关键字 :cpp:`class`, 当使用关键字 :cpp:`
   :linenos:
 
   // ↓使用 class 而非 struct, 语法上没有任何区别, 但告诉读者这个类具有不变式
-  class Lowest_terms_fraction {
+  class Irreducible_fraction {
     /* 与上面的代码完全相同 */
   };
 
