@@ -323,7 +323,7 @@
 
 .. tabs::
 
-  .. tab:: 我不知道你在做什么
+  .. tab:: 我看不出来你是想做什么
 
     .. code-block:: cpp
       :linenos:
@@ -398,6 +398,12 @@
       use(value);  // 使用元素
     }
   }
+
+注意到,
+
+- :cpp:`cin >> value` 可以对应于迭代器自增操作.
+- :cpp:`cin.fail()` 可以对应于迭代器判断是否终止.
+- 对 :cpp:`value` 的使用可以对应于迭代器解引用操作.
 
 据此我们可以找到 :cpp:`cin` 的迭代器 :cpp:`Cin_iterator<T>` 的 **一种** 实现方式:
 
