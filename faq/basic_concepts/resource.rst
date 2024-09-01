@@ -6,10 +6,14 @@
 
 .. code-block:: cpp
   :linenos:
+  :caption: C 语言打开文件、关闭文件
 
-  file* file = open_file("text.txt");  // 获取文件资源
+  #include <cstdio>  // for fopen, fclose
+  using namespace std;
+
+  FILE* file = fopen("text.txt", "w");  // 以写入方式 (write) 打开文件
   /* 对打开的文件进行操作 */
-  close_file(file);  // 释放文件资源
+  fclose(file);  // 关闭文件, 即释放文件资源
 
 ========================================================================================================================
 所有权 (ownership)
@@ -20,8 +24,8 @@
 .. code-block:: cpp
   :linenos:
 
-  file* file = open_file("text.txt");
-  close_file(file);  // file 须负责释放文件资源, 它具有该资源的所有权
+  FILE* file = fopen("text.txt", "w");
+  fclose(file);  // file 须负责释放文件资源, 它具有该资源的所有权
 
   int value    = 0;
   int* pointer = &value;  // pointer 不需要负责释放 value, 只是引用, 不具有所有权
@@ -32,12 +36,12 @@
 
   // 程序 A
   int main() {
-    file* file = open_file("text.txt");
+    FILE* file = fopen("text.txt", "w");
   }  // 离开 main 时, file 被析构, 但是它指向的文件资源没有被释放
 
   // 程序 B
   int main() {
-    file* file = open_file("text.txt");  // 错误: 文件被占用!
+    FILE* file = fopen("text.txt", "w");  // 错误: 文件被占用!
   }
 
 .. figure:: resource.png
@@ -76,15 +80,18 @@
 .. code-block:: cpp
   :linenos:
 
+  #include <cstdio>
+  using namespace std;
+
   class File {
    public:
-    //                                   ↓ 对 file_ 成员初始化
-    File(std::string const& file_path) : file_{open_file(file_path)} {}
-    ~File() { close_file(file_); }
+    //                                  ↓ 对 file_ 成员初始化
+    File(char const* file_path) : file_{fopen(file_path, "w")} {}
+    ~File() { fclose(file_); }
     // ...
 
    private:
-    file* file_;
+    FILE* file_;
   };
 
   int main() {
