@@ -814,7 +814,7 @@
 
 .. seealso::
 
-  以下代码的具体思路, 请参考 :doc:`/faq/dynamic_array/main`
+  以下代码的具体思路请参考 :doc:`/faq/dynamic_array/main`
 
 .. code-block:: cpp
   :linenos:
