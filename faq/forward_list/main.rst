@@ -552,7 +552,7 @@
     :linenos:
 
     struct Forward_list {
-    public:
+     public:
       Node* dummy;
     };
 
