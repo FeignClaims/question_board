@@ -560,9 +560,9 @@
       Forward_list list = {new Node{0, nullptr}};  // 只占位, 存储的 0 不实际使用
 
       Node* node = list.dummy;
-      node = insert_after(node, new Node{0, nullptr});
-      node = insert_after(node, new Node{1, nullptr});
-      node = insert_after(node, new Node{2, nullptr});
+      node       = insert_after(node, new Node{0, nullptr});
+      node       = insert_after(node, new Node{1, nullptr});
+      node       = insert_after(node, new Node{2, nullptr});
       // 0 -> 1 -> 2 -> nullptr
 
       print(list.dummy->next);  // 之后一个结点才是实际存储内容的结点
