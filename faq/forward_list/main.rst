@@ -812,6 +812,10 @@
 
 为了简化实现, 我选择将第一个结点作为占位结点而把第二个结点作为真正的首结点, 这样一来所有插入都能用向后插入实现: :godbolt:`xTfGcjjMT`
 
+.. seealso::
+
+  以下代码的具体思路, 请参考 :doc:`/faq/dynamic_array/main`
+
 .. code-block:: cpp
   :linenos:
 
