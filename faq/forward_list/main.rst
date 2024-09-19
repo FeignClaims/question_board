@@ -528,7 +528,7 @@
   //  - new_node  != nullptr, 即 new_node 是确实存在的结点.
   void prepend(Forward_list& list, Node* new_node) {
     new_node->next = list.head;
-    list.head = new_node;
+    list.head      = new_node;
   }
 
   int main() {
