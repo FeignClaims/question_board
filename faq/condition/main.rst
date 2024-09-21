@@ -11,7 +11,7 @@
 
   bool function();
 
-  if (function) {  // 返回 bool 类型, 可以用于条件判断
+  if (function()) {  // 返回 bool 类型, 可以用于条件判断
   }
 
 .. code-block:: cpp
