@@ -120,7 +120,7 @@
 .. toctree::
   :maxdepth: 1
 
-  lifetime/index
+  storage_duration/index
   rule_of_350/main
   copy_functions_parameter/main
   copy_assignment_define/main
@@ -269,7 +269,7 @@ Visual Studio 特定问题
 
     - 类型与对象. `初始化 <https://weekly-questions.readthedocs.io/core_guidelines/ES/ES_20/>`_
 
-    - 类型与对象.生命周期
+    - 类型与对象.存储周期
 
   - 类与 `结构体 <https://weekly-questions.readthedocs.io/2022_2023_autumn/week_04/doc/>`_
 
