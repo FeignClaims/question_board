@@ -25,7 +25,7 @@
 
 无论以下何种方式, 都会在到达文件尾 (eof, end of file) 时结束输入.
 
-除 :cpp:`ch = cin.get()` 和 :cpp:`ch = cin.peek()`, 以下方式均返回输入流 :cpp:`cin` 本身, 从而允许链式调用和条件判断:
+除 :cpp:`ch = cin.get()` 和 :cpp:`ch = cin.peek()` 外, 所提及的方式均返回输入流 :cpp:`cin` 本身, 从而允许链式调用和条件判断:
 
 .. code-block:: cpp
   :linenos:
