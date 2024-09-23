@@ -348,6 +348,7 @@ rule of 3/5: 定义全部特殊函数
 
     .. code-block:: cpp
       :linenos:
+      :emphasize-lines: 13
 
       class Input_file {
       public:
@@ -367,6 +368,7 @@ rule of 3/5: 定义全部特殊函数
 
     .. code-block:: cpp
       :linenos:
+      :emphasize-lines: 13
 
       class Input_file {
       public:
