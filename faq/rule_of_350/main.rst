@@ -208,17 +208,20 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
+  #include <cstdio>
+
   class Widget {
    public:
-    Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
 
    private:
-    file* file_;
+    FILE* file_;
   };
 
   int main() {
     Widget a("text.txt");
-    Widget b(a);  // a、b 均占有 "text.txt" 文件资源
+    Widget b(a);  // b 拷贝 a 的 file_ 指针
+    /* a、b 均占有 "text.txt" 文件资源 */
   }
 
 这样拷贝后两个变量实际是指向同一个对象的语义, 称为引用语义; 与之相对地, 像 :cpp:`int` 那样拷贝后得到确确实实的新对象, 与原来的对象完全独立, 称为值语义. **尽量避免引用语义.**
@@ -228,14 +231,16 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
+  #include <cstdio>
+
   class Widget {
   public:
-    Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
     Widget(Widget const&)            = delete;  // 显式地删除该函数
     Widget& operator=(Widget const&) = delete;
 
   private:
-    file* file_;
+    FILE* file_;
   };
 
 .. admonition:: 相关核心准则
@@ -266,11 +271,11 @@ rule of 3/5: 定义全部特殊函数
 
       class Widget {
       public:
-        Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+        Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
         ~Widget() { close_file(file_); }
 
       private:
-        file* file_;
+        FILE* file_;
       };
 
       int main() {
@@ -285,12 +290,12 @@ rule of 3/5: 定义全部特殊函数
 
       class Widget {
       public:
-        Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+        Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
         Widget(Widget const&)            = delete;
         Widget& operator=(Widget const&) = delete;
 
       private:
-        file* file_;
+        FILE* file_;
       };
 
       int main() {
