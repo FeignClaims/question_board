@@ -476,7 +476,7 @@
     function(value);  // value 通过 Dynamic_array(int) 转换为 Dynamic_array
   }
 
-所以对于能被单个参数调用的构造函数, 我们应该用 :cpp:`explicit` 要求它只能被显式调用:
+我们的 :cpp:`Dynamic_array(int)` 构造函数导致 :cpp:`int` 类型能莫名其妙类型转换为 :cpp:`Dynamic_array`! 这种行为可能在写代码时导致意外结果, 所以对于能被单个参数调用的构造函数, 我们应该用 :cpp:`explicit` 要求它只能被显式调用:
 
 .. code-block:: cpp
   :linenos:
