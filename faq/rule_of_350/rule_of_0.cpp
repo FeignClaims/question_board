@@ -1,24 +1,27 @@
+#include <cstdio>
+
 class File {
  public:
-  File(std::string const& file_path) : file_(open_file(file_path)) {}
+  File(char const* file_path, char const* open_mode)
+      : file_(fopen(file_path, open_mode)) {}
   File(File const&)            = delete;
   File& operator=(File const&) = delete;
   ~File() {
-    close_file(file_);
+    fclose(file_);
   }
 
  private:
-  file* file_;
+  FILE* file_;
 };
 
 class Editor {
  public:
-  Editor(std::string const& input_file_1,
-         std::string const& input_file_2,
-         std::string const& output_file)
-      : input_file_1_{input_file_1},
-        input_file_2_(input_file_2),
-        output_file(output_file) {}
+  Editor(char const* input_file_1,
+         char const* input_file_2,
+         char const* output_file)
+      : input_file_1_{input_file_1, "r"},
+        input_file_2_{input_file_2, "r"},
+        output_file{output_file, "w"} {}
 
  private:
   File input_file_1_;

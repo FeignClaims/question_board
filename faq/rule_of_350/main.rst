@@ -332,6 +332,12 @@ rule of 0: 不定义任何特殊函数
   :language: cpp
   :linenos:
 
+事实上, :cpp:`fopen` 和 :cpp:`fclose` 是 C 语言标准库的内容, 而 C++ 标准库内已经有了自动管理文件资源的类——当然它还定义了移动操作.
+
+.. literalinclude:: rule_of_0_with_std.cpp
+  :language: cpp
+  :linenos:
+
 .. admonition:: 相关核心准则
   :class: coreguidelines
 
