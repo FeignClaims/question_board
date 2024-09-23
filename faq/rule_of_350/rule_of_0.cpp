@@ -3,11 +3,11 @@
 class File {
  public:
   File(char const* file_path, char const* open_mode)
-      : handle_(fopen(file_path, open_mode)) {}
+      : handle_(std::fopen(file_path, open_mode)) {}
   File(File const&)            = delete;
   File& operator=(File const&) = delete;
   ~File() {
-    fclose(handle_);
+    std::fclose(handle_);
   }
 
  private:

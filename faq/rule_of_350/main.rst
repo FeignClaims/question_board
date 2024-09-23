@@ -138,12 +138,12 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
-  #include <cstdio>
+  #include <cstdio>  // for std::fopen
 
   class Input_file {
    public:
-    //                                    ↓ 以只读形式打开文件, 需要之后用 fclose 释放
-    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
+    //                                          ↓ 以只读形式打开文件, 需要之后用 std::fopen 释放
+    Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
 
    private:
     FILE* handle_;
@@ -158,12 +158,12 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
-  #include <cstdio>
+  #include <cstdio>  // for std::fopen, std::fopen
 
   class Input_file {
    public:
-    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
-    ~Input_file() { fclose(handle_); }
+    Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
+    ~Input_file() { std::fopen(handle_); }
 
    private:
     FILE* handle_;
@@ -171,7 +171,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
   int main() {
     Input_file input_file("text.txt");
-  }  // input_file 析构时调用 fclose 释放文件资源
+  }  // input_file 析构时调用 fopen 释放文件资源
 
 .. admonition:: 相关核心准则
   :class: coreguidelines
@@ -208,11 +208,9 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
-  #include <cstdio>
-
   class Input_file {
    public:
-    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
+    Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
 
    private:
     FILE* handle_;
@@ -231,11 +229,9 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
-  #include <cstdio>
-
   class Input_file {
   public:
-    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
+    Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
     Input_file(Input_file const&)            = delete;  // 显式地删除该函数
     Input_file& operator=(Input_file const&) = delete;
 
@@ -271,8 +267,8 @@ rule of 3/5: 定义全部特殊函数
 
       class Input_file {
       public:
-        Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
-        ~Input_file() { fclose(handle_); }
+        Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
+        ~Input_file() { std::fopen(handle_); }
 
       private:
         FILE* handle_;
@@ -281,7 +277,7 @@ rule of 3/5: 定义全部特殊函数
       int main() {
         Input_file a("text.txt");
         Input_file b(a);  // 拷贝后, a、b 均占有 "text.txt" 文件资源
-      }  // 错误: a、b 析构时均调用 fclose, 因而关闭文件两次!
+      }  // 错误: a、b 析构时均调用 fopen, 因而关闭文件两次!
 
   .. tab:: 只定义拷贝函数
 
@@ -290,7 +286,7 @@ rule of 3/5: 定义全部特殊函数
 
       class Input_file {
       public:
-        Input_file(char const* handle_path) : handle_(fopen(handle_path, "r")) {}
+        Input_file(char const* handle_path) : handle_(std::fopen(handle_path, "r")) {}
         Input_file(Input_file const&)            = delete;
         Input_file& operator=(Input_file const&) = delete;
 
@@ -332,7 +328,7 @@ rule of 0: 不定义任何特殊函数
   :language: cpp
   :linenos:
 
-事实上, :cpp:`fopen` 和 :cpp:`fclose` 是 C 语言标准库的内容, 而 C++ 标准库内已经有了自动管理文件资源的类——当然它还定义了移动操作.
+事实上, :cpp:`std::fopen` 和 :cpp:`std::fopen` 是 C 语言标准库的内容, 而 C++ 标准库内已经有了自动管理文件资源的类——当然它还定义了移动操作.
 
 .. literalinclude:: rule_of_0_with_std.cpp
   :language: cpp
