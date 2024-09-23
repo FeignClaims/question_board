@@ -18,5 +18,6 @@
   automatic_storage_duration.rst
   static_storage_duration.rst
   dynamic_storage_duration.rst
+  thread_local_storage_duration.rst
   temporaries.rst
   mix.rst
