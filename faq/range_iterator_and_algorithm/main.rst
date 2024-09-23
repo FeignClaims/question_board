@@ -91,9 +91,51 @@
 
   - 通过自增操作 :cpp:`++iter`, 我们获得下一个元素的指针.
 
-那么, 如果我们自定义一个类型, 它支持所有这些操作, 将会怎么样?
+那么, 如果我们自定义一个类型, 它包装一个指针从而支持所有这些操作, 将会怎么样?
+
+首先, 我们让这个自定义类型 :cpp:`Iter` 存储一个指针:
 
 .. literalinclude:: input_iterator.cpp
+  :lines: 1-3, 22-25
+  :dedent:
+  :language: cpp
+  :linenos:
+
+然后, 我们使用运算符重载让 :cpp:`Iter` 支持上面所说的所有操作.
+
+支持拷贝
+  .. literalinclude:: input_iterator.cpp
+    :lines: 4
+    :dedent:
+    :language: cpp
+    :linenos:
+
+支持相等性比较
+  .. literalinclude:: input_iterator.cpp
+    :lines: 6-12
+    :dedent:
+    :language: cpp
+    :linenos:
+
+支持解引用
+  .. literalinclude:: input_iterator.cpp
+    :lines: 14-16
+    :dedent:
+    :language: cpp
+    :linenos:
+
+
+支持自增操作
+  .. literalinclude:: input_iterator.cpp
+    :lines: 18-21
+    :dedent:
+    :language: cpp
+    :linenos:
+
+故迭代器 :cpp:`Iter` 的定义如下:
+
+.. literalinclude:: input_iterator.cpp
+  :dedent:
   :language: cpp
   :linenos:
 
@@ -386,18 +428,24 @@
 
 .. code-block:: cpp
   :linenos:
+  :caption: 读入范围中下一个元素
 
-  template <typename T>
-  void f() {
-    while (true) {
-      T value;
-      cin >> value;      // 读入范围中下一个元素
-      if (cin.fail()) {  // 判断是否已经遍历到范围外
-        break;
-      }
-      use(value);  // 使用元素
-    }
+  T value;
+  cin >> value;
+
+.. code-block:: cpp
+  :linenos:
+  :caption: 判断是否已经遍历到范围外
+
+  if (cin.fail()) {
+    break;
   }
+
+.. code-block:: cpp
+  :linenos:
+  :caption: 使用元素
+
+  auto result = process_value(value);
 
 注意到,
 
