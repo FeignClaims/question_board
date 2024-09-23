@@ -248,7 +248,90 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 移动的默认行为
 ------------------------------------------------------------------------------------------------------------------------
 
-进阶内容, 略.
+.. warning::
+
+  这是进阶内容, 可以跳过继续往下阅读.
+
+.. seealso::
+
+  在 :doc:`/faq/dynamic_array/main` 和 :doc:`/faq/forward_list/main` 的扩展部分, 我都有介绍如何为它们定义移动函数.
+
+假设小明、小刚合租房子而只有一把钥匙, 移动就是小明将钥匙交给小刚, 而拷贝则是小刚拿小明的钥匙再去配一把钥匙. 我们在上方定义的文件资源由于其所有权独占性而不能拷贝, 但可以用移动将它移动给另一个 :cpp:`Input_file` 对象.
+
+.. code-block:: cpp
+  :emphasize-lines: 5
+  :linenos:
+
+  #include <utility>  // for std::move
+
+  int main() {
+    Input_file file1("text.txt");
+    Input_file file2(std::move(file1));
+    // 移动后预期:
+    // - file2 占有 "text.txt"
+    // - file1 不清楚有什么但至少不占有 "text.txt" 了
+  }
+
+默认情况下, 移动操作按顺序对类的基类和所有非静态成员逐一进行移动; 如果某个基类或非静态成员不能移动, 则该类也不能移动而将尝试拷贝.
+
+需要注意的是, 设计移动除了表达资源所有权的转移外, 还在于有的资源拷贝起来代价太高 (类比地想想你下载 100GB 文件花的时间!), 而 :cpp:`int`、:cpp:`int*` 等基本类型拷贝代价很低, 反而移动代价很高, 因而 **默认情况下即便我们在移动, 基本类型也会进行拷贝**.
+
+.. code-block:: cpp
+  :linenos:
+
+  int main() {
+    int value = 0;
+
+    int* pointer1 = &value;
+    int* pointer2 = std::move(pointer1);
+    /* pointer1 和 pointer2 均指向 value */
+  }
+
+为此我们可以使用 :cpp:`result = std::exchange(object, new_value)` 函数. 它就像水流一样, 将数据从右边流到左边:
+
+- ``result <- object <- new_value``
+
+  - :cpp:`new_value` 的值移动给 :cpp:`object`.
+  - :cpp:`object` 原来的值移动给 :cpp:`result`.
+
+.. code-block:: cpp
+  :linenos:
+
+  #include <utility>  // for std::exchange
+
+  int main() {
+    int value = 0;
+
+    int* pointer1 = &value;
+    int* pointer2 = std::exchange(pointer1, nullptr);
+    /* pointer1 为空, pointer2 指向 value */
+  }
+
+而 :cpp:`Input_file` 中的 :cpp:`FILE*` 是一个指针. 作为基本类型, 它移动时进行拷贝. 因此我们需要自己定义 :cpp:`Input_file` 的移动行为:
+
+.. code-block:: cpp
+  :linenos:
+
+  #include <utility>  // for std::exchange, std::move, std::swap
+
+  class Input_file {
+  public:
+    Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
+    Input_file(Input_file&& other) : handle_(std::exchange(other.handle_, nullptr)) {}
+    Input_file& operator=(Input_file&& other) {
+      Input_file temp(std::move(other));  // 利用移动构造将资源传给临时对象 temp
+      swap(*this, temp);                  // 交换当前对象和 temp 的内容从而将资源换给当前对象
+      return *this;
+    }  // 如果当前对象原本有资源, temp 的析构函数将会负责它的释放
+
+    friend void swap(Input_file& lhs, Input_file& rhs) {
+      using std::swap;
+      swap(lhs.handle_, rhs.handle_);
+    }
+
+  private:
+    FILE* handle_;
+  };
 
 ========================================================================================================================
 rule of 3/5: 定义全部特殊函数
