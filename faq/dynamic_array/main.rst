@@ -270,7 +270,9 @@
 
   int lhs = 2;
   int rhs = 3;
+
   std::swap(lhs, rhs);
+
   std::cout << lhs;  // 输出 3
   std::cout << rhs;  // 输出 2
 
