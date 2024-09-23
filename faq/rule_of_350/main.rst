@@ -272,7 +272,7 @@ rule of 3/5: 定义全部特殊函数
       class Widget {
       public:
         Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
-        ~Widget() { close_file(file_); }
+        ~Widget() { fclose(file_); }
 
       private:
         FILE* file_;
@@ -281,7 +281,7 @@ rule of 3/5: 定义全部特殊函数
       int main() {
         Widget a("text.txt");
         Widget b(a);  // 拷贝后, a、b 均占有 "text.txt" 文件资源
-      }  // 错误: a、b 析构时均调用 close_file, 因而关闭文件两次!
+      }  // 错误: a、b 析构时均调用 fclose, 因而关闭文件两次!
 
   .. tab:: 只定义拷贝函数
 
