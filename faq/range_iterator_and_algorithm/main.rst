@@ -34,7 +34,7 @@
 
 可以发现, 我们完全可以传入数组的一个子部分, 单独对那个部分进行操作. 这样由一个 *起始点* 和一个 *结束点* 描述的一部分 (一系列值的集合), 称为范围 (range).
 
-在 C++ 中, 范围通常用半开区间 :cpp:`[begin, end)` 表示, 例如 :cpp:`print(array + 1, array +3)` 即是传入范围 :cpp:`[array + 1, array + 3)`.
+在 C++ 中, 范围通常用半开区间 :cpp:`[begin, end)` 表示, 例如 :cpp:`print(array + 1, array + 3)` 即是传入范围 :cpp:`[array + 1, array + 3)`.
 
 :cpp:`begin`
   指向范围中第一个元素.
