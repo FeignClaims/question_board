@@ -259,8 +259,8 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 假设小明、小刚合租房子而只有一把钥匙, 移动就是小明将钥匙交给小刚, 而拷贝则是小刚拿小明的钥匙再去配一把钥匙. 我们在上方定义的文件资源由于其所有权独占性而不能拷贝, 但可以用移动将它移动给另一个 :cpp:`Input_file` 对象.
 
 .. code-block:: cpp
-  :emphasize-lines: 5
   :linenos:
+  :emphasize-lines: 5
 
   #include <utility>  // for std::move
 
@@ -311,11 +311,12 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
 .. code-block:: cpp
   :linenos:
+  :emphasize-lines: 6-7
 
   #include <utility>  // for std::exchange, std::move, std::swap
 
   class Input_file {
-  public:
+   public:
     Input_file(char const* file_path) : handle_(std::fopen(file_path, "r")) {}
     Input_file(Input_file&& other) : handle_(std::exchange(other.handle_, nullptr)) {}
     Input_file& operator=(Input_file&& other) {
@@ -410,6 +411,7 @@ rule of 0: 不定义任何特殊函数
 .. literalinclude:: rule_of_0.cpp
   :language: cpp
   :linenos:
+  :emphasize-lines: 3, 27-29
 
 事实上, :cpp:`std::fopen` 和 :cpp:`std::fopen` 是 C 语言标准库的内容, 而 C++ 标准库内已经有了自动管理文件资源的类——当然它还定义了移动操作.
 
