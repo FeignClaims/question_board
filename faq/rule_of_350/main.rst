@@ -158,18 +158,20 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
+  #include <cstdio>
+
   class Widget {
    public:
-    Widget(std::string const& file_path) : file_(open_file(file_path)) {}
-    ~Widget() { close_file(file_); }
+    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
+    ~Widget() { fclose(file_); }
 
    private:
-    file* file_;
+    FILE* file_;
   };
 
   int main() {
-    Widget widget(10);
-  }  // widget 析构时调用 close_file 释放文件资源
+    Widget widget("text.txt");
+  }  // widget 析构时调用 fclose 释放文件资源
 
 .. admonition:: 相关核心准则
   :class: coreguidelines
