@@ -389,7 +389,7 @@
 
     Dynamic_array(int size) {
       size_ = size;
-      data_ = size == 0 ? nullptr : new value_type[size];
+      data_ = size == 0 ? nullptr : new value_type[size]{};
     }
 
     ~Dynamic_array() {
