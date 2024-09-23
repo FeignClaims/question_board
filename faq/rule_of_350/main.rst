@@ -138,12 +138,15 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 .. code-block:: cpp
   :linenos:
 
+  #include <cstdio>
+
   class Widget {
    public:
-    Widget(std::string const& file_path) : file_(open_file(file_path)) {}
+    //                                    ↓ 以只读形式打开文件, 需要之后用 fclose 释放
+    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
 
    private:
-    file* file_;
+    FILE* file_;
   };
 
   int main() {
