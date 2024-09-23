@@ -3,15 +3,15 @@
 class File {
  public:
   File(char const* file_path, char const* open_mode)
-      : file_(fopen(file_path, open_mode)) {}
+      : handle_(fopen(file_path, open_mode)) {}
   File(File const&)            = delete;
   File& operator=(File const&) = delete;
   ~File() {
-    fclose(file_);
+    fclose(handle_);
   }
 
  private:
-  FILE* file_;
+  FILE* handle_;
 };
 
 class Editor {

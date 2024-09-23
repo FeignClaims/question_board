@@ -140,18 +140,18 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
   #include <cstdio>
 
-  class Widget {
+  class Input_file {
    public:
     //                                    ↓ 以只读形式打开文件, 需要之后用 fclose 释放
-    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
+    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
 
    private:
-    FILE* file_;
+    FILE* handle_;
   };
 
   int main() {
-    Widget widget("text.txt");
-  }  // widget 发生析构时 file_ 发生析构, 但不意味着 file_ 指向的文件资源被释放
+    Input_file input_file("text.txt");
+  }  // input_file 发生析构时 file_ 发生析构, 但不意味着 file_ 指向的文件资源被释放
 
 如果默认行为不能满足需要, 应该自定义析构函数:
 
@@ -160,18 +160,18 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
   #include <cstdio>
 
-  class Widget {
+  class Input_file {
    public:
-    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
-    ~Widget() { fclose(file_); }
+    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
+    ~Input_file() { fclose(handle_); }
 
    private:
-    FILE* file_;
+    FILE* handle_;
   };
 
   int main() {
-    Widget widget("text.txt");
-  }  // widget 析构时调用 fclose 释放文件资源
+    Input_file input_file("text.txt");
+  }  // input_file 析构时调用 fclose 释放文件资源
 
 .. admonition:: 相关核心准则
   :class: coreguidelines
@@ -210,17 +210,17 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
   #include <cstdio>
 
-  class Widget {
+  class Input_file {
    public:
-    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
+    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
 
    private:
-    FILE* file_;
+    FILE* handle_;
   };
 
   int main() {
-    Widget a("text.txt");
-    Widget b(a);  // b 拷贝 a 的 file_ 指针
+    Input_file a("text.txt");
+    Input_file b(a);  // b 拷贝 a 的 file_ 指针
     /* a、b 均占有 "text.txt" 文件资源 */
   }
 
@@ -233,14 +233,14 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
   #include <cstdio>
 
-  class Widget {
+  class Input_file {
   public:
-    Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
-    Widget(Widget const&)            = delete;  // 显式地删除该函数
-    Widget& operator=(Widget const&) = delete;
+    Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
+    Input_file(Input_file const&)            = delete;  // 显式地删除该函数
+    Input_file& operator=(Input_file const&) = delete;
 
   private:
-    FILE* file_;
+    FILE* handle_;
   };
 
 .. admonition:: 相关核心准则
@@ -269,18 +269,18 @@ rule of 3/5: 定义全部特殊函数
     .. code-block:: cpp
       :linenos:
 
-      class Widget {
+      class Input_file {
       public:
-        Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
-        ~Widget() { fclose(file_); }
+        Input_file(char const* file_path) : handle_(fopen(file_path, "r")) {}
+        ~Input_file() { fclose(handle_); }
 
       private:
-        FILE* file_;
+        FILE* handle_;
       };
 
       int main() {
-        Widget a("text.txt");
-        Widget b(a);  // 拷贝后, a、b 均占有 "text.txt" 文件资源
+        Input_file a("text.txt");
+        Input_file b(a);  // 拷贝后, a、b 均占有 "text.txt" 文件资源
       }  // 错误: a、b 析构时均调用 fclose, 因而关闭文件两次!
 
   .. tab:: 只定义拷贝函数
@@ -288,19 +288,19 @@ rule of 3/5: 定义全部特殊函数
     .. code-block:: cpp
       :linenos:
 
-      class Widget {
+      class Input_file {
       public:
-        Widget(char const* file_path) : file_(fopen(file_path, "r")) {}
-        Widget(Widget const&)            = delete;
-        Widget& operator=(Widget const&) = delete;
+        Input_file(char const* handle_path) : handle_(fopen(handle_path, "r")) {}
+        Input_file(Input_file const&)            = delete;
+        Input_file& operator=(Input_file const&) = delete;
 
       private:
-        FILE* file_;
+        FILE* handle_;
       };
 
       int main() {
-        Widget file("text.txt");
-      }  // 错误: file 析构时没有释放所占有的资源
+        Input_file input_file("text.txt");
+      }  // 错误: input_file 析构时没有释放所占有的资源
 
 这正是 `本问题的提问人所犯的错误 <https://gitee.com/cpp_tutorial/question/issues/I7GJ0R>`_!
 
