@@ -16,8 +16,8 @@ C++ 环境配置
 
 - 直接装 `Visual Studio <https://visualstudio.microsoft.com/zh-hans/>`_ 最新版即可用.
 - 如需在线编译运行, 可用 `Compiler Explorer <https://godbolt.org/>`_, 此处提供一个 `已配置好提供较多诊断的版本 <https://godbolt.org/z/8Tof9397K>`_.
-- :ref:`我个人写的 Visual Studio 配置教程 <vscode_cpp_starter:vs>`, 在 Visual Studio 默认配置基础上添加自动格式化、代码行间显示报错、更多诊断.
-- :ref:`我个人写的 VSCode 配置教程 <vscode_cpp_starter:main>`.
+- :ref:`我个人写的 Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>`, 在 Visual Studio 默认配置基础上添加自动格式化、代码行间显示报错、更多诊断.
+- :ref:`我个人写的 VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`.
 
 =======================================================================================================================
 学习方法
