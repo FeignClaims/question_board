@@ -42,6 +42,7 @@ C++ 洋葱剥法交流群资料
   :caption: 理论依据
   :maxdepth: 1
 
+  /c_and_cpp.rst
   /theory.rst
   /swan_preface.rst
   /personal_learning_map/main.rst
