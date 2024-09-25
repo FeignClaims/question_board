@@ -143,56 +143,55 @@ C++ 环境配置
 《C++ Primer Plus》课后习题
   主要是语法的练习. github 上可找到别人完成的版本作为解答的参考.
 
------------------------------------------------------------------------------------------------------------------------
-应对上机考试的进阶内容, 有余力可用
------------------------------------------------------------------------------------------------------------------------
+.. admonition:: 应对上机考试的进阶内容, 有余力可用
+  :class: seealso, dropdown
 
-- :doc:`/faq/range_iterator_and_algorithm/main`
-- `STL "简" 述 (摘自《C++标准库（第 2 版) 》by Nicolai Josuttis <https://gitee.com/cpp_tutorial/board/raw/main/cpp/stl_introduction.pdf>`_
-- `105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`_
-- `动态规划 入门 <https://www.bilibili.com/video/BV1xb411e7ww>`_
-- `动态规划 套路 <https://www.bilibili.com/video/BV1gp4y1t7xe>`_
-- `递归与分治精讲 <https://leetcode.cn/leetbook/detail/recursion-and-divide-and-conquer/>`_
-- `初级算法 <https://leetcode.cn/leetbook/detail/top-interview-questions-easy/>`_
+  - :doc:`/faq/range_iterator_and_algorithm/main`
+  - `STL "简" 述 (摘自《C++标准库（第 2 版) 》by Nicolai Josuttis <https://gitee.com/cpp_tutorial/board/raw/main/cpp/stl_introduction.pdf>`_
+  - `105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`_
+  - `动态规划 入门 <https://www.bilibili.com/video/BV1xb411e7ww>`_
+  - `动态规划 套路 <https://www.bilibili.com/video/BV1gp4y1t7xe>`_
+  - `递归与分治精讲 <https://leetcode.cn/leetbook/detail/recursion-and-divide-and-conquer/>`_
+  - `初级算法 <https://leetcode.cn/leetbook/detail/top-interview-questions-easy/>`_
 
-尤其是转专业考试, 强烈建议在应试学习基础上学习这些内容, 即学习范围为
+  尤其是转专业考试, 强烈建议在应试学习基础上学习这些内容, 即学习范围为
 
-- 课内必修
+  - 课内必修
 
-  - C++98/03 (即应试网课、教材所教授的版本)
+    - C++98/03 (即应试网课、教材所教授的版本)
 
-  - 淡化指针 (很多地方都能用引用代替)
+    - 淡化指针 (很多地方都能用引用代替)
 
-  - :cpp:`std::string` 基本用法.
+    - :cpp:`std::string` 基本用法.
 
-  - :cpp:`std::vector<Type>` 基本用法.
+    - :cpp:`std::vector<Type>` 基本用法.
 
-- 可选
+  - 可选
 
-  - :cpp:`std::stringstream`: 用于数字和字符串间的转换和分割单词等. 可用于 2023 年计软智转专业上机第 1 题, 秒杀 2022 年网安转专业编写程序题第 1 题.
+    - :cpp:`std::stringstream`: 用于数字和字符串间的转换和分割单词等. 可用于 2023 年计软智转专业上机第 1 题, 秒杀 2022 年网安转专业编写程序题第 1 题.
 
-  - STL 容器基本用法
+    - STL 容器基本用法
 
-    - :cpp:`std::vector<Type>`: 动态数组, 且无需手动管理内存.
+      - :cpp:`std::vector<Type>`: 动态数组, 且无需手动管理内存.
 
-    - :cpp:`std::array<Type, size>`: 固定长度的数组, 且不会隐式类型转换为首元素的指针.
+      - :cpp:`std::array<Type, size>`: 固定长度的数组, 且不会隐式类型转换为首元素的指针.
 
-    - :cpp:`std::map<Key, Value>`: 关联数组. 可秒杀 2021 年计软智转专业第 3 题.
+      - :cpp:`std::map<Key, Value>`: 关联数组. 可秒杀 2021 年计软智转专业第 3 题.
 
-    - :cpp:`std::set<Key>`: 元素唯一且自动排序. 2020 年计软智转专业第 4 题和 2023 年计软智转专业上机第 2 题均考了此概念.
+      - :cpp:`std::set<Key>`: 元素唯一且自动排序. 2020 年计软智转专业第 4 题和 2023 年计软智转专业上机第 2 题均考了此概念.
 
-  - STL 算法 + Lambdas
+    - STL 算法 + Lambdas
 
-  - C++11 的基于范围的 for 循环 + auto 基本用法
+    - C++11 的基于范围的 for 循环 + auto 基本用法
 
-  .. code-block:: cpp
-    :linenos:
+    .. code-block:: cpp
+      :linenos:
 
-    // auto: 我不在乎 array 里的元素 value 类型具体是什么, 编译器你自己搞定;
-    //       我只要求你把它按 const& 传给 value
-    for (const auto& value : array) {
-      std::cout << value << ' ';
-    }
+      // auto: 我不在乎 array 里的元素 value 类型具体是什么, 编译器你自己搞定;
+      //       我只要求你把它按 const& 传给 value
+      for (const auto& value : array) {
+        std::cout << value << ' ';
+      }
 
 .. _非应试自学学习路径:
 
