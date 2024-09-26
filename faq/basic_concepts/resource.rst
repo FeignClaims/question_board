@@ -102,7 +102,7 @@
 
   那时我常用这样的方式解释有关概念, 有一个构造函数, 它建立其他成员函数进行操作的环境基础; 另有一个析构函数来销毁这个环境, 并释放它以前获得的所有资源.
 
-  — Bjarne Stroustrup《The Design and Evolution of C++》
+  —— Bjarne Stroustrup《The Design and Evolution of C++》
 
 .. note::
 
