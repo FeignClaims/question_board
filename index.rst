@@ -26,6 +26,7 @@ C++ 洋葱剥法交流群资料
   :maxdepth: 1
 
   /searching_method/main.rst
+  /share_code/main.rst
   /how_to_ask.rst
   /debugger/main.rst
   /formatter/main.rst
