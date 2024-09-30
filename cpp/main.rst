@@ -15,7 +15,7 @@ C++ 环境配置
 =======================================================================================================================
 
 - 直接装 `Visual Studio (Windows 可用) <https://visualstudio.microsoft.com/zh-hans/>`_ 就好; 当然更建议按下文配置 Visual Studio 或 **VSCode**.
-- `Compiler Explorer <https://godbolt.org/z/bbvarf6hW>`_ 可用来在线编译运行、分享代码, 它能自动格式化代码, 检测 :cpp:`=` 错写成 :cpp:`==`、下标越界等 Visual Studio 默认没检查的问题, 并有其他很多功能.
+- `Compiler Explorer <https://godbolt.org/z/3bqadYv8b>`_ 可用来在线编译运行、分享代码, 它能自动格式化代码, 检测 :cpp:`=` 错写成 :cpp:`==`、下标越界等 Visual Studio 默认没检查的问题, 并有其他很多功能.
 - :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>`, 在 Visual Studio 默认配置基础上让他支持上述 Compiler Explorer 的部分功能和检查, 并能代码行间显示报错.
 - :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`, 相比 Visual Studio 配置教程, 它还能 **自动添加头文件**, 有更丰富的字体和颜色, 且检查代码速度更快. 
 
