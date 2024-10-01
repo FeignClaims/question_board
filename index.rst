@@ -45,5 +45,6 @@ C++ 洋葱剥法交流群资料
 
   /c_or_cpp.rst
   /theory.rst
+  /ppp3_chapter0.rst
   /ppp2_chapter0.rst
   /learning_map/main.rst
