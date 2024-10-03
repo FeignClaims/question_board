@@ -69,6 +69,7 @@
 .. _`Better Code: Concurrency - Sean Parent - NDC London 2017`: https://www.youtube.com/watch?v=zULU6Hhp42w
 .. _`C++ Seasoning - Sean Parent - GoingNative 2013`: https://www.bilibili.com/video/BV1cF4m1c7UE
 .. _`CMake 2022 C++ Modules and More - Bill Hoffman - CppNow 2022`: https://www.youtube.com/watch?v=hkefPcWySzI
+.. _`Cpu Caches and Why You Care - Scott Meyers - code::dive conference 2014`: https://www.youtube.com/watch?v=WDIkqP4JbkE
 .. _`Deep CMake for Library Authors - Craig Scott - CppCon 2019`: https://www.youtube.com/watch?v=m0DwB4OvDXk
 .. _`Documentation in the Era of Concepts and Ranges - Christopher Di Bella & Sy Brand - CppCon 2021`: https://www.youtube.com/watch?v=nm45t2fnUms
 .. _`Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`: https://www.youtube.com/watch?v=I52uPJSoAT4

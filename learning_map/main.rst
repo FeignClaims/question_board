@@ -112,6 +112,8 @@
 - `Stop Teaching C - Kate Gregory - CppCon 2015`_
 - `C++ Seasoning - Sean Parent - GoingNative 2013`_
 - `Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`_
+- `What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`_
+- `Cpu Caches and Why You Care - Scott Meyers - code::dive conference 2014`_
 
 ========================================================================================================================
 工具链
@@ -177,7 +179,6 @@
 ========================================================================================================================
 
 - `Abstraction Patterns: Making Code Reliably Better Without Deep Understanding - Kate Gregory - ACCU 2022`_
-- `What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`_
 - 《C++ Software Design - Design Principles and Patterns for High-Quality Software》
 - `Inheritance Is The Base Class of Evil - Sean Parent - GoingNative 2013`_
 - `SOLID, Revisited - Tony Van Eerd - CppNow 2021`_
