@@ -197,6 +197,7 @@
 - 《Elements of Programming》(《编程原本》)
 - 《From Mathematics to Generic Programming》(《从数学到泛型编程》)
 - `《Efficient Programming with Components》`_
+- 《Notes on Programming》
 
 ========================================================================================================================
 并发
@@ -269,7 +270,6 @@
 难以分类和未分类的.
 
 - 《Large-Scale C++ Volume I - Process and Architecture》
-- 《Notes on Programming》
 - 《The Art of Writing Efficient Programs》
 - C++98
 
