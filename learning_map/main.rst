@@ -282,8 +282,10 @@
 编码风格
 ========================================================================================================================
 
-- `Guidelines For snake_case Concept Naming`_
+更多见于 :ref:`学习大纲_常用网站资源`.
+
 - `C++ Core Guidelines`_
+- `Guidelines For snake_case Concept Naming`_
 - `Google C++ Style Guide`_
 - `SEI CERT C++ Coding Standard`_
 - `Chromium C++ style guide`_
