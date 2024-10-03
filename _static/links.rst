@@ -64,6 +64,7 @@
 .. _`*(char*)0 = 0: What Does the C++ Programmer Intend With This Code? - JF Bastien - C++ on Sea 2023`: https://www.youtube.com/watch?v=dFIqNZ8VbRY
 .. _`105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`: https://www.bilibili.com/video/BV1VU4y1U7rL
 .. _`Abstraction Patterns: Making Code Reliably Better Without Deep Understanding - Kate Gregory - ACCU 2022`: https://www.youtube.com/watch?v=Y3wxJD3BpqI
+.. _`An (In-)Complete Guide to C++ Object Lifetimes - Jonathan Müller - ACCU 2024`: https://www.youtube.com/watch?v=Lo-IlZxL8DU
 .. _`Back to Basics: Move Semantics - Nicolai Josuttis - CppCon 2021`: https://www.youtube.com/watch?v=Bt3zcJZIalk
 .. _`Better Algorithm Intuition - Conor Hoekstra @code_report - Meeting C++ 2019`: https://www.youtube.com/watch?v=TSZzvo4htTQ
 .. _`Better Code: Concurrency - Sean Parent - NDC London 2017`: https://www.youtube.com/watch?v=zULU6Hhp42w
@@ -88,6 +89,7 @@
 .. _`STL and Its Design Principles - Alexander Stepanov`: https://www.youtube.com/watch?v=YlVUzJwN_Xc
 .. _`Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`: https://www.youtube.com/watch?v=n0Ak6xtVXno
 .. _`Stop Teaching C - Kate Gregory - CppCon 2015`: https://www.bilibili.com/video/BV13P411D7eF/
+.. _`Type punning in modern C++ - Timur Doumler - CppCon 2019`: https://www.youtube.com/watch?v=_qzMpk-22cc
 .. _`Undefined Behavior is Not an Error - Barbara Geller & Ansel Sermersheim - CppCon 2018`: https://www.youtube.com/watch?v=XEXpwis_deQ
 .. _`Using Modern CMake Patterns to Enforce a Good Modular Design - Mathieu Ropert - CppCon 2017`: https://www.youtube.com/watch?v=eC9-iRN2b04
 .. _`What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`: https://www.youtube.com/watch?v=bSkpMdDe4g4

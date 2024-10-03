@@ -239,6 +239,8 @@
 深入语言
 ========================================================================================================================
 
+显然, 这部分内容不是几个资料就能学全的 (其他部分也不是!), 因此此处仅选择了一些内容列出, 更多见于 :ref:`学习大纲_常用网站资源`.
+
 - `Undefined Behavior is Not an Error - Barbara Geller & Ansel Sermersheim - CppCon 2018`_
 - `Back to Basics: Move Semantics - Nicolai Josuttis - CppCon 2021`_
 - 《C++ Move Semantics - The Complete Guide》
@@ -251,7 +253,9 @@
 - `How C++20 Changes the Way We Write Code - Timur Doumler - CppCon 2020`_
 - 《C++20 - The Complete Guide》
 - `*(char*)0 = 0: What Does the C++ Programmer Intend With This Code? - JF Bastien - C++ on Sea 2023`_
+- `Type punning in modern C++ - Timur Doumler - CppCon 2019`_
 - `How C++23 Changes the Way We Write Code - Timur Doumler - CppCon 2022`_
+- `An (In-)Complete Guide to C++ Object Lifetimes - Jonathan Müller - ACCU 2024`_
 - 《C++ Lambda Story - Everything you need to know about Lambda Expressions in Modern C++》
 
 ========================================================================================================================
