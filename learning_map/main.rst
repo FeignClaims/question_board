@@ -113,7 +113,6 @@
 - `C++ Seasoning - Sean Parent - GoingNative 2013`_
 - `Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`_
 - `What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`_
-- `Cpu Caches and Why You Care - Scott Meyers - code::dive conference 2014`_
 
 ========================================================================================================================
 工具链
@@ -203,6 +202,7 @@
 并发
 ========================================================================================================================
 
+- `Cpu Caches and Why You Care - Scott Meyers - code::dive conference 2014`_
 - 《C++ Concurrency in Action, 2nd Edition》前4章
 - `Better Code: Concurrency - Sean Parent - NDC London 2017`_
 - `atomic Weapons 1 of 2 - Herb Sutter - C++ and Beyond 2012`_
