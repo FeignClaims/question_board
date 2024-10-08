@@ -193,6 +193,7 @@ Visual Studio 特定问题
 
   visual_studio/strcpy
   visual_studio/unresovable_external_symbol
+  visual_studio/multiple_main
 
 ***********************************************************************************************************************
 非答疑范畴问题
