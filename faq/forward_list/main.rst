@@ -865,6 +865,11 @@
 .. admonition:: 别看: 让链表支持高效的移动
   :class: dropdown, dontread
 
+  .. admonition:: 前置内容
+    :class: precontent
+
+    - :doc:`/faq/basic_concepts/move_semantics`
+
   这样定义拷贝函数后, 我们不再能高效地返回本地对象:
 
   .. code-block:: cpp
