@@ -14,10 +14,12 @@ C++ 学习建议、环境配置等
 C++ 环境配置
 =======================================================================================================================
 
+哪怕按下面列出的 :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>` 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 因此我更建议你使用 :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`.
+
 - 直接装 `Visual Studio (Windows 可用) <https://visualstudio.microsoft.com/zh-hans/>`_ 就好; 当然更建议按下文配置 Visual Studio 或 **VSCode**.
 - 如需在线编译运行, 可用 :doc:`Compiler Explorer </share_code/main>`, 它能检测 :cpp:`=` 错写成 :cpp:`==` 等 Visual Studio 默认没检查的问题.
 - :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>`, 在 Visual Studio 默认配置基础上添加自动格式化、代码行间显示报错、更多诊断.
-- :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`, 相比 Visual Studio 配置教程, 它还能 **自动添加头文件**, 有更丰富的字体和颜色, 且检查代码速度更快. 
+- :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`, 相比 Visual Studio 配置教程, 它还能 **自动添加头文件**, 有更丰富的字体和颜色, 且检查代码速度更快.
 
 =======================================================================================================================
 学习方法
@@ -87,6 +89,8 @@ C++ 环境配置
 如果仅仅因为考试时用的软件是 Dev-C++、VS 2010 等就在平时的学习中使用这些软件, 只会严重影响新手的学习: 它们因为过老不会为新手提供某些报错, 甚至可能没有 :doc:`断点调试 </debugger/main>` 或 :doc:`自动格式化 </formatter/main>` 等功能.
 
 既然有的新手所主张的 "面向考试学习" 是为了考试取得好成绩, 使用这些影响自己学习的软件岂不是本末倒置? 上文 :ref:`跑起来` 已经强调了, 新手需要在走得好看之前跑起来, 而当新手通过在 :ref:`最新软件 <环境配置>` 上持之以恒地练习从而入门程序设计后, 熟悉考试软件只需要一两天时间.
+
+此外, 哪怕按 :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>` 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 我更建议你使用 :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`.
 
 -----------------------------------------------------------------------------------------------------------------------
 更多学习方法
