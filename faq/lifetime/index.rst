@@ -83,3 +83,4 @@
   thread_local_storage_duration.rst
   temporary_object.rst
   mix.rst
+  make_more_exercises.rst
