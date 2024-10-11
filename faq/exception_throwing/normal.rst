@@ -4,7 +4,7 @@
 
 抛出异常时, 控制流沿着栈 **向上** 进行回溯, 直到找到一个能 **匹配** 到的 :cpp:`try-catch` 块, 如果没能找到, 则调用 :cpp:`std::terminate` 终止程序.
 
-自动存储期对象是分配在栈上的 (:doc:`具体地, 分配在代码块 {} 之内 </faq/storage_duration/index>`), 因此当抛出异常而发生栈回溯时, 若栈回溯离开了代码块 (函数代码块、:cpp:`try-catch` 块、自行添加的 :cpp:`{}` 等), 则会依次析构 *已构造但尚未销毁的自动存储期对象*, 以它们的构造函数完成的逆序调用析构函数.
+自动存储期对象是分配在栈上的 (:doc:`具体地, 分配在代码块 {} 之内 </faq/lifetime/index>`), 因此当抛出异常而发生栈回溯时, 若栈回溯离开了代码块 (函数代码块、:cpp:`try-catch` 块、自行添加的 :cpp:`{}` 等), 则会依次析构 *已构造但尚未销毁的自动存储期对象*, 以它们的构造函数完成的逆序调用析构函数.
 
 .. hint::
 
@@ -30,7 +30,7 @@
     }
   }
 
-  auto main() -> int {
+  int main() {
     function();
   }
 
@@ -63,7 +63,7 @@
     }
   }
 
-  auto main() -> int {
+  int main() {
     function();
   }
 
@@ -95,7 +95,7 @@
     Printer c2{Info{.ctor = "H", .dtor = "L"}};
   }
 
-  auto main() -> int {
+  int main() {
     try {
       function2();
     } catch (double) {
@@ -135,7 +135,7 @@
     Printer c2{Info{.ctor = "o", .dtor = "t"}};
   }
 
-  auto main() -> int {
+  int main() {
     try {
       function2();
     } catch (int) {
@@ -179,7 +179,7 @@
     Printer c2(Info{.ctor = "n", .dtor = "t"});
   }
 
-  auto main() -> int {
+  int main() {
     try {
       function2();
     } catch (Derived&) {

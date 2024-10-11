@@ -6,24 +6,24 @@
 说明
 ========================================================================================================================
 
-自动对象的存储周期在运行到它的名字时开始, 在它名字不可见后结束 (到达了 :cpp:`}`).
+对于自动存储周期的对象, 它在运行到它的定义时被构造, 在离开它所在的代码块 (:cpp:`{}` 包括起来的代码) 时被销毁.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer c1{Info{.ctor = "0", .dtor = "1"}};
   }
   // 最终输出
   // 0: c1 构造
   // 1: c1 析构
 
-对象的存储周期按它开始的相反顺序结束.
+如果有多个自动存储周期对象要销毁, 它们将按构造的相反顺序销毁.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer c1{Info{.ctor = "0", .dtor = "1"}};
     Printer c2{Info{.ctor = "2", .dtor = "3"}};
   }
@@ -33,12 +33,12 @@
   // 3: c2 析构
   // 1: c1 析构
 
-可以引入作用域, 来缩小对象的存储周期.
+可以引入代码块, 来缩小对象的生命期.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     {
       Printer c1{Info{.ctor = "0", .dtor = "1"}};
     }
@@ -50,12 +50,12 @@
   // 2: c2 构造
   // 3: c2 析构
 
-C风格数组的元素按下标顺序构造, 按逆序析构.
+C 风格数组的元素按下标顺序构造, 按逆序销毁.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer c1[] = {Printer{Info{.ctor = "0", .dtor = "1"}},
                     Printer{Info{.ctor = "2", .dtor = "3"}},
                     Printer{Info{.ctor = "4", .dtor = "5"}}};
@@ -78,7 +78,7 @@ C风格数组的元素按下标顺序构造, 按逆序析构.
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer c1{
         Info{.ctor = "s", .copy_ctor = "t", .copy_assign = "o", .dtor = "l"}};
 
@@ -108,7 +108,7 @@ C风格数组的元素按下标顺序构造, 按逆序析构.
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     {
       {
         Printer c1{Info{.ctor = "i", .dtor = "r"}};
@@ -139,7 +139,7 @@ C风格数组的元素按下标顺序构造, 按逆序析构.
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     DerivedPrinter c1{
         Info{.ctor = "l", .copy_ctor = "g", .copy_assign = "i", .dtor = "r"},
         DerivedInfo{

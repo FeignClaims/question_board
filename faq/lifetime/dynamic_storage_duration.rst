@@ -6,12 +6,12 @@
 说明
 ========================================================================================================================
 
-运行到 :cpp:`new` 时开始, :cpp:`delete` 时结束.
+对于动态存储周期的对象, 它在运行到 :cpp:`new` 时被构造, 在运行到 :cpp:`delete` 时被销毁.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer* c1 = new Printer{Info{.ctor = "0", .dtor = "1"}};
     Printer* c2 = new Printer{Info{.ctor = "2", .dtor = "3"}};
     delete c1;
@@ -23,12 +23,12 @@
   // 1: c1 析构
   // 3: c2 析构
 
-如果不 :cpp:`delete` 则不发生析构而内存泄露.
+如果不 :cpp:`delete` 则动态存储周期对象不会被销毁, 将会发生内存泄露.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer* c1 = new Printer{Info{.ctor = "0", .dtor = "1"}};
   }  // 指针本身为自动存储周期而析构, 它指向的对象为动态存储周期而泄露
   // 最终输出
@@ -45,7 +45,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer* c1 = new Printer{Info{.ctor = "s", .dtor = "o"}};
     Printer* c2 = nullptr;
     c2          = new Printer{Info{.ctor = "t", .dtor = "l"}};
@@ -71,7 +71,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     {
       Printer* c1 = nullptr;
       c1          = new Printer{Info{.ctor = "i", .dtor = "h"}};
@@ -117,7 +117,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     {
       Printer c1{
           Info{.ctor = "s", .copy_ctor = "u", .copy_assign = "s", .dtor = "l"}};

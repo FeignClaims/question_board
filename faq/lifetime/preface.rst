@@ -23,7 +23,7 @@
 .. code-block:: cpp
   :caption: 构造析构
 
-  auto main() -> int {
+  int main() {
     // 构造时输出 "0", 被用于拷贝构造时输出 "1", 被用于拷贝赋值时输出 "2", 析构时输出 "3", 其余情况不输出
     Printer c1{Info{.ctor = "0", .copy_ctor = "1", .copy_assign = "2", .dtor = "3"}};
 
@@ -39,7 +39,7 @@
 .. code-block:: cpp
   :caption: 拷贝构造
 
-  auto main() -> int {
+  int main() {
     // 构造时输出 "0", 被用于拷贝构造时输出 "1", 被用于拷贝赋值时输出 "2", 析构时输出 "3", 其余情况不输出
     Printer c1{Info{.ctor = "0", .copy_ctor = "1", .copy_assign = "2", .dtor = "3"}};
 
@@ -56,7 +56,7 @@
 .. code-block:: cpp
   :caption: 拷贝赋值
 
-  auto main() -> int {
+  int main() {
     // 构造时输出 "0", 被用于拷贝构造时输出 "1", 被用于拷贝赋值时输出 "2", 析构时输出 "3", 其余情况不输出
     Printer c1{Info{.ctor = "0", .copy_ctor = "1", .copy_assign = "2", .dtor = "3"}};
 
@@ -87,7 +87,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     // 构造时输出 "03", 正常被用于拷贝时输出 "14", 析构时输出 "52", 其余情况不输出
     DerivedPrinter c1{Info{.ctor = "0", .copy_ctor = "1", .dtor = "2"},
                       DerivedInfo{.ctor = "3", .copy_ctor = "4", .dtor = "5"}};

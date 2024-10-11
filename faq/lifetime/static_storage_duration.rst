@@ -6,9 +6,7 @@
 说明
 ========================================================================================================================
 
-此处专指静态局部变量和全局变量.
-
-运行到它的名字时开始,  **程序结束时** 结束, 因此即使多次运行到, 也只会构造一次. 它的析构晚于自动存储周期对象.
+对于静态存储周期的对象, 它在第一次从运行到它的定义时被构造, 在 **程序结束时** 销毁. 因此即使多次运行到, 也只会构造一次.
 
 .. code-block:: cpp
   :linenos:
@@ -18,7 +16,7 @@
     Printer c2{Info{.ctor = "2", .dtor = "3"}};
   }
   
-  auto main() -> int {
+  int main() {
     function();
     function();
   }
@@ -30,12 +28,27 @@
   // 3: 第二次调用时, c2 析构
   // 1: 程序结束时, c1 析构
 
-对象的存储周期按它开始的相反顺序结束.
+程序在执行完 :cpp:`main` 函数后, 才对静态存储周期对象进行销毁. 因此, 它的析构晚于 :cpp:`main` 函数中的自动存储周期对象.
 
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
+    Printer c1{Info{.ctor = "0", .dtor = "1"}};
+    static Printer c2{Info{.ctor = "2", .dtor = "3"}};
+  }
+  // 最终输出
+  // 0: c1 构造
+  // 2: c2 构造
+  // 1: c1 析构
+  // 3: c2 析构
+
+如果有多个静态存储周期对象要销毁, 它们将按构造的相反顺序销毁.
+
+.. code-block:: cpp
+  :linenos:
+
+  int main() {
     { static Printer c1{Info{.ctor = "0", .dtor = "1"}}; }
     static Printer c2{Info{.ctor = "2", .dtor = "3"}};
   }
@@ -45,14 +58,14 @@
   // 3: c2 析构
   // 1: c1 析构
 
-全局变量也是静态存储周期, 它在程序开始时开始, 在程序结束时结束.
+全局变量也是静态存储周期, 它在程序开始、进入 :cpp:`main` 函数之前被构造, 在程序结束时被销毁.
 
 .. code-block:: cpp
   :linenos:
 
   Printer c1{Info{.ctor = "0", .dtor = "1"}};
 
-  auto main() -> int {
+  int main() {
     Printer c2{Info{.ctor = "2", .dtor = "3"}};
   }
   // 最终输出
@@ -61,7 +74,7 @@
   // 3: c2 析构
   // 1: 程序结束时, c1 析构
 
-函数模板实例化后可能是不同的函数, 则有不同的静态局部变量.
+类模板、函数模板实例化后可能是不同的类、函数, 则有不同的静态局部变量.
 
 .. code-block:: cpp
   :linenos:
@@ -71,7 +84,7 @@
     static Printer c1{Info{.ctor = "0", .dtor = "1"}};
   }
 
-  auto main() -> int {
+  int main() {
     function<int>();
     function<double>();
     function<int>();
@@ -81,6 +94,10 @@
   // 0: function<double>::c1 构造
   // 1: function<double>::c1 析构
   // 1: function<int>::c1 析构
+
+.. seealso::
+
+  :doc:`/faq/instantiation/main` 中解释了模板的实例化.
 
 ========================================================================================================================
 题目
@@ -93,7 +110,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     static Printer c1{Info{.ctor = "v", .dtor = "r"}};
     { static Printer c2{Info{.ctor = "e", .dtor = "o"}}; }
     static Printer c3{Info{.ctor = "c", .dtor = "t"}};
@@ -120,7 +137,7 @@
 
   Printer c1{Info{.ctor = "d", .copy_ctor = "m", .dtor = "r"}};
 
-  auto main() -> int {
+  int main() {
     {
       static Printer c2{Info{.ctor = "o", .copy_ctor = "l", .dtor = "o"}};
       function(c1);
@@ -149,7 +166,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     {
       { static Printer c1{Info{.ctor = "f", .dtor = "f"}}; }
       static Printer c2{Info{.ctor = "i", .dtor = "o"}};

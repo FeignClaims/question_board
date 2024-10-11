@@ -7,7 +7,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     static Printer c1{Info{.ctor = "r", .dtor = "t"}};
     Printer c2{Info{.ctor = "a", .dtor = "o"}};
     {

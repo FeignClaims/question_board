@@ -27,7 +27,7 @@
     }
   }
 
-  auto main() -> int {
+  int main() {
     function();
   }
 
@@ -62,7 +62,7 @@
     }
   }
 
-  auto main() -> int {
+  int main() {
     function();
   }
 

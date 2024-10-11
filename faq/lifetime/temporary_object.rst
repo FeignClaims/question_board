@@ -1,5 +1,5 @@
 ************************************************************************************************************************
-5. 临时对象 (temporaries)
+5. 临时对象 (temporary object)
 ************************************************************************************************************************
 
 ========================================================================================================================
@@ -14,7 +14,7 @@
 未被延长的临时对象
 ------------------------------------------------------------------------------------------------------------------------
 
-在 **整个表达式 (完整表达式, full expression)** 结束时, 它的存储周期结束. 如果整个表达式中有多个临时对象, 那么按临时对象构造的相反顺序结束.
+对于临时对象, 它在 **整个表达式 (完整表达式, full expression)** 结束时被销毁. 如果整个表达式中有多个临时对象, 那么按临时对象构造的相反顺序被销毁.
 
 .. code-block:: cpp
   :linenos:
@@ -23,7 +23,7 @@
     return Printer(info);
   }
 
-  auto main() -> int {
+  int main() {
     Printer c1{Info{.ctor = "0", .dtor = "1"}};
     make_printer(Info{.ctor = "2", .dtor = "3"}), make_printer(Info{.ctor = "4", .dtor = "5"});
     Printer c2{Info{.ctor = "6", .dtor = "7"}};
@@ -41,7 +41,7 @@
 被延长的临时对象
 ------------------------------------------------------------------------------------------------------------------------
 
-通过 :cpp:`const&` 可以延长临时对象的存储周期, 它的存储周期在 :cpp:`const&` 的存储周期结束时结束.
+通过 :cpp:`const&` 可以延长临时对象的生命期, 则它的生命期在 :cpp:`const&` 的生命期结束时结束.
 
 .. code-block:: cpp
   :linenos:
@@ -50,14 +50,17 @@
     return Printer(info);
   }
 
-  auto main() -> int {
-    Printer const& c1 = make_printer(Info{.ctor = "0", .dtor = "1"});
-    { static Printer const& c2 = make_printer(Info{.ctor = "2", .dtor = "3"}); }
+  int main() {
+    Printer c1{Info{.ctor = "0", .dtor = "1"}};
+    Printer const& c2 = make_printer(Info{.ctor = "2", .dtor = "3"});
+    { static Printer const& c3 = make_printer(Info{.ctor = "4", .dtor = "5"}); }
   }
   // 0: c1 构造
   // 2: c2 构造
-  // 1: c1 析构
+  // 4: c3 构造
   // 3: c2 析构
+  // 1: c1 析构
+  // 5: c3 析构
 
 ========================================================================================================================
 题目
@@ -70,7 +73,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     make_printer(Info{.ctor = "m", .dtor = "i"});
 
     DerivedPrinter c1{
@@ -108,7 +111,7 @@
 .. code-block:: cpp
   :linenos:
 
-  auto main() -> int {
+  int main() {
     Printer c1{
         Info{.ctor = "v", .copy_ctor = "d", .copy_assign = "u", .dtor = ">"}};
     Printer c2{Info{.ctor = "e", .dtor = "l"}};
