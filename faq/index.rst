@@ -75,6 +75,7 @@
   basic_concepts/c_string
   basic_concepts/operator_overloading
   basic_concepts/template
+  basic_concepts/move_semantics
 
 ***********************************************************************************************************************
 表达式和语句
