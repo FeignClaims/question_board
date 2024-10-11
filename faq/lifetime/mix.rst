@@ -8,52 +8,56 @@
   :linenos:
 
   int main() {
-    static Printer c1{Info{.ctor = "r", .dtor = "t"}};
-    Printer c2{Info{.ctor = "a", .dtor = "o"}};
+    static Noisy c1{Info{.ctor = "r", .dtor = "t"}};
+    Noisy c2{Info{.ctor = "a", .dtor = "o"}};
     {
-      Printer* c3 = new Printer{Info{.ctor = "n", .dtor = "t"}};
-      Printer* c4 = nullptr;
-      static Printer c5{Info{.ctor = "g", .dtor = "l"}};
+      Noisy* c3 = new Noisy{Info{.ctor = "n", .dtor = "t"}};
+      Noisy* c4 = nullptr;
+      static Noisy c5{Info{.ctor = "g", .dtor = "l"}};
     }
     {
-      Printer* c6 = nullptr;
-      { Printer{Info{.ctor = "e", .dtor = "s"}}; }
-      { Printer* c8 = nullptr; }
-      c6           = new Printer{Info{.ctor = ":", .dtor = "i"}};
-      Printer* c9  = nullptr;
-      Printer* c10 = new Printer{Info{.ctor = ":", .dtor = "o"}};
+      Noisy* c6 = nullptr;
+      {
+        Noisy{Info{.ctor = "e", .dtor = "s"}};
+      }
+      {
+        Noisy* c8 = nullptr;
+      }
+      c6         = new Noisy{Info{.ctor = ":", .dtor = "i"}};
+      Noisy* c9  = nullptr;
+      Noisy* c10 = new Noisy{Info{.ctor = ":", .dtor = "o"}};
       delete c6;
       {
-        c9 = new Printer{Info{.ctor = "n", .dtor = "l"}};
-        static Printer c11{Info{.ctor = "_", .dtor = "u"}};
+        c9 = new Noisy{Info{.ctor = "n", .dtor = "l"}};
+        static Noisy c11{Info{.ctor = "_", .dtor = "u"}};
         {
-          Printer* c12 = new Printer{Info{.ctor = "f", .dtor = "h"}};
+          Noisy* c12 = new Noisy{Info{.ctor = "f", .dtor = "h"}};
           delete c10;
-          delete new Printer{Info{.ctor = "u", .dtor = "n"}};
+          delete new Noisy{Info{.ctor = "u", .dtor = "n"}};
         }
-        Printer c14{Info{.ctor = "d", .dtor = "_"}};
-        static Printer c15{Info{.ctor = "_", .dtor = "s"}};
-        Printer* c16 = new Printer{Info{.ctor = "r", .dtor = ":"}};
-        static Printer c17{Info{.ctor = "e", .dtor = "e"}};
-        static Printer c18{Info{.ctor = "s", .dtor = "r"}};
-        static Printer c19{Info{.ctor = "u", .dtor = "_"}};
+        Noisy c14{Info{.ctor = "d", .dtor = "_"}};
+        static Noisy c15{Info{.ctor = "_", .dtor = "s"}};
+        Noisy* c16 = new Noisy{Info{.ctor = "r", .dtor = ":"}};
+        static Noisy c17{Info{.ctor = "e", .dtor = "e"}};
+        static Noisy c18{Info{.ctor = "s", .dtor = "r"}};
+        static Noisy c19{Info{.ctor = "u", .dtor = "_"}};
         delete c9;
-        static Printer c20{Info{.ctor = "t", .dtor = "d"}};
-        Printer* c21 = new Printer{Info{.ctor = ":", .dtor = "u"}};
+        static Noisy c20{Info{.ctor = "t", .dtor = "d"}};
+        Noisy* c21 = new Noisy{Info{.ctor = ":", .dtor = "u"}};
         delete c16;
-        delete new Printer{Info{.ctor = "o", .dtor = "p"}};
-        Printer{Info{.ctor = "e", .dtor = "r"}};
-        static Printer c24{Info{.ctor = "a", .dtor = "n"}};
-        Printer* c25 = nullptr;
-        c25          = new Printer{Info{.ctor = "t", .dtor = "s"}};
-        Printer* c26 = nullptr;
-        Printer c27{Info{.ctor = "o", .dtor = "r"}};
+        delete new Noisy{Info{.ctor = "o", .dtor = "p"}};
+        Noisy{Info{.ctor = "e", .dtor = "r"}};
+        static Noisy c24{Info{.ctor = "a", .dtor = "n"}};
+        Noisy* c25 = nullptr;
+        c25        = new Noisy{Info{.ctor = "t", .dtor = "s"}};
+        Noisy* c26 = nullptr;
+        Noisy c27{Info{.ctor = "o", .dtor = "r"}};
       }
       {
-        Printer* c28 = new Printer{Info{.ctor = "i", .dtor = "a"}};
-        delete new Printer{Info{.ctor = "n", .dtor = "_"}};
+        Noisy* c28 = new Noisy{Info{.ctor = "i", .dtor = "a"}};
+        delete new Noisy{Info{.ctor = "n", .dtor = "_"}};
       }
-      static Printer c30{Info{.ctor = "f", .dtor = "u"}};
+      static Noisy c30{Info{.ctor = "f", .dtor = "u"}};
     }
   }
 
@@ -65,4 +69,4 @@
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`47zEPz81h`, 答案: :cpp:`ranges::in_found_result::operator_in_found_result`.
+  :godbolt:`qz8jn3s9j`, 答案: :cpp:`ranges::in_found_result::operator_in_found_result`.

@@ -19,14 +19,14 @@
 .. code-block:: cpp
   :linenos:
 
-  Printer make_printer(Info info) {
-    return Printer(info);
+  Noisy make_noisy(Info info) {
+    return Noisy(info);
   }
 
   int main() {
-    Printer c1{Info{.ctor = "0", .dtor = "1"}};
-    make_printer(Info{.ctor = "2", .dtor = "3"}), make_printer(Info{.ctor = "4", .dtor = "5"});
-    Printer c2{Info{.ctor = "6", .dtor = "7"}};
+    Noisy c1{Info{.ctor = "0", .dtor = "1"}};
+    make_noisy(Info{.ctor = "2", .dtor = "3"}), make_noisy(Info{.ctor = "4", .dtor = "5"});
+    Noisy c2{Info{.ctor = "6", .dtor = "7"}};
   }
   // 0: c1 构造
   // 2: 临时对象构造
@@ -46,14 +46,14 @@
 .. code-block:: cpp
   :linenos:
 
-  Printer make_printer(Info info) {
-    return Printer(info);
+  Noisy make_noisy(Info info) {
+    return Noisy(info);
   }
 
   int main() {
-    Printer c1{Info{.ctor = "0", .dtor = "1"}};
-    Printer const& c2 = make_printer(Info{.ctor = "2", .dtor = "3"});
-    { static Printer const& c3 = make_printer(Info{.ctor = "4", .dtor = "5"}); }
+    Noisy c1{Info{.ctor = "0", .dtor = "1"}};
+    Noisy const& c2 = make_noisy(Info{.ctor = "2", .dtor = "3"});
+    { static Noisy const& c3 = make_noisy(Info{.ctor = "4", .dtor = "5"}); }
   }
   // 0: c1 构造
   // 2: c2 构造
@@ -74,35 +74,35 @@
   :linenos:
 
   int main() {
-    make_printer(Info{.ctor = "m", .dtor = "i"});
+    make_noisy(Info{.ctor = "m", .dtor = "i"});
 
-    DerivedPrinter c1{
+    Derived_noisy c1{
         Info{.ctor = "c", .copy_ctor = "o", .copy_assign = "u", .dtor = "s"},
-        DerivedInfo{
+        Derived_info{
             .ctor = "r", .copy_ctor = "h", .copy_assign = "a", .dtor = "d"}};
 
-    static_cast<Printer*>(&c1);
-    static_cast<Printer>(c1);
+    static_cast<Noisy*>(&c1);
+    static_cast<Noisy>(c1);
 
-    Printer{Info{.ctor = "e", .dtor = "c"}};  // 这是临时对象
-                                              // 所以平时写代码时不要漏写名字, 除非这就是想要的
+    Noisy{Info{.ctor = "e", .dtor = "c"}};  // 这是临时对象
+        // 所以平时写代码时不要漏写名字, 除非这就是想要的
 
-    static_cast<Printer&>(c1);
+    static_cast<Noisy&>(c1);
 
-    make_printer(Info{.ctor = "o", .dtor = "n"});
+    make_noisy(Info{.ctor = "o", .dtor = "n"});
   }
 
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  12 个字符, 一种时间单位.
+  12 个字符. 一种时间单位.
 
   大多数情况下, :cpp:`static_cast<new_type>(expression)` 相当于以 :cpp:`new_type temp(expression);` 初始化了一个虚拟变量 :cpp:`temp`, 见于 :doc:`/faq/basic_concepts/type_conversion`.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`65jMzEePz`, 答案: :cpp:`microseconds`.
+  :godbolt:`ns6vKq73E`, 答案: :cpp:`microseconds`.
 
 ------------------------------------------------------------------------------------------------------------------------
 题 2
@@ -112,16 +112,16 @@
   :linenos:
 
   int main() {
-    Printer c1{
+    Noisy c1{
         Info{.ctor = "v", .copy_ctor = "d", .copy_assign = "u", .dtor = ">"}};
-    Printer c2{Info{.ctor = "e", .dtor = "l"}};
+    Noisy c2{Info{.ctor = "e", .dtor = "l"}};
     {
       {
-        Printer c1{
+        Noisy c1{
             Info{.ctor = "c", .copy_ctor = "b", .copy_assign = "a", .dtor = "o"}};
-        Printer{Info{.ctor = "t", .dtor = "o"}};
-        { Printer c2{Info{.ctor = "r", .dtor = "<"}}; }
-        Printer{c1};
+        Noisy{Info{.ctor = "t", .dtor = "o"}};
+        { Noisy c2{Info{.ctor = "r", .dtor = "<"}}; }
+        Noisy{c1};
       }
     }
   }
@@ -129,11 +129,11 @@
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  12 个字符, :cpp:`std::vector<T>` 的特化版本, 但不是 STL 容器, 证明了代理对象和 STL 容器不可兼得的失败产物, 且在 C++23 之前不该用于 STL 算法.
+  12 个字符. :cpp:`std::vector<T>` 的特化版本, 但不是 STL 容器, 证明了代理对象和 STL 容器不可兼得的失败产物, 且在 C++23 之前不该用于 STL 算法.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`EhzbfoPfv`, 答案: :cpp:`vector<bool>`.
+  :godbolt:`esqofxnjs`, 答案: :cpp:`vector<bool>`.
 
   注意考试中如果想用 STL 算法, 则不能用 :cpp:`vector<bool>`, 可以用 :cpp:`deque<bool>` 等其他 STL 容器代替.

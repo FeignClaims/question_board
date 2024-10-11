@@ -12,8 +12,8 @@
   :linenos:
 
   int main() {
-    Printer* c1 = new Printer{Info{.ctor = "0", .dtor = "1"}};
-    Printer* c2 = new Printer{Info{.ctor = "2", .dtor = "3"}};
+    Noisy* c1 = new Noisy{Info{.ctor = "0", .dtor = "1"}};
+    Noisy* c2 = new Noisy{Info{.ctor = "2", .dtor = "3"}};
     delete c1;
     delete c2;
   }
@@ -29,7 +29,7 @@
   :linenos:
 
   int main() {
-    Printer* c1 = new Printer{Info{.ctor = "0", .dtor = "1"}};
+    Noisy* c1 = new Noisy{Info{.ctor = "0", .dtor = "1"}};
   }  // 指针本身为自动存储周期而析构, 它指向的对象为动态存储周期而泄露
   // 最终输出
   // 0: c1 构造
@@ -46,23 +46,23 @@
   :linenos:
 
   int main() {
-    Printer* c1 = new Printer{Info{.ctor = "s", .dtor = "o"}};
-    Printer* c2 = nullptr;
-    c2          = new Printer{Info{.ctor = "t", .dtor = "l"}};
+    Noisy* c1 = new Noisy{Info{.ctor = "s", .dtor = "o"}};
+    Noisy* c2 = nullptr;
+    c2        = new Noisy{Info{.ctor = "t", .dtor = "l"}};
     delete c1;
-    Printer* c3 = new Printer{Info{.ctor = "i", .dtor = "u"}};
-    c2          = c3;
+    Noisy* c3 = new Noisy{Info{.ctor = "i", .dtor = "u"}};
+    c2        = c3;
   }
 
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  4 个字符, 将 :cpp:`std::string` 转换为对应 :cpp:`int` 类型的方法.
+  4 个字符. 将 :cpp:`std::string` 转换为对应 :cpp:`int` 类型的方法.
 
 .. admonition:: 点击查看答案
    :class: dropdown, solution
 
-   :godbolt:`d3o6rf6hx`, 答案: :cpp:`stoi`.
+   :godbolt:`s6MG9b9Wq`, 答案: :cpp:`stoi`.
 
 ------------------------------------------------------------------------------------------------------------------------
 题 2
@@ -73,42 +73,42 @@
 
   int main() {
     {
-      Printer* c1 = nullptr;
-      c1          = new Printer{Info{.ctor = "i", .dtor = "h"}};
-      Printer* c2 = new DerivedPrinter{Info{.ctor = "n", .dtor = "_"},
-                                      DerivedInfo{.ctor = "n", .dtor = "r"}};
-      Printer* c3 = nullptr;
+      Noisy* c1 = nullptr;
+      c1        = new Noisy{Info{.ctor = "o", .dtor = "a"}};
+      Noisy* c2 = new Derived_noisy{Info{.ctor = "s", .dtor = "n"},
+                                    Derived_info{.ctor = "t", .dtor = "i"}};
+      Noisy* c3 = nullptr;
       {
-        c3 = new Printer{Info{.ctor = "e", .dtor = "m"}};
+        c3 = new Noisy{Info{.ctor = "r", .dtor = "b"}};
         c3 = c2;
         delete c2;
       }
-      Printer* c4 = nullptr;
+      Noisy* c4 = nullptr;
     }
-    Printer* c5 = nullptr;
-    Printer* c6 = nullptr;
-    Printer* c7 = new Printer{Info{.ctor = "p", .dtor = "w"}};
+    Noisy* c5 = nullptr;
+    Noisy* c6 = nullptr;
+    Noisy* c7 = new Noisy{Info{.ctor = "g", .dtor = "q"}};
     {
-      c5          = new Printer{Info{.ctor = "r", .dtor = "p"}};
-      Printer* c8 = new Printer{Info{.ctor = "o", .dtor = "l"}};
+      c5        = new Noisy{Info{.ctor = "s", .dtor = "n"}};
+      Noisy* c8 = new Noisy{Info{.ctor = "t", .dtor = "u"}};
     }
     {
-      Printer* c9 = new Printer{Info{.ctor = "d", .dtor = "s"}};
-      c6          = new Printer{Info{.ctor = "u", .dtor = "c"}};
+      Noisy* c9 = new Noisy{Info{.ctor = "r", .dtor = "o"}};
+      c6        = new Noisy{Info{.ctor = "e", .dtor = "a"}};
     }
     delete c6;
-    Printer* c10 = new Printer{Info{.ctor = "t", .dtor = "v"}};
+    Noisy* c10 = new Noisy{Info{.ctor = "m", .dtor = "p"}};
   }
 
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  13 个字符, STL 求两个范围的内积.
+  13 个字符. 像 :cpp:`cout` 一样使用, 但是将输出结果存储为 :cpp:`string` 的类.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`f4q4d117o`, 答案: :cpp:`inner_product`.
+  :godbolt:`d9vjff7xx`, 答案: :cpp:`ostringstream`.
 
 ------------------------------------------------------------------------------------------------------------------------
 题 3
@@ -119,24 +119,24 @@
 
   int main() {
     {
-      Printer c1{
+      Noisy c1{
           Info{.ctor = "s", .copy_ctor = "u", .copy_assign = "s", .dtor = "l"}};
-      Printer* c2 = new Printer{
+      Noisy* c2 = new Noisy{
           Info{.ctor = "s", .copy_ctor = "o", .copy_assign = "t", .dtor = "r"}};
-      Printer* c3 = nullptr;
-      c1          = *c2;
+      Noisy* c3 = nullptr;
+      c1        = *c2;
     }
-    Printer* c4 = new Printer{Info{.ctor = "e", .dtor = "y"}};
-    Printer c5{Info{.ctor = "a", .dtor = "m"}};
-    Printer* c6 = nullptr;
+    Noisy* c4 = new Noisy{Info{.ctor = "e", .dtor = "y"}};
+    Noisy c5{Info{.ctor = "a", .dtor = "m"}};
+    Noisy* c6 = nullptr;
   }
 
 .. admonition:: 点击查看提示
   :class: dropdown
 
-  7 个字符, 编程题解答参考中所用到的一个头文件.
+  7 个字符. 上一题答案所要用的头文件.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`aWz5WYjTo`, 答案: :cpp:`sstream`.
+  :godbolt:`G61bEMeTa`, 答案: :cpp:`sstream`.

@@ -12,7 +12,7 @@
   :linenos:
 
   int main() {
-    Printer c1{Info{.ctor = "0", .dtor = "1"}};
+    Noisy c1{Info{.ctor = "0", .dtor = "1"}};
   }
   // 最终输出
   // 0: c1 构造
@@ -24,8 +24,8 @@
   :linenos:
 
   int main() {
-    Printer c1{Info{.ctor = "0", .dtor = "1"}};
-    Printer c2{Info{.ctor = "2", .dtor = "3"}};
+    Noisy c1{Info{.ctor = "0", .dtor = "1"}};
+    Noisy c2{Info{.ctor = "2", .dtor = "3"}};
   }
   // 最终输出
   // 0: c1 构造
@@ -40,9 +40,9 @@
 
   int main() {
     {
-      Printer c1{Info{.ctor = "0", .dtor = "1"}};
+      Noisy c1{Info{.ctor = "0", .dtor = "1"}};
     }
-    Printer c2{Info{.ctor = "2", .dtor = "3"}};
+    Noisy c2{Info{.ctor = "2", .dtor = "3"}};
   }
   // 最终输出
   // 0: c1 构造
@@ -56,9 +56,9 @@ C 风格数组的元素按下标顺序构造, 按逆序销毁.
   :linenos:
 
   int main() {
-    Printer c1[] = {Printer{Info{.ctor = "0", .dtor = "1"}},
-                    Printer{Info{.ctor = "2", .dtor = "3"}},
-                    Printer{Info{.ctor = "4", .dtor = "5"}}};
+    Noisy c1[] = {Noisy{Info{.ctor = "0", .dtor = "1"}},
+                  Noisy{Info{.ctor = "2", .dtor = "3"}},
+                  Noisy{Info{.ctor = "4", .dtor = "5"}}};
   }
   // 0: 第 0 个元素构造
   // 2: 第 1 个元素构造
@@ -79,27 +79,27 @@ C 风格数组的元素按下标顺序构造, 按逆序销毁.
   :linenos:
 
   int main() {
-    Printer c1{
-        Info{.ctor = "s", .copy_ctor = "t", .copy_assign = "o", .dtor = "l"}};
+    Noisy c1{
+        Info{.ctor = "c", .copy_ctor = "m", .copy_assign = "l", .dtor = "e"}};
 
-    Printer c2 = c1;
+    Noisy c2{
+        Info{.ctor = "o", .copy_ctor = "a", .copy_assign = "p", .dtor = "t"}};
 
-    Printer c3{
-        Info{.ctor = "r", .copy_ctor = "a", .copy_assign = "t", .dtor = "u"}};
+    Noisy c3 = c1;
 
-    c2 = c3;
-    c2 = c1;
+    c3 = c2;
+    c3 = c1;
   }
 
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  7 个字符, 将 C 字符串转换为对应的 :cpp:`unsigned long long` 类型整数的方法.
+  7 个字符. 英语单词 "完成".
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`qM87cz5aE`, 答案: :cpp:`strtoull`.
+  :godbolt:`nxhMWdbf6`, 答案: :cpp:`complete`.
 
 ------------------------------------------------------------------------------------------------------------------------
 题 2
@@ -111,26 +111,28 @@ C 风格数组的元素按下标顺序构造, 按逆序销毁.
   int main() {
     {
       {
-        Printer c1{Info{.ctor = "i", .dtor = "r"}};
-        { Printer c2{Info{.ctor = "s", .dtor = "_"}}; }
-        Printer c3{Info{.ctor = "p", .dtor = "a"}};
+        Noisy c1{Info{.ctor = "i", .dtor = "r"}};
+        {
+          Noisy c2{Info{.ctor = "s", .dtor = "_"}};
+        }
+        Noisy c3{Info{.ctor = "p", .dtor = "a"}};
       }
-      Printer c4{Info{.ctor = "t", .dtor = "i"}};
+      Noisy c4{Info{.ctor = "t", .dtor = "i"}};
     }
-    Printer c5{Info{.ctor = "t", .dtor = "d"}};
-    Printer c6{Info{.ctor = "i", .dtor = "e"}};
-    Printer c7{Info{.ctor = "o", .dtor = "n"}};
+    Noisy c5{Info{.ctor = "t", .dtor = "d"}};
+    Noisy c6{Info{.ctor = "i", .dtor = "e"}};
+    Noisy c7{Info{.ctor = "o", .dtor = "n"}};
   }
 
 .. admonition:: 点击查看提示
   :class: dropdown
   
-  14 个字符, STL 判断范围是否已经划分.
+  14 个字符. STL 判断范围是否已经划分.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`EPscshb6d`, 答案: :cpp:`is_partitioned`.
+  :godbolt:`eMETGvnTW`, 答案: :cpp:`is_partitioned`.
 
 ------------------------------------------------------------------------------------------------------------------------
 题 3
@@ -140,18 +142,20 @@ C 风格数组的元素按下标顺序构造, 按逆序销毁.
   :linenos:
 
   int main() {
-    DerivedPrinter c1{
+    Derived_noisy c1{
         Info{.ctor = "l", .copy_ctor = "g", .copy_assign = "i", .dtor = "r"},
-        DerivedInfo{
+        Derived_info{
             .ctor = "e", .copy_ctor = "m", .copy_assign = "h", .dtor = "o"}};
 
-    Printer c2{Info{.ctor = "n", .dtor = "r"}};
+    Noisy c2{Info{.ctor = "n", .dtor = "r"}};
 
     {
-      Printer c3{c1};  // Printer c3 = c1;
+      Noisy c3{c1};  // Noisy c3 = c1;
       {
-        Printer c4{Info{.ctor = "t", .dtor = "e"}};
-        { Printer c5{Info{.ctor = "h", .dtor = "_"}}; }
+        Noisy c4{Info{.ctor = "t", .dtor = "e"}};
+        {
+          Noisy c5{Info{.ctor = "h", .dtor = "_"}};
+        }
       }
     }
   }
@@ -159,9 +163,9 @@ C 风格数组的元素按下标顺序构造, 按逆序销毁.
 .. admonition:: 点击查看提示
   :class: dropdown
 
-  12 个字符, 超出实现支持的长度限制时抛出的异常. 如当新容量大于 :cpp:`std::vector::max_size()` 时, :cpp:`std::vector::reserve` 会抛出此异常.
+  12 个字符. 超出实现支持的长度限制时使用的标准库异常. 如当新容量大于 :cpp:`std::vector::max_size()` 时, :cpp:`std::vector::reserve` 会抛出此异常.
 
 .. admonition:: 点击查看答案
   :class: dropdown, solution
 
-  :godbolt:`T6acTT4vv`, 答案: :cpp:`length_error`.
+  :godbolt:`vaxGPEjhf`, 答案: :cpp:`length_error`.
