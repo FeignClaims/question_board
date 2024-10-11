@@ -23,16 +23,16 @@ namespace detail {
   return data;
 }
 
-[[nodiscard]] inline auto match(std::string_view pattern,
+[[nodiscard]] inline auto match(std::vector<std::string> const& pattern,
                                 std::string_view string)
-    -> std::map<char, char> {
+    -> std::map<std::string, char> {
   if (pattern.size() != string.size()) {
     return {};
   }
 
-  std::map<char, char> map;
+  std::map<std::string, char> map;
   for (int i : std::views::iota(0UZ, pattern.size())) {
-    char const dummy_char{pattern[i]};
+    std::string const dummy_char{pattern[i]};
 
     auto const iter{map.find(dummy_char)};
     if (iter == map.end()) {
@@ -65,12 +65,12 @@ class Match_logger {
     }
   }
 
-  void log(char ch) {
-    pattern += ch;
+  void log(std::string_view string) {
+    pattern.emplace_back(std::string{string});
   }
 
  private:
-  std::string pattern{};
+  std::vector<std::string> pattern{};
   std::vector<std::string> names;
 };
 

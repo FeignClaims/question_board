@@ -2,11 +2,12 @@
 #define NORMAL_LOGGER_HPP
 
 #include <iostream>
+#include <string_view>
 
 class Normal_logger {
  public:
-  void log(char ch) {
-    std::cout << ch;
+  void log(std::string_view string) {
+    std::cout << string;
   }
 };
 

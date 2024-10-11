@@ -1,15 +1,17 @@
 #ifndef INFO_HP
 #define INFO_HP
 
+#include <string>
+
 // clang-format off
 template <auto = []{}>
 // clang-format on
 struct Info_impl {
  public:
-  char ctor{};
-  char copy_ctor{};
-  char copy_assign{};
-  char dtor{};
+  std::string ctor{};
+  std::string copy_ctor{};
+  std::string copy_assign{};
+  std::string dtor{};
 };
 
 using Info         = Info_impl<>;
