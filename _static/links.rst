@@ -1,11 +1,11 @@
-.. _`我的 C++ 浏览器书签 (2024/08/30) (右键另存为再导入到浏览器)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp_bookmarks.html
-.. _`我的 C++ 订阅源 (2024/08/30) (右键另存为再导入浏览器 feedbro 插件)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/cpp_feedbro.opml
+.. _`我的 C++ 浏览器书签 (2024/08/30) (右键另存为再导入到浏览器)`: https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/cpp_bookmarks.html?ref_type=heads
+.. _`我的 C++ 订阅源 (2024/08/30) (右键另存为再导入浏览器 feedbro 插件)`: https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/cpp_feedbro.opml?ref_type=heads
 .. _`FeignClaims/cpp_conan_template`: https://www.github.com/FeignClaims/cpp_conan_template/
 .. _`FeignClaims/customized_conan_recipes`: https://www.github.com/FeignClaims/customized_conan_recipes/
 .. _`cpp_tutorial/question`: https://gitee.com/cpp_tutorial/question
 .. _`cpp_tutorial/board`: https://gitee.com/cpp_tutorial/board
-.. _`为天鹅书第二版制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp2_novice.zip
-.. _`为天鹅书第三版制作的学习项目文件 (解压以使用)`: https://gitee.com/cpp_tutorial/vscode_cpp_starter_resource/raw/main/ppp3_novice.zip
+.. _`为天鹅书第二版制作的学习项目文件 (解压以使用)`: https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/ppp2_novice.zip?ref_type=heads
+.. _`为天鹅书第三版制作的学习项目文件 (解压以使用)`: https://gitlab.com/FeignClaims/vscode_cpp_starter_resource/-/raw/main/ppp3_novice.zip?ref_type=heads
 .. _`Git: 通过官网下载`: https://git-scm.com/download/win
 
 .. _`aminya/project_options`: https://www.github.com/aminya/project_options
