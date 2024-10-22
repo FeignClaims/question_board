@@ -44,7 +44,7 @@
 
 **看书记得看前言! 看书记得看前言! 看书记得看前言!**
 
-《Programming: Principles and Practice Using C++, 3rd Edition》(个人译为《程序设计：使用C++的原理与实践（第3版）》, 天鹅书) 
+《Programming: Principles and Practice Using C++, 3rd Edition》(天鹅书, 个人译为《程序设计：使用C++的原理与实践（第3版）》, 第二版译本错译为《C++程序设计：原理与实践（第2版）》) 
   .. hint::
 
     我为这本好书做了 **一个学习项目文件**: `为天鹅书第三版制作的学习项目文件 (解压以使用)`_, 解压后打开 "请读我" 文件查看使用说明 (例如需要安装 `Git: 通过官网下载`_).
@@ -65,7 +65,7 @@
 
   这三门书虽有各自的优点, 但已经被主推的入门书《Programming: Principles and Practice Using C++, 3rd Edition》完全爆杀.
 
-  《Programming: Principles and Practice Using C++, 2nd Edition》(《C++程序设计：原理与实践（第2版）》, 天鹅书) 
+  《Programming: Principles and Practice Using C++, 2nd Edition》(天鹅书, 个人译为《程序设计：使用C++的原理与实践（第2版）》, 译本错译为《C++程序设计：原理与实践（第2版）》) 
     .. hint::
 
       我为这本好书做了 **一个学习项目文件**: `为天鹅书第二版制作的学习项目文件 (解压以使用)`_, 解压后打开 "请读我" 文件查看使用说明 (例如需要安装 `Git: 通过官网下载`_).
