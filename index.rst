@@ -11,7 +11,7 @@ C++ 洋葱剥法交流群资料
 
 - `本网站的国外备用网址 (不支持搜索) <https://feignclaims.github.io/question_board/>`_
 
-如果图片看不清, 请按 :KBD:`Ctrl` + :KBD:`+` 放大网页或 :menuselection:`右键 --> 在新标签页中打开图片`.
+如果图片看不清, 请按 :KBD:`Ctrl-+` 放大网页或 :menuselection:`右键 --> 在新标签页中打开图片`.
 
 .. toctree::
   :caption: 关于文档

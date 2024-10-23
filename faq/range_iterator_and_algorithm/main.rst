@@ -651,7 +651,7 @@
   :language: cpp
   :linenos:
 
-需要注意的是, 由于我们规定 :cpp:`cin.fail()` 成立时范围终止, 我们需要通过 Windows 下 :KBD:`Ctrl` + :KBD:`z`, MacOS 下 :KBD:`Ctrl` + :KBD:`d`, 或输入错误数据的方式来终止范围. **无论如何, 我们确实成功为输入制作了迭代器!**
+需要注意的是, 由于我们规定 :cpp:`cin.fail()` 成立时范围终止, 我们需要通过 Windows 下 :KBD:`Ctrl-Z`, MacOS 下 :KBD:`Ctrl-D`, 或输入错误数据的方式来终止范围. **无论如何, 我们确实成功为输入制作了迭代器!**
 
 .. code-block:: cpp
   :linenos:
