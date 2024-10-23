@@ -191,11 +191,11 @@
 
 - 《Functional Programming in C++ - How to improve your C++ programs using functional techniques》
 - `《Efficient Programming with Components》`_
-- `Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`_
 - `Better Algorithm Intuition - Conor Hoekstra @code_report - Meeting C++ 2019`_
 - 《Elements of Programming》(《编程原本》)
 - 《From Mathematics to Generic Programming》(《从数学到泛型编程》)
 - 《Notes on Programming》
+- `Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`_
 - `Documentation in the Era of Concepts and Ranges - Christopher Di Bella & Sy Brand - CppCon 2021`_
 
 ========================================================================================================================
