@@ -20,8 +20,8 @@
 
   连在一起的按键是说同时按, 是说同时按.
 
-- Visual Studio (2010 就别想了): :KBD:`Ctrl-K` 然后 :KBD:`Ctrl-D`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:vs>`.
-- VSCode: :KBD:`Shift-Alt-F`, 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:main>`.
+- Visual Studio (2010 就别想了): :menuselection:`编辑 --> 高级 --> 设置文档的格式`, 或按住 :KBD:`Ctrl` 然后依次按 :KBD:`K` 和 :KBD:`D`. 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:vs>`.
+- VSCode: :KBD:`Shift-Alt-F`. 更好地, :ref:`配置保存时自动格式化 <vscode_cpp_starter:main>`.
 - CLion: :KBD:`Ctrl-Shift-Alt-L`.
 - Dev C++: 该换软件了😡.
 - Qt Creator: 好麻烦啊自己查.
