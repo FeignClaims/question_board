@@ -66,7 +66,7 @@
         - 非 0 -> :cpp:`true`.
         - 0 -> :cpp:`false`.
 
-      - :cpp:`char` 类型可能采用 :cpp:`signed char` 或 :cpp:`unsigned char` 的表示方式; 但 :cpp:`char` 是独立的类型, 不是 :cpp:`signed char` 类型, 也不是 :cpp:`unsigned char`! 
+      - :cpp:`char` 类型可能采用 :cpp:`signed char` 或 :cpp:`unsigned char` 的表示方式, 也就是说可能是有符号数或无符号数; 此外, :cpp:`char` 是独立的类型, 不是 :cpp:`signed char` 类型, 也不是 :cpp:`unsigned char`! 
 
     -> 浮点数
       - 只要有可能, 转换为足够精确的数值, 例如整数 :cpp:`1` 转换为浮点数 :cpp:`1`.
