@@ -52,7 +52,7 @@
 .. code-block:: cpp
   :linenos:
 
-  #include <cmath>     // for std::pow
+  #include <cmath>  // for std::pow
   #include <iostream>
   using namespace std;
 
