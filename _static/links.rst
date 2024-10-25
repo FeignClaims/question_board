@@ -92,6 +92,7 @@
 .. _`Type punning in modern C++ - Timur Doumler - CppCon 2019`: https://www.youtube.com/watch?v=_qzMpk-22cc
 .. _`Undefined Behavior is Not an Error - Barbara Geller & Ansel Sermersheim - CppCon 2018`: https://www.youtube.com/watch?v=XEXpwis_deQ
 .. _`Using Modern CMake Patterns to Enforce a Good Modular Design - Mathieu Ropert - CppCon 2017`: https://www.youtube.com/watch?v=eC9-iRN2b04
+.. _`Want fast C++? Know your hardware! - Timur Doumler - CppCon 2016`: https://www.youtube.com/watch?v=BP6NxVxDQIs
 .. _`What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`: https://www.youtube.com/watch?v=bSkpMdDe4g4
 .. _`atomic Weapons 1 of 2 - Herb Sutter - C++ and Beyond 2012`: https://www.youtube.com/watch?v=A8eCGOqgvH4
 .. _`atomic Weapons 2 of 2 - Herb Sutter - C++ and Beyond 2012`: https://www.youtube.com/watch?v=KeLBd2EJLOU

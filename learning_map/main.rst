@@ -113,7 +113,8 @@
 - `C++ Seasoning - Sean Parent - GoingNative 2013`_
 - `Simplicity: Not Just For Beginners - Kate Gregory - CppCon 2018`_
 - `What Has My Compiler Done for Me Lately? Unbolting the Compiler's Lid - Matt Godbolt - CppCon 2017`_
-- `STL and Its Design Principles - Alexander Stepanov`_
+- `Want fast C++? Know your hardware! - Timur Doumler - CppCon 2016`_
+- `STL and Its Design Principles - Alexander Stepanov`_ (粗略感觉一遍, 到 :ref:`学习大纲_泛型编程` 再深入理解)
 
 ========================================================================================================================
 工具链
@@ -195,6 +196,7 @@
 - 《Elements of Programming》(《编程原本》)
 - 《From Mathematics to Generic Programming》(《从数学到泛型编程》)
 - 《Notes on Programming》
+- `STL and Its Design Principles - Alexander Stepanov`_
 - `Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`_
 - `Documentation in the Era of Concepts and Ranges - Christopher Di Bella & Sy Brand - CppCon 2021`_
 
