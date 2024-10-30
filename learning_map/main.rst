@@ -194,7 +194,7 @@
 - `《Efficient Programming with Components》`_
 - `Better Algorithm Intuition - Conor Hoekstra @code_report - Meeting C++ 2019`_
 - 《Elements of Programming》(《编程原本》)
-- 《From Mathematics to Generic Programming》(《从数学到泛型编程》)
+- 《From Mathematics to Generic Programming》(《从数学到泛型编程》, 译本名为《数学与泛型编程：高效编程的奥秘》)
 - 《Notes on Programming》
 - `STL and Its Design Principles - Alexander Stepanov`_
 - `Easy to Use, Hard to Misuse: Declarative Style in C++ - Ben Deane - CppCon 2018`_
