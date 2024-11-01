@@ -97,7 +97,7 @@
 编程思维
 -----------------------------------------------------------------------------------------------------------------------
 
-- `C++ Core Guidelines`_
+- `C++ Core Guidelines (C++ 核心准则)`_
 - 《Elements of Programming》
 - `C++ Seasoning - Sean Parent - GoingNative 2013`_ 及 Sean Parent 其他公开视频
 - 《Effective Modern C++》

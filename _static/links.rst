@@ -51,7 +51,8 @@
 .. _`Clang-Tidy 诊断选项列表`: https://clang.llvm.org/extra/clang-tidy/checks/list.html
 
 .. _`Guidelines For snake_case Concept Naming`: https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1851r0.html
-.. _`C++ Core Guidelines`: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+.. _`PPP Style Guide (天鹅书风格指南)`: https://www.stroustrup.com/PPP-style.pdf
+.. _`C++ Core Guidelines (C++ 核心准则)`: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
 .. _`Google C++ Style Guide`: https://google.github.io/styleguide/cppguide.html
 .. _`SEI CERT C++ Coding Standard`: https://wiki.sei.cmu.edu/confluence/pages/viewpage.action?pageId=88046682
 .. _`Chromium C++ style guide`: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/styleguide/c++/c++.md

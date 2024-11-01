@@ -26,7 +26,7 @@
 - `How to Ask For C++ Coding Help <http://www.gregcons.com/KateBlog/HowToAskForCCodingHelp.aspx>`_
 - `Bjarne Stroustrup's Homepage`_
 - `Standard C++ <https://isocpp.org/>`_
-- `C++ Core Guidelines`_
+- `C++ Core Guidelines (C++ 核心准则)`_
 
 .. _学习大纲_基础:
 
@@ -292,7 +292,8 @@
 
 更多见于 :ref:`学习大纲_常用网站资源`.
 
-- `C++ Core Guidelines`_
+- `PPP Style Guide (天鹅书风格指南)`_
+- `C++ Core Guidelines (C++核心准则)`_
 - `Guidelines For snake_case Concept Naming`_
 - `Google C++ Style Guide`_
 - `SEI CERT C++ Coding Standard`_
