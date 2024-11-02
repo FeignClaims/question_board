@@ -9,6 +9,13 @@
 .. code-block:: cpp
   :linenos:
 
+  int value = 1;
+  if (value == 1) {  // value == 1 表达式返回 bool 类型, 可以用于条件判断
+  }
+
+.. code-block:: cpp
+  :linenos:
+
   bool function();
 
   if (function()) {  // 返回 bool 类型, 可以用于条件判断
