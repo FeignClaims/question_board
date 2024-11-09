@@ -14,39 +14,110 @@
 C 随机数
 ========================================================================================================================
 
-首先需要设置随机数的种子, 这需要调用函数 :cpp:`std::srand(seed)` 将 :cpp:`seed` 作为种子, 习惯上我们用 :cpp:`std::time(0)` 获取当前时间作为种子.
-
-由于使用相同的种子和算法, 将会生成一模一样的随机数, **我们应该只在程序运行开始时设置一次随机数种子**.
+我们可以通过 :cpp:`#include <cstdlib>` 中的 :cpp:`rand()` 来生成随机数:
 
 .. code-block:: cpp
   :linenos:
 
-  #include <cstdlib>  // for std::srand
-  #include <ctime>    // for std::time
+  #include <cstdlib>
+  using namespace std;
 
   int main() {
-    std::srand(std::time(0));  // 只在启动程序时设置一次
+    cout << (rand() % 10 + 5);  // 输出 [5, 15) 的随机整数.
   }
 
-此后即可调用 :cpp:`std::rand()` 生成随机数, 其生成的随机数为 :cpp:`[0, RAND_MAX]` 区间的整数, 故建议用下面的方式生成 **对应区间的随机数 (整数、浮点数通用)**:
+------------------------------------------------------------------------------------------------------------------------
+设置种子
+------------------------------------------------------------------------------------------------------------------------
+
+但是当你重新运行程序, 你会发现程序输出了一模一样的结果. 这是因为就像开头说的, 通常我们生成的随机数并不是真正的随机数, 而是基于一个种子 (seed), 以一定算法生成的伪随机数 (pseudo-random number). 这意味着 **如果使用相同的种子和算法, 将会生成一模一样的数.**
+
+所以, 我们需要在程序开始时, 为 :cpp:`rand()` 设置一个种子, 这需要用到 :cpp:`srand()`:
 
 .. code-block:: cpp
+  :linenos:
 
-  #include <cstdlib>  // for std::rand
+  #include <cstdlib>
+  using namespace std;
 
-  double min = 0;   // 预期随机数的最小值
-  double max = 10;  // 预期随机数的最大值
+  int main() {
+    srand(5);  // 设置一个种子
+    cout << (rand() % 10 + 5);  // 输出 [5, 15) 的随机整数.
+  }
 
-  // rand() 生成随机数, 转换为 double 与可能最大的随机数相除, 得到一个概率, 取值为 [0, 1]
-  double posibility = static_cast<double>(std::rand()) / RAND_MAX;
+但这样的设置显然是不行的: 每次运行所使用的种子都相同, 随机结果也相同. 所以我们需要在每次运行时设置不同的种子, 而每次运行程序, 有什么不同呢? 当前时间.
 
-  // 概率 [0, 1] * 区间长度 = [0, 区间长度]
-  double temp = posibility * (max - min + 1);  // +1, 因为是要映射到 [min - min, max - min] 这个闭区间
+.. code-block:: cpp
+  :linenos:
 
-  // [0, 区间长度] + min = [min, max]
-  double value = temp + min;
+  int main() {
+    time_t current_time = time(nullptr);  // 或 time(0)
+    srand(current_time);
+    /* 或者 srand(time(nullptr)) */
+  }
 
-:godbolt:`bx7WfKd7r`
+但要注意, **我们应该只在程序运行开始时设置一次随机数种子**. 程序运行很快, 如果我们在循环内反复获取当前时间作为种子, 那么可能几次循环的种子相同.
+
+.. code-block:: cpp
+  :linenos:
+
+  int main () {
+    for (int i = 0; i < 10; ++i) {
+      srand(time(nullptr));  // 可能设置一样的种子!
+      cout << (rand() % 10 + 5);
+    }
+  }
+
+------------------------------------------------------------------------------------------------------------------------
+随机浮点数
+------------------------------------------------------------------------------------------------------------------------
+
+好了, 我们现在生成了整数的随机数, 那么浮点数呢? 浮点数可不能求余.
+
+因此, :cpp:`rand()` 生成的随机数为 :cpp:`[0, RAND_MAX]` 区间的整数, 因此可以采用下面的通用方案 **对应区间的随机数 (整数、浮点数通用)**:
+
+:godbolt:`5d5fsnc8h`
+
+.. tabs::
+
+  .. tab:: 浮点数
+
+    .. code-block:: cpp
+      :linenos:
+
+      #include <cstdlib>  // for std::rand
+
+      double min = 0;   // 预期随机数的最小值
+      double max = 10;  // 预期随机数的最大值
+
+      // rand() 生成随机数, 转换为 double 与可能最大的随机数相除, 得到一个概率, 取值为 [0, 1]
+      double posibility = static_cast<double>(std::rand()) / RAND_MAX;
+
+      // 概率 [0, 1] * 区间长度 = [0, 区间长度]
+      double temp = posibility * (max - min);  // 映射到 [0, max - min]
+
+      // [0, max - min] + min = [min, max]
+      double value = temp + min;
+
+  .. tab:: 整数
+
+    .. code-block:: cpp
+      :linenos:
+
+      #include <cstdlib>  // for std::rand
+
+      double min = 0;   // 预期随机数的最小值
+      double max = 10;  // 预期随机数的最大值
+
+      // rand() 生成随机数, 转换为 double 与可能最大的随机数相除, 得到一个概率, 取值为 [0, 1]
+      double posibility = static_cast<double>(std::rand()) / RAND_MAX;
+
+      // 概率 [0, 1] * (区间长度 + 1) = [0, 区间长度 + 1]
+      double temp = posibility * (max - min + 1);  // +1, 映射到 [0, max - min + 1] 这个区间才是均匀分布
+                                                   // 这样 [0, 1) 取整为 0, [max, max + 1) 取整为 max 才是均匀的, 而 max + 1 的概率非常小
+
+      // [0, 区间长度 + 1] + min = [min, max + 1]
+      int value = temp + min;
 
 .. warning::
 
