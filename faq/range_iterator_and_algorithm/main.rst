@@ -1352,6 +1352,61 @@
   —— Alexander Stepanov `《Efficient Programming with Components》`_
 
 ========================================================================================================================
+C++20 ranges
+========================================================================================================================
+
+在 C++20, 我们有了 ranges, 将能更简单地使用范围、迭代器、算法:
+
+
+.. tabs::
+
+  .. tab:: 计数
+
+    :godbolt:`nEM8981ro`
+
+    .. code-block:: cpp
+      :linenos:
+
+      // 计数有多少个 3
+      int count = std::ranges::count(range, 3);
+
+      // 计数有多少平方为 4 的数
+      int count = std::ranges::count(range, 4, [](int value) { return value * value; } );
+
+      // 计数有多少个偶数
+      int count = std::ranges::count_if(range, [](int value) { return value % 2 == 0; });
+
+  .. tab:: 遍历所有偶数
+
+    :godbolt:`PndcMsE19`
+
+    .. code-block:: cpp
+      :linenos:
+
+      for (auto value :
+          range | std::views::filter([](int value) { return value % 2 == 0; })) {
+        /* 使用 value */
+      }
+
+  .. tab:: 输出前 3 个正数
+
+    :godbolt:`Efz3Pxn6M`
+
+    .. code-block:: cpp
+      :linenos:
+
+      // C++20
+      std::cout << std::format("{}\n",
+                               range
+                               | std::views::filter([](int value) { return value > 0; })
+                               | std::views::take(3));
+
+      // C++23
+      std::println("{}\n", range
+                           | std::views::filter([](int value) { return value > 0; })
+                           | std::views::take(3));
+
+========================================================================================================================
 涉及的标准库内容
 ========================================================================================================================
 
