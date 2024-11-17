@@ -151,6 +151,7 @@
   c_string_output/main
   ascii_output/main
   newline_character/main
+  fstream/main
   binary_io/main
 
 ***********************************************************************************************************************

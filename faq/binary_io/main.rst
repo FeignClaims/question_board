@@ -27,6 +27,7 @@
 
   int value = 0;
 
+  // ofstream 会自动为打开方式加上 std::ios_base::out, 因此直接写 std::ios_base::binary 就行了
   std::ofstream ofile("输出文件路径", std::ios_base::binary);
   ofile.write(reinterpret_cast<char const*>(&value), sizeof(value));
 
@@ -44,6 +45,7 @@
 
   int value = 0;
 
+  // ifstream 会自动为打开方式加上 std::ios_base::in, 因此直接写 std::ios_base::binary 就行了
   std::ifstream ifile("输入文件路径", std::ios_base::binary);
   ifile.read(reinterpret_cast<char*>(&value), sizeof(value));
 
