@@ -8,7 +8,7 @@
 单源文件项目分享
 ========================================================================================================================
 
-:godbolt:`YY95j86dn`
+:godbolt:`9vrM5MEP7`
 
 .. figure:: simple.gif
 
@@ -31,7 +31,7 @@
 以下是我常用的一些 Compiler Explorer 配置, 相较于默认配置添加了非常多的检查 (例如下标越界等). 如果需要配置这样检查的软件, 请阅读 :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>` 或 :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>`.
 
 - :godbolt:`clang <fsrxYYav9>`
-- :godbolt:`clang - 单源文件项目 <K4r3sK3E6>`
+- :godbolt:`clang - 单源文件项目 <oja4MEvzr>`
 - :godbolt:`clang - 多源文件项目 <o68aKEYM7>`
 - :godbolt:`gcc <Mqvvv88xT>`
 - :godbolt:`msvc (Visual Studio 的编译器) <EbWjP7j44>`
