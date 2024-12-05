@@ -11,7 +11,7 @@
 
 .. cppreference
 .. _`cppreference`: https://zh.cppreference.com/w/%E9%A6%96%E9%A1%B5
-.. _`cppreference 检索`: https://www4.bing.com/search?q=site%3Aen.cppreference.com%2Fw%2F&qs=n&form=QBRE&sp=-1&pq=site%3Aencppreference.com%2Fw%2F&sc=0-26&sk=&cvid=6F2BF5E847D044E1BBF0D6011466352B
+.. _`cppreference 检索`: https://www4.bing.com/search?q=site%3Acppreference.com
 .. _`cppreference: 求值顺序`: https://zh.cppreference.com/w/cpp/language/eval_order
 .. _`cppreference: 运算符优先级`: https://zh.cppreference.com/w/cpp/language/operator_precedence
 .. _`cppreference: 运算符重载`: https://zh.cppreference.com/w/cpp/language/operators
