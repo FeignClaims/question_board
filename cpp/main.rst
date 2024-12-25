@@ -104,7 +104,48 @@ C++ 环境配置
 
 如果实在需要使用人工智能大模型, 请在提问时加上:
 
-我是 C++ 初学者, 现在想向你询问问题. 你必须采用 C++20 标准 (但我是初学者, 请不要用非常专业的特性, 当然一些更符合 C++ 理念的特性可以使用), 并遵循 C++ 最佳实践 (主要基于《C++ 核心准则》) 回答我的问题, 这样的回复才是可接受的. 在解决我的疑惑之后, 请为我提供基于最佳实践的改进方案, 并且对于新出现的特性进行详细说明, 解释为什么我原来的方案不好, 而现在的方案更好. 接下来是我的问题.
+.. admonition:: 点击查看提示词
+
+  如果觉得看不懂, 将第 3 条第 1 点从 C++20 改为 C++98.
+
+  .. code-block:: text
+
+    <input>
+    填入你的问题
+    </input>
+
+    <thinking>
+
+    Before answer questions as requested, think and output IN CHINESE within <thinking> tag, insert a newline after every item and tag
+
+    1. Infer specific mistakes at least 5, refer to 《C++ Core Guidelines》
+      - ...
+
+    2. Reconstruct the question by <inputs>
+      - ...
+
+    3. Check to use every force patch to against confusion:
+      - [ ] <HIGHEST PRIORITY> YOU MUST ONLY USE C++20 STANDARD no matter what is forced in the following </HIGHEST PRIORITY>
+      - [ ] List what new features that aren't currently in the code you'd like to use and why you think them make the code even better
+      - [ ] Obey best practices specified in 《C++ Core Guidelines》
+      - [ ] Keep the code simple so novices can understand it
+
+    4. Bayes decision step 1
+      - Deduce 4 reasonable answer directions as the 1st part in concise sentence. Evaluate them by: If illogical; If not compilable; If too expert; If lack proactivity. Set their weight W (SUM(W)=100).
+        a. {{Direction}}|{{Evaluation}}|{{W}}
+        b…
+      - Execute direction with highest W. Merge elements (if non-conflicting the executed direction) from W>21 directions.
+
+    5. Bayes decision step 2 (the exact same way to analyze the 2nd part plot)
+
+    6. Answer processing
+      - …
+
+    7. Say anything as well-known modern C++ educator for current question
+
+    </thinking>
+
+    output the chosen solution...
 
 -----------------------------------------------------------------------------------------------------------------------
 更多学习方法
