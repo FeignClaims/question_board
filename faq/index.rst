@@ -9,7 +9,7 @@
 
   以下所有问题都是有人实际问我的. 由于主要面向应试学生, 解答会大量基于课内 C 风格 C++ 教学, 所以必然有无法描述清楚或没有扩展的内容.
 
-  常见问题解答确实只是为了解答该问题才写的, 且由于大量基于课内 C 风格 C++ 教学, 很难用作现代 C++ 知识点整理, 自学请参考 :doc:`/cpp/main`. 此外, 解答并不是正式手册, 在解释时对很多内容进行了简化.
+  常见问题解答确实只是为了解答该问题才写的, 且由于大量基于课内 C 风格 C++ 教学, 很难用作现代 C++ 知识点整理, 自学请参考 :doc:`/cpp/index`. 此外, 解答并不是正式手册, 在解释时对很多内容进行了简化.
 
 .. admonition:: 阅读方法
   :class: dropdown
@@ -84,13 +84,13 @@
 .. toctree::
   :maxdepth: 1
 
-  east_const/main
-  variable_decleration_reading/main
-  condition/main
-  md_c_array/main
-  escape_character/main
-  newline_character/main
-  comma_operator/main
+  east_const/index
+  variable_decleration_reading/index
+  condition/index
+  md_c_array/index
+  escape_character/index
+  newline_character/index
+  comma_operator/index
   exception_throwing/index
 
 ***********************************************************************************************************************
@@ -100,9 +100,9 @@
 .. toctree::
   :maxdepth: 1
 
-  class_invariant/main
-  member_initializer/main
-  access_specifiers/main
+  class_invariant/index
+  member_initializer/index
+  access_specifiers/index
 
 =======================================================================================================================
 构造函数、赋值函数、析构函数
@@ -123,9 +123,9 @@
   :maxdepth: 1
 
   lifetime/index
-  rule_of_350/main
-  copy_functions_parameter/main
-  copy_assignment_define/main
+  rule_of_350/index
+  copy_functions_parameter/index
+  copy_assignment_define/index
 
 =======================================================================================================================
 类层次 (面向对象程序设计, Object-Oriented Programming, OOP)
@@ -136,8 +136,8 @@
 .. toctree::
   :maxdepth: 1
 
-  access_specifiers/main
-  virtual_function_invocation_explain/main
+  access_specifiers/index
+  virtual_function_invocation_explain/index
 
 ***********************************************************************************************************************
 输入输出
@@ -146,13 +146,13 @@
 .. toctree::
   :maxdepth: 1
 
-  input_methods/main
-  pointer_output/main
-  c_string_output/main
-  ascii_output/main
-  newline_character/main
-  fstream/main
-  binary_io/main
+  input_methods/index
+  pointer_output/index
+  c_string_output/index
+  ascii_output/index
+  newline_character/index
+  fstream/index
+  binary_io/index
 
 ***********************************************************************************************************************
 模板
@@ -161,7 +161,7 @@
 .. toctree::
   :maxdepth: 1
 
-  instantiation/main
+  instantiation/index
 
 ***********************************************************************************************************************
 标准库、算法、数据结构
@@ -170,10 +170,10 @@
 .. toctree::
   :maxdepth: 1
 
-  generate_random_number/main
-  range_iterator_and_algorithm/main
-  forward_list/main
-  dynamic_array/main
+  generate_random_number/index
+  range_iterator_and_algorithm/index
+  forward_list/index
+  dynamic_array/index
 
 ***********************************************************************************************************************
 术语和惯用法
@@ -182,9 +182,9 @@
 .. toctree::
   :maxdepth: 1
 
-  getter_setter/main
-  separate_interface_from_implementation/main
-  copy_assignment_define/main
+  getter_setter/index
+  separate_interface_from_implementation/index
+  copy_assignment_define/index
 
 ***********************************************************************************************************************
 Visual Studio 特定问题
@@ -214,7 +214,7 @@ Visual Studio 特定问题
 .. toctree::
   :maxdepth: 1
 
-  twos_complement/main
+  twos_complement/index
 
 ***********************************************************************************************************************
 核心准则

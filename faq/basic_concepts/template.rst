@@ -277,5 +277,5 @@
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/range_iterator_and_algorithm/main`
-- :doc:`/faq/instantiation/main`
+- :doc:`/faq/range_iterator_and_algorithm/index`
+- :doc:`/faq/instantiation/index`

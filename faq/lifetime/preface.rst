@@ -88,7 +88,7 @@
 
 - 构造/赋值时先构造/赋值 :cpp:`Noisy`, 再构造/赋值 :cpp:`Derived_noisy`.
 - 析构时先析构 :cpp:`Derived_noisy`, 再析构 :cpp:`Noisy`.
-- 拷贝时发生切片, 只拷贝静态类型部分, 这部分内容可参考 :doc:`虚函数调用的感性理解 </faq/virtual_function_invocation_explain/main>`.
+- 拷贝时发生切片, 只拷贝静态类型部分, 这部分内容可参考 :doc:`虚函数调用的感性理解 </faq/virtual_function_invocation_explain/index>`.
 
 .. code-block:: cpp
   :linenos:

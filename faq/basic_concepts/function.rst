@@ -121,7 +121,7 @@
   }
   // 输出 123
 
-请在 :cpp:`main()` 函数最开始设置断点, :doc:`断点调试 </debugger/main>` 以上代码, 观察程序具体如何执行.
+请在 :cpp:`main()` 函数最开始设置断点, :doc:`断点调试 </debugger/index>` 以上代码, 观察程序具体如何执行.
 
 当我们断点调试执行到 :cpp:`function()` 函数内时, 我们可以明显观察到调用堆栈发生了变化: 原本的 :cpp:`main()` 函数上面多了一层 :cpp:`function()`. 所以调用堆栈所表示的并不是函数本身, 而是函数调用, 而最上层即我们正在执行的函数调用.
 
@@ -143,8 +143,8 @@
 
   要想理解这种怎么读, 请看:
 
-  - :doc:`/faq/east_const/main`
-  - :doc:`/faq/variable_decleration_reading/main`
+  - :doc:`/faq/east_const/index`
+  - :doc:`/faq/variable_decleration_reading/index`
 
 这确实很容易混淆, 尤其是很多教材把 :cpp:`*` 放在右边. 所以按我的个人习惯, 我更喜欢使用 C++11 起的函数返回值后置语法:
 
@@ -187,5 +187,5 @@
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/variable_decleration_reading/main`
-- :doc:`/faq/separate_interface_from_implementation/main`
+- :doc:`/faq/variable_decleration_reading/index`
+- :doc:`/faq/separate_interface_from_implementation/index`

@@ -62,6 +62,6 @@
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/class_invariant/main`
-- :doc:`/faq/forward_list/main`
-- :doc:`/faq/dynamic_array/main`
+- :doc:`/faq/class_invariant/index`
+- :doc:`/faq/forward_list/index`
+- :doc:`/faq/dynamic_array/index`

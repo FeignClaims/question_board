@@ -9,7 +9,7 @@
   - :doc:`/faq/basic_concepts/initialization_assignment`
   - :doc:`/faq/basic_concepts/struct`
   - :doc:`/faq/basic_concepts/pointer`
-  - :doc:`/faq/class_invariant/main`
+  - :doc:`/faq/class_invariant/index`
 
 ========================================================================================================================
 关注逻辑、忽略数据
@@ -102,7 +102,7 @@
 
   但我们在本文中不把这称为单向链表, 你也许可以称它为环状链表或其他东西.
 
-  数据结构都具有 :doc:`不变式 </faq/class_invariant/main>` 即逻辑关系, 对于本文中的单向链表而言就是:
+  数据结构都具有 :doc:`不变式 </faq/class_invariant/index>` 即逻辑关系, 对于本文中的单向链表而言就是:
 
   - 链表中上一个结点都指向下一个结点, 而不会反过来或指向其他结点;
   - 链表中最后一个结点指向空结点.
@@ -814,7 +814,7 @@
 
 .. seealso::
 
-  以下代码的具体思路请参考 :doc:`/faq/dynamic_array/main`
+  以下代码的具体思路请参考 :doc:`/faq/dynamic_array/index`
 
 .. code-block:: cpp
   :linenos:
@@ -937,8 +937,8 @@
 
 .. seealso::
 
-  - :doc:`/faq/rule_of_350/main`.
-  - :doc:`/faq/copy_assignment_define/main`.
+  - :doc:`/faq/rule_of_350/index`.
+  - :doc:`/faq/copy_assignment_define/index`.
 
 ========================================================================================================================
 扩展: 让链表能包含任何类型的数据
@@ -1081,4 +1081,4 @@
 
 .. seealso::
 
-  但为什么说支持上百种呢? 请阅读 :doc:`/faq/range_iterator_and_algorithm/main`.
+  但为什么说支持上百种呢? 请阅读 :doc:`/faq/range_iterator_and_algorithm/index`.

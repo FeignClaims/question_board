@@ -9,7 +9,7 @@
 - :doc:`/faq/basic_concepts/const`
 - :doc:`/faq/basic_concepts/reference`
 - :doc:`/faq/basic_concepts/pointer`
-- :doc:`/faq/east_const/main`
+- :doc:`/faq/east_const/index`
 - :doc:`/faq/basic_concepts/function`
 - :doc:`/faq/basic_concepts/c_array`
 
@@ -103,7 +103,7 @@
 明确复杂声明的语义
 =======================================================================================================================
 
-如果真的考这种题那只能说没活了, 在实际的程序设计中, 复杂的类型往往有明确的语义乃至 :doc:`不变式 </faq/class_invariant/main>`, 应该通过命名来解决.
+如果真的考这种题那只能说没活了, 在实际的程序设计中, 复杂的类型往往有明确的语义乃至 :doc:`不变式 </faq/class_invariant/index>`, 应该通过命名来解决.
 
 -----------------------------------------------------------------------------------------------------------------------
 类型别名

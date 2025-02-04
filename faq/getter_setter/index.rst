@@ -14,7 +14,7 @@
 
 .. seealso::
 
-  - :doc:`/faq/class_invariant/main`
+  - :doc:`/faq/class_invariant/index`
 
 .. admonition:: 相关核心准则
   :class: coreguidelines

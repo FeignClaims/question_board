@@ -165,7 +165,7 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 
 .. hint::
 
-  你也可以使用断点调试自己验证一下函数内 :cpp:`array` 的实际类型. 断点调试非常有用, 请学习 :doc:`/debugger/main` 并完成习题.
+  你也可以使用断点调试自己验证一下函数内 :cpp:`array` 的实际类型. 断点调试非常有用, 请学习 :doc:`/debugger/index` 并完成习题.
 
 甚至, 以下函数实际是同样的函数:
 
@@ -359,10 +359,10 @@ C 风格数组 **很容易很容易很容易** 隐式类型转换为指向首元
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/variable_decleration_reading/main`
-- :doc:`/faq/md_c_array/main`
-- :doc:`/faq/c_string_output/main`
-- :doc:`/faq/pointer_output/main`
+- :doc:`/faq/variable_decleration_reading/index`
+- :doc:`/faq/md_c_array/index`
+- :doc:`/faq/c_string_output/index`
+- :doc:`/faq/pointer_output/index`
 - :doc:`/faq/visual_studio/strcpy`
-- :doc:`/faq/dynamic_array/main`
-- :doc:`/faq/range_iterator_and_algorithm/main`
+- :doc:`/faq/dynamic_array/index`
+- :doc:`/faq/range_iterator_and_algorithm/index`

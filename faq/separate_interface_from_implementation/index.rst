@@ -22,7 +22,7 @@
   :linenos:
   :caption: hello.cpp
 
-.. literalinclude:: split/main.cpp
+.. literalinclude:: split/index.cpp
   :language: cpp
   :linenos:
   :caption: main.cpp
@@ -48,7 +48,7 @@
   :linenos:
   :caption: concrete.cpp
 
-.. literalinclude:: oo/main.cpp
+.. literalinclude:: oo/index.cpp
   :language: cpp
   :linenos:
   :caption: main.cpp

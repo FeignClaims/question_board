@@ -25,13 +25,13 @@ C++ 洋葱剥法交流群资料
   :caption: 学习资料
   :maxdepth: 1
 
-  /searching_method/main.rst
-  /share_code/main.rst
+  /searching_method/index
+  /share_code/index
   /how_to_ask.rst
-  /debugger/main.rst
-  /formatter/main.rst
-  /cpp/main.rst
-  /faq/index.rst
+  /debugger/index
+  /formatter/index
+  /cpp/index
+  /faq/index
 
 另有计软智网转专业相关资料:
 
@@ -47,4 +47,4 @@ C++ 洋葱剥法交流群资料
   /theory.rst
   /ppp3_chapter0.rst
   /ppp2_chapter0.rst
-  /learning_map/main.rst
+  /learning_map/index

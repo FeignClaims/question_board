@@ -6,9 +6,9 @@
   :class: precontent
 
   - :doc:`/faq/basic_concepts/initialization_assignment`
-  - :doc:`/faq/class_invariant/main`
+  - :doc:`/faq/class_invariant/index`
 
-为了维护 :doc:`不变式 </faq/class_invariant/main>`, 我们将数据成员设为私用; 为了建立不变式, 我们定义构造函数:
+为了维护 :doc:`不变式 </faq/class_invariant/index>`, 我们将数据成员设为私用; 为了建立不变式, 我们定义构造函数:
 
 .. code-block:: cpp
   :linenos:

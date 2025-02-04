@@ -46,5 +46,5 @@
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/east_const/main`
-- :doc:`/faq/variable_decleration_reading/main`
+- :doc:`/faq/east_const/index`
+- :doc:`/faq/variable_decleration_reading/index`

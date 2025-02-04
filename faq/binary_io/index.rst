@@ -103,7 +103,7 @@
 
 对 :cpp:`widget` 进行二进制输出, 会连同 :cpp:`value` 一起输出出去吗? 不是的, :cpp:`Widget` 类只有 :cpp:`pointer` 是数据成员; :cpp:`value` 虽然被 :cpp:`pointer` 指向, 但不是 :cpp:`Widget` 类的数据成员.
 
-这样有远程 (remote) 部分 [#1]_ 的类都不能直接进行二进制输入输出. 如果实在需要二进制输入输出它们, 你需要根据其数据的逻辑关系 (:doc:`类的不变式 </faq/class_invariant/main>`) 为它定义如何二进制输入输出.
+这样有远程 (remote) 部分 [#1]_ 的类都不能直接进行二进制输入输出. 如果实在需要二进制输入输出它们, 你需要根据其数据的逻辑关系 (:doc:`类的不变式 </faq/class_invariant/index>`) 为它定义如何二进制输入输出.
 
 .. [#1] 这个说法出自《Elements of Programming》
 

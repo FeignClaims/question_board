@@ -596,7 +596,7 @@
 
 .. margin::
 
-  如果需要显式定义默认构造函数, 最好应该使用 :cpp:`= default;` 而不是空括号, 见于 :doc:`/faq/rule_of_350/main`
+  如果需要显式定义默认构造函数, 最好应该使用 :cpp:`= default;` 而不是空括号, 见于 :doc:`/faq/rule_of_350/index`
 
 .. code-block:: cpp
   :emphasize-lines: 14
@@ -627,7 +627,7 @@
 
 .. margin::
 
-  如果需要显式定义默认析构函数, 最好应该使用 :cpp:`= default;` 而不是空括号, 见于 :doc:`/faq/rule_of_350/main`
+  如果需要显式定义默认析构函数, 最好应该使用 :cpp:`= default;` 而不是空括号, 见于 :doc:`/faq/rule_of_350/index`
 
 .. code-block:: cpp
   :emphasize-lines: 13
@@ -688,7 +688,7 @@
 
 .. hint::
 
-  你也可以通过断点调试查看该参数的数据, 自己验证一下结果如何. 断点调试非常有用, 请学习 :doc:`/debugger/main` 并完成习题.
+  你也可以通过断点调试查看该参数的数据, 自己验证一下结果如何. 断点调试非常有用, 请学习 :doc:`/debugger/index` 并完成习题.
 
   .. figure:: object_slicing.png
 
@@ -703,7 +703,7 @@
 
 .. hint::
 
-  你也可以通过断点调试查看该参数的数据, 自己验证一下结果如何. 断点调试非常有用, 请学习 :doc:`/debugger/main` 并完成习题.
+  你也可以通过断点调试查看该参数的数据, 自己验证一下结果如何. 断点调试非常有用, 请学习 :doc:`/debugger/index` 并完成习题.
 
   .. figure:: referencing.png
 
@@ -733,8 +733,8 @@
 
 .. seealso::
 
-  - :doc:`/faq/rule_of_350/main` 中解释了拷贝构造函数、拷贝赋值函数、析构函数的定义原则.
-  - :doc:`/faq/copy_assignment_define/main` 中介绍了一种利用拷贝构造函数和析构函数直接定义拷贝赋值函数的惯用法.
+  - :doc:`/faq/rule_of_350/index` 中解释了拷贝构造函数、拷贝赋值函数、析构函数的定义原则.
+  - :doc:`/faq/copy_assignment_define/index` 中介绍了一种利用拷贝构造函数和析构函数直接定义拷贝赋值函数的惯用法.
 
 .. admonition:: 相关核心准则
   :class: coreguidelines

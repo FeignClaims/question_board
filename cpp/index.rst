@@ -6,7 +6,7 @@ C++ 学习建议、环境配置等
 
 .. danger::
 
-  .. include:: dialectics_announcement/main.irst
+  .. include:: dialectics_announcement/index.irst
 
 .. _环境配置:
 
@@ -17,7 +17,7 @@ C++ 环境配置
 哪怕按下面列出的 :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>` 对 Visual Studio 进行额外配置, 它对于缺少分号、括号等简单错误的报错依旧非常糟糕, 因此我更建议你使用 :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`.
 
 - 直接装 `Visual Studio (Windows 可用) <https://visualstudio.microsoft.com/zh-hans/>`_ 就好; 当然更建议按下文配置 Visual Studio 或 **VSCode**.
-- 如需在线编译运行, 可用 :doc:`Compiler Explorer </share_code/main>`, 它能检测 :cpp:`=` 错写成 :cpp:`==` 等 Visual Studio 默认没检查的问题.
+- 如需在线编译运行, 可用 :doc:`Compiler Explorer </share_code/index>`, 它能检测 :cpp:`=` 错写成 :cpp:`==` 等 Visual Studio 默认没检查的问题.
 - :ref:`Visual Studio 配置教程 (Windows 可用) <vscode_cpp_starter:vs>`, 在 Visual Studio 默认配置基础上添加自动格式化、代码行间显示报错、更多诊断.
 - :ref:`VSCode 配置教程 (Windows/MacOS/Linux 均可用) <vscode_cpp_starter:main>`, 相比 Visual Studio 配置教程, 它还能 **自动添加头文件**, 有更丰富的字体和颜色, 且检查代码速度更快.
 
@@ -51,7 +51,7 @@ C++ 环境配置
 
 我不知道, 因为我没必要知道. 如果实在需要知道 :cpp:`int` 的大小 (它并不固定) 那可以去查, 如果实在不清楚运算符的结合性优先级那可以加括号. 问题在于, 知道这些细节会帮助初学者写出程序吗? 对于初学者, 更重要的是如 :ref:`跑起来` 所述建立起对编程的感性认识. 这些细节并不是学习的重点, 且 **在有了总体认识后很容易补充上**.
 
-考试可能是闭卷考试, 但编程不是, 编程学习过程也不是. :doc:`/searching_method/main`
+考试可能是闭卷考试, 但编程不是, 编程学习过程也不是. :doc:`/searching_method/index`
 
 .. _实际编程:
 
@@ -78,8 +78,8 @@ C++ 环境配置
 软件是你的朋友, 手写代码不报错不算什么能力, 能用合适的软件写代码才是能力. 例如, 建议学习:
 
 - 阅读报错信息.
-- :doc:`进行断点调试 </debugger/main>` 查找代码中的逻辑错误.
-- :doc:`如何自动格式化代码 </formatter/main>` 查找代码中的语法错误 (少加分号、括号不匹配等).
+- :doc:`进行断点调试 </debugger/index>` 查找代码中的逻辑错误.
+- :doc:`如何自动格式化代码 </formatter/index>` 查找代码中的语法错误 (少加分号、括号不匹配等).
 - ``#include <cassert>`` 里的 :cpp:`assert(condition)`.
 
 **学会这些比多刷几道力扣题提升更大**.
@@ -90,7 +90,7 @@ C++ 环境配置
 
 :ref:`学习使用软件` 中所说的用合适的软件还意味着 **你应该用最新的软件**.
 
-如果仅仅因为考试时用的软件是 Dev-C++、VS 2010 等就在平时的学习中使用这些软件, 只会严重影响新手的学习: 它们因为过老不会为新手提供某些报错, 甚至可能没有 :doc:`断点调试 </debugger/main>` 或 :doc:`自动格式化 </formatter/main>` 等功能.
+如果仅仅因为考试时用的软件是 Dev-C++、VS 2010 等就在平时的学习中使用这些软件, 只会严重影响新手的学习: 它们因为过老不会为新手提供某些报错, 甚至可能没有 :doc:`断点调试 </debugger/index>` 或 :doc:`自动格式化 </formatter/index>` 等功能.
 
 既然有的新手所主张的 "面向考试学习" 是为了考试取得好成绩, 使用这些影响自己学习的软件岂不是本末倒置? 上文 :ref:`跑起来` 已经强调了, 新手需要在走得好看之前跑起来, 而当新手通过在 :ref:`最新软件 <环境配置>` 上持之以恒地练习从而入门程序设计后, 熟悉考试软件只需要一两天时间.
 
@@ -232,7 +232,7 @@ C++ 环境配置
 《C++ 程序设计（朱金付主编）》
   快跑!!! 简单列一些问题:
 
-  - 展示拷贝构造函数和拷贝赋值函数时, 参数使用 :cpp:`&`, :doc:`实际应该使用 const& </faq/copy_functions_parameter/main>`.
+  - 展示拷贝构造函数和拷贝赋值函数时, 参数使用 :cpp:`&`, :doc:`实际应该使用 const& </faq/copy_functions_parameter/index>`.
   - 解释链表时使用有序链表, 导致读者连怎么插入删除都搞不懂.
   - ……
 
@@ -246,7 +246,7 @@ C++ 环境配置
 .. admonition:: 应对上机考试的进阶内容, 有余力可用
   :class: seealso, dropdown
 
-  - :doc:`/faq/range_iterator_and_algorithm/main`
+  - :doc:`/faq/range_iterator_and_algorithm/index`
   - 
   - `105 STL Algorithms in Less Than an Hour - Jonathan Boccara - CppCon 2018`_
   - `动态规划 入门 <https://www.bilibili.com/video/BV1xb411e7ww>`_
@@ -297,7 +297,7 @@ C++ 环境配置
 C++ 资料查询
 =======================================================================================================================
 
-- :doc:`/searching_method/main`.
+- :doc:`/searching_method/index`.
 - `小抄 (可能过于进阶) <https://hackingcpp.com/cpp/cheat_sheets.html>`_.
 
 =======================================================================================================================

@@ -134,7 +134,7 @@
 函数参数和返回值
   同样地, 模拟内置类型的行为, 具体参考以下示例.
 
-  此外, 如果参数不会被修改, 应该用 :cpp:`const&` 而不是 :cpp:`&`, :doc:`求求你这么做吧😭😭😭, 教材不这么做是因为它是垃圾教材 </faq/copy_functions_parameter/main>`.
+  此外, 如果参数不会被修改, 应该用 :cpp:`const&` 而不是 :cpp:`&`, :doc:`求求你这么做吧😭😭😭, 教材不这么做是因为它是垃圾教材 </faq/copy_functions_parameter/index>`.
 
 :cpp:`class Widget` 各种运算符模拟内置类型的实现示例 (C++98)
   .. toctree::
@@ -154,4 +154,4 @@
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/range_iterator_and_algorithm/main`
+- :doc:`/faq/range_iterator_and_algorithm/index`

@@ -7,8 +7,8 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
   - :doc:`/faq/basic_concepts/initialization_assignment`
   - :doc:`/faq/basic_concepts/resource`
-  - :doc:`/faq/class_invariant/main`
-  - :doc:`/faq/member_initializer/main`
+  - :doc:`/faq/class_invariant/index`
+  - :doc:`/faq/member_initializer/index`
 
 ========================================================================================================================
 特殊函数
@@ -254,7 +254,7 @@ rule of 3/5/0: 要么不定义任何特殊函数, 要么定义它们全部
 
 .. seealso::
 
-  在 :doc:`/faq/dynamic_array/main` 和 :doc:`/faq/forward_list/main` 的扩展部分, 我都有介绍如何为它们定义移动函数.
+  在 :doc:`/faq/dynamic_array/index` 和 :doc:`/faq/forward_list/index` 的扩展部分, 我都有介绍如何为它们定义移动函数.
 
 假设小明、小刚合租房子而只有一把钥匙, 移动就是小明将钥匙交给小刚, 而拷贝则是小刚拿小明的钥匙再去配一把钥匙. 我们在上方定义的文件资源由于其所有权独占性而不能拷贝, 但可以用移动 (move) 将它交给另一个 :cpp:`Input_file` 对象.
 
@@ -387,7 +387,7 @@ rule of 3/5: 定义全部特殊函数
 
 这正是 `本问题的提问人所犯的错误 <https://gitee.com/cpp_tutorial/question/issues/I7GJ0R>`_!
 
-如果需要自定义拷贝构造函数、拷贝赋值函数、(移动构造函数、移动赋值函数、) 析构函数, **总是定义它们所有**. 此外, 你可以 :doc:`用拷贝构造函数来实现拷贝赋值函数 </faq/copy_assignment_define/main>`.
+如果需要自定义拷贝构造函数、拷贝赋值函数、(移动构造函数、移动赋值函数、) 析构函数, **总是定义它们所有**. 此外, 你可以 :doc:`用拷贝构造函数来实现拷贝赋值函数 </faq/copy_assignment_define/index>`.
 如果默认的行为仍然可行, 用 :cpp:`=default` 明确定义; 如果该行为不成立, 用 :cpp:`=delete` 明确删除.
 
 .. admonition:: 相关核心准则

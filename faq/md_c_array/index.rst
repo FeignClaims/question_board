@@ -13,7 +13,7 @@
 
 多维数组实际上仍然是一维数组, 只是数组的元素是数组.
 
-例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]` (:doc:`复杂声明的阅读方法 </faq/variable_decleration_reading/main>`), 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
+例如 :cpp:`int marix[3][4]`, 阅读顺序应该是 :cpp:`matrix[3]`-:cpp:`matrix[3][4]`-:cpp:`int matrix[3][4]` (:doc:`复杂声明的阅读方法 </faq/variable_decleration_reading/index>`), 它是一个长度为 3 的数组, 数组中的元素是长度为 4 的数组, 而这个内部数组的元素是 :cpp:`int`.
 
 .. code-block:: text
   :linenos:

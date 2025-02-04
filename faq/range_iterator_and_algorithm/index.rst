@@ -1252,7 +1252,7 @@
 .. admonition:: 前置内容
   :class: precontent
 
-  :doc:`/faq/virtual_function_invocation_explain/main`
+  :doc:`/faq/virtual_function_invocation_explain/index`
 
 通过对迭代器概念进行精化, 我们可以为合适的概念层次实现高效的算法. 但如何告知函数我们的类型能建模哪种迭代器概念呢? 例如:
 

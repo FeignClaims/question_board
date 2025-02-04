@@ -49,7 +49,7 @@ C++ 中存在初始化与赋值的区别.
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/member_initializer/main`
-- :doc:`/faq/rule_of_350/main`
-- :doc:`/faq/forward_list/main`
-- :doc:`/faq/dynamic_array/main`
+- :doc:`/faq/member_initializer/index`
+- :doc:`/faq/rule_of_350/index`
+- :doc:`/faq/forward_list/index`
+- :doc:`/faq/dynamic_array/index`

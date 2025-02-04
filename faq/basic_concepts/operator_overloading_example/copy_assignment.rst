@@ -2,4 +2,4 @@
 拷贝赋值函数: :cpp:`operator=(Widget const&)`
 ************************************************************************************************************************
 
-见于 :doc:`/faq/copy_assignment_define/main`.
+见于 :doc:`/faq/copy_assignment_define/index`.

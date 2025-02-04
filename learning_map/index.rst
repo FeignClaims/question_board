@@ -22,7 +22,7 @@
 
 更多见于 `我的 C++ 浏览器书签 (2024/08/30) (右键另存为再导入到浏览器)`_ 和 `我的 C++ 订阅源 (2024/08/30) (右键另存为再导入浏览器 feedbro 插件)`_.
 
-- `cppreference`_; :doc:`/searching_method/main`.
+- `cppreference`_; :doc:`/searching_method/index`.
 - `How to Ask For C++ Coding Help <http://www.gregcons.com/KateBlog/HowToAskForCCodingHelp.aspx>`_
 - `Bjarne Stroustrup's Homepage`_
 - `Standard C++ <https://isocpp.org/>`_

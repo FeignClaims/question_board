@@ -130,7 +130,7 @@
 相关解答
 ========================================================================================================================
 
-- :doc:`/faq/rule_of_350/main`
-- :doc:`/faq/forward_list/main`
-- :doc:`/faq/dynamic_array/main`
-- :doc:`/faq/fstream/main`
+- :doc:`/faq/rule_of_350/index`
+- :doc:`/faq/forward_list/index`
+- :doc:`/faq/dynamic_array/index`
+- :doc:`/faq/fstream/index`

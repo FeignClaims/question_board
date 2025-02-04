@@ -4,7 +4,7 @@
 
 通过 :cpp:`#include <fstream>` 中的 :cpp:`ofstream`、:cpp:`ifstream` 和 :cpp:`fstream` 文件流, 你可以对文件进行写入、读取或读写.
 
-它们的用法于 :cpp:`cout` 和 :cpp:`cin` 相似, 因此请参考 :doc:`/faq/input_methods/main` 等了解. 以下解释如何打开文件、读取到了文件末尾和关闭文件.
+它们的用法于 :cpp:`cout` 和 :cpp:`cin` 相似, 因此请参考 :doc:`/faq/input_methods/index` 等了解. 以下解释如何打开文件、读取到了文件末尾和关闭文件.
 
 ========================================================================================================================
 打开文件
@@ -98,11 +98,11 @@
 .. admonition:: 前置内容
   :class: precontent
 
-  在往下看正确的方案之前, 请先阅读 :doc:`/faq/input_methods/main` 直到读完 "共同部分".
+  在往下看正确的方案之前, 请先阅读 :doc:`/faq/input_methods/index` 直到读完 "共同部分".
 
 数据读写有三类错误状态: eof (到达读取数据的尾部)、fail (读写操作失败)、bad (读写流本身出现不可逆转的问题). **读写操作失败 fail** 才是你真正想要的, 它涵盖了 bad 和 eof 的几乎所有情况, 唯一没涵盖的某种 eof 情况也不是你真正想要的.
 
-因此, 我们应该使用 :cpp:`!ifile.fail()` 来表达读取有没有结束, 而 :doc:`/faq/input_methods/main` 的共同部分已经说了怎么写:
+因此, 我们应该使用 :cpp:`!ifile.fail()` 来表达读取有没有结束, 而 :doc:`/faq/input_methods/index` 的共同部分已经说了怎么写:
 
 .. code-block:: cpp
   :linenos:
@@ -277,4 +277,4 @@ C++ 中的对象存在 :doc:`生命期和存储周期 </faq/lifetime/index>` 的
 二进制文件读写
 ========================================================================================================================
 
-二进制文件读写见于 :doc:`/faq/binary_io/main`.
+二进制文件读写见于 :doc:`/faq/binary_io/index`.
