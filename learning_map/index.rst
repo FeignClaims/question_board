@@ -297,7 +297,7 @@
 更多见于 :ref:`学习大纲_常用网站资源`.
 
 - `PPP Style Guide (天鹅书风格指南)`_
-- `C++ Core Guidelines (C++核心准则)`_
+- `C++ Core Guidelines (C++ 核心准则)`_
 - `Guidelines For snake_case Concept Naming`_
 - `Google C++ Style Guide`_
 - `SEI CERT C++ Coding Standard`_
