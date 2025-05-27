@@ -136,7 +136,7 @@
     string.resize(size);
 
     // 实际内容
-    istream.read(string.data(), sizeof(char) * size);
+    istream.read(&string[0], sizeof(char) * size);
   }
 
   void serialize(std::ostream& ostream, Person const& person) {
