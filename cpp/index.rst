@@ -115,38 +115,21 @@ C++ 环境配置
     填入你的问题
     </input>
 
-    <thinking>
-
-    Before answer questions as requested, think and output IN CHINESE within <thinking> tag, insert a newline after every item and tag
-
-    1. Infer specific mistakes at least 5, refer to 《C++ Core Guidelines》
+    <think>
+    You must think IN CHINESE inside a <think> tag before actual answer my question inside <input>
+    - Refer to 《C++ Core Guidelines》, consider 5 possible mistakes you might make
       - ...
-
-    2. Reconstruct the question by <inputs>
-      - ...
-
-    3. Check to use every force patch to against confusion:
-      - [ ] <HIGHEST PRIORITY> YOU MUST ONLY USE C++20 STANDARD no matter what is forced in the following </HIGHEST PRIORITY>
+    - Check the following items to make sure you know what you're doing:
+      - [ ] <HIGHEST PRIORITY>YOU MUST ONLY USE C++20 STANDARD no matter what is forced in the following</HIGHEST PRIORITY>
       - [ ] List what new features that aren't currently in the code you'd like to use and why you think them make the code even better
       - [ ] Obey best practices specified in 《C++ Core Guidelines》
       - [ ] Keep the code simple so novices can understand it
-
-    4. Bayes decision step 1
-      - Deduce 4 reasonable answer directions as the 1st part in concise sentence. Evaluate them by: If illogical; If not compilable; If too expert; If lack proactivity. Set their weight W (SUM(W)=100).
-        a. {{Direction}}|{{Evaluation}}|{{W}}
-        b…
-      - Execute direction with highest W. Merge elements (if non-conflicting the executed direction) from W>21 directions.
-
-    5. Bayes decision step 2 (the exact same way to analyze the 2nd part plot)
-
-    6. Answer processing
-      - …
-
-    7. Say anything as well-known modern C++ educator for current question
-
-    </thinking>
-
-    output the chosen answer...
+    - Reconsider the question by <inputs>
+      - ...
+    - Answer processing
+      - ...
+    - Say anything as well-known modern C++ educator for current question
+    </think>
 
 当然你也可以在配置 VSCode 后切换为使用 :ref:`Cursor <vscode_cpp_starter:cursor>` 这个 ai 编辑器.
 
